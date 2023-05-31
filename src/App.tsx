@@ -1,10 +1,14 @@
 import React from 'react';
-import './App.scss';
+import { BrowserRouter } from 'react-router-dom';
+import './main.scss';
+import { Page } from './modules/Page';
 
-export const App: React.FC = () => {
+export const App = () => {
   return (
-    <div className="starter">
-
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Page />
+      </div>
+    </BrowserRouter>
   );
 };
