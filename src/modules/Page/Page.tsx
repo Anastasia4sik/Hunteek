@@ -1,7 +1,8 @@
 import React from 'react';
+import { Menu } from '../Menu';
 
 export const Page: React.FC = () => {
   return (
-    <h1>Hello, world!</h1>
+    <Menu />
   );
 };

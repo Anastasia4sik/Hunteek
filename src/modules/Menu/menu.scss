@@ -1,0 +1,33 @@
+.menu {
+  width: 213px;
+  height: 100vw;
+
+  background-color: $grey-dark;
+
+  &__logo {
+    height: 105px;
+
+    padding: 25px 30px;
+
+    border-bottom: 1px solid $grey-border;
+  }
+
+  &__nav {
+    padding: 11px 15px;
+
+    &__item {
+      width: 183px;
+      height: 40px;
+
+      padding: 13px 20px;
+
+      border-radius: 10px;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $green-main;
+      }
+    }
+  }
+}
