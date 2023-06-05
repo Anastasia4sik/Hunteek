@@ -6,7 +6,7 @@
   top: 0;
   left: $menu-width;
 
-  padding: 0 60px 0 54px;
+  margin-left: 60px;
 
   &__select {
     background-color: $black-main;
@@ -18,11 +18,11 @@
   }
   
   &__search {   
-    margin: 0 2vw 0 3vw;
+    margin: 0 30px 0 60px;
  
     &__input {
       height: 56px;
-      width: 46vw;
+      width: 52vw;
 
       background-color: $grey-dark;
       color: $white-text-main;
@@ -47,15 +47,14 @@
 
   &__menu {
     height: 66px;
+    width: 22vw;
     
     &__info {
       gap: 10px;
-      width: 11vw;
+      width: 50%;
 
-      padding: 8px 0 8px 4%;
+      padding: 8px 15px 8px 22px;
       
-      margin-right: 25px;
-
       border-left: 2px solid $grey-border;
 
       &__top {
@@ -87,10 +86,10 @@
     }
     
     &__nav {
-      width: 11vw;
+      width: 50%;
 
       border-left: 2px solid $grey-border;
-      padding: 8px 0 8px 4%;
+      padding: 8px 0 8px 30px;
       
       margin-right: 25px;
 
