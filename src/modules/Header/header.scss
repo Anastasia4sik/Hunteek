@@ -6,10 +6,12 @@
   top: 0;
   left: $menu-width;
 
-  margin-left: 60px;
+  padding-left: 60px;
+
+  background-color: $black-header;
 
   &__select {
-    background-color: $black-main;
+    background-color: $black-header;
     border: none;
 
     height: 50%;

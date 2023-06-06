@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Header: React.FC = () => {
+export const Card: React.FC = () => {
   return (
-    <div className="card d-grid">
-      <p className="card__title">
+    <div className="card">
+      <p className="card__title text-center">
         Middle Front-end Developer (Vue)
       </p>
 
@@ -28,7 +28,9 @@ export const Header: React.FC = () => {
         <div className="card__media__item"></div>
       </div>
 
-      <div className="card__btn"></div>
+      <div className="card__btn">
+        <button type="button" className="card__btn__button">Hire the talent</button>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,15 @@
+.main {
+  &__catalog {
+    display: grid;
+    width: 46vw;
+    height: 85vh;
+
+    position: absolute;
+    left: 30%;
+    top: 126px;
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+  }
+}
