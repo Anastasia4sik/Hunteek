@@ -8,13 +8,13 @@ export const Page: React.FC = () => {
     <div className="main">
       <Menu />
 
+      <Header />
+
       <div className="main__catalog">
         {[0, 1, 2, 3, 4, 5].map((each) => (
           <Card key={each} />
         ))}
       </div>
-
-      <Header />
     </div>
   );
 };

@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
 
   return (
     <div className="header d-flex flex-row align-items-center">
-      <select className="header__select" name="Language" id="language">
+      <select className="header__select list-text" name="Language" id="language">
         <option value="" selected disabled hidden>
           Language
         </option>
@@ -48,7 +48,7 @@ export const Header: React.FC = () => {
         <i className="bx bx-search-alt"></i>
 
         <input
-          className="header__search__input border-0 rounded-pill"
+          className="header__search__input border-0 rounded-pill main-text"
           type="text"
           placeholder="Search"
           value={searchQuery}
@@ -69,15 +69,15 @@ export const Header: React.FC = () => {
         <div className="header__menu__info d-flex flex-column justify-content-between">
           <div className="header__menu__info__top d-flex flex-row justify-content-between ">
             <div className="header__menu__info__top__nums d-flex flex-row align-items-center text-center">
-              <p className="header__menu__info__top__num header__menu__info__top__num--1">
+              <p className="header__menu__info__top__num header__menu__info__top__num--1 main-text">
                 0
               </p>
 
-              <p className="header__menu__info__top__num header__menu__info__top__num--2">
+              <p className="header__menu__info__top__num header__menu__info__top__num--2 main-text">
                 0
               </p>
 
-              <p className="header__menu__info__top__num header__menu__info__top__num--3">
+              <p className="header__menu__info__top__num header__menu__info__top__num--3 main-text">
                 1
               </p>
             </div>
@@ -95,7 +95,7 @@ export const Header: React.FC = () => {
           </div>
 
           <div className="header__menu__info__bottom d-flex flex-row">
-            <p className="header__menu__info__bottom__time">
+            <p className="header__menu__info__bottom__time list-text">
               1y 60m 48h
             </p>
 

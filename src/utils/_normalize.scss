@@ -4,12 +4,11 @@
   box-sizing: border-box;
 
   scroll-behavior: smooth;
-  transition: all 0.4s ease-in-out;
 }
 
 html,
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body {
@@ -26,4 +25,31 @@ body {
   background-color: $black-main;
 
   color: $white-text-main;
+}
+
+.main-text {
+  font-weight: 600;
+
+  font-size: 18px;
+
+  line-height: 25px;
+}
+
+.list-text {
+  font-weight: 600;
+
+  font-size: 16px;
+}
+
+.light-text {
+  font-weight: 600;
+
+  font-size: 14px;
+}
+
+.small-text {
+  font-weight: 700;
+
+  font-size: 12px;
+  line-height: 16px;
 }
