@@ -30,9 +30,14 @@ body {
 .main-text {
   font-weight: 600;
 
-  font-size: 18px;
+  font-size: 16px;
 
   line-height: 25px;
+
+  @include onBigDesktop {
+    font-size: 18px;
+
+  }
 }
 
 .list-text {

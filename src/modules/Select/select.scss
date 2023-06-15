@@ -1,0 +1,105 @@
+.select {
+  width: 14vw;
+
+  height: calc(100vh - #{$header-height});
+
+  background-color: $grey-dark;
+
+  margin: 0 20px 0 calc(#{$menu-width} + 20px);
+
+  border-radius: 20px;
+
+  color: $grey-text;
+
+  &--1 {
+    padding: 20px 0 25px 25px;
+  }
+
+  &--2 {
+    padding: 15px 0 15px 25px;
+  }
+
+  &--1,
+  &--2 {
+    border-bottom: 1px solid $grey-border;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+  }
+
+  &__header {
+    cursor: pointer;
+
+    &--active {
+      color: $white-text-sec;
+    }
+  }
+
+  &__option {
+    transition: all 1s ease-in-out;
+
+    &__list {
+      margin-top: 15px;
+
+      &--close {
+        transform: translateY(-100%);
+
+        display: none;
+        visibility: hidden;
+      }
+
+      &--open {
+        transform: translateY(0%);
+
+        display: block;
+        visibility: visible;
+      }
+
+      &__item {
+        margin-bottom: 10px;
+
+        &--last {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid $grey-text;
+  border-radius: 3px;
+  background-color: transparent;
+  cursor: pointer;
+
+  margin-right: 10px;
+}
+
+/* Style the checked default checkbox */
+input[type="checkbox"]:checked {
+  background-image: url('../../img/icons/check.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Style the label for the default checkbox */
+.checkbox-label {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + .checkbox-label {
+  color: #ededed;
+}

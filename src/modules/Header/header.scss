@@ -1,11 +1,11 @@
 .header {
   width: calc(100vw - #{$menu-width});
-  height: 10vh;
+  height: $header-height;
 
   margin-left: $menu-width;
   margin-bottom: 20px;
 
-  padding-left: 40px;
+  padding-left: 3vw;
 
   background-color: $black-header;
 
@@ -19,7 +19,7 @@
   }
   
   &__search {   
-    margin: 0 30px 0 60px;
+    margin: 0 30px 0 3vw;
  
     &__input {
       height: 50%;

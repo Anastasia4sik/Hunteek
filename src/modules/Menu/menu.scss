@@ -1,19 +1,32 @@
 .menu {
   width: $menu-width;
-  height: 100vh;
+  // height: 100vh;
 
-  background-color: $grey-dark;
-
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
+  bottom: 0;
+  
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%; /* Set the minimum height to fill the menu wrapper */
+  }
+
+  background-color: $grey-dark;  
 
   &__logo {
-    height: 105px;
-
-    padding: 25px 30px;
+    padding: 1vh 30px;
 
     border-bottom: 1px solid $grey-border;
+
+    cursor: pointer;
+
+    &__img {
+      // height: 5vh;
+      width: 10vw;
+    }
   }
 
   &__container {

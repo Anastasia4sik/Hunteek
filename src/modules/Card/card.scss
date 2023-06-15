@@ -8,13 +8,17 @@
 
   color: $grey-text;
 
-  width: 275px;
+  width: 18vw;
+
+  @include onBigDesktop {
+    width: 275px;
+  }
 
   &__title {
     background: $green-main;
 
-    height: 82px;
-    padding: 20px;
+    height: 8vh;
+    padding: 1vh 20px;
 
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
@@ -31,7 +35,7 @@
 
   &__person,
   &__info {
-    margin: 12px 20px 0;
+    margin: 12px 2vh 0;
     padding-bottom: 12px;
 
     border-bottom: 1px solid $grey-border;
@@ -65,8 +69,8 @@
   }
 
   &__media {
-    margin: 20px 0 0 25px;
-    gap: 20px;
+    margin: 2vh 0 0 25px;
+    gap: 2vh;
 
     &__item {
       gap: 7px;
@@ -74,10 +78,10 @@
   }
 
   &__btn {
-    padding: 20px;
+    padding: 2vh 20px;
 
     &__button {
-      height: 53px;
+      height: 5vh;
       width: 100%;
 
       background-color: $grey-light;
