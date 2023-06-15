@@ -1,0 +1,13 @@
+.info {
+  width: 23vw;
+
+  background-color: $grey-dark;
+
+  height: calc(100vh - #{$header-height});
+
+  // margin-left: calc(#{$menu-width} + #{$select-width} + 50px);
+
+  &__title {
+    background: $green-main;
+  }
+}

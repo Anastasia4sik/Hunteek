@@ -3,6 +3,7 @@ import { Menu } from '../Menu';
 import { Header } from '../Header';
 import { Card } from '../Card';
 import { Select } from '../Select';
+import { Info } from '../Info';
 
 export const Page: React.FC = () => {
   return (
@@ -19,6 +20,8 @@ export const Page: React.FC = () => {
             <Card key={each} />
           ))}
         </div>
+
+        <Info />
       </div>
     </div>
   );

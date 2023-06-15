@@ -14,3 +14,9 @@ $purple-main: linear-gradient(105.41deg, #B453E4 0%, #4963F1 100%);
 
 $menu-width: 213px;
 $header-height: 10vh;
+$select-width: 14vw;
+$card-width: 16vw;
+
+@include onBigDesktop {
+  $card-width: 275px;
+}

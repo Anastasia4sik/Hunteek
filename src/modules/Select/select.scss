@@ -1,11 +1,11 @@
 .select {
-  width: 14vw;
+  width: $select-width;
 
   height: calc(100vh - #{$header-height});
 
   background-color: $grey-dark;
 
-  margin: 0 20px 0 calc(#{$menu-width} + 20px);
+  margin: 0 20px 0 20px;
 
   transition: all 0.3s ease-in-out;
 
@@ -108,9 +108,6 @@ input[type="checkbox"] {
   &:hover {
     color: $white-text-main;
   }
-}
-
-input[type="checkbox"]:checked + .checkbox-label {
 }
 
 .arrow-close {

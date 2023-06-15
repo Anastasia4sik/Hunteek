@@ -8,11 +8,7 @@
 
   color: $grey-text;
 
-  width: 16vw;
-
-  @include onBigDesktop {
-    width: 275px;
-  }
+  width: $card-width;
 
   &__title {
     background: $green-main;

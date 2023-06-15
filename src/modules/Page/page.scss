@@ -1,12 +1,15 @@
 .main {
   &__catalog {
     display: grid;
-    width: 275px;
 
     margin-bottom: 20px;
 
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 
+  }
+
+  .content {
+    margin-left: $menu-width;
   }
 }

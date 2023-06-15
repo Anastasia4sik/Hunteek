@@ -9,9 +9,9 @@ export const Card: React.FC = () => {
   return (
     <div className="card">
       <div className="card__title text-center">
-        <p className="card__title__p text-center main-text">
+        <h3 className="card__title__p text-center main-text">
           Middle Front-end Developer (Vue)
-        </p>
+        </h3>
       </div>
 
       <div className="card__person">
