@@ -19,49 +19,49 @@ export const Menu: React.FC = () => {
 
       <div className="menu__container d-flex flex-column justify-content-between">
         <nav className="menu__nav d-flex flex-column">
-          <a href="/home" className="menu__nav__item d-flex flex-row">
+          <a href="/home" className="menu__nav__item list-text d-flex flex-row">
             <img src={home} alt="Home" className="menu__nav__item__img" />
 
             Home
           </a>
 
-          <a href="/news" className="menu__nav__item d-flex flex-row">
+          <a href="/news" className="menu__nav__item list-text d-flex flex-row">
             <img src={news} alt="News" className="menu__nav__item__img" />
 
             News
           </a>
 
-          <a href="/subscriptions" className="menu__nav__item d-flex flex-row">
+          <a href="/subscriptions" className="menu__nav__item list-text d-flex flex-row">
             <img src={subsc} alt="Subscriptions" className="menu__nav__item__img" />
 
             Subscriptions
           </a>
 
-          <a href="/team" className="menu__nav__item d-flex flex-row">
+          <a href="/team" className="menu__nav__item list-text d-flex flex-row">
             <img src={team} alt="Team" className="menu__nav__item__img" />
 
             Team
           </a>
 
-          <a href="/project" className="menu__nav__item d-flex flex-row">
+          <a href="/project" className="menu__nav__item list-text d-flex flex-row">
             <img src={project} alt="Project" className="menu__nav__item__img" />
 
             Project
           </a>
 
-          <a href="/task" className="menu__nav__item d-flex flex-row">
+          <a href="/task" className="menu__nav__item list-text d-flex flex-row">
             <img src={task} alt="Task" className="menu__nav__item__img" />
 
             Task
           </a>
 
-          <a href="/message" className="menu__nav__item d-flex flex-row">
+          <a href="/message" className="menu__nav__item list-text d-flex flex-row">
             <img src={message} alt="Message" className="menu__nav__item__img" />
 
             Message
           </a>
 
-          <a href="/analytics" className="menu__nav__item d-flex flex-row">
+          <a href="/analytics" className="menu__nav__item list-text d-flex flex-row">
             <img src={analytics} alt="Analytics" className="menu__nav__item__img" />
 
             Analytics
@@ -69,7 +69,7 @@ export const Menu: React.FC = () => {
         </nav>
 
         <div className="menu__theme">
-          <p className="menu__theme__text">Theme:</p>
+          <p className="menu__theme__text list-text">Theme:</p>
 
           <label className="menu__theme__btn">
             <input type="checkbox"></input>

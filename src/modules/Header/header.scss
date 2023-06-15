@@ -1,12 +1,11 @@
 .header {
   width: calc(100vw - #{$menu-width});
-  height: 106px;
+  height: 10vh;
 
-  position: absolute;
-  top: 0;
-  left: $menu-width;
+  margin-left: $menu-width;
+  margin-bottom: 20px;
 
-  padding-left: 60px;
+  padding-left: 40px;
 
   background-color: $black-header;
 
@@ -23,7 +22,7 @@
     margin: 0 30px 0 60px;
  
     &__input {
-      height: 56px;
+      height: 50%;
       width: 52vw;
 
       background-color: $grey-dark;
@@ -33,12 +32,15 @@
       
       &::placeholder {
         color: $grey-text;
+
+        font-weight: 600;
+        font-size: 18px;
       }
     }
 
     &__btn {
       right: 7px;
-      top: 15%;
+      top: 10%;
 
       height: 44px;
       width: 74px;
@@ -68,11 +70,11 @@
   
         &__icons {
           &__chart {
-            padding-right: 14px;
+            padding-right: 4px;
           }
 
           &__menu {
-            padding: 4px 0 4px 14px;
+            padding: 4px 0 4px 8px;
 
             border-left: 2px solid $grey-border;
           }

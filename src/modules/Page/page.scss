@@ -1,15 +1,13 @@
 .main {
   &__catalog {
     display: grid;
-    width: 46vw;
-    height: 85vh;
+    width: 275px;
 
-    position: absolute;
-    left: 30%;
-    top: 126px;
+    margin-left: $menu-width;
+    margin-bottom: 20px;
 
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 25px;
 
   }
 }
