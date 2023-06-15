@@ -7,16 +7,18 @@
 
   margin: 0 20px 0 calc(#{$menu-width} + 20px);
 
+  transition: all 0.3s ease-in-out;
+
   border-radius: 20px;
 
   color: $grey-text;
 
   &--1 {
-    padding: 20px 0 25px 25px;
+    padding: 20px 25px 25px;
   }
 
   &--2 {
-    padding: 15px 0 15px 25px;
+    padding: 15px 25px;
   }
 
   &--1,
@@ -40,7 +42,7 @@
   }
 
   &__option {
-    transition: all 1s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     &__list {
       margin-top: 15px;
@@ -50,6 +52,8 @@
 
         display: none;
         visibility: hidden;
+    transition: all 1s ease-in-out;
+
       }
 
       &--open {
@@ -57,6 +61,8 @@
 
         display: block;
         visibility: visible;
+    transition: all 1s ease-in-out;
+
       }
 
       &__item {
@@ -83,13 +89,12 @@ input[type="checkbox"] {
   cursor: pointer;
 
   margin-right: 10px;
-}
 
-/* Style the checked default checkbox */
-input[type="checkbox"]:checked {
-  background-image: url('../../img/icons/check.svg');
-  background-repeat: no-repeat;
-  background-position: center;
+  &:checked {
+    background-image: url('../../img/icons/check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 /* Style the label for the default checkbox */
@@ -98,8 +103,17 @@ input[type="checkbox"]:checked {
   vertical-align: middle;
   margin-left: 5px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: $white-text-main;
+  }
 }
 
 input[type="checkbox"]:checked + .checkbox-label {
-  color: #ededed;
 }
+
+.arrow-close {
+  transform: rotate(180deg);
+}
+

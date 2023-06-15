@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import arrow from '../../img/icons/arrow_down.svg';
+
 export const Select: React.FC = () => {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
@@ -23,14 +25,15 @@ export const Select: React.FC = () => {
       <div className="select">
         <div className={`select--1 celect__content  ${isOpen1 ? 'open' : ''}`}>
           <div
-            className={`select__header ${isOpen1 ? 'select__header--active' : ''}`}
+            className={`select__header d-flex flex-row justify-content-between ${isOpen1 ? 'select__header--active' : ''}`}
             role="button"
             tabIndex={0}
             onClick={handleToggle1}
             onKeyDown={handleKeyDown}
           >
             <span className="select__option">Specilization</span>
-            <span className="arrow">▼</span>
+
+            {!isOpen1 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
           </div>
           <ul
             className={`
@@ -58,15 +61,15 @@ export const Select: React.FC = () => {
               list-text
               select__option__list__item"
             >
-              <label htmlFor="android-checkbox" className="checkbox-label">
+              <label htmlFor="iOS-checkbox" className="checkbox-label">
                 <input
                   type="checkbox"
-                  id="android-checkbox"
+                  id="iOS-checkbox"
                   name="option"
-                  value="Android"
+                  value="iOS / macOS"
 
                 />
-                Android
+                iOS / macOS
               </label>
             </li>
 
@@ -74,15 +77,15 @@ export const Select: React.FC = () => {
               list-text
               select__option__list__item"
             >
-              <label htmlFor="android-checkbox" className="checkbox-label">
+              <label htmlFor="C-checkbox" className="checkbox-label">
                 <input
                   type="checkbox"
-                  id="android-checkbox"
+                  id="C-checkbox"
                   name="option"
-                  value="Android"
+                  value="C/C++/Embedded"
 
                 />
-                Android
+                C / C++ / Embedded
               </label>
             </li>
 
@@ -90,15 +93,15 @@ export const Select: React.FC = () => {
               list-text
               select__option__list__item"
             >
-              <label htmlFor="android-checkbox" className="checkbox-label">
+              <label htmlFor="Golang-checkbox" className="checkbox-label">
                 <input
                   type="checkbox"
-                  id="android-checkbox"
+                  id="Golang-checkbox"
                   name="option"
-                  value="Android"
+                  value="Golang"
 
                 />
-                Android
+                Golang
               </label>
             </li>
 
@@ -107,15 +110,15 @@ export const Select: React.FC = () => {
               select__option__list__item
               select__option__list__item--last"
             >
-              <label htmlFor="android-checkbox" className="checkbox-label">
+              <label htmlFor="Scala-checkbox" className="checkbox-label">
                 <input
                   type="checkbox"
-                  id="android-checkbox"
+                  id="Scala-checkbox"
                   name="option"
-                  value="Android"
+                  value="Scala"
 
                 />
-                Android
+                Scala
               </label>
             </li>
           </ul>
@@ -123,14 +126,15 @@ export const Select: React.FC = () => {
 
         <div className={`select--2 celect__content  ${isOpen2 ? 'open' : ''}`}>
           <div
-            className={`select__header ${isOpen2 ? 'select__header--active' : ''}`}
+            className={`select__header d-flex flex-row justify-content-between ${isOpen2 ? 'select__header--active' : ''}`}
             role="button"
             tabIndex={0}
             onClick={handleToggle2}
             onKeyDown={handleKeyDown}
           >
             <span className="select__option">Seller type</span>
-            <span className="arrow">▼</span>
+
+            {!isOpen2 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
           </div>
 
           <ul
@@ -143,15 +147,15 @@ export const Select: React.FC = () => {
               list-text
               select__option__list__item"
             >
-              <label htmlFor="android-checkbox" className="checkbox-label">
+              <label htmlFor="first-checkbox" className="checkbox-label">
                 <input
                   type="checkbox"
-                  id="android-checkbox"
+                  id="first-checkbox"
                   name="option"
-                  value="Android"
+                  value="first"
 
                 />
-                Android
+                first
               </label>
             </li>
 
@@ -159,15 +163,15 @@ export const Select: React.FC = () => {
               list-text
               select__option__list__item"
             >
-              <label htmlFor="android-checkbox" className="checkbox-label">
+              <label htmlFor="second-checkbox" className="checkbox-label">
                 <input
                   type="checkbox"
-                  id="android-checkbox"
+                  id="second-checkbox"
                   name="option"
-                  value="Android"
+                  value="second"
 
                 />
-                Android
+                second
               </label>
             </li>
 
@@ -175,14 +179,14 @@ export const Select: React.FC = () => {
               list-text
               select__option__list__item"
             >
-              <label htmlFor="android-checkbox" className="checkbox-label">
+              <label htmlFor="third-checkbox" className="checkbox-label">
                 <input
                   type="checkbox"
-                  id="android-checkbox"
+                  id="third-checkbox"
                   name="option"
-                  value="Android"
+                  value="third"
                 />
-                Android
+                third
               </label>
             </li>
 
@@ -190,15 +194,15 @@ export const Select: React.FC = () => {
               list-text
               select__option__list__item"
             >
-              <label htmlFor="android-checkbox" className="checkbox-label">
+              <label htmlFor="fourth-checkbox" className="checkbox-label">
                 <input
                   type="checkbox"
-                  id="android-checkbox"
+                  id="fourth-checkbox"
                   name="option"
-                  value="Android"
+                  value="fourth"
 
                 />
-                Android
+                fourth
               </label>
             </li>
 
@@ -207,15 +211,15 @@ export const Select: React.FC = () => {
               select__option__list__item
               select__option__list__item--last"
             >
-              <label htmlFor="android-checkbox" className="checkbox-label">
+              <label htmlFor="fifth-checkbox" className="checkbox-label">
                 <input
                   type="checkbox"
-                  id="android-checkbox"
+                  id="fifth-checkbox"
                   name="option"
-                  value="Android"
+                  value="fifth"
 
                 />
-                Android
+                fifth
               </label>
             </li>
           </ul>
