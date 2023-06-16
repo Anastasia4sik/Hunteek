@@ -42,10 +42,11 @@
     &__desc {
       color: #888888;
     
-      height: calc(100vh - #{$header-height} - 180px);
+      height: calc(100vh - #{$header-height} - 182px);
     
       padding: 0 25px 25px 0;
-
+    
+    
       overflow-y: scroll;
       
       &::-webkit-scrollbar {

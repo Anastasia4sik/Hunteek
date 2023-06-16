@@ -6,6 +6,14 @@ import { Select } from '../Select';
 import { Info } from '../Info';
 
 export const Main: React.FC = () => {
+  let location = '';
+
+  if (window.location.hash.includes('#profile')) {
+    location = 'profile';
+  } else {
+    location = 'general';
+  }
+
   return (
     <div className="main">
       <Menu />
@@ -21,7 +29,7 @@ export const Main: React.FC = () => {
           ))}
         </div>
 
-        <Info />
+        <Info purpose={location} />
       </div>
     </div>
   );

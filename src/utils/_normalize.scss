@@ -27,6 +27,13 @@ body {
   color: $white-text-main;
 }
 
+.big-text {
+  font-weight: 600;
+  line-height: 29px;
+
+  font-size: 21px;
+}
+
 .main-text {
   font-weight: 600;
 
@@ -41,6 +48,12 @@ body {
   font-size: 16px;
 }
 
+.bold-text {
+  font-weight: 700;
+
+  font-size: 16px;
+}
+
 .light-text {
   font-weight: 600;
 
@@ -51,5 +64,4 @@ body {
   font-weight: 700;
 
   font-size: 12px;
-  line-height: 16px;
 }

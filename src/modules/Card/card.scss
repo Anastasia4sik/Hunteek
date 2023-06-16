@@ -10,6 +10,15 @@
 
   width: $card-width;
 
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: $white-text-main;
+
+    background-color: $black-header;
+  }
+
   @include onBigDesktop {
     width: $card-width-big;
   }
@@ -52,10 +61,6 @@
       background-color: white;
 
       border-radius: 50%;
-    }
-
-    &__rate {
-      gap: 3px;
     }
   }
 
