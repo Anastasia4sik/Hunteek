@@ -5,7 +5,7 @@ import { Card } from '../Card';
 import { Select } from '../Select';
 import { Info } from '../Info';
 
-export const Page: React.FC = () => {
+export const Main: React.FC = () => {
   return (
     <div className="main">
       <Menu />
