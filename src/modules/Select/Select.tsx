@@ -54,7 +54,7 @@ export const Select: React.FC = () => {
                     value="Android"
 
                   />
-                  Android
+                  <span>Android</span>
                 </label>
               </li>
 
@@ -70,7 +70,7 @@ export const Select: React.FC = () => {
                     value="iOS / macOS"
 
                   />
-                  iOS / macOS
+                  <span>iOS / macOS</span>
                 </label>
               </li>
 
@@ -86,7 +86,7 @@ export const Select: React.FC = () => {
                     value="C/C++/Embedded"
 
                   />
-                  C / C++ / Embedded
+                  <span>C / C++ / Embedded</span>
                 </label>
               </li>
 
@@ -102,7 +102,7 @@ export const Select: React.FC = () => {
                     value="Golang"
 
                   />
-                  Golang
+                  <span>Golang</span>
                 </label>
               </li>
 
@@ -119,7 +119,7 @@ export const Select: React.FC = () => {
                     value="Scala"
 
                   />
-                  Scala
+                  <span>Scala</span>
                 </label>
               </li>
             </ul>
@@ -156,7 +156,7 @@ export const Select: React.FC = () => {
                     value="first"
 
                   />
-                  first
+                  <span>first</span>
                 </label>
               </li>
 
@@ -172,7 +172,7 @@ export const Select: React.FC = () => {
                     value="second"
 
                   />
-                  second
+                  <span>second</span>
                 </label>
               </li>
 
@@ -187,7 +187,7 @@ export const Select: React.FC = () => {
                     name="option"
                     value="third"
                   />
-                  third
+                  <span>third</span>
                 </label>
               </li>
 
@@ -203,7 +203,7 @@ export const Select: React.FC = () => {
                     value="fourth"
 
                   />
-                  fourth
+                  <span>fourth</span>
                 </label>
               </li>
 
@@ -220,7 +220,7 @@ export const Select: React.FC = () => {
                     value="fifth"
 
                   />
-                  fifth
+                  <span>fifth</span>
                 </label>
               </li>
             </ul>

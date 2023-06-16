@@ -84,7 +84,6 @@
   }
 }
 
-/* Hide the default checkbox */
 input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
@@ -105,7 +104,6 @@ input[type="checkbox"] {
   }
 }
 
-/* Style the label for the default checkbox */
 .checkbox-label {
   display: inline-block;
   vertical-align: middle;
@@ -116,6 +114,10 @@ input[type="checkbox"] {
   &:hover {
     color: $white-text-main;
   }
+}
+
+input[type="checkbox"]:checked ~ span {
+  color: $white-text-main;
 }
 
 .arrow-close {
