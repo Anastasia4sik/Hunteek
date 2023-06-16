@@ -5,6 +5,8 @@ $grey-light: #393939;
 
 $grey-border: #383d3d;
 
+$grey-scroll: #303030;
+
 $grey-text: #888888;
 $white-text-main: #ededed;
 $white-text-sec: #dfdfdf;
@@ -17,6 +19,4 @@ $header-height: 10vh;
 $select-width: 14vw;
 $card-width: 16vw;
 
-@include onBigDesktop {
-  $card-width: 275px;
-}
+$card-width-big: 275px;

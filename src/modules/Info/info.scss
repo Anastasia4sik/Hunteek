@@ -1,13 +1,72 @@
 .info {
-  width: 23vw;
+  width: 22vw;
 
-  background-color: $grey-dark;
+  background-color: #282828;
 
   height: calc(100vh - #{$header-height});
 
-  // margin-left: calc(#{$menu-width} + #{$select-width} + 50px);
+  margin-left: 30px;
 
+  border-radius: 20px;
+
+  position: fixed;
+  right: 25px;
+  top: calc(#{$header-height} + 21px);
+  bottom: 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  
   &__title {
-    background: $green-main;
+    background: linear-gradient(94.52deg, #296051 0%, #3B6078 100%);
+  
+    padding: 20px 0;
+  
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  
+    margin-bottom: 25px;
+  }
+  
+  &__content {
+    padding: 0 30px;
+  
+    overflow: hidden;
+    
+    &__title {
+      margin-bottom: 5px;
+    }
+    
+    &__desc {
+      color: #888888;
+    
+      min-height: calc(84vh - #{$header-height} - 21px);
+    
+      padding: 0 25px 25px 0;
+    
+    
+      overflow-y: scroll;
+      
+      &::-webkit-scrollbar {
+        padding: 25px 10px 25px 0;
+        width: 8px;
+        
+      }
+      
+      &::-webkit-scrollbar-track {
+        background-color: $grey-scroll;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background-color: $grey-text;
+        border-radius: 5px;
+      }
+    }
   }
 }
+
+
+

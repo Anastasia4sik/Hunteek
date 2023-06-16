@@ -2,14 +2,21 @@
   &__catalog {
     display: grid;
 
+    position: absolute;
+
+    top: calc(#{$header-height} + 20px);
+
     margin-bottom: 20px;
 
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    margin-left: calc(30px + #{$select-width});
 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    z-index: -1;
   }
 
   .content {
-    margin-left: $menu-width;
+    margin-left: calc(#{$menu-width} + 30px);
   }
 }

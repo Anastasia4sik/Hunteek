@@ -1,17 +1,25 @@
 .select {
   width: $select-width;
 
-  height: calc(100vh - #{$header-height});
+  height: calc(100vh - #{$header-height} - 21px);
 
   background-color: $grey-dark;
-
-  margin: 0 20px 0 20px;
 
   transition: all 0.3s ease-in-out;
 
   border-radius: 20px;
 
   color: $grey-text;
+
+  position: fixed;
+  top: calc(#{$header-height} + 21px);
+  bottom: 0;
+  
+  &__container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
 
   &--1 {
     padding: 20px 25px 25px;
