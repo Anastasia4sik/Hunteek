@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Menu } from '../Menu';
 import { Header } from '../Header';
 import { Card } from '../Card';
@@ -6,13 +6,25 @@ import { Select } from '../Select';
 import { Info } from '../Info';
 
 export const Main: React.FC = () => {
-  let location = '';
+  const [location, setLocation] = useState('');
 
-  if (window.location.hash.includes('#profile')) {
-    location = 'profile';
-  } else {
-    location = 'general';
-  }
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash === '#profile') {
+        setLocation('profile');
+      } else {
+        setLocation('general');
+      }
+    };
+
+    handleHashChange(); // Call the function once on initial load to set the location
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
 
   return (
     <div className="main">

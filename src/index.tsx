@@ -11,6 +11,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Main />} />
+          <Route index path="#profile" element={<Main />} />
         </Route>
       </Routes>
     </Router>
