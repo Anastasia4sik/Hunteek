@@ -17,6 +17,7 @@
   background-color: $grey-dark;  
 
   &__logo {
+    height: 10vh;
     padding: 1vh 30px;
 
     border-bottom: 1px solid $grey-border;
@@ -24,8 +25,8 @@
     cursor: pointer;
 
     &__img {
-      // height: 5vh;
-      width: 10vw;
+      height: 8vh;
+      width: 8vw;
     }
   }
 
