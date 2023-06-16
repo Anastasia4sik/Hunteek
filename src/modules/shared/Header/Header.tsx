@@ -1,14 +1,14 @@
 /* eslint-disable no-console */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
-import search from '../../img/icons/search.svg';
-import chart from '../../img/icons/header/chart.svg';
-import menu from '../../img/icons/header/menu.svg';
-import time from '../../img/icons/header/time.svg';
-import video from '../../img/icons/header/video.svg';
-import category from '../../img/icons/header/category.svg';
-import dollar from '../../img/icons/header/dollar.svg';
-import profile from '../../img/icons/header/profile.svg';
+import search from '../../../img/icons/search.svg';
+import chart from '../../../img/icons/header/chart.svg';
+import menu from '../../../img/icons/header/menu.svg';
+import time from '../../../img/icons/header/time.svg';
+import video from '../../../img/icons/header/video.svg';
+import category from '../../../img/icons/header/category.svg';
+import dollar from '../../../img/icons/header/dollar.svg';
+import profile from '../../../img/icons/header/profile.svg';
 
 export const Header: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -116,7 +116,7 @@ export const Header: React.FC = () => {
             <img src={dollar} alt="Money" />
           </a>
 
-          <a href="/">
+          <a href="/my-profile">
             <img src={profile} alt="Profile" />
           </a>
         </div>

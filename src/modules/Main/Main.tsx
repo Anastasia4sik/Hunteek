@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Menu } from '../Menu';
-import { Header } from '../Header';
-import { Card } from '../Card';
-import { Select } from '../Select';
-import { Info } from '../Info';
+import { Menu } from '../shared/Menu';
+import { Header } from '../shared/Header';
+import { Card } from '../shared/Card';
+import { Select } from '../shared/Select';
+import { Info } from '../shared/Info';
 
 export const Main: React.FC = () => {
   const [location, setLocation] = useState('');

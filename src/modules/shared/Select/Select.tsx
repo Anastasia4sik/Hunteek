@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import arrow from '../../img/icons/arrow_down.svg';
+import arrow from '../../../img/icons/arrow_down.svg';
 
 export const Select: React.FC = () => {
   const [isOpen1, setIsOpen1] = useState(false);

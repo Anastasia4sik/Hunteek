@@ -3,11 +3,12 @@
 @import './utils/normalize';
 @import './utils/reset';
 
-@import './modules/Main/main.scss';
-@import './modules/Menu/menu.scss';
-@import './modules/Header/header.scss';
-@import './modules/Card/card.scss';
-@import './modules/Select/select.scss';
-@import './modules/Info/info.scss';
+@import './modules/shared/Header/header.scss';
 @import './modules/shared/profile/profile.scss';
 @import './modules/shared/rate/rate.scss';
+@import './modules/shared/Menu/menu.scss';
+@import './modules/shared/Card/card.scss';
+@import './modules/shared/Select/select.scss';
+@import './modules/shared/Info/info.scss';
+
+@import './modules/Main/main.scss';

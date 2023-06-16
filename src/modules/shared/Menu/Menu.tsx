@@ -1,15 +1,15 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 
-import logo from '../../img/icons/logo.svg';
-import home from '../../img/icons/menu/home.svg';
-import news from '../../img/icons/menu/news.svg';
-import subsc from '../../img/icons/menu/subsc.svg';
-import team from '../../img/icons/menu/team.svg';
-import project from '../../img/icons/menu/project.svg';
-import task from '../../img/icons/menu/task.svg';
-import message from '../../img/icons/menu/message.svg';
-import analytics from '../../img/icons/menu/analytics.svg';
+import logo from '../../../img/icons/logo.svg';
+import home from '../../../img/icons/menu/home.svg';
+import news from '../../../img/icons/menu/news.svg';
+import subsc from '../../../img/icons/menu/subsc.svg';
+import team from '../../../img/icons/menu/team.svg';
+import project from '../../../img/icons/menu/project.svg';
+import task from '../../../img/icons/menu/task.svg';
+import message from '../../../img/icons/menu/message.svg';
+import analytics from '../../../img/icons/menu/analytics.svg';
 
 export const Menu: React.FC = () => {
   return (

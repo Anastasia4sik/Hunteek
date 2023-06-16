@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { General } from '../shared/general';
-import { Profile } from '../shared/profile';
+import { General } from '../general';
+import { Profile } from '../profile';
 
 type Props = {
   purpose: string;

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import user from '../../img/photo/user.png';
-import eye from '../../img/icons/card/eye.svg';
-import message from '../../img/icons/card/message.svg';
-import { Rate } from '../shared/rate';
+import user from '../../../img/photo/user.png';
+import eye from '../../../img/icons/card/eye.svg';
+import message from '../../../img/icons/card/message.svg';
+import { Rate } from '../rate';
 
 export const Card: React.FC = () => {
   return (
