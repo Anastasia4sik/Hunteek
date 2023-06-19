@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
 import arrow from '../../../img/icons/arrow_down.svg';
+import user from '../../../img/icons/header/profile.svg';
 
 export const Select: React.FC = () => {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
+  const [isOpen3, setIsOpen3] = useState(false);
 
   const handleToggle1 = () => {
     setIsOpen1(!isOpen1);
@@ -14,37 +16,54 @@ export const Select: React.FC = () => {
     setIsOpen2(!isOpen2);
   };
 
+  const handleToggle3 = () => {
+    setIsOpen3(!isOpen3);
+  };
+
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.key === 'Enter' || event.key === ' ') {
       handleToggle1();
     }
   };
 
-  return (
-    <>
-      <div className="select">
-        <div className="select__container">
-          <div className={`select--1 celect__content  ${isOpen1 ? 'open' : ''}`}>
-            <div
-              className={`select__header d-flex flex-row justify-content-between ${isOpen1 ? 'select__header--active' : ''}`}
-              role="button"
-              tabIndex={0}
-              onClick={handleToggle1}
-              onKeyDown={handleKeyDown}
-            >
-              <span className="select__option">Specilization</span>
+  const isMy = window.location.pathname.includes('my');
 
-              {!isOpen1 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
-            </div>
+  return (
+    <div className="select">
+      <div className="select__container">
+        <div className={`${isMy ? 'select--3' : 'select--1'} celect__content  ${isOpen1 ? 'open' : ''}`}>
+          <div
+            className={`${isMy ? 'select__header--profile' : ''} select__header d-flex flex-row justify-content-between ${isOpen1 ? 'select__header--active' : ''}`}
+            role="button"
+            tabIndex={0}
+            onClick={handleToggle1}
+            onKeyDown={handleKeyDown}
+          >
+            {!isMy ? (
+              <span className="select__option">Specilization</span>
+            ) : (
+              <div className="d-flex flex-row align-items-center select__profile">
+                <img src={user} alt="User" />
+
+                <span className="select__option">
+                  My profile
+                </span>
+              </div>
+            )}
+
+            {!isOpen1 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+          </div>
+
+          {!isMy ? (
             <ul
               className={`
-              select__option__list
-              select__option__list--1
-              ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
+                  select__option__list
+                  select__option__list--1
+                  ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
             >
               <li className="
-              list-text
-              select__option__list__item"
+                  list-text
+                  select__option__list__item"
               >
                 <label htmlFor="android-checkbox" className="checkbox-label">
                   <input
@@ -59,8 +78,8 @@ export const Select: React.FC = () => {
               </li>
 
               <li className="
-              list-text
-              select__option__list__item"
+                  list-text
+                  select__option__list__item"
               >
                 <label htmlFor="iOS-checkbox" className="checkbox-label">
                   <input
@@ -75,8 +94,8 @@ export const Select: React.FC = () => {
               </li>
 
               <li className="
-              list-text
-              select__option__list__item"
+                  list-text
+                  select__option__list__item"
               >
                 <label htmlFor="C-checkbox" className="checkbox-label">
                   <input
@@ -91,8 +110,8 @@ export const Select: React.FC = () => {
               </li>
 
               <li className="
-              list-text
-              select__option__list__item"
+                  list-text
+                  select__option__list__item"
               >
                 <label htmlFor="Golang-checkbox" className="checkbox-label">
                   <input
@@ -107,9 +126,9 @@ export const Select: React.FC = () => {
               </li>
 
               <li className="
-              list-text
-              select__option__list__item
-              select__option__list__item--last"
+                  list-text
+                  select__option__list__item
+                  select__option__list__item--last"
               >
                 <label htmlFor="Scala-checkbox" className="checkbox-label">
                   <input
@@ -123,8 +142,135 @@ export const Select: React.FC = () => {
                 </label>
               </li>
             </ul>
-          </div>
+          ) : (
+            <ul
+              className={`
+                  select__option__list
+                  select__option__list--1
+                  ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
+            >
+              <li className="
+                  list-text
+                  select__option__list__item"
+              >
+                <label htmlFor="resume-checkbox" className="checkbox-label">
+                  <input
+                    type="checkbox"
+                    id="resume-checkbox"
+                    name="option"
+                    value="resume"
 
+                  />
+                  <span>My Resume</span>
+                </label>
+              </li>
+
+              <li className="
+                  list-text
+                  select__option__list__item
+                  select__option__list__item--border"
+              >
+                <label htmlFor="wallet-checkbox" className="d-flex flex-row justify-content-between select__option__list__item--wallet">
+                  <div className={`select--4 celect__content ${isOpen3 ? 'open' : ''}`}>
+                    <input
+                      type="checkbox"
+                      id="wallet-checkbox"
+                      name="option"
+                      value="wallet"
+                      onClick={handleToggle3}
+                      onKeyDown={handleKeyDown}
+                    />
+                    <span className="select__option">My Wallet</span>
+                  </div>
+
+                  {!isOpen3 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+                </label>
+              </li>
+
+              <ul
+                className={`
+                  select__option__list
+                  select__option__list--3
+                  ${isOpen3 ? 'select__option__list--open' : 'select__option__list--close'}`}
+              >
+                <li className="
+                  list-text
+                  select__option__list__item"
+                >
+                  <label htmlFor="Balance-checkbox" className="checkbox-label">
+                    <input
+                      type="checkbox"
+                      id="Balance-checkbox"
+                      name="option"
+                      value="Balance"
+
+                    />
+                    <span>My Balance</span>
+                  </label>
+                </li>
+
+                <li className="
+                  list-text
+                  select__option__list__item"
+                >
+                  <label htmlFor="Contracts-checkbox" className="checkbox-label">
+                    <input
+                      type="checkbox"
+                      id="Contracts-checkbox"
+                      name="option"
+                      value="Contracts"
+
+                    />
+                    <span>My Smart Contracts</span>
+                  </label>
+                </li>
+
+                <li className="
+                  list-text
+                  select__option__list__item
+                  select__option__list__item--border"
+                >
+                  <label htmlFor="Referral-checkbox" className="checkbox-label">
+                    <input
+                      type="checkbox"
+                      id="Referral-checkbox"
+                      name="option"
+                      value="Referral"
+
+                    />
+                    <span>Referral system</span>
+                  </label>
+                </li>
+              </ul>
+
+              <ul
+                className={`
+                select__option__list
+                select__option__list--3
+                ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
+              >
+                <li className="
+                  list-text
+                  select__option__list__item
+                  select__option__list__item--last"
+                >
+                  <label htmlFor="BanList-checkbox" className="checkbox-label">
+                    <input
+                      type="checkbox"
+                      id="BanList-checkbox"
+                      name="option"
+                      value="BanList"
+
+                    />
+                    <span>BanList</span>
+                  </label>
+                </li>
+              </ul>
+            </ul>
+          )}
+        </div>
+
+        {!isMy ? (
           <div className={`select--2 celect__content  ${isOpen2 ? 'open' : ''}`}>
             <div
               className={`select__header d-flex flex-row justify-content-between ${isOpen2 ? 'select__header--active' : ''}`}
@@ -225,8 +371,8 @@ export const Select: React.FC = () => {
               </li>
             </ul>
           </div>
-        </div>
+        ) : null}
       </div>
-    </>
+    </div>
   );
 };
