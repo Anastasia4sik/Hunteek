@@ -3,6 +3,7 @@ import { Menu } from '../shared/Menu';
 import { Header } from '../shared/Header';
 import { Select } from '../shared/Select';
 import { Info } from '../shared/Info';
+import { RecruitInfo } from '../shared/recruitInfo';
 
 export const MyProfile: React.FC = () => {
   return (
@@ -13,6 +14,11 @@ export const MyProfile: React.FC = () => {
 
       <div className="content d-flex flex-row">
         <Select />
+
+        <div className="content__top d-flex flex-rowjustify-content-between">
+          <RecruitInfo />
+          <RecruitInfo />
+        </div>
 
         <Info purpose="general" />
       </div>
