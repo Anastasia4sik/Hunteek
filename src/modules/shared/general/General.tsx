@@ -3,7 +3,7 @@ import React from 'react';
 
 export const General: React.FC = () => {
   return (
-    <div className="info__content">
+    <div className="info__content block">
       <h4 className="info__content__title main-text">
         About the page
       </h4>

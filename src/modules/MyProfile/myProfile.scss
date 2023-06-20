@@ -7,10 +7,10 @@
 
     top: calc(#{$header-height} + 20px);
 
-    margin-left: calc(30px + #{$select-width});
+    margin-left: calc(#{$main-gap} + #{$select-width});
 
     width: 46vw;
 
-    gap: 30px;
+    gap: $main-gap;
   }
 }

@@ -7,7 +7,7 @@ import { Rate } from '../rate';
 
 export const Card: React.FC = () => {
   return (
-    <div className="card">
+    <div className="card block">
       <div className="card__title text-center">
         <h3 className="card__title__p text-center main-text">
           Middle Front-end Developer (Vue)
@@ -16,7 +16,7 @@ export const Card: React.FC = () => {
 
       <a href="#profile">
         <div className="card__person">
-          <div className="card__person__inner d-flex flex-row justify-content-between">
+          <div className="card__person__inner d-flex flex-row justify-content-between align-items-center">
             <div className="card__person__content d-flex flex-column">
               <p className="card__person__name main-text">
                 Yuri Kudin

@@ -3,7 +3,7 @@
   height: $header-height;
 
   margin-left: $menu-width;
-  margin-bottom: 20px;
+  margin-bottom: $main-p;
 
   padding-left: 3vw;
 
@@ -20,7 +20,7 @@
   }
 
   &__search {   
-    margin: 0 30px 0 3vw;
+    margin: 0 $main-gap 0 $main-gap;
  
     &__input {
       height: 50%;
@@ -29,7 +29,7 @@
       background-color: $grey-dark;
       color: $white-text-main;
 
-      padding: 15px 30px;
+      padding: 15px $main-gap;
       
       &::placeholder {
         color: $grey-text;
@@ -94,7 +94,7 @@
       width: 50%;
 
       border-left: 2px solid $grey-border;
-      padding: 8px 0 8px 30px;
+      padding: 8px 0 8px $main-gap;
       
       margin-right: 25px;
 

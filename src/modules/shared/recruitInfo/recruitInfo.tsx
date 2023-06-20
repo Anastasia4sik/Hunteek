@@ -7,7 +7,7 @@ import { Rate } from '../rate';
 
 export const RecruitInfo: React.FC = () => {
   return (
-    <div className="recruitInfo">
+    <div className="recruitInfo block">
       <div className="recruitInfo__content">
         <div className="recruitInfo__user">
           <div className="recruitInfo__user__top d-flex flex-row align-items-start justify-content-between">

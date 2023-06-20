@@ -26,7 +26,7 @@ export const Info: React.FC<Props> = ({ purpose }) => {
   }
 
   return (
-    <div className="info">
+    <div className="info block">
       <div className="info__container">
         <h3 className="info__title main-text d-block text-center">
           {title}
