@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import search from '../../../img/icons/search.svg';
+
 import chart from '../../../img/icons/header/chart.svg';
 import menu from '../../../img/icons/header/menu.svg';
 import time from '../../../img/icons/header/time.svg';

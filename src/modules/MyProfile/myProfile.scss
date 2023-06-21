@@ -1,16 +1,32 @@
 .content {
   
-  &__top {
+  &__middle {
     display: grid;
-
+    
     position: absolute;
-
+    
     top: calc(#{$header-height} + 20px);
-
+    
     margin-left: calc(#{$main-gap} + #{$select-width});
 
-    width: 46vw;
+    width: 49vw;
 
     gap: $main-gap;
+    
+    @include onBigDesktop {
+      width: 46vw;
+    }
+  }
+  
+  &__top {
+    gap: $main-gap;
+
+    height: 45.5vh;
+
+    &__empty {
+      &__hide {
+        visibility: hidden;
+      }
+    }
   }
 }

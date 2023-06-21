@@ -8,7 +8,7 @@ import { Rate } from '../rate';
 export const RecruitInfo: React.FC = () => {
   return (
     <div className="recruitInfo block">
-      <div className="recruitInfo__content">
+      <div className="recruitInfo__content scroll">
         <div className="recruitInfo__user">
           <div className="recruitInfo__user__top d-flex flex-row align-items-start justify-content-between">
             <div className="d-flex flex-row align-items-center">
@@ -31,7 +31,7 @@ export const RecruitInfo: React.FC = () => {
               </div>
             </div>
 
-            <div className="recruitInfo__user__edit d-flex flex-row">
+            <div className="recruitInfo__user__edit d-flex flex-row align-items-center">
               <img src={edit} alt="Edit" className="recruitInfo__user__edit__img" />
 
               <p className="small-text"> Edit Profile</p>

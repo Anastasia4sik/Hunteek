@@ -1,0 +1,25 @@
+.banItem {
+  height: 50px;
+  padding: 10px 30px;
+
+  border-top: 2px solid $black-main;
+
+  &__img {
+    width: 30px;
+    height: 30px;
+
+    background-color: white;
+  
+    border-radius: 50%;
+  }
+
+  &__unban {
+    color: $green;
+
+    gap: 5px;
+
+    &:hover {
+      color: $green;
+    }
+  }
+}
