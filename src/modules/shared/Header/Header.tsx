@@ -105,19 +105,19 @@ export const Header: React.FC = () => {
 
         <div className="header__menu__nav d-flex align-items-center">
           <a href="/">
-            <img src={video} alt="Video" />
+            <img src={video} alt="Video" className="header__menu__nav__img" />
           </a>
 
           <a href="/">
-            <img src={category} alt="Categories" />
+            <img src={category} alt="Categories" className="header__menu__nav__img" />
           </a>
 
           <a href="/">
-            <img src={dollar} alt="Money" />
+            <img src={dollar} alt="Money" className="header__menu__nav__img" />
           </a>
 
           <a href="/my-profile">
-            <img src={profile} alt="Profile" />
+            <img src={profile} alt="Profile" className="header__menu__nav__img" />
           </a>
         </div>
       </div>
