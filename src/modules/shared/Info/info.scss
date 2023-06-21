@@ -22,12 +22,17 @@
   &__title {
     background: linear-gradient(94.52deg, #296051 0%, #3B6078 100%);
   
-    padding: $main-p 0;
+    padding: 1.5vh 0;
   
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
   
-    margin-bottom: $main-p;
+    margin-bottom: 1.5vh;
+
+    @include onBigDesktop {
+      margin-bottom: $main-p;
+      padding: $main-p 0;
+    }
   }
   
   &__content {
@@ -51,20 +56,6 @@
       padding: 0 25px 25px 0;
 
       overflow-y: scroll;
-      
-      &::-webkit-scrollbar {
-        padding: 25px 10px 25px 0;
-        width: 8px;
-      }
-      
-      &::-webkit-scrollbar-track {
-        background-color: $grey-scroll;
-      }
-      
-      &::-webkit-scrollbar-thumb {
-        background-color: $grey-text;
-        border-radius: 5px;
-      }
     }
   }
 }

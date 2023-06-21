@@ -7,7 +7,7 @@ import { Rate } from '../rate';
 export const Profile: React.FC = () => {
   return (
     <div className="profile">
-      <div className="profile__content">
+      <div className="profile__content scroll">
         <div className="profile__user">
           <div className="profile__user__top d-flex flex-row align-items-center">
             <img src={user} alt="User" className="profile__user__img" />
