@@ -1,0 +1,53 @@
+.editProfile {
+  padding: 0 1vh 0 $main-p;
+
+  color: $grey-text;
+
+  overflow: hidden;
+
+  @include onBigDesktop {
+    padding-left: $main-p;
+  }
+
+  &__content {
+    overflow-y: scroll;
+
+    padding-right: 20px;
+
+  }
+
+  &__photo {
+    &__img {
+      width: 20%;
+      height: 20%;
+  
+      background-color: white;
+  
+      border-radius: 50%;
+    }
+  }
+
+  &__label {
+    margin-bottom: 5px;
+  }
+
+  &__input {
+    padding-left: 16px;
+
+    background-color: $grey-light;
+
+    border-radius: 10px;
+    border: none;
+
+    color: $white-text-main;
+
+    &:not(:last-of-type) {
+      margin-bottom: 15px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 5px;
+    }
+  }
+
+}
