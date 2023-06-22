@@ -1,9 +1,9 @@
 import React from 'react';
 
-import user from '../../../img/photo/user.png';
 import eye from '../../../img/icons/card/eye.svg';
 import message from '../../../img/icons/card/message.svg';
 import { Rate } from '../rate';
+import { UserPhoto } from '../userPhoto';
 
 export const Card: React.FC = () => {
   return (
@@ -25,7 +25,7 @@ export const Card: React.FC = () => {
               <Rate />
             </div>
 
-            <img src={user} alt="User" className="card__person__photo" />
+            <UserPhoto size={24} />
           </div>
         </div>
 

@@ -3,6 +3,7 @@ import React from 'react';
 import { General } from '../general';
 import { Profile } from '../profile';
 import { EditProfile } from '../editPRofile';
+import { BlockUser } from '../blockUser';
 
 type Props = {
   purpose: string;
@@ -21,6 +22,9 @@ export const Info: React.FC<Props> = ({ purpose }) => {
   } else if (purpose === 'edit') {
     title = 'Edit Profile';
     content = <EditProfile />;
+  } else if (purpose === 'block') {
+    title = 'Block a user';
+    content = <BlockUser />;
   } else {
     title = '';
     content = '';

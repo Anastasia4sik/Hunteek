@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-import user from '../../../img/photo/user.png';
 import { Rate } from '../rate';
+import { UserPhoto } from '../userPhoto';
 
 export const Profile: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ export const Profile: React.FC = () => {
       <div className="profile__content scroll">
         <div className="profile__user">
           <div className="profile__user__top d-flex flex-row align-items-center">
-            <img src={user} alt="User" className="profile__user__img" />
+            <UserPhoto size={20} />
 
             <div className="profile__user__info d-flex flex-column">
               <p className="profile__user__info__name big-text">

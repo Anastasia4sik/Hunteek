@@ -1,12 +1,12 @@
 import React from 'react';
 
-import photo from '../../../img/photo/user.png';
 import unlock from '../../../img/icons/unlock.svg';
+import { UserPhoto } from '../userPhoto';
 
 export const BanItem: React.FC = () => {
   return (
     <div className="banItem d-flex flex-row justify-content-between align-items-center">
-      <img src={photo} alt="User" className="banItem__img" />
+      <UserPhoto size={5} height={100} />
 
       <p className="banItem__name bold-text">
         Yuri Kudin

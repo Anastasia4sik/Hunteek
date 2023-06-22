@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-import user from '../../../img/photo/user.png';
 import edit from '../../../img/icons/edit.svg';
 import { Rate } from '../rate';
+import { UserPhoto } from '../userPhoto';
 
 export const RecruitInfo: React.FC = () => {
   return (
@@ -11,8 +11,8 @@ export const RecruitInfo: React.FC = () => {
       <div className="recruitInfo__content scroll">
         <div className="recruitInfo__user">
           <div className="recruitInfo__user__top d-flex flex-row align-items-start justify-content-between">
-            <div className="d-flex flex-row align-items-center">
-              <img src={user} alt="User" className="recruitInfo__user__img" />
+            <div className="recruitInfo__user__top__container d-flex flex-row align-items-center">
+              <UserPhoto size={24} />
 
               <div className="recruitInfo__user__info d-flex flex-column">
                 <p className="recruitInfo__user__info__name big-text">

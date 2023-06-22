@@ -2,9 +2,9 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-import user from '../../../img/photo/user.png';
 import delet from '../../../img/icons/delete.svg';
 import upload from '../../../img/icons/upload.svg';
+import { UserPhoto } from '../userPhoto';
 
 export const EditProfile: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ export const EditProfile: React.FC = () => {
           <label htmlFor="uploadPhoto" className="editProfile__label list-text"> Image </label>
 
           <div className="editProfile__photo d-flex flex-row align-items-center">
-            <img src={user} alt="User" className="editProfile__photo__img" />
+            <UserPhoto size={20} />
 
             <div className="editProfile__photo__upload">
               <label htmlFor="uploadPhoto" className="editProfile__photo__upload__label btn-grey">
