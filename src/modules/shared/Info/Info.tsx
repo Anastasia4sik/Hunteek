@@ -19,7 +19,7 @@ export const Info: React.FC<Props> = ({ purpose }) => {
     title = 'Profile';
     content = <Profile />;
   } else if (purpose === 'edit') {
-    title = 'Edit profile';
+    title = 'Edit Profile';
     content = <EditProfile />;
   } else {
     title = '';

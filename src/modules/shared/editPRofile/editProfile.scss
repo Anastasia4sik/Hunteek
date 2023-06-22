@@ -1,15 +1,17 @@
 .editProfile {
-  padding: 0 1vh 0 $main-p;
+  padding: 0 1vh 0 1vh;
 
   color: $grey-text;
 
-  overflow: hidden;
+  overflow: hidden;  
+  height: calc(100vh - #{$header-height} - 116px);
 
   @include onBigDesktop {
-    padding-left: $main-p;
+    padding: 0 $main-p;
   }
-
+  
   &__content {
+    height: 100%;
     overflow-y: scroll;
 
     padding-right: 20px;
@@ -17,6 +19,12 @@
   }
 
   &__photo {
+    gap: 8px;
+
+    @include onBigDesktop {
+      gap: 15px;
+    }
+
     &__img {
       width: 20%;
       height: 20%;
@@ -25,14 +33,90 @@
   
       border-radius: 50%;
     }
+
+    &__delete {
+      height: 20%;
+      padding: 8px 24px;
+      background-color: $grey-light;
+      border-radius: 100px;
+
+      border: none;
+      
+      @include onBigDesktop {
+        padding: 14px 28px;
+      }
+      
+      &__img {
+        width: 12px;
+        
+        @include onBigDesktop {
+          width: 15px;
+        }
+      }
+    }
+
+    &__upload {
+      display: inline-block;
+      position: relative;
+      
+      &__label {
+        display: block;
+
+        padding: 8px 12px;
+
+        width: max-content;
+
+        background-color: $grey-light;
+        border-radius: 100px;
+        cursor: pointer;
+
+        @include onBigDesktop {
+          padding: 12px 24px;
+        }
+
+        &__content {
+          gap: 5px;
+        }
+
+        &__icon {
+          width: 10px;
+          height: 15px;
+
+          @include onBigDesktop {
+            width: 15px;
+          }
+        }
+
+        &__text {
+          font-size: 10px;
+
+          @include onBigDesktop {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  &__container {
+    gap: 5px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 15px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 25px;
+    }
   }
 
   &__label {
     margin-bottom: 5px;
   }
 
-  &__input {
-    padding-left: 16px;
+  &__input,
+  &__btn {
+    padding: 8px 16px;
 
     background-color: $grey-light;
 
@@ -41,13 +125,18 @@
 
     color: $white-text-main;
 
-    &:not(:last-of-type) {
-      margin-bottom: 15px;
-    }
-
-    &:last-of-type {
-      margin-bottom: 5px;
+    @include onBigDesktop {
+      padding: 14px 16px;
     }
   }
 
+  &__btn {
+    width: 100%;
+  }
+
+}
+
+input[type="file"].editProfile__photo__upload {
+  position: absolute;
+  left: -9999px;
 }

@@ -59,7 +59,7 @@ export const Card: React.FC = () => {
       </a>
 
       <div className="card__btn">
-        <button type="button" className="card__btn__button main-text">Hire the talent</button>
+        <button type="button" className="card__btn__button main-text btn-grey">Hire the talent</button>
       </div>
     </div>
   );

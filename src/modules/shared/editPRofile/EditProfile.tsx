@@ -4,46 +4,80 @@ import React from 'react';
 
 import user from '../../../img/photo/user.png';
 import delet from '../../../img/icons/delete.svg';
+import upload from '../../../img/icons/upload.svg';
 
 export const EditProfile: React.FC = () => {
   return (
     <div className="editProfile">
-      <div className="editProfile__content scroll">
-        <label htmlFor="uploadPhoto" className="editProfile__label"> Image </label>
-        <div className="editProfile__photo d-flex flex-row align-items-center">
-          <img src={user} alt="User" className="editProfile__photo__img" />
+      <form action="#" className="editProfile__content scroll">
+        <div className="editProfile__container">
+          <label htmlFor="uploadPhoto" className="editProfile__label list-text"> Image </label>
 
-          <input id="uploadPhoto" type="file" className="editProfile__photo__upload editProfile__input" />
+          <div className="editProfile__photo d-flex flex-row align-items-center">
+            <img src={user} alt="User" className="editProfile__photo__img" />
 
-          <button type="button" className="editProfile__photo__delete">
-            <img src={delet} alt="Delete" />
-          </button>
+            <div className="editProfile__photo__upload">
+              <label htmlFor="uploadPhoto" className="editProfile__photo__upload__label btn-grey">
+                <div className="editProfile__photo__upload__label__content d-flex align-items-center flex-row">
+                  <img src={upload} alt="Upload Icon" className="editProfile__photo__upload__label__icon" />
+
+                  <span className="editProfile__photo__upload__label__text bold-text">Upload Image</span>
+                </div>
+              </label>
+
+              <input id="uploadPhoto" type="file" className="editProfile__photo__upload editProfile__input" />
+            </div>
+
+            <button type="button" className="editProfile__photo__delete btn-grey">
+              <img src={delet} alt="Delete" className="editProfile__photo__delete__img" />
+            </button>
+          </div>
         </div>
 
-        <label htmlFor="name" className="editProfile__label"> Name </label>
-        <input type="text" id="name" placeholder="None" className="editProfile__input editProfile__input--name" />
+        <div className="editProfile__container d-flex flex-column">
+          <label htmlFor="name" className="editProfile__label list-text"> Name </label>
+          <input type="text" id="name" placeholder="None" className="editProfile__input editProfile__input--name list-text" />
+        </div>
 
-        <label htmlFor="lastName" className="editProfile__label"> Name </label>
-        <input type="text" id="lastName" placeholder="None" className="editProfile__input editProfile__input--lastName" />
+        <div className="editProfile__container d-flex flex-column">
+          <label htmlFor="lastName" className="editProfile__label list-text"> Last Name </label>
+          <input type="text" id="lastName" placeholder="None" className="editProfile__input editProfile__input--lastName list-text" />
+        </div>
 
-        <label htmlFor="desc" className="editProfile__label"> Description </label>
-        <textarea id="desc" placeholder="None" className="editProfile__input editProfile__input--desc" />
+        <div className="editProfile__container d-flex flex-column">
+          <label htmlFor="desc" className="editProfile__label list-text"> Description </label>
+          <textarea id="desc" placeholder="None" className="editProfile__input editProfile__input--desc list-text" />
+        </div>
 
-        <label htmlFor="email" className="editProfile__label"> Email </label>
-        <input type="email" id="email" placeholder="None" className="editProfile__input editProfile__input--email" />
+        <div className="editProfile__container d-flex flex-column">
+          <label htmlFor="email" className="editProfile__label list-text"> Email </label>
+          <input type="email" id="email" placeholder="None" className="editProfile__input editProfile__input--email list-text" />
+        </div>
 
-        <label htmlFor="phone" className="editProfile__label"> Phone </label>
-        <input type="number" id="phone" placeholder="None" className="editProfile__input editProfile__input--phone" />
+        <div className="editProfile__container d-flex flex-column">
+          <label htmlFor="phone" className="editProfile__label list-text"> Phone </label>
+          <input type="number" id="phone" placeholder="None" className="editProfile__input editProfile__input--phone list-text" />
+        </div>
 
-        <label htmlFor="telegram" className="editProfile__label"> Telegram </label>
-        <input type="url" id="telegram" placeholder="None" className="editProfile__input editProfile__input--telegram" />
+        <div className="editProfile__container d-flex flex-column">
+          <label htmlFor="telegram" className="editProfile__label list-text"> Telegram </label>
+          <input type="url" id="telegram" placeholder="None" className="editProfile__input editProfile__input--telegram list-text" />
+        </div>
 
-        <label htmlFor="linkedin" className="editProfile__label"> Linkedin </label>
-        <input type="url" id="linkedin" placeholder="None" className="editProfile__input editProfile__input--linkedin" />
+        <div className="editProfile__container d-flex flex-column">
+          <label htmlFor="linkedin" className="editProfile__label list-text"> Linkedin </label>
+          <input type="url" id="linkedin" placeholder="None" className="editProfile__input editProfile__input--linkedin list-text" />
+        </div>
 
-        <label htmlFor="github" className="editProfile__label"> GitHub </label>
-        <input type="url" id="github" placeholder="None" className="editProfile__input editProfile__input--github" />
-      </div>
+        <div className="editProfile__container d-flex flex-column">
+          <label htmlFor="github" className="editProfile__label list-text"> GitHub </label>
+          <input type="url" id="github" placeholder="None" className="editProfile__input editProfile__input--github list-text" />
+        </div>
+
+        <button type="submit" className="editProfile__btn btn-grey">
+          Submit
+        </button>
+      </form>
     </div>
   );
 };
