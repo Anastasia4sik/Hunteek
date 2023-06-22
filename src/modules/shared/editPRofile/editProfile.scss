@@ -14,7 +14,11 @@
     height: 100%;
     overflow-y: scroll;
 
-    padding-right: 20px;
+    padding-right: 8px;
+
+    @include onBigDesktop {
+      padding-right: 20px;
+    }
 
   }
 
@@ -23,15 +27,6 @@
 
     @include onBigDesktop {
       gap: 15px;
-    }
-
-    &__img {
-      width: 20%;
-      height: 20%;
-  
-      background-color: white;
-  
-      border-radius: 50%;
     }
 
     &__delete {

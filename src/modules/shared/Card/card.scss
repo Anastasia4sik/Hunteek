@@ -58,20 +58,6 @@
     &__inner {
       margin: 0 8px 0 5px;
     }
-
-    &__photo {
-      width: 32px;
-      height: 32px;
-
-      background-color: white;
-
-      border-radius: 50%;
-
-      @include onBigDesktop {
-        width: 36px;
-        height: 36px;
-      }
-    }
   }
 
   &__info {

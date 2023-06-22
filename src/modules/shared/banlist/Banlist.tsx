@@ -3,8 +3,8 @@ import { Pagination } from '../pagination';
 import { getNumbers } from '../../../helpers';
 import { BanItem } from '../banItem';
 
-import search from '../../../img/icons/search.svg';
 import lock from '../../../img/icons/lock.svg';
+import { SearchUser } from '../searchUser';
 
 export const Banlist: React.FC = () => {
   const [perPage] = useState(4);
@@ -26,32 +26,6 @@ export const Banlist: React.FC = () => {
     }
   };
 
-  // search
-
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const performSearch = () => {
-    // eslint-disable-next-line no-console
-    console.log('Performing search:', searchQuery);
-  };
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(event.target.value);
-  };
-
-  const handleSearchClick = () => {
-    performSearch();
-    setSearchQuery('');
-  };
-
-  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
-      performSearch();
-
-      setSearchQuery('');
-    }
-  };
-
   return (
     <div className="banlist">
       <div className="banlist__container block">
@@ -61,29 +35,8 @@ export const Banlist: React.FC = () => {
           </p>
 
           <div className="banlist__header__targets d-flex lfex-row">
-            <div className="banlist__header__search position-relative">
-              <i className="bx bx-search-alt"></i>
-
-              <input
-                className="banlist__header__search__input border-0 rounded-pill main-text"
-                type="text"
-                placeholder="Enter a name to search for"
-                value={searchQuery}
-                onChange={handleInputChange}
-                onKeyPress={handleKeyPress}
-              />
-
-              <button
-                className="banlist__header__search__btn position-absolute d-flex flex-row align-items-center"
-                type="button"
-                onClick={handleSearchClick}
-              >
-                <img src={search} alt="Search" className="banlist__header__search__btn__img" />
-
-                <p className="bold-text">
-                  Search
-                </p>
-              </button>
+            <div className="banlist__header__search">
+              <SearchUser />
             </div>
 
             <a href="#block-user" className="banlist__header__btn d-flex flex-row align-items-center border-0 rounded-pill btn-grey">

@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
+
 import { Menu } from '../shared/menu';
-import { Header } from '../shared/header';
+import { Header } from '../shared/Header';
 import { Select } from '../shared/select';
-import { Info } from '../shared/info';
+import { Info } from '../shared/Info';
 import { RecruitInfo } from '../shared/recruitInfo';
 import { Banlist } from '../shared/banlist';
 
@@ -14,7 +15,8 @@ export const MyProfile: React.FC = () => {
     const handleHashChange = () => {
       if (window.location.hash === '#edit-profile') {
         setLocation('edit');
-        console.log(location);
+      } else if (window.location.hash === '#block-user') {
+        setLocation('block');
       } else {
         setLocation('general');
       }
