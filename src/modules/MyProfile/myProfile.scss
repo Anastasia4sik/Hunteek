@@ -21,7 +21,11 @@
   &__top {
     gap: $main-gap;
 
-    height: 45.5vh;
+    height: 40vh;
+
+    @include onBigDesktop {
+      height: 45.5vh;
+    }
 
     &__empty {
       &__hide {

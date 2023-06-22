@@ -31,11 +31,11 @@ export const RecruitInfo: React.FC = () => {
               </div>
             </div>
 
-            <div className="recruitInfo__user__edit d-flex flex-row align-items-center">
+            <a href="#edit-profile" className="recruitInfo__user__edit d-flex flex-row align-items-center">
               <img src={edit} alt="Edit" className="recruitInfo__user__edit__img" />
 
               <p className="small-text"> Edit Profile</p>
-            </div>
+            </a>
           </div>
 
           <p className="recruitInfo__user__desc bold-text">

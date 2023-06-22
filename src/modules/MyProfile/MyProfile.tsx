@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable no-console */
+import React, { useEffect, useState } from 'react';
 import { Menu } from '../shared/menu';
 import { Header } from '../shared/header';
 import { Select } from '../shared/select';
@@ -7,6 +8,27 @@ import { RecruitInfo } from '../shared/recruitInfo';
 import { Banlist } from '../shared/banlist';
 
 export const MyProfile: React.FC = () => {
+  const [location, setLocation] = useState('');
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash === '#edit-profile') {
+        setLocation('edit');
+        console.log(location);
+      } else {
+        setLocation('general');
+      }
+    };
+
+    handleHashChange(); // Call the function once on initial load to set the location
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+
   return (
     <div className="main">
       <Menu />
@@ -32,7 +54,7 @@ export const MyProfile: React.FC = () => {
 
       </div>
 
-      <Info purpose="general" />
+      <Info purpose={location} />
     </div>
   );
 };

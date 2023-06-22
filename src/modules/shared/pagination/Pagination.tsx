@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import classNames from 'classnames';
 import React from 'react';
 import { getNumbers } from '../../../helpers';
@@ -18,23 +19,29 @@ export const Pagination: React.FC<Props> = (props) => {
   } = props;
 
   const lastPage = Math.ceil(total / perPage);
-  const numbersOfPages = getNumbers(1, lastPage);
+  let numbersOfPages: number[] | string[] | (number | string)[] = getNumbers(Math.max(1, currentPage - 1), Math.min(lastPage, currentPage + 1));
+
+  if (currentPage === 1) {
+    numbersOfPages = [' ', ...numbersOfPages];
+  } else if (currentPage === lastPage) {
+    numbersOfPages = [...numbersOfPages, ' '];
+  }
 
   return (
-    <ul className="pagination">
-      {/* first page btn */}
-      <li className={classNames('page-item', {
+    <ul className="pagination justify-content-center pag">
+      {/* prev page btn */}
+      <li className={classNames('pag__item', {
         disabled: currentPage === 1,
       })}
       >
         <a
           data-cy="prevLink"
-          className="page-link"
+          className="pag__link"
           href="#prev"
           aria-disabled={currentPage === 1}
           onClick={() => {
             if (currentPage !== 1) {
-              onPageChange('prev');
+              onPageChange(currentPage - 1);
             }
           }}
         >
@@ -43,16 +50,16 @@ export const Pagination: React.FC<Props> = (props) => {
       </li>
 
       {/* pages */}
-      {numbersOfPages.map(page => (
+      {numbersOfPages.map((page: number | string) => (
         <li
-          className={classNames('page-item', {
-            active: page === currentPage,
+          className={classNames('pag__item', {
+            pag__active: page === currentPage,
           })}
           key={page}
         >
           <a
             data-cy="pageLink"
-            className="page-link"
+            className="pag__link"
             href={`#${page}`}
             onClick={() => onPageChange(page)}
           >
@@ -61,19 +68,19 @@ export const Pagination: React.FC<Props> = (props) => {
         </li>
       ))}
 
-      {/* last page btn */}
-      <li className={classNames('page-item', {
+      {/* next page btn */}
+      <li className={classNames('pag__item', {
         disabled: currentPage === lastPage,
       })}
       >
         <a
           data-cy="nextLink"
-          className="page-link"
+          className="pag__link"
           href="#next"
           aria-disabled={currentPage === lastPage}
           onClick={() => {
             if (currentPage !== lastPage) {
-              onPageChange('next');
+              onPageChange(currentPage + 1);
             }
           }}
         >

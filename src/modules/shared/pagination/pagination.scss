@@ -1,0 +1,17 @@
+.pag {
+  gap: 20px;
+
+  color: $grey-text;
+
+  &__item {
+    background-color: transparent;
+  }
+
+  &__link {
+
+  }
+
+  &__active {
+    color: $white-text-sec;
+  }
+}

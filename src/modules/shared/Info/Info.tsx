@@ -2,6 +2,7 @@
 import React from 'react';
 import { General } from '../general';
 import { Profile } from '../profile';
+import { EditProfile } from '../editPRofile';
 
 type Props = {
   purpose: string;
@@ -19,10 +20,10 @@ export const Info: React.FC<Props> = ({ purpose }) => {
     content = <Profile />;
   } else if (purpose === 'edit') {
     title = 'Edit profile';
-    content = <General />;
+    content = <EditProfile />;
   } else {
     title = '';
-    content = <General />;
+    content = '';
   }
 
   return (
