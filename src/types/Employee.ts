@@ -13,6 +13,6 @@ export interface Employee {
   whereToWork: string;
   typeOfWork: string;
   englishLevel: string;
-  expierence: 5;
+  expierence: number;
   skills: string
 }

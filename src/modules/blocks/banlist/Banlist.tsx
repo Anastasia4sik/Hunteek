@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
 import { Pagination } from '../../shared/pagination';
-import { getNumbers } from '../../../helpers';
+// import { getNumbers } from '../../../helpers';
 import { BanItem } from '../../shared/banItem';
 
 import lock from '../../../img/icons/lock.svg';
 import { SearchUser } from '../../shared/searchUser';
+import { Employee } from '../../../types/Employee';
 
-export const Banlist: React.FC = () => {
+type Props = {
+  employees: Employee[],
+};
+
+export const Banlist: React.FC<Props> = ({ employees }) => {
   const [perPage] = useState(4);
   const [currentPage, setCurrentPage] = useState(1);
-  // items in list
-  const [total] = useState(36);
 
-  const firstItem = (currentPage - 1) * perPage + 1;
-  const lastItem = Math.min(perPage * currentPage, total);
-  const itemsPerPage = getNumbers(firstItem, lastItem);
+  if (!employees) {
+    return null;
+  }
+
+  const total = employees.length;
+  const firstItem = (currentPage - 1) * perPage;
+  const lastItem = currentPage * perPage;
+  const itemsPerPage = employees.slice(firstItem, lastItem);
 
   const handleOnPageChange = (page: number | string) => {
     if (typeof page === 'number') {
@@ -72,12 +80,12 @@ export const Banlist: React.FC = () => {
         </div>
 
         <ul>
-          {itemsPerPage.map(item => (
+          {itemsPerPage.map(employee => (
             <li
-              key={item}
+              key={employee.slug}
               data-cy="item"
             >
-              <BanItem />
+              <BanItem employee={employee} />
             </li>
           ))}
         </ul>

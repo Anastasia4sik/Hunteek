@@ -3,8 +3,13 @@ import { SearchUser } from '../../shared/searchUser';
 import { UserPhoto } from '../../shared/userPhoto';
 
 import lock from '../../../img/icons/lock_red.svg';
+import { Employee } from '../../../types/Employee';
 
-export const BlockUser: React.FC = () => {
+type Props = {
+  employees: Employee[],
+};
+
+export const BlockUser: React.FC<Props> = ({ employees }) => {
   return (
     <div className="blockUser">
       <div className="blockUser__content scroll">
@@ -17,9 +22,9 @@ export const BlockUser: React.FC = () => {
           flex-wrap
           justify-content-between"
         >
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((each) => (
+          {employees.map((employee) => (
             <div
-              key={each}
+              key={employee.slug}
               className="
                 blockUser__list__card
                 block
@@ -28,14 +33,14 @@ export const BlockUser: React.FC = () => {
                 justify-content-center
                 align-items-center"
             >
-              <UserPhoto size={26} height={35} />
+              <UserPhoto size={26} height={35} photo={employee.photo} />
 
               <p className="small-text blockUser__list__card__name">
-                Yuri Kudin
+                {employee.name}
               </p>
 
               <p className="small-text blockUser__list__card__location">
-                Ukraine, Lviv
+                {`${employee.homeCountry}, ${employee.homeCity}`}
               </p>
 
               <a

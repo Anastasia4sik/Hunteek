@@ -5,8 +5,7 @@ import message from '../../../img/icons/card/message.svg';
 import { Rate } from '../rate';
 import { UserPhoto } from '../userPhoto';
 
-// eslint-disable-next-line import/no-unresolved
-import { Employee } from '../../../types/employee';
+import { Employee } from '../../../types/Employee';
 
 type Props = {
   employee: Employee,

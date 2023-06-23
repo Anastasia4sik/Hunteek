@@ -1,13 +1,30 @@
 /* eslint-disable no-console */
-// eslint-disable-next-line import/no-unresolved
-import { Employee } from '../types/employee';
+import { Employee } from '../types/Employee';
+import { Recruiter } from '../types/Recruiter';
+
+import employeesData from '../api/employees.json';
+import recruitersData from '../api/recruiter.json';
 
 export function getEmployees(): Promise<Employee[]> {
-  return fetch('https://gitlab.com/Anastasia4sik/hunteek/-/blob/develop/public/api/employees.json')
-    .then(response => response.json())
-    .catch(error => {
-      console.error(error);
+  // return fetch('url')
+  //   .then(response => response.json())
+  //   .catch(error => {
+  //     console.error(error);
 
-      return [];
-    });
+  //     return [];
+  //   });
+
+  return Promise.resolve(employeesData);
+}
+
+export function getRecruiters(): Promise<Recruiter[]> {
+  // return fetch('url')
+  //   .then(response => response.json())
+  //   .catch(error => {
+  //     console.error(error);
+
+  //     return [];
+  //   });
+
+  return Promise.resolve(recruitersData);
 }

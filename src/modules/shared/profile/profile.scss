@@ -27,6 +27,18 @@
       }
     }
 
+    &__desc {
+      height: calc(3 * 19px);
+      overflow: hidden;
+      line-height: 19px;
+
+      @include onBigDesktop {
+        height: calc(3 * 22px);
+      overflow: hidden;
+      line-height: 22px;
+      }
+    }
+
     &__info {
       margin-left: 25px;
 

@@ -5,8 +5,7 @@ import { Card } from '../shared/Card';
 import { Select } from '../blocks/select';
 import { Info } from '../blocks/Info';
 
-// eslint-disable-next-line import/no-unresolved
-import { Employee } from '../../types/employee';
+import { Employee } from '../../types/Employee';
 import { getEmployees } from '../../helpers/api';
 
 export const Main: React.FC = () => {
@@ -53,7 +52,7 @@ export const Main: React.FC = () => {
           ))}
         </div>
 
-        <Info purpose={location} />
+        <Info purpose={location} employee={employees[0]} employees={employees} />
       </div>
     </div>
   );

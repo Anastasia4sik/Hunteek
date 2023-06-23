@@ -4,12 +4,15 @@ import { General } from '../../shared/general';
 import { Profile } from '../../shared/profile';
 import { EditProfile } from '../editPRofile';
 import { BlockUser } from '../blockUser';
+import { Employee } from '../../../types/Employee';
 
 type Props = {
   purpose: string;
+  employee: Employee;
+  employees: Employee[];
 };
 
-export const Info: React.FC<Props> = ({ purpose }) => {
+export const Info: React.FC<Props> = ({ purpose, employee, employees }) => {
   let title;
   let content;
 
@@ -18,13 +21,13 @@ export const Info: React.FC<Props> = ({ purpose }) => {
     content = <General />;
   } else if (purpose === 'profile') {
     title = 'Profile';
-    content = <Profile />;
+    content = <Profile employee={employee} />;
   } else if (purpose === 'edit') {
     title = 'Edit Profile';
-    content = <EditProfile />;
+    content = <EditProfile employee={employee} />;
   } else if (purpose === 'block') {
     title = 'Block a user';
-    content = <BlockUser />;
+    content = <BlockUser employees={employees} />;
   } else {
     title = '';
     content = '';

@@ -7,7 +7,7 @@ import upload from '../../../img/icons/upload.svg';
 import { UserPhoto } from '../../shared/userPhoto';
 
 // eslint-disable-next-line import/no-unresolved
-import { Employee } from '../../../types/employee';
+import { Employee } from '../../../types/Employee';
 
 type Props = {
   employee: Employee,

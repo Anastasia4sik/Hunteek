@@ -8,8 +8,14 @@ import { Info } from '../blocks/Info';
 import { RecruitInfo } from '../blocks/recruitInfo';
 import { Banlist } from '../blocks/banlist';
 
+import { getRecruiters, getEmployees } from '../../helpers/api';
+import { Recruiter } from '../../types/Recruiter';
+import { Employee } from '../../types/Employee';
+
 export const MyProfile: React.FC = () => {
   const [location, setLocation] = useState('');
+  const [recruiters, setRecruiters] = useState<Recruiter[]>([]);
+  const [employees, setEmployees] = useState<Employee[]>([]);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -31,6 +37,18 @@ export const MyProfile: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    getRecruiters().then(data => {
+      setRecruiters(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    getEmployees().then(data => {
+      setEmployees(data);
+    });
+  }, []);
+
   return (
     <div className="main">
       <Menu />
@@ -42,21 +60,21 @@ export const MyProfile: React.FC = () => {
 
         <div className="content__middle d-flex flex-column">
           <div className="content__top d-flex flex-row justify-content-between">
-            <RecruitInfo />
+            <RecruitInfo recruiter={recruiters[0]} />
 
             <div className="block content__top__empty">
               <div className="content__top__empty__hide">
-                <RecruitInfo />
+                <RecruitInfo recruiter={recruiters[0]} />
               </div>
             </div>
           </div>
 
-          <Banlist />
+          <Banlist employees={employees} />
         </div>
 
       </div>
 
-      <Info purpose={location} />
+      <Info purpose={location} employee={employees[0]} employees={employees} />
     </div>
   );
 };
