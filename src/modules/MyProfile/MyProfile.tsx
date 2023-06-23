@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 
-import { Menu } from '../shared/menu';
-import { Header } from '../shared/Header';
-import { Select } from '../shared/select';
-import { Info } from '../shared/Info';
-import { RecruitInfo } from '../shared/recruitInfo';
-import { Banlist } from '../shared/banlist';
+import { Menu } from '../blocks/menu';
+import { Header } from '../blocks/Header';
+import { Select } from '../blocks/select';
+import { Info } from '../blocks/Info';
+import { RecruitInfo } from '../blocks/recruitInfo';
+import { Banlist } from '../blocks/banlist';
 
 export const MyProfile: React.FC = () => {
   const [location, setLocation] = useState('');

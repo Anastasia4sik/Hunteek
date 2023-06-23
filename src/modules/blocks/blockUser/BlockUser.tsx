@@ -1,6 +1,6 @@
 import React from 'react';
-import { SearchUser } from '../searchUser';
-import { UserPhoto } from '../userPhoto';
+import { SearchUser } from '../../shared/searchUser';
+import { UserPhoto } from '../../shared/userPhoto';
 
 import lock from '../../../img/icons/lock_red.svg';
 

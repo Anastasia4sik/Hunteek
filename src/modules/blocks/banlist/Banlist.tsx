@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Pagination } from '../pagination';
+import { Pagination } from '../../shared/pagination';
 import { getNumbers } from '../../../helpers';
-import { BanItem } from '../banItem';
+import { BanItem } from '../../shared/banItem';
 
 import lock from '../../../img/icons/lock.svg';
-import { SearchUser } from '../searchUser';
+import { SearchUser } from '../../shared/searchUser';
 
 export const Banlist: React.FC = () => {
   const [perPage] = useState(4);

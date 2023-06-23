@@ -4,7 +4,7 @@ import React from 'react';
 
 import delet from '../../../img/icons/delete.svg';
 import upload from '../../../img/icons/upload.svg';
-import { UserPhoto } from '../userPhoto';
+import { UserPhoto } from '../../shared/userPhoto';
 
 export const EditProfile: React.FC = () => {
   return (

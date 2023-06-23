@@ -3,21 +3,23 @@
 @import './utils/normalize';
 @import './utils/reset';
 
-@import './modules/shared/Header/header.scss';
 @import './modules/shared/profile/profile.scss';
 @import './modules/shared/rate/rate.scss';
-@import './modules/shared/Menu/menu.scss';
 @import './modules/shared/Card/card.scss';
-@import './modules/shared/Select/select.scss';
-@import './modules/shared/Info/info.scss';
-@import './modules/shared/recruitInfo/recruitInfo.scss';
-@import './modules/shared/banlist/banlist.scss';
 @import './modules/shared/banItem/banItem.scss';
 @import './modules/shared/pagination/pagination.scss';
-@import './modules/shared/editPRofile/editProfile.scss';
 @import './modules/shared/searchUser/searchUser.scss';
-@import './modules/shared/blockUser/blockUser.scss';
 @import './modules/shared/userPhoto/userPhoto.scss';
+
+@import './modules/blocks/Header/header.scss';
+@import './modules/blocks/Info/info.scss';
+@import './modules/blocks/Menu/menu.scss';
+@import './modules/blocks/recruitInfo/recruitInfo.scss';
+@import './modules/blocks/Select/select.scss';
+@import './modules/blocks/banlist/banlist.scss';
+@import './modules/blocks/blockUser/blockUser.scss';
+@import './modules/blocks/editPRofile/editProfile.scss';
+
 
 @import './modules/Main/main.scss';
 @import './modules/MyProfile/myProfile.scss';

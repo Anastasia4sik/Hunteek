@@ -2,8 +2,8 @@
 import React from 'react';
 
 import edit from '../../../img/icons/edit.svg';
-import { Rate } from '../rate';
-import { UserPhoto } from '../userPhoto';
+import { Rate } from '../../shared/rate';
+import { UserPhoto } from '../../shared/userPhoto';
 
 export const RecruitInfo: React.FC = () => {
   return (
