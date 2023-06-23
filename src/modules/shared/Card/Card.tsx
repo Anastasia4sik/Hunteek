@@ -5,12 +5,28 @@ import message from '../../../img/icons/card/message.svg';
 import { Rate } from '../rate';
 import { UserPhoto } from '../userPhoto';
 
-export const Card: React.FC = () => {
+// eslint-disable-next-line import/no-unresolved
+import { Employee } from '../../../types/employee';
+
+type Props = {
+  employee: Employee,
+};
+
+export const Card: React.FC<Props> = ({ employee }) => {
+  const {
+    name,
+    photo,
+    position,
+    workCity,
+    whereToWork,
+    typeOfWork,
+  } = employee;
+
   return (
     <div className="card block">
       <div className="card__title text-center">
         <h3 className="card__title__p text-center main-text">
-          Middle Front-end Developer (Vue)
+          { position }
         </h3>
       </div>
 
@@ -19,27 +35,27 @@ export const Card: React.FC = () => {
           <div className="card__person__inner d-flex flex-row justify-content-between align-items-center">
             <div className="card__person__content d-flex flex-column">
               <p className="card__person__name main-text">
-                Yuri Kudin
+                { name }
               </p>
 
               <Rate />
             </div>
 
-            <UserPhoto size={24} />
+            <UserPhoto size={24} photo={photo} />
           </div>
         </div>
 
         <div className="card__info d-flex flex-column justify-content-center">
           <p className="card__info__desc main-text">
-            Kiev
+            { workCity }
           </p>
 
           <p className="card__info__desc main-text">
-            Quarantine Remote
+            { whereToWork }
           </p>
 
           <p className="card__info__desc main-text">
-            Product
+            { typeOfWork }
           </p>
         </div>
 

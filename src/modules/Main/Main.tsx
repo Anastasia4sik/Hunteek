@@ -5,6 +5,10 @@ import { Card } from '../shared/Card';
 import { Select } from '../blocks/select';
 import { Info } from '../blocks/Info';
 
+// eslint-disable-next-line import/no-unresolved
+import { Employee } from '../../types/employee';
+import { getEmployees } from '../../helpers/api';
+
 export const Main: React.FC = () => {
   const [location, setLocation] = useState('');
 
@@ -26,6 +30,14 @@ export const Main: React.FC = () => {
     };
   }, []);
 
+  const [employees, setEmployees] = useState<Employee[]>([]);
+
+  useEffect(() => {
+    getEmployees().then(data => {
+      setEmployees(data);
+    });
+  }, []);
+
   return (
     <div className="main">
       <Menu />
@@ -36,8 +48,8 @@ export const Main: React.FC = () => {
         <Select />
 
         <div className="main__catalog">
-          {[0, 1, 2, 3, 4, 5].map((each) => (
-            <Card key={each} />
+          {employees.map((employee) => (
+            <Card key={employee.slug} employee={employee} />
           ))}
         </div>
 
