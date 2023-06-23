@@ -6,7 +6,14 @@ import delet from '../../../img/icons/delete.svg';
 import upload from '../../../img/icons/upload.svg';
 import { UserPhoto } from '../../shared/userPhoto';
 
-export const EditProfile: React.FC = () => {
+// eslint-disable-next-line import/no-unresolved
+import { Employee } from '../../../types/employee';
+
+type Props = {
+  employee: Employee,
+};
+
+export const EditProfile: React.FC<Props> = ({ employee }) => {
   return (
     <div className="editProfile">
       <form action="#" className="editProfile__content scroll">
@@ -14,7 +21,7 @@ export const EditProfile: React.FC = () => {
           <label htmlFor="uploadPhoto" className="editProfile__label list-text"> Image </label>
 
           <div className="editProfile__photo d-flex flex-row align-items-center">
-            <UserPhoto size={20} />
+            <UserPhoto size={20} photo={employee.photo} />
 
             <div className="editProfile__photo__upload">
               <label htmlFor="uploadPhoto" className="editProfile__photo__upload__label btn-grey">
