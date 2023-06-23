@@ -1,0 +1,64 @@
+.info {
+  width: 21vw;
+
+  height: calc(100vh - #{$header-height} - 40px);
+
+  position: fixed;
+  top: calc(#{$header-height} + 21px);
+  right: 2vw;
+
+  @include onBigDesktop {
+    width: 24vw;
+
+    right: 2vw;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  
+  &__title {
+    background: linear-gradient(94.52deg, #296051 0%, #3B6078 100%);
+  
+    padding: 1.5vh 0;
+  
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  
+    margin-bottom: 1.5vh;
+
+    @include onBigDesktop {
+      margin-bottom: $main-p;
+      padding: $main-p 0;
+    }
+  }
+  
+  &__content {
+    padding: 0 18px;
+  
+    overflow: hidden;
+
+    @include onBigDesktop {
+      padding: 0 30px;
+    }
+    
+    &__title {
+      margin-bottom: 5px;
+    }
+    
+    &__desc {
+      color: #888888;
+    
+      height: calc(100vh - #{$header-height} - 180px);
+    
+      padding: 0 25px 25px 0;
+
+      overflow-y: scroll;
+    }
+  }
+}
+
+
+

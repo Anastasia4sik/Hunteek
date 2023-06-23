@@ -1,0 +1,22 @@
+.main {
+  &__catalog {
+    display: grid;
+
+    position: absolute;
+
+    top: calc(#{$header-height} + #{$main-p});
+
+    margin-bottom: $main-p;
+
+    margin-left: calc(#{$main-gap} + #{$select-width});
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: $main-gap;
+
+    z-index: -1;
+  }
+
+  .content {
+    margin-left: calc(#{$menu-width} + #{$main-gap});
+  }
+}

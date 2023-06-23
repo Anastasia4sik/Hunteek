@@ -1,0 +1,70 @@
+.blockUser {
+  padding: 0 12px;
+
+  
+  @include onBigDesktop {
+    padding: 0 30px;
+  }
+
+  &__content {
+    height: calc(100vh - #{$header-height} - 116px);
+
+    overflow-y: scroll;
+
+    padding-right: $main-p;
+  }
+  
+  &__list {
+    gap: 14px;
+
+    margin-top: 1.5vh;
+
+    @include onBigDesktop {
+      margin-top: 30px;
+    }
+
+    &__card {
+      width: 46%;
+
+      padding: 20px 0;
+
+      background-color: $grey-light;
+
+      @include onBigDesktop {
+        padding: 30px 0;
+
+        width: 48%;
+      }
+
+      &__name,
+      &__location,
+      &__block p {
+        @include onBigDesktop {
+          font-size: 14px;
+        }
+      }
+
+      &__name {
+        margin-top: 8px;
+
+        @include onBigDesktop {
+          margin-top: 15px;
+        }
+      }
+
+      &__location {
+        margin-bottom: 8px;
+
+        @include onBigDesktop {
+          margin-bottom: 15px;
+        }
+      }
+
+      &__block {
+        gap: 5px;
+
+        color: #F03738;
+      }
+    }
+  }
+}

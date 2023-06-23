@@ -1,0 +1,111 @@
+.header {
+  width: calc(100vw - #{$menu-width});
+  height: $header-height;
+
+  margin-left: $menu-width;
+  margin-bottom: $main-p;
+
+  padding-left: 3vw;
+
+  background-color: $black-header;
+  position: fixed;
+
+  &__select {
+    background-color: $black-header;
+    border: none;
+
+    height: 50%;
+
+    color: $white-text-sec;
+  }
+
+  &__search {   
+    margin: 0 $main-gap 0 $main-gap;
+ 
+    &__input {
+      height: 50%;
+      width: 52vw;
+
+      background-color: $grey-dark;
+      color: $white-text-main;
+
+      padding: 15px $main-gap;
+      
+      &::placeholder {
+        color: $grey-text;
+
+        font-weight: 600;
+        font-size: 14px;
+
+        @include onBigDesktop {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &__btn {
+      right: 7px;
+      top: 10%;
+
+      height: 44px;
+      width: 74px;
+      
+      background: $green-main;
+    }
+  }
+
+  &__menu {
+    height: 66px;
+    width: 22vw;
+    
+    &__info {
+      gap: 10px;
+ 
+      padding: 8px 15px 8px 22px;
+      
+      border-left: 2px solid $grey-border;
+
+      &__top {
+        &__nums {
+          gap: 30%;
+
+          padding-top: 2px;
+
+          margin-right: 36px;
+        }
+  
+        &__icons {
+          &__chart {
+            padding-right: 4px;
+          }
+
+          &__menu {
+            padding: 4px 0 4px 8px;
+
+            border-left: 2px solid $grey-border;
+          }
+        }
+      }
+
+      
+      &__bottom {
+        color: $grey-text;
+        
+        gap: 12px;
+      }
+    }
+    
+    &__nav {
+      border-left: 2px solid $grey-border;
+      padding: 8px 0 8px $main-gap;
+
+      gap: 6%;
+
+      &__img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+

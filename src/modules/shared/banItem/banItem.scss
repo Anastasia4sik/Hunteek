@@ -1,0 +1,20 @@
+.banItem {
+  height: 48px;
+  padding: 10px 0;
+
+  border-top: 2px solid $black-main;
+
+  @include onBigDesktop {
+    height: 50px;
+  }
+
+  &__unban {
+    color: $green;
+
+    gap: 5px;
+
+    &:hover {
+      color: $green;
+    }
+  }
+}

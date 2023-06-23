@@ -1,0 +1,47 @@
+.blockUser {
+  padding: 0 12px;
+
+  
+  @include onBigDesktop {
+    padding: 0 30px;
+  }
+
+  &__content {
+    height: calc(100vh - #{$header-height} - 116px);
+
+    overflow-y: scroll;
+  }
+  
+  &__list {
+    gap: 14px;
+
+    margin-top: 20px;
+
+    &__card {
+      width: 47%;
+
+      padding: 30px 0;
+
+      background-color: $grey-light;
+
+      &__name,
+      &__location {
+        font-size: 14px;
+      }
+
+      &__name {
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+
+      &__block {
+        color: #F03738;
+
+        & img {
+          fill: #F03738;
+        }
+      }
+
+    }
+  }
+}

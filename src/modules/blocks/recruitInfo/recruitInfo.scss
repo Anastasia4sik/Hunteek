@@ -1,0 +1,69 @@
+.recruitInfo {    
+  padding: 16px 0;
+  
+  color: $grey-text;
+  
+  @include onBigDesktop {
+    padding: 24px;
+  }
+  
+  &__content {
+    padding:  0 12px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    height: 100%;
+  }
+
+  &__user {
+    &__top {
+      margin-bottom: 12px;
+
+      @include onBigDesktop {
+        margin-bottom: 25px;
+      }
+
+      &__container {
+        gap: 25px;
+      }
+    }
+
+    &__desc {
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid $grey-border;
+
+      @include onBigDesktop {
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+      }
+    }
+
+    &__edit {
+      width: 140%;
+
+      justify-content: end;
+
+      gap: 6px;
+
+      cursor: pointer;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: $white-text-main;
+      }
+
+      @include onBigDesktop {
+        width: 115%;
+      }
+
+      &__img {
+        height: 14px;
+      }
+    }
+  }
+
+  &__social {
+    gap: 12px;
+  }
+}

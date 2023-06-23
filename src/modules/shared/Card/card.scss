@@ -1,0 +1,110 @@
+.card {
+  display: grid;
+
+  color: $grey-text;
+
+  width: $card-width;
+
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: $white-text-main;
+
+    background-color: $black-header;
+  }
+
+  @include onBigDesktop {
+    width: $card-width-big;
+  }
+
+  &__title {
+    background: $green-main;
+
+    padding: 1.5vh;
+
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+    @include onBigDesktop {
+      padding: $main-p;
+    }
+
+    
+    &__p {
+      max-width: 70%;
+
+      margin: 0 auto;
+
+      color: $white-text-main;
+    }
+  }
+
+  &__person,
+  &__info {
+    margin: 6px $main-p 0;
+    padding-bottom: 6px;
+
+    border-bottom: 1px solid $grey-border;
+
+    @include onBigDesktop {
+      margin: 12px $main-p 0;
+
+      padding-bottom: 12px;
+    }
+  }
+
+  &__person {
+    &__inner {
+      margin: 0 8px 0 5px;
+    }
+  }
+
+  &__info {
+    gap: 2px;
+
+    &__desc {
+      margin-left: 5px;
+    }
+
+    @include onBigDesktop {
+      gap: 5px;
+    }
+  }
+
+  &__media {
+    margin: 1.5vh 0 0 25px;
+    gap: $main-gap;
+
+    @include onBigDesktop {
+      margin: $main-p 0 0 25px;
+    }
+
+    &__item {
+      gap: 7px;
+    }
+  }
+
+  &__btn {
+    padding: 1.5vh 2vh;
+
+    @include onBigDesktop {
+      padding: $main-p;
+    }
+
+    &__button {
+      height: 36px;
+      width: 100%;
+
+      background-color: $grey-light;
+      border: 0px transparent;
+      border-radius: 100px;
+
+      color: $white-text-main;
+
+      @include onBigDesktop {
+        height: 48px;
+      }
+    }
+  }
+}
