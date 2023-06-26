@@ -7,7 +7,7 @@ import { UserPhoto } from '../userPhoto';
 import { Employee } from '../../../types/Employee';
 
 type Props = {
-  employee: Employee,
+  employee: Employee | undefined,
 };
 
 export const Profile: React.FC<Props> = ({ employee }) => {

@@ -3,7 +3,11 @@ import React, { useState } from 'react';
 import arrow from '../../../img/icons/arrow_down.svg';
 import user from '../../../img/icons/header/profile.svg';
 
-export const Select: React.FC = () => {
+type Props = {
+  setIsBanListChecked?: (isChecked: boolean) => void,
+};
+
+export const Select: React.FC<Props> = ({ setIsBanListChecked }) => {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
   const [isOpen3, setIsOpen3] = useState(false);
@@ -27,6 +31,11 @@ export const Select: React.FC = () => {
   };
 
   const isMy = window.location.pathname.includes('my');
+
+  const handleCheckboxChange = (e: { target: { checked: any; }; }) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    setIsBanListChecked ? setIsBanListChecked(e.target.checked) : null;
+  };
 
   return (
     <div className="select block">
@@ -260,7 +269,7 @@ export const Select: React.FC = () => {
                       id="BanList-checkbox"
                       name="option"
                       value="BanList"
-
+                      onChange={handleCheckboxChange}
                     />
                     <span>BanList</span>
                   </label>

@@ -6,18 +6,13 @@ import { Header } from '../blocks/Header';
 import { Select } from '../blocks/select';
 import { Info } from '../blocks/Info';
 import { RecruitInfo } from '../blocks/recruitInfo';
-import { Banlist } from '../blocks/banlist';
 
-import { getRecruiters, getEmployees } from '../../helpers/api';
+import { getRecruiters } from '../../helpers/api';
 import { Recruiter } from '../../types/Recruiter';
-import { Employee } from '../../types/Employee';
 
-export const MyProfile: React.FC = () => {
+export const MyWallet: React.FC = () => {
   const [location, setLocation] = useState('');
   const [recruiters, setRecruiters] = useState<Recruiter[]>([]);
-  const [employees, setEmployees] = useState<Employee[]>([]);
-
-  const [isBanListChecked, setIsBanListChecked] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -45,12 +40,6 @@ export const MyProfile: React.FC = () => {
     });
   }, []);
 
-  useEffect(() => {
-    getEmployees().then(data => {
-      setEmployees(data);
-    });
-  }, []);
-
   return (
     <div className="main">
       <Menu />
@@ -58,7 +47,7 @@ export const MyProfile: React.FC = () => {
       <Header />
 
       <div className="content d-flex flex-row">
-        <Select setIsBanListChecked={setIsBanListChecked} />
+        <Select />
 
         <div className="content__middle d-flex flex-column">
           <div className="content__top d-flex flex-row justify-content-between">
@@ -70,13 +59,11 @@ export const MyProfile: React.FC = () => {
               </div>
             </div>
           </div>
-
-          {isBanListChecked && <Banlist employees={employees} />}
         </div>
 
       </div>
 
-      <Info purpose={location} employee={employees[0]} employees={employees} />
+      <Info purpose={location} recruteir={recruiters[0]} recruteirs={recruiters} />
     </div>
   );
 };

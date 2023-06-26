@@ -6,7 +6,7 @@ import lock from '../../../img/icons/lock_red.svg';
 import { Employee } from '../../../types/Employee';
 
 type Props = {
-  employees: Employee[],
+  employees: Employee[] | undefined,
 };
 
 export const BlockUser: React.FC<Props> = ({ employees }) => {
@@ -22,7 +22,7 @@ export const BlockUser: React.FC<Props> = ({ employees }) => {
           flex-wrap
           justify-content-between"
         >
-          {employees.map((employee) => (
+          {employees?.map((employee) => (
             <div
               key={employee.slug}
               className="

@@ -10,7 +10,7 @@ import { UserPhoto } from '../../shared/userPhoto';
 import { Employee } from '../../../types/Employee';
 
 type Props = {
-  employee: Employee,
+  employee: Employee | undefined,
 };
 
 export const EditProfile: React.FC<Props> = ({ employee }) => {
@@ -21,7 +21,7 @@ export const EditProfile: React.FC<Props> = ({ employee }) => {
           <label htmlFor="uploadPhoto" className="editProfile__label list-text"> Image </label>
 
           <div className="editProfile__photo d-flex flex-row align-items-center">
-            <UserPhoto size={20} photo={employee.photo} />
+            <UserPhoto size={20} photo={employee?.photo} />
 
             <div className="editProfile__photo__upload">
               <label htmlFor="uploadPhoto" className="editProfile__photo__upload__label btn-grey">

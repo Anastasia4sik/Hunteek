@@ -5,6 +5,7 @@ import './index.scss';
 import { App } from './App';
 import { Main } from './modules/Main';
 import { MyProfile } from './modules/MyProfile';
+import { MyWallet } from './modules/MyWallet';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,9 +13,10 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Main />} />
-          <Route index path="#profile" element={<Main />} />
 
           <Route path="/my-profile" element={<MyProfile />} />
+
+          <Route path="/my-wallet" element={<MyWallet />} />
 
         </Route>
       </Routes>

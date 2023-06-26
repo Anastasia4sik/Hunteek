@@ -5,11 +5,14 @@ import { Profile } from '../../shared/profile';
 import { EditProfile } from '../editPRofile';
 import { BlockUser } from '../blockUser';
 import { Employee } from '../../../types/Employee';
+import { Recruiter } from '../../../types/Recruiter';
 
 type Props = {
   purpose: string;
-  employee: Employee;
-  employees: Employee[];
+  employee?: Employee;
+  employees?: Employee[];
+  recruteir?: Recruiter;
+  recruteirs?: Recruiter[];
 };
 
 export const Info: React.FC<Props> = ({ purpose, employee, employees }) => {
