@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useState } from 'react';
 
 import arrow from '../../../img/icons/arrow_down.svg';
@@ -5,9 +6,13 @@ import user from '../../../img/icons/header/profile.svg';
 
 type Props = {
   setIsBanListChecked?: (isChecked: boolean) => void,
+  setIsResumeChecked?: (isChecked: boolean) => void,
 };
 
-export const Select: React.FC<Props> = ({ setIsBanListChecked }) => {
+export const Select: React.FC<Props> = ({
+  setIsBanListChecked,
+  setIsResumeChecked,
+}) => {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
   const [isOpen3, setIsOpen3] = useState(false);
@@ -32,9 +37,12 @@ export const Select: React.FC<Props> = ({ setIsBanListChecked }) => {
 
   const isMy = window.location.pathname.includes('my');
 
-  const handleCheckboxChange = (e: { target: { checked: any; }; }) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+  const handleBanListChange = (e: { target: { checked: any; }; }) => {
     setIsBanListChecked ? setIsBanListChecked(e.target.checked) : null;
+  };
+
+  const handleResumeChange = (e: { target: { checked: any; }; }) => {
+    setIsResumeChecked ? setIsResumeChecked(e.target.checked) : null;
   };
 
   return (
@@ -168,7 +176,7 @@ export const Select: React.FC<Props> = ({ setIsBanListChecked }) => {
                     id="resume-checkbox"
                     name="option"
                     value="resume"
-
+                    onChange={handleResumeChange}
                   />
                   <span>My Resume</span>
                 </label>
@@ -269,7 +277,7 @@ export const Select: React.FC<Props> = ({ setIsBanListChecked }) => {
                       id="BanList-checkbox"
                       name="option"
                       value="BanList"
-                      onChange={handleCheckboxChange}
+                      onChange={handleBanListChange}
                     />
                     <span>BanList</span>
                   </label>

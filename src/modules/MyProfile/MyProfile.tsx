@@ -11,6 +11,7 @@ import { Banlist } from '../blocks/banlist';
 import { getRecruiters, getEmployees } from '../../helpers/api';
 import { Recruiter } from '../../types/Recruiter';
 import { Employee } from '../../types/Employee';
+import { EmployeeInfo } from '../blocks/employeeInfo';
 
 export const MyProfile: React.FC = () => {
   const [location, setLocation] = useState('');
@@ -18,6 +19,7 @@ export const MyProfile: React.FC = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);
 
   const [isBanListChecked, setIsBanListChecked] = useState(false);
+  const [isResumeChecked, setIsResumeChecked] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -58,18 +60,33 @@ export const MyProfile: React.FC = () => {
       <Header />
 
       <div className="content d-flex flex-row">
-        <Select setIsBanListChecked={setIsBanListChecked} />
+        <Select
+          setIsBanListChecked={setIsBanListChecked}
+          setIsResumeChecked={setIsResumeChecked}
+        />
 
         <div className="content__middle d-flex flex-column">
-          <div className="content__top d-flex flex-row justify-content-between">
-            <RecruitInfo recruiter={recruiters[0]} />
+          {isResumeChecked ? (
+            <div className="content__top__resume d-flex flex-row justify-content-between">
+              <EmployeeInfo employee={employees[0]} />
 
-            <div className="block content__top__empty">
-              <div className="content__top__empty__hide">
-                <RecruitInfo recruiter={recruiters[0]} />
+              <div className="block content__top__empty">
+                <div className="content__top__empty__hide">
+                  <EmployeeInfo employee={employees[0]} />
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="content__top d-flex flex-row justify-content-between">
+              <RecruitInfo recruiter={recruiters[0]} />
+
+              <div className="block content__top__empty">
+                <div className="content__top__empty__hide">
+                  <RecruitInfo recruiter={recruiters[0]} />
+                </div>
+              </div>
+            </div>
+          )}
 
           {isBanListChecked && <Banlist employees={employees} />}
         </div>
