@@ -1,4 +1,4 @@
-.editProfile {
+.edit {
   padding: 0 1vh 0 1vh;
 
   color: $grey-text;
@@ -31,7 +31,7 @@
 
     &__delete {
       height: 20%;
-      padding: 8px 24px;
+      padding: 8px 28px;
       background-color: $grey-light;
       border-radius: 100px;
 
@@ -57,7 +57,7 @@
       &__label {
         display: block;
 
-        padding: 8px 12px;
+        padding: 8px 24px;
 
         width: max-content;
 
@@ -83,11 +83,7 @@
         }
 
         &__text {
-          font-size: 10px;
-
-          @include onBigDesktop {
-            font-size: 14px;
-          }
+          font-size: 14px;
         }
       }
     }
@@ -131,7 +127,7 @@
 
 }
 
-input[type="file"].editProfile__photo__upload {
+input[type="file"].edit__photo__upload {
   position: absolute;
   left: -9999px;
 }

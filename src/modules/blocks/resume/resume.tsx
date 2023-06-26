@@ -52,7 +52,7 @@ export const Resume: React.FC<Props> = ({ employee }) => {
               </div>
             </div>
 
-            <a href="#edit-profile" className="resume__main__edit d-flex flex-row align-items-center">
+            <a href="#edit-resume" className="resume__main__edit d-flex flex-row align-items-center">
               <img src={edit} alt="Edit" className="resume__main__edit__img" />
 
               <p className="small-text"> Edit Resume </p>
@@ -68,7 +68,7 @@ export const Resume: React.FC<Props> = ({ employee }) => {
           </p>
         </div>
 
-        <div className="resume__info d-flex flex-row flex-wrap align-items-center">
+        <div className="resume__info d-flex flex-row flex-wrap align-items-center justify-content-between">
           <div className="
             resume__info__item
             block

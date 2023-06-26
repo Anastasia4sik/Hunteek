@@ -6,7 +6,7 @@ import { Select } from '../blocks/select';
 import { Info } from '../blocks/Info';
 
 import { Employee } from '../../types/Employee';
-import { getEmployees } from '../../helpers/api';
+import { getEmployees } from '../../api/api';
 
 export const Main: React.FC = () => {
   const [location, setLocation] = useState('');

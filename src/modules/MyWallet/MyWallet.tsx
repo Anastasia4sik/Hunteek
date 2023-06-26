@@ -7,7 +7,7 @@ import { Select } from '../blocks/select';
 import { Info } from '../blocks/Info';
 import { RecruitInfo } from '../blocks/recruitInfo';
 
-import { getRecruiters } from '../../helpers/api';
+import { getRecruiters } from '../../api/api';
 import { Recruiter } from '../../types/Recruiter';
 
 export const MyWallet: React.FC = () => {

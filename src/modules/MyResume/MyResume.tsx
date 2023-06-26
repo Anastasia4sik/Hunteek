@@ -6,7 +6,7 @@ import { Header } from '../blocks/Header';
 import { Select } from '../blocks/select';
 import { Info } from '../blocks/Info';
 
-import { getEmployees } from '../../helpers/api';
+import { getEmployees } from '../../api/api';
 import { Resume } from '../blocks/resume';
 import { Employee } from '../../types/Employee';
 
@@ -16,8 +16,8 @@ export const MyResume: React.FC = () => {
 
   useEffect(() => {
     const handleHashChange = () => {
-      if (window.location.hash === '#edit-profile') {
-        setLocation('edit');
+      if (window.location.hash === '#edit-resume') {
+        setLocation('edit-resume');
       } else {
         setLocation('general');
       }
@@ -53,7 +53,7 @@ export const MyResume: React.FC = () => {
 
       </div>
 
-      <Info purpose={location} />
+      <Info purpose={location} employee={employees[0]} />
     </div>
   );
 };

@@ -8,7 +8,7 @@ import { Info } from '../blocks/Info';
 import { RecruitInfo } from '../blocks/recruitInfo';
 import { Banlist } from '../blocks/banlist';
 
-import { getRecruiters, getEmployees } from '../../helpers/api';
+import { getRecruiters, getEmployees } from '../../api/api';
 import { Recruiter } from '../../types/Recruiter';
 import { Employee } from '../../types/Employee';
 import { EmployeeInfo } from '../blocks/employeeInfo';
@@ -24,7 +24,7 @@ export const MyProfile: React.FC = () => {
   useEffect(() => {
     const handleHashChange = () => {
       if (window.location.hash === '#edit-profile') {
-        setLocation('edit');
+        setLocation('edit-profile');
       } else if (window.location.hash === '#block-user') {
         setLocation('block');
       } else {

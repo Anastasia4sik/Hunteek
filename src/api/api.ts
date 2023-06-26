@@ -2,8 +2,8 @@
 import { Employee } from '../types/Employee';
 import { Recruiter } from '../types/Recruiter';
 
-import employeesData from '../api/employees.json';
-import recruitersData from '../api/recruiter.json';
+import employeesData from './employees.json';
+import recruitersData from './recruiter.json';
 
 export function getEmployees(): Promise<Employee[]> {
   // return fetch('url')

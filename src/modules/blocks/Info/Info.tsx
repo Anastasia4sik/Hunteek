@@ -2,10 +2,11 @@
 import React from 'react';
 import { General } from '../../shared/general';
 import { Profile } from '../../shared/profile';
-import { EditProfile } from '../editPRofile';
+import { EditProfile } from '../editProfile';
 import { BlockUser } from '../blockUser';
 import { Employee } from '../../../types/Employee';
 import { Recruiter } from '../../../types/Recruiter';
+import { EditResume } from '../editResume';
 
 type Props = {
   purpose: string;
@@ -25,9 +26,12 @@ export const Info: React.FC<Props> = ({ purpose, employee, employees }) => {
   } else if (purpose === 'profile') {
     title = 'Profile';
     content = <Profile employee={employee} />;
-  } else if (purpose === 'edit') {
+  } else if (purpose === 'edit-profile') {
     title = 'Edit Profile';
     content = <EditProfile employee={employee} />;
+  } else if (purpose === 'edit-resume') {
+    title = 'Edit Resume';
+    content = <EditResume employee={employee} />;
   } else if (purpose === 'block') {
     title = 'Block a user';
     content = <BlockUser employees={employees} />;
