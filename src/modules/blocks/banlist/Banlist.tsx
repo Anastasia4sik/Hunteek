@@ -42,7 +42,7 @@ export const Banlist: React.FC<Props> = ({ employees }) => {
             Ban List
           </p>
 
-          <div className="banlist__header__targets d-flex lfex-row">
+          <div className="banlist__header__targets d-flex flex-row">
             <div className="banlist__header__search">
               <SearchUser />
             </div>

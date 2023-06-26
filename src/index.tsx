@@ -6,6 +6,7 @@ import { App } from './App';
 import { Main } from './modules/Main';
 import { MyProfile } from './modules/MyProfile';
 import { MyWallet } from './modules/MyWallet';
+import { MyResume } from './modules/MyResume';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,6 +16,8 @@ ReactDOM.render(
           <Route index element={<Main />} />
 
           <Route path="/my-profile" element={<MyProfile />} />
+
+          <Route path="/my-resume" element={<MyResume />} />
 
           <Route path="/my-wallet" element={<MyWallet />} />
 
