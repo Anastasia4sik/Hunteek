@@ -9,7 +9,6 @@ import { UserPhoto } from '../../shared/userPhoto';
 import { Employee } from '../../../types/Employee';
 
 import { timeZones } from '../../../helpers/timezones';
-import { countries } from '../../../helpers/countries';
 
 type Props = {
   employee: Employee | undefined,
@@ -17,11 +16,6 @@ type Props = {
 
 export const EditResume: React.FC<Props> = ({ employee }) => {
   const [, setSelectedTimezone] = useState('');
-  const [, setSelectedCountrie] = useState('');
-
-  const handleCountrieChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-    setSelectedCountrie(event.target.value);
-  };
 
   const handleTimezoneChanged = (event: { target: { value: React.SetStateAction<string>; }; }) => {
     setSelectedTimezone(event.target.value);
@@ -81,28 +75,8 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
             <option value="" disabled selected hidden>None</option>
 
             {timeZones.map((timezone) => (
-              <option key={timezone} value={timezone}>
-                { timezone }
-              </option>
-            ))}
-          </select>
-        </fieldset>
-
-        <fieldset className="edit__container d-flex flex-column">
-          <legend className="edit__label list-text">
-            Country
-          </legend>
-
-          <select
-            onChange={handleCountrieChange}
-            id="country"
-            className="list-text edit__input"
-          >
-            <option value="" disabled selected hidden>None</option>
-
-            {countries.map((country) => (
-              <option key={country} value={country}>
-                { country }
+              <option key={timezone.offset} value={timezone.offset}>
+                {`${timezone.name}, ${timezone.offset}`}
               </option>
             ))}
           </select>

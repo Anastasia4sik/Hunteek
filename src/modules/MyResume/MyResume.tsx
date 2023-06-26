@@ -23,7 +23,7 @@ export const MyResume: React.FC = () => {
       }
     };
 
-    handleHashChange(); // Call the function once on initial load to set the location
+    handleHashChange();
 
     window.addEventListener('hashchange', handleHashChange);
 

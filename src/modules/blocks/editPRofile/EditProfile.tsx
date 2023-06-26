@@ -17,7 +17,7 @@ export const EditProfile: React.FC<Props> = ({ employee }) => {
   return (
     <div className="edit">
       <form action="#" className="edit__content scroll">
-        <div className="edit__container">
+        <fieldset className="edit__container">
           <label htmlFor="uploadPhoto" className="edit__label list-text"> Image </label>
 
           <div className="edit__photo d-flex flex-row align-items-center justify-content-between">
@@ -39,47 +39,71 @@ export const EditProfile: React.FC<Props> = ({ employee }) => {
               <img src={delet} alt="Delete" className="edit__photo__delete__img" />
             </button>
           </div>
-        </div>
+        </fieldset>
 
-        <div className="edit__container d-flex flex-column">
-          <label htmlFor="name" className="edit__label list-text"> Name </label>
+        <fieldset className="edit__container d-flex flex-column">
+          <legend className="edit__label list-text">
+            Name
+          </legend>
+
           <input type="text" id="name" placeholder="None" className="edit__input edit__input--name list-text" />
-        </div>
+        </fieldset>
 
-        <div className="edit__container d-flex flex-column">
-          <label htmlFor="lastName" className="edit__label list-text"> Last Name </label>
+        <fieldset className="edit__container d-flex flex-column">
+          <legend className="edit__label list-text">
+            Last Name
+          </legend>
+
           <input type="text" id="lastName" placeholder="None" className="edit__input edit__input--lastName list-text" />
-        </div>
+        </fieldset>
 
-        <div className="edit__container d-flex flex-column">
-          <label htmlFor="desc" className="edit__label list-text"> Description </label>
+        <fieldset className="edit__container d-flex flex-column">
+          <legend className="edit__label list-text">
+            Description
+          </legend>
+
           <textarea id="desc" placeholder="None" className="edit__input edit__input--desc list-text" />
-        </div>
+        </fieldset>
 
-        <div className="edit__container d-flex flex-column">
-          <label htmlFor="email" className="edit__label list-text"> Email </label>
+        <fieldset className="edit__container d-flex flex-column">
+          <legend className="edit__label list-text">
+            Email
+          </legend>
+
           <input type="email" id="email" placeholder="None" className="edit__input edit__input--email list-text" />
-        </div>
+        </fieldset>
 
-        <div className="edit__container d-flex flex-column">
-          <label htmlFor="phone" className="edit__label list-text"> Phone </label>
+        <fieldset className="edit__container d-flex flex-column">
+          <legend className="edit__label list-text">
+            Phone
+          </legend>
+
           <input type="number" id="phone" placeholder="None" className="edit__input edit__input--phone list-text" />
-        </div>
+        </fieldset>
 
-        <div className="edit__container d-flex flex-column">
-          <label htmlFor="telegram" className="edit__label list-text"> Telegram </label>
+        <fieldset className="edit__container d-flex flex-column">
+          <legend className="edit__label list-text">
+            Telegram
+          </legend>
+
           <input type="url" id="telegram" placeholder="None" className="edit__input edit__input--telegram list-text" />
-        </div>
+        </fieldset>
 
-        <div className="edit__container d-flex flex-column">
-          <label htmlFor="linkedin" className="edit__label list-text"> Linkedin </label>
+        <fieldset className="edit__container d-flex flex-column">
+          <legend className="edit__label list-text">
+            Linkedin
+          </legend>
+
           <input type="url" id="linkedin" placeholder="None" className="edit__input edit__input--linkedin list-text" />
-        </div>
+        </fieldset>
 
-        <div className="edit__container d-flex flex-column">
-          <label htmlFor="github" className="edit__label list-text"> GitHub </label>
+        <fieldset className="edit__container d-flex flex-column">
+          <legend className="edit__label list-text">
+            GitHub
+          </legend>
+
           <input type="url" id="github" placeholder="None" className="edit__input edit__input--github list-text" />
-        </div>
+        </fieldset>
 
         <button type="submit" className="edit__btn btn-grey">
           Submit
