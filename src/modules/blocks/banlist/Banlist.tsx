@@ -47,7 +47,7 @@ export const Banlist: React.FC<Props> = ({ employees }) => {
               <SearchUser />
             </div>
 
-            <a href="#block-user" className="banlist__header__btn d-flex flex-row align-items-center border-0 rounded-pill btn-grey">
+            <a href="#block-user" className="banlist__header__btn d-flex flex-row btn-grey">
               <img src={lock} alt="Lock" className="banlist__header__btn__img" />
 
               <p className="banlist__header__btn__p bold-text">

@@ -5,10 +5,10 @@ import { Menu } from '../blocks/menu';
 import { Header } from '../blocks/Header';
 import { Select } from '../blocks/select';
 import { Info } from '../blocks/Info';
-import { RecruitInfo } from '../blocks/recruitInfo';
 
 import { getRecruiters } from '../../api/api';
 import { Recruiter } from '../../types/Recruiter';
+import { Wallet } from '../blocks/wallet';
 
 export const MyWallet: React.FC = () => {
   const [location, setLocation] = useState('');
@@ -50,15 +50,7 @@ export const MyWallet: React.FC = () => {
         <Select />
 
         <div className="content__middle d-flex flex-column">
-          <div className="content__top d-flex flex-row justify-content-between">
-            <RecruitInfo recruiter={recruiters[0]} />
-
-            <div className="block content__top__empty">
-              <div className="content__top__empty__hide">
-                <RecruitInfo recruiter={recruiters[0]} />
-              </div>
-            </div>
-          </div>
+          <Wallet />
         </div>
 
       </div>

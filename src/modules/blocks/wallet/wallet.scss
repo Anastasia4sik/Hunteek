@@ -1,0 +1,61 @@
+.wallet {
+  &__container {
+
+  }
+
+  &__top {
+    gap: 30px;
+
+    height: calc(55vh - #{$header-height} - 21px);
+
+    &__blocks {
+      gap: 16px;
+
+      flex-grow: 1;
+
+      @include onBigDesktop {
+        gap: 24px;
+      }
+
+      &__item {
+        height: 100%;
+
+          gap: 12px;
+
+          @include onBigDesktop {
+            gap: 25px;
+          }
+        
+        &__text {
+          gap: 6px;
+
+          @include onBigDesktop {
+            gap: 12px;
+          }
+        }
+
+        &__title {
+          color: $grey-text;
+        }
+
+        &__btn {
+          padding: 6px 0;
+
+          width: 50%;
+
+          @include onBigDesktop {
+            padding: 12px 0;
+          }
+        }
+      }
+
+      &__btn {
+        padding: 12px 0;
+
+        @include onBigDesktop {
+          padding: 18px 0;
+        }
+      }
+    }
+  }
+}

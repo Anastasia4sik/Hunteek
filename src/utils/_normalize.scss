@@ -114,6 +114,16 @@ body {
 .btn-grey {
   transition: all 0.3s ease-in-out; 
 
+  border: none;
+  border-radius: 100px;
+
+  background-color: $grey-light;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
   
   &:hover {
     color: $white-text-sec;
