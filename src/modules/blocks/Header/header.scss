@@ -10,6 +10,8 @@
   background-color: $black-header;
   position: fixed;
 
+  z-index: 3;
+
   &__select {
     background-color: $black-header;
     border: none;

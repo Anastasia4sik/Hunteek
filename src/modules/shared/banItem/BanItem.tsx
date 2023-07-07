@@ -22,7 +22,7 @@ export const BanItem: React.FC<Props> = ({ employee }) => {
 
   return (
     <div className="banItem d-flex flex-row justify-content-between align-items-center">
-      <UserPhoto size={5} height={100} photo={photo} />
+      <UserPhoto size={4} height={120} photo={photo} />
 
       <p className="banItem__name bold-text">
         {name}

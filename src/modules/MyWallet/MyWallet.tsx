@@ -9,6 +9,7 @@ import { Info } from '../blocks/Info';
 import { getRecruiters } from '../../api/api';
 import { Recruiter } from '../../types/Recruiter';
 import { Wallet } from '../blocks/wallet';
+import { CatalogSmall } from '../blocks/catalogSmall';
 
 export const MyWallet: React.FC = () => {
   const [location, setLocation] = useState('');
@@ -51,6 +52,8 @@ export const MyWallet: React.FC = () => {
 
         <div className="content__middle d-flex flex-column">
           <Wallet />
+
+          <CatalogSmall />
         </div>
 
       </div>

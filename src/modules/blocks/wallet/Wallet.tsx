@@ -56,10 +56,6 @@ export const Wallet: React.FC = () => {
 
           </div>
         </div>
-
-        <div className="wallet__top d-flex flex-row justify-content-between">
-
-        </div>
       </div>
     </div>
   );
