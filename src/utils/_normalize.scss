@@ -66,11 +66,12 @@ body {
 .main-text {
   font-weight: 600;
 
-  line-height: 25px;
+  line-height: 22px;
 
-  font-size: 14px;
+  font-size: 13px;
 
   @include onBigDesktop {
+    line-height: 25px;
     font-size: 18px;
   }
 }

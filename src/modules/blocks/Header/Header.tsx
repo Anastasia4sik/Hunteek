@@ -7,7 +7,7 @@ import chart from '../../../img/icons/header/chart.svg';
 import menu from '../../../img/icons/header/menu.svg';
 import time from '../../../img/icons/header/time.svg';
 import video from '../../../img/icons/header/video.svg';
-import category from '../../../img/icons/header/category.svg';
+import projects from '../../../img/icons/header/category.svg';
 import dollar from '../../../img/icons/header/dollar.svg';
 import profile from '../../../img/icons/header/profile.svg';
 
@@ -109,8 +109,8 @@ export const Header: React.FC = () => {
             <img src={video} alt="Video" className="header__menu__nav__img" />
           </a>
 
-          <a href="/">
-            <img src={category} alt="Categories" className="header__menu__nav__img" />
+          <a href="/projects">
+            <img src={projects} alt="Projects" className="header__menu__nav__img" />
           </a>
 
           <a href="/my-wallet">

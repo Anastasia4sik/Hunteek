@@ -7,6 +7,7 @@ import { Main } from './modules/Main';
 import { MyProfile } from './modules/MyProfile';
 import { MyWallet } from './modules/MyWallet';
 import { MyResume } from './modules/MyResume';
+import { Projects } from './modules/Projects';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,6 +21,8 @@ ReactDOM.render(
           <Route path="/my-resume" element={<MyResume />} />
 
           <Route path="/my-wallet" element={<MyWallet />} />
+
+          <Route path="/projects" element={<Projects />} />
 
         </Route>
       </Routes>
