@@ -109,7 +109,7 @@ export const Header: React.FC = () => {
             <img src={video} alt="Video" className="header__menu__nav__img" />
           </a>
 
-          <a href="/projects">
+          <a href="/">
             <img src={projects} alt="Projects" className="header__menu__nav__img" />
           </a>
 

@@ -1,6 +1,8 @@
+/* eslint-disable no-console */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 
+import classNames from 'classnames';
 import logo from '../../../img/icons/logo.svg';
 import home from '../../../img/icons/menu/home.svg';
 import news from '../../../img/icons/menu/news.svg';
@@ -12,6 +14,15 @@ import message from '../../../img/icons/menu/message.svg';
 import analytics from '../../../img/icons/menu/analytics.svg';
 
 export const Menu: React.FC = () => {
+  const isHome = window.location.pathname === '/';
+  const isNews = window.location.pathname === '/news';
+  const isSubs = window.location.pathname === '/subscriptions';
+  const isTeam = window.location.pathname === '/teams';
+  const isProjects = window.location.pathname === '/projects';
+  const isTask = window.location.pathname === '/task';
+  const isMessage = window.location.pathname === '/messages';
+  const isAnalytics = window.location.pathname === '/analytics';
+
   return (
     <div className="menu d-flex flex-column">
       <div className="menu__content">
@@ -21,49 +32,97 @@ export const Menu: React.FC = () => {
 
         <div className="menu__container d-flex flex-column justify-content-between">
           <nav className="menu__nav d-flex flex-column">
-            <a href="/home" className="menu__nav__item list-text d-flex flex-row">
+            <a
+              href="/"
+              className={classNames(
+                'menu__nav__item list-text d-flex flex-row align-items-center',
+                { menu__nav__item__selected: isHome },
+              )}
+            >
               <img src={home} alt="Home" className="menu__nav__item__img" />
 
               Home
             </a>
 
-            <a href="/news" className="menu__nav__item list-text d-flex flex-row">
+            <a
+              href="/news"
+              className={classNames(
+                'menu__nav__item list-text d-flex flex-row align-items-center',
+                { menu__nav__item__selected: isNews },
+              )}
+            >
               <img src={news} alt="News" className="menu__nav__item__img" />
 
               News
             </a>
 
-            <a href="/subscriptions" className="menu__nav__item list-text d-flex flex-row">
+            <a
+              href="/subscriptions"
+              className={classNames(
+                'menu__nav__item list-text d-flex flex-row align-items-center',
+                { menu__nav__item__selected: isSubs },
+              )}
+            >
               <img src={subsc} alt="Subscriptions" className="menu__nav__item__img" />
 
               Subscriptions
             </a>
 
-            <a href="/team" className="menu__nav__item list-text d-flex flex-row">
+            <a
+              href="/teams"
+              className={classNames(
+                'menu__nav__item list-text d-flex flex-row align-items-center',
+                { menu__nav__item__selected: isTeam },
+              )}
+            >
               <img src={team} alt="Team" className="menu__nav__item__img" />
 
               Team
             </a>
 
-            <a href="/project" className="menu__nav__item list-text d-flex flex-row">
+            <a
+              href="/projects"
+              className={classNames(
+                'menu__nav__item list-text d-flex flex-row align-items-center',
+                { menu__nav__item__selected: isProjects },
+              )}
+            >
               <img src={project} alt="Project" className="menu__nav__item__img" />
 
               Project
             </a>
 
-            <a href="/task" className="menu__nav__item list-text d-flex flex-row">
+            <a
+              href="/task"
+              className={classNames(
+                'menu__nav__item list-text d-flex flex-row align-items-center',
+                { menu__nav__item__selected: isTask },
+              )}
+            >
               <img src={task} alt="Task" className="menu__nav__item__img" />
 
               Task
             </a>
 
-            <a href="/message" className="menu__nav__item list-text d-flex flex-row">
+            <a
+              href="/messages"
+              className={classNames(
+                'menu__nav__item list-text d-flex flex-row align-items-center',
+                { menu__nav__item__selected: isMessage },
+              )}
+            >
               <img src={message} alt="Message" className="menu__nav__item__img" />
 
               Message
             </a>
 
-            <a href="/analytics" className="menu__nav__item list-text d-flex flex-row">
+            <a
+              href="/analytics"
+              className={classNames(
+                'menu__nav__item list-text d-flex flex-row align-items-center',
+                { menu__nav__item__selected: isAnalytics },
+              )}
+            >
               <img src={analytics} alt="Analytics" className="menu__nav__item__img" />
 
               Analytics

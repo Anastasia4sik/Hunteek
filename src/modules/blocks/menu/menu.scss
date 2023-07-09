@@ -52,8 +52,7 @@
       transition: all 0.3s ease-in-out;
 
       &:hover,
-      &:focus,
-      &:active {
+      &__selected {
         background: $green-main;
 
         color: $white-text-main;
