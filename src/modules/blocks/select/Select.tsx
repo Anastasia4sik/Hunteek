@@ -37,6 +37,7 @@ export const Select: React.FC<Props> = ({
   };
 
   const isMy = window.location.pathname.includes('my');
+  const isProject = window.location.pathname.includes('projects');
 
   const handleBanListChange = (e: { target: { checked: any; }; }) => {
     setIsBanListChecked ? setIsBanListChecked(e.target.checked) : null;
@@ -49,6 +50,12 @@ export const Select: React.FC<Props> = ({
   return (
     <div className="select block">
       <div className="select__container">
+        {isProject && (
+          <a href="#create-project" className="select__container__btn btn-grey list-text">
+            Create a vacancy
+          </a>
+        )}
+
         <div className={`${isMy ? 'select--3' : 'select--1'} celect__content  ${isOpen1 ? 'open' : ''}`}>
           <div
             className={`${isMy ? 'select__header--profile' : ''} select__header d-flex flex-row justify-content-between ${isOpen1 ? 'select__header--active' : ''}`}
@@ -75,13 +82,13 @@ export const Select: React.FC<Props> = ({
           {!isMy ? (
             <ul
               className={`
-                  select__option__list
-                  select__option__list--1
-                  ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
+                select__option__list
+                select__option__list--1
+                ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
             >
               <li className="
-                  list-text
-                  select__option__list__item"
+                list-text
+                select__option__list__item"
               >
                 <label htmlFor="android-checkbox" className="checkbox-label list-text">
                   <input
@@ -96,8 +103,8 @@ export const Select: React.FC<Props> = ({
               </li>
 
               <li className="
-                  list-text
-                  select__option__list__item"
+                list-text
+                select__option__list__item"
               >
                 <label htmlFor="iOS-checkbox" className="checkbox-label list-text">
                   <input
@@ -112,8 +119,8 @@ export const Select: React.FC<Props> = ({
               </li>
 
               <li className="
-                  list-text
-                  select__option__list__item"
+                list-text
+                select__option__list__item"
               >
                 <label htmlFor="C-checkbox" className="checkbox-label list-text">
                   <input
@@ -128,8 +135,8 @@ export const Select: React.FC<Props> = ({
               </li>
 
               <li className="
-                  list-text
-                  select__option__list__item"
+                list-text
+                select__option__list__item"
               >
                 <label htmlFor="Golang-checkbox" className="checkbox-label list-text">
                   <input
@@ -144,9 +151,9 @@ export const Select: React.FC<Props> = ({
               </li>
 
               <li className="
-                  list-text
-                  select__option__list__item
-                  select__option__list__item--last"
+                list-text
+                select__option__list__item
+                select__option__list__item--last"
               >
                 <label htmlFor="Scala-checkbox" className="checkbox-label list-text">
                   <input
@@ -288,7 +295,7 @@ export const Select: React.FC<Props> = ({
           )}
         </div>
 
-        {!isMy ? (
+        {!isMy && (
           <div className={`select--2 celect__content  ${isOpen2 ? 'open' : ''}`}>
             <div
               className={`select__header d-flex flex-row justify-content-between ${isOpen2 ? 'select__header--active' : ''}`}
@@ -389,7 +396,7 @@ export const Select: React.FC<Props> = ({
               </li>
             </ul>
           </div>
-        ) : null}
+        )}
       </div>
     </div>
   );

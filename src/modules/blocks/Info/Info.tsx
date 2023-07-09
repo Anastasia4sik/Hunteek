@@ -7,6 +7,7 @@ import { BlockUser } from '../blockUser';
 import { Employee } from '../../../types/Employee';
 import { Recruiter } from '../../../types/Recruiter';
 import { EditResume } from '../editResume';
+import { CreateProject } from '../createProject';
 
 type Props = {
   purpose: string;
@@ -35,6 +36,9 @@ export const Info: React.FC<Props> = ({ purpose, employee, employees }) => {
   } else if (purpose === 'block') {
     title = 'Block a user';
     content = <BlockUser employees={employees} />;
+  } else if (purpose === 'project') {
+    title = 'Create a vacancy';
+    content = <CreateProject />;
   } else {
     title = '';
     content = '';

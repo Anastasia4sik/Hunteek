@@ -17,10 +17,8 @@ export const Projects: React.FC = () => {
 
   useEffect(() => {
     const handleHashChange = () => {
-      if (window.location.hash === '#edit-profile') {
-        setLocation('edit');
-      } else if (window.location.hash === '#block-user') {
-        setLocation('block');
+      if (window.location.hash === '#create-project') {
+        setLocation('project');
       } else {
         setLocation('general');
       }
@@ -53,41 +51,39 @@ export const Projects: React.FC = () => {
                 </h3>
               </div>
 
-              <a href="#profile">
-                <div className="card__person--projects">
-                  <div className="card__person__inner d-flex flex-row justify-content-between align-items-center">
-                    <div className="card__person__content d-flex flex-column">
-                      <p className="card__person__name main-text">
-                        Company Name
-                      </p>
+              <div className="card__person--projects">
+                <div className="card__person__inner d-flex flex-row justify-content-between align-items-center">
+                  <div className="card__person__content d-flex flex-column">
+                    <p className="card__person__name main-text">
+                      Company Name
+                    </p>
 
-                      <Rate />
-                    </div>
-
-                    <UserPhoto size={20} photo={photo} />
-                  </div>
-                </div>
-
-                <div className="card__info--projects d-flex flex-column justify-content-center">
-                  <p className="card__info__desc main-text">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...
-                  </p>
-                </div>
-
-                <div className="card__media d-flex flex-row">
-                  <div className="card__media__item d-flex flex-row">
-                    <img src={time} alt="Time" />
-
-                    <p className="card__media__item__desc main-text">99h</p>
+                    <Rate />
                   </div>
 
-                  <div className="card__media__item d-flex flex-row">
-                    <img src={wallet} alt="Money" />
-
-                    <p className="card__media__item__desc main-text">$784</p>
-                  </div>
+                  <UserPhoto size={20} photo={photo} />
                 </div>
-              </a>
+              </div>
+
+              <div className="card__info--projects d-flex flex-column justify-content-center">
+                <p className="card__info__desc main-text">
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...
+                </p>
+              </div>
+
+              <div className="card__media d-flex flex-row">
+                <div className="card__media__item d-flex flex-row">
+                  <img src={time} alt="Time" />
+
+                  <p className="card__media__item__desc main-text">99h</p>
+                </div>
+
+                <div className="card__media__item d-flex flex-row">
+                  <img src={wallet} alt="Money" />
+
+                  <p className="card__media__item__desc main-text">$784</p>
+                </div>
+              </div>
 
               <div className="card__btn">
                 <button type="button" className="card__btn__button main-text btn-grey">Complete the project</button>
