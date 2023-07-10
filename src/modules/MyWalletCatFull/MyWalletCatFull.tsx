@@ -4,10 +4,9 @@ import { Menu } from '../blocks/menu';
 import { Header } from '../blocks/Header';
 import { Select } from '../blocks/select';
 import { Info } from '../blocks/Info';
-import { Wallet } from '../blocks/wallet';
-import { CatalogSmall } from '../blocks/catalogSmall';
+import { CatalogFull } from '../blocks/catalogFull';
 
-export const MyWallet: React.FC = () => {
+export const MyWalletCatFull: React.FC = () => {
   const [location, setLocation] = useState('');
 
   useEffect(() => {
@@ -41,8 +40,7 @@ export const MyWallet: React.FC = () => {
         <Select />
 
         <div className="content__middle d-flex flex-column">
-          <Wallet />
-          <CatalogSmall />
+          <CatalogFull />
         </div>
       </div>
 

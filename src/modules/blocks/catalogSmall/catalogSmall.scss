@@ -11,10 +11,14 @@
       margin-bottom: 14px;
     }
 
+    &__targets {
+      gap: 8px;
+    }
+
     &__btn {
       height: 43px;
 
-      padding: 0 30px;
+      padding: 0 30px;  
 
       gap: 5px;
 
@@ -43,6 +47,14 @@
 
     @include onBigDesktop {
       height: 46px;
+    }
+
+    &__download {
+      gap: 8px;
+
+      &__img {
+        transform: rotate(180deg);
+      }
     }
   }
 }

@@ -1,26 +1,41 @@
+/* eslint-disable no-console */
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 
 import upload from '../../../img/icons/upload.svg';
 import filter from '../../../img/icons/filter.svg';
 import { Pagination } from '../../shared/pagination';
 
+const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
 export const CatalogFull: React.FC = () => {
-  const [perPage] = useState(14);
+  const [perPage] = useState(15);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const total = 140;
+  const total = array.length;
   const firstItem = (currentPage - 1) * perPage;
   const lastItem = currentPage * perPage;
-  const itemsPerPage = employees.slice(firstItem, lastItem);
+  const itemsPerPage = array.slice(firstItem, lastItem);
+  let newHash: string;
 
   const handleOnPageChange = (page: number | string) => {
     if (typeof page === 'number') {
       setCurrentPage(page);
+      newHash = `#${page}`;
     } else if (page === 'prev') {
       setCurrentPage(current => current - 1);
+      newHash = '#prev';
     } else if (page === 'next') {
       setCurrentPage(current => current + 1);
+      newHash = '#next';
     }
+
+    const currentHash = window.location.hash;
+    const newHashWithCurrent = currentHash ? `${currentHash}${newHash}` : newHash;
+
+    window.location.hash = newHashWithCurrent;
+
+    console.log(newHash);
   };
 
   return (
@@ -41,7 +56,7 @@ export const CatalogFull: React.FC = () => {
             </a>
 
             <a href="#download" className="catalog__header__btn d-flex flex-row btn-grey">
-              <img src={upload} alt="Download" className="catalog__header__btn__img" />
+              <img src={upload} alt="Download" className="catalog__item__download__img" />
 
               <p className="catalog__header__btn__p bold-text">
                 Download All
@@ -82,7 +97,7 @@ export const CatalogFull: React.FC = () => {
         </div>
 
         <ul>
-          {[0, 1, 2, 3, 4, 5].map(each => (
+          {itemsPerPage.map(each => (
             <li key={each}>
               <div className="catalog__item d-flex flex-row justify-content-between align-items-center">
                 <p className="catalog__item__date bold-text">
@@ -109,8 +124,8 @@ export const CatalogFull: React.FC = () => {
                   No referral
                 </p>
 
-                <a href="#download" className="catalog__item__referral bold-text">
-                  <img src={upload} alt="Download" className="catalog__header__btn__img" />
+                <a href="#download" className="catalog__item__download bold-text d-flex flex-row align-items-center">
+                  <img src={upload} alt="Download" className="catalog__item__download__img" />
 
                   <p className="catalog__header__btn__p bold-text">
                     Download

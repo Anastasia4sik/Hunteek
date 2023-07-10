@@ -9,6 +9,7 @@ import { MyWallet } from './modules/MyWallet';
 import { MyResume } from './modules/MyResume';
 import { Projects } from './modules/Projects';
 import { Team } from './modules/Team';
+import { MyWalletCatFull } from './modules/MyWalletCatFull';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,16 +18,17 @@ ReactDOM.render(
         <Route path="/" element={<App />}>
           <Route index element={<Main />} />
 
-          <Route path="/my-profile" element={<MyProfile />} />
+          <Route path="my-profile" element={<MyProfile />} />
 
-          <Route path="/my-resume" element={<MyResume />} />
+          <Route path="my-resume" element={<MyResume />} />
 
-          <Route path="/my-wallet" element={<MyWallet />} />
+          <Route path="my-wallet" element={<MyWallet />} />
 
-          <Route path="/projects" element={<Projects />} />
+          <Route path="my-wallet/catalog-full" element={<MyWalletCatFull />} />
 
-          <Route path="/teams" element={<Team />} />
+          <Route path="projects" element={<Projects />} />
 
+          <Route path="teams" element={<Team />} />
         </Route>
       </Routes>
     </Router>

@@ -9,7 +9,7 @@ export const CatalogSmall: React.FC = () => {
             Catalog of accounting and reports
           </p>
 
-          <a href="#catalog-full" className="catalog__header__btn d-flex flex-row btn-grey bold-text">
+          <a href="/my-wallet/catalog-full" className="catalog__header__btn d-flex flex-row btn-grey bold-text">
             Show All Transaction
           </a>
         </div>
