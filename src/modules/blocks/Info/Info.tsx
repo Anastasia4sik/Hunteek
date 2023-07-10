@@ -9,6 +9,7 @@ import { Recruiter } from '../../../types/Recruiter';
 import { EditResume } from '../editResume';
 import { CreateProject } from '../createProject';
 import { AllWallets } from '../allWallets';
+import { Transfer } from '../transfer';
 
 type Props = {
   purpose: string;
@@ -43,6 +44,9 @@ export const Info: React.FC<Props> = ({ purpose, employee, employees }) => {
   } else if (purpose === 'wallets') {
     title = 'All Cryptocurrency Wallet';
     content = <AllWallets />;
+  } else if (purpose === 'transfer') {
+    title = 'Transfer of funds';
+    content = <Transfer />;
   } else {
     title = '';
     content = '';

@@ -16,6 +16,8 @@ export const MyWallet: React.FC = () => {
 
       if (hash === '#all-wallets') {
         setLocation('wallets');
+      } else if (hash === '#transfer') {
+        setLocation('transfer');
       } else {
         setLocation('general');
       }
