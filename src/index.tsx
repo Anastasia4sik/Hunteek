@@ -20,7 +20,7 @@ ReactDOM.render(
 
           <Route path="my-profile" element={<MyProfile />} />
 
-          <Route path="my-resume" element={<MyResume />} />
+          <Route path="my-profile/my-resume" element={<MyResume />} />
 
           <Route path="my-wallet" element={<MyWallet />} />
 

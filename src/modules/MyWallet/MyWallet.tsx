@@ -14,10 +14,8 @@ export const MyWallet: React.FC = () => {
     const handleHashChange = () => {
       const { hash } = window.location;
 
-      if (hash === '#edit-profile') {
-        setLocation('edit');
-      } else if (hash === '#block-user') {
-        setLocation('block');
+      if (hash === '#all-wallets') {
+        setLocation('wallets');
       } else {
         setLocation('general');
       }

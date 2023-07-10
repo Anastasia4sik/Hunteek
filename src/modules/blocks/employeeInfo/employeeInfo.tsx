@@ -32,7 +32,7 @@ export const EmployeeInfo: React.FC<Props> = ({ employee }) => {
   } = employee;
 
   return (
-    <a href="/my-resume">
+    <a href="my-profile/my-resume">
       <div className="employeeInfo block">
         <div className="employeeInfo__content scroll">
           <div className="employeeInfo__user">
