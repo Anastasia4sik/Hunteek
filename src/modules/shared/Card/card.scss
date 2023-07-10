@@ -37,6 +37,10 @@
       margin: 0 auto;
 
       color: $white-text-main;
+
+      @include onBigDesktop{
+        max-width: 100%;
+      }
     }
   }
 
@@ -51,6 +55,19 @@
       margin: 12px $main-p 0;
 
       padding-bottom: 12px;
+    }
+
+    &--projects {
+      margin: 8px $main-p 0;
+      padding-bottom: 8px;
+
+      border-bottom: 1px solid $grey-border;
+
+      @include onBigDesktop {
+        margin: 20px $main-p 0;
+
+        padding-bottom: 20px;
+      }
     }
   }
 
