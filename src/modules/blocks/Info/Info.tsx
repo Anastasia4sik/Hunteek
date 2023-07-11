@@ -41,8 +41,11 @@ export const Info: React.FC<Props> = ({ purpose, employee, employees }) => {
   } else if (purpose === 'project') {
     title = 'Create a vacancy';
     content = <CreateProject />;
-  } else if (purpose === 'wallets') {
+  } else if (purpose === 'cryptoWallets') {
     title = 'All Cryptocurrency Wallet';
+    content = <AllWallets />;
+  } else if (purpose === 'fiatWallets') {
+    title = 'All Fiat Wallet';
     content = <AllWallets />;
   } else if (purpose === 'transfer') {
     title = 'Transfer of funds';

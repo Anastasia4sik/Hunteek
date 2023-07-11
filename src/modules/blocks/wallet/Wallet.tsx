@@ -33,7 +33,7 @@ export const Wallet: React.FC = () => {
                 </p>
               </div>
 
-              <a href="#all-wallets" className="wallet__top__blocks__item__btn btn-grey">
+              <a href="#crypto-wallets" className="wallet__top__blocks__item__btn btn-grey">
                 Show all wallets
               </a>
             </div>
@@ -49,7 +49,7 @@ export const Wallet: React.FC = () => {
                 </p>
               </div>
 
-              <a href="#all-wallets" className="wallet__top__blocks__item__btn btn-grey">
+              <a href="#fiat-wallets" className="wallet__top__blocks__item__btn btn-grey">
                 Show all wallets
               </a>
             </div>

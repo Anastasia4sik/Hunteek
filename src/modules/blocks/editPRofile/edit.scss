@@ -99,6 +99,9 @@
     &:last-of-type {
       margin-bottom: 25px;
     }
+     &__row {
+      gap: 16px;
+     }
   }
 
   &__label {

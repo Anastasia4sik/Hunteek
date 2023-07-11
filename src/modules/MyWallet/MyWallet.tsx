@@ -14,10 +14,12 @@ export const MyWallet: React.FC = () => {
     const handleHashChange = () => {
       const { hash } = window.location;
 
-      if (hash === '#all-wallets') {
-        setLocation('wallets');
+      if (hash === '#crypto-wallets') {
+        setLocation('cryptoWallets');
       } else if (hash === '#transfer') {
         setLocation('transfer');
+      } else if (hash === '#fiat-wallets') {
+        setLocation('fiatWallets');
       } else {
         setLocation('general');
       }

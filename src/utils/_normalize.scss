@@ -173,3 +173,15 @@ input[type="checkbox"] {
     background-position: center;
   }
 }
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("../img/icons/arrow_down_grey.svg");
+  background-repeat: no-repeat;
+  background-position-x: 97%;
+  background-position-y: 50%;
+
+  border: 1px solid #dfdfdf;
+}
