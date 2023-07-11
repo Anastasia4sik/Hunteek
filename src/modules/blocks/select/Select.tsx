@@ -8,11 +8,13 @@ import user from '../../../img/icons/header/profile.svg';
 type Props = {
   setIsBanListChecked?: (isChecked: boolean) => void,
   setIsResumeChecked?: (isChecked: boolean) => void,
+  setIsReferralChecked?: (isChecked: boolean) => void,
 };
 
 export const Select: React.FC<Props> = ({
   setIsBanListChecked,
   setIsResumeChecked,
+  setIsReferralChecked,
 }) => {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
@@ -45,6 +47,10 @@ export const Select: React.FC<Props> = ({
 
   const handleResumeChange = (e: { target: { checked: any; }; }) => {
     setIsResumeChecked ? setIsResumeChecked(e.target.checked) : null;
+  };
+
+  const handleReferralChange = (e: { target: { checked: any; }; }) => {
+    setIsReferralChecked ? setIsReferralChecked(e.target.checked) : null;
   };
 
   return (
@@ -261,7 +267,7 @@ export const Select: React.FC<Props> = ({
                       id="Referral-checkbox"
                       name="option"
                       value="Referral"
-
+                      onChange={handleReferralChange}
                     />
                     <span>Referral system</span>
                   </label>

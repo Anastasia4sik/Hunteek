@@ -6,9 +6,11 @@ import { Select } from '../blocks/select';
 import { Info } from '../blocks/Info';
 import { Wallet } from '../blocks/wallet';
 import { CatalogSmall } from '../blocks/catalogSmall';
+import { Referral } from '../blocks/referral';
 
 export const MyWallet: React.FC = () => {
   const [location, setLocation] = useState('');
+  const [isReferralChecked, setIsReferralChecked] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -40,10 +42,15 @@ export const MyWallet: React.FC = () => {
       <Header />
 
       <div className="content d-flex flex-row">
-        <Select />
+        <Select setIsReferralChecked={setIsReferralChecked} />
 
         <div className="content__middle d-flex flex-column">
-          <Wallet />
+          {isReferralChecked ? (
+            <Referral />
+          ) : (
+            <Wallet />
+          )}
+
           <CatalogSmall />
         </div>
       </div>
