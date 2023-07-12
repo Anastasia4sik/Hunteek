@@ -23,6 +23,8 @@ export const MyWallet: React.FC = () => {
         setLocation('transfer');
       } else if (hash === '#fiat-wallets') {
         setLocation('fiatWallets');
+      } else if (hash === '#reporting-of-payments') {
+        setLocation('reporting');
       } else {
         setLocation('general');
       }

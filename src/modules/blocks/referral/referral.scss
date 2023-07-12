@@ -43,6 +43,14 @@
 
     gap: 12px;
 
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $white-text-main;
+  
+      background-color: $black-header;
+    }
+
     &__user {
       color: $grey-text;
     }

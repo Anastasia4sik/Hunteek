@@ -50,6 +50,9 @@ export const Info: React.FC<Props> = ({ purpose, employee, employees }) => {
   } else if (purpose === 'transfer') {
     title = 'Transfer of funds';
     content = <Transfer />;
+  } else if (purpose === 'reporting') {
+    title = 'Reporting on payments';
+    content = <Transfer />;
   } else {
     title = '';
     content = '';
