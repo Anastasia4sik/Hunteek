@@ -6,10 +6,14 @@ import upload from '../../../img/icons/upload.svg';
 import filter from '../../../img/icons/filter.svg';
 import { Pagination } from '../../shared/pagination';
 
+type Props = {
+  isShorter?: boolean,
+};
+
 const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
-export const CatalogFull: React.FC = () => {
-  const [perPage] = useState(15);
+export const CatalogFull: React.FC<Props> = ({ isShorter }) => {
+  const [perPage] = useState(isShorter ? 7 : 15);
   const [currentPage, setCurrentPage] = useState(1);
 
   const total = array.length;

@@ -1,11 +1,40 @@
+/* eslint-disable max-len */
 /* eslint-disable no-alert */
-import React, { RefObject, useRef } from 'react';
-import { UserPhoto } from '../../shared/userPhoto';
+import React, { RefObject, useRef, useState } from 'react';
+import { ReferraCard } from '../../shared/referralCard';
+import { Pagination } from '../../shared/pagination';
 
-import photo from '../../../img/photo/user.png';
+const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 8, 9, 10, 11, 12, 9, 10, 11, 12];
 
 export const Referral: React.FC = () => {
   const inputRef: RefObject<HTMLInputElement> = useRef(null);
+
+  const [perPage] = useState(3);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const total = array.length;
+  const firstItem = (currentPage - 1) * perPage;
+  const lastItem = currentPage * perPage;
+  const itemsPerPage = array.slice(firstItem, lastItem);
+  let newHash: string;
+
+  const handleOnPageChange = (page: number | string) => {
+    if (typeof page === 'number') {
+      setCurrentPage(page);
+      newHash = `#${page}`;
+    } else if (page === 'prev') {
+      setCurrentPage(current => current - 1);
+      newHash = '#prev';
+    } else if (page === 'next') {
+      setCurrentPage(current => current + 1);
+      newHash = '#next';
+    }
+
+    const currentHash = window.location.hash;
+    const newHashWithCurrent = currentHash ? `${currentHash}${newHash}` : newHash;
+
+    window.location.hash = newHashWithCurrent;
+  };
 
   const handleCopyPlaceholder = () => {
     const inputElement = inputRef.current;
@@ -44,26 +73,21 @@ export const Referral: React.FC = () => {
           </button>
         </div>
 
-        <a href="#report">
-          <div className="referral__card d-flex flex-column align-items-center block">
-            <UserPhoto size={20} photo={photo} />
+        <div className="referral__catalog d-flex flex-row justify-content-between align-items-center">
+          {itemsPerPage.map(each => (
+            <ReferraCard key={each} />
+          ))}
+        </div>
 
-            <div className="referral__card__user d-flex flex-column align-items-center">
-              <p className="referral__card__name list-text">
-                Olena Maccorter
-              </p>
-
-              <p className="referral__card__number light-text">
-                36578
-              </p>
-            </div>
-
-            <p className="referral__card__amount list-text">
-              1200.00
-            </p>
-          </div>
-        </a>
       </div>
+
+      <Pagination
+        total={total}
+        perPage={perPage}
+        currentPage={currentPage}
+        onPageChange={handleOnPageChange}
+        withBullets
+      />
     </div>
   );
 };

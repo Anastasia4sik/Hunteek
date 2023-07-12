@@ -7,6 +7,7 @@ import { Info } from '../blocks/Info';
 import { Wallet } from '../blocks/wallet';
 import { CatalogSmall } from '../blocks/catalogSmall';
 import { Referral } from '../blocks/referral';
+import { CatalogFull } from '../blocks/catalogFull';
 
 export const MyWallet: React.FC = () => {
   const [location, setLocation] = useState('');
@@ -46,12 +47,19 @@ export const MyWallet: React.FC = () => {
 
         <div className="content__middle d-flex flex-column">
           {isReferralChecked ? (
-            <Referral />
+            <>
+              <Referral />
+
+              <CatalogFull isShorter />
+            </>
           ) : (
-            <Wallet />
+            <>
+              <Wallet />
+
+              <CatalogSmall />
+            </>
           )}
 
-          <CatalogSmall />
         </div>
       </div>
 

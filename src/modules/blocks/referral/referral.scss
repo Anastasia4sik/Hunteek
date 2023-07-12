@@ -29,6 +29,14 @@
     }
   }
 
+  &__catalog {
+    width: 100%;
+
+    gap: 30px;
+
+    margin-bottom: 15px;
+  }
+
   &__card {
     width: 33%;
     padding: 30px 0;

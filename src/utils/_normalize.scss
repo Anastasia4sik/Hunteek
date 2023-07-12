@@ -185,3 +185,24 @@ select {
 
   border: 1px solid #dfdfdf;
 }
+
+.bullet {
+  width: 10px;
+  height: 10px;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: $grey-text;
+  
+  &.active {
+    background-color: $white-text-main;
+  }
+}
+
+.pag__item {
+  &.disabled {
+    filter: brightness(0.5);
+  }
+}
+
