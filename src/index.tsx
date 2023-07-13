@@ -10,6 +10,7 @@ import { MyResume } from './modules/MyResume';
 import { Projects } from './modules/Projects';
 import { Team } from './modules/Team';
 import { MyWalletCatFull } from './modules/MyWalletCatFull';
+import { Messages } from './modules/Messages';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -29,6 +30,8 @@ ReactDOM.render(
           <Route path="projects" element={<Projects />} />
 
           <Route path="teams" element={<Team />} />
+
+          <Route path="messages" element={<Messages />} />
         </Route>
       </Routes>
     </Router>

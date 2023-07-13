@@ -1,0 +1,66 @@
+
+[
+  {
+    "slug": "GlobalLogic-19.10.2021.17.22",
+    "name": "GlobalLogic",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit, sed do eiusmod temp.",
+    "date": "19.10.2021 17:22",
+    "photo": "https://www.globallogic.com/wp-content/uploads/2021/11/Symbol-29.png"
+  },
+  {
+    "slug": "LinkedIn-19.10.2021.18.22",
+    "name": "LinkedIn",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit, sed do eiusmod temp.",
+    "date": "19.10.2021 18:22",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/800px-LinkedIn_logo_initials.png"
+  },
+  {
+    "slug": "Google-20.10.2021.18.22",
+    "name": "Google",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit, sed do eiusmod temp.",
+    "date": "20.10.2021 18:22",
+    "photo": "https://media.lpgenerator.ru/uploads/2019/07/11/1_thumb600x460.jpg"
+  },
+  {
+    "slug": "GlobalLogic-19.10.2021.17.23",
+    "name": "GlobalLogic",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit, sed do eiusmod temp.",
+    "date": "19.10.2021 17:23",
+    "photo": "https://www.globallogic.com/wp-content/uploads/2021/11/Symbol-29.png"
+  },
+  {
+    "slug": "LinkedIn-19.10.2021.19.22",
+    "name": "LinkedIn",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit, sed do eiusmod temp.",
+    "date": "19.10.2021 19:22",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/800px-LinkedIn_logo_initials.png"
+  },
+  {
+    "slug": "Google-20.10.2022.18.22",
+    "name": "Google",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit, sed do eiusmod temp.",
+    "date": "20.10.2022 18:22",
+    "photo": "https://media.lpgenerator.ru/uploads/2019/07/11/1_thumb600x460.jpg"
+  },
+  {
+    "slug": "GlobalLogic-19.10.2023.17.22",
+    "name": "GlobalLogic",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit, sed do eiusmod temp.",
+    "date": "19.10.2023 17:22",
+    "photo": "https://www.globallogic.com/wp-content/uploads/2021/11/Symbol-29.png"
+  },
+  {
+    "slug": "LinkedIn-21.10.2021.18.22",
+    "name": "LinkedIn",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit, sed do eiusmod temp.",
+    "date": "21.10.2021 18:22",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/800px-LinkedIn_logo_initials.png"
+  },
+  {
+    "slug": "Google-25.10.2021.18.22",
+    "name": "Google",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit, sed do eiusmod temp.",
+    "date": "25.10.2021 18:22",
+    "photo": "https://media.lpgenerator.ru/uploads/2019/07/11/1_thumb600x460.jpg"
+  }
+]
