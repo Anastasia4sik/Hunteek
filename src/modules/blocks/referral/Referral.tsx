@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 /* eslint-disable no-alert */
 import React, { RefObject, useRef, useState } from 'react';
-import { ReferraCard } from '../../shared/referralCard';
+import { ReferralCard } from '../../shared/referralCard';
 import { Pagination } from '../../shared/pagination';
 
-const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 8, 9, 10, 11, 12, 9, 10, 11, 12];
+import referralInfo from '../../../api/referralPerson.json';
 
 export const Referral: React.FC = () => {
   const inputRef: RefObject<HTMLInputElement> = useRef(null);
@@ -12,10 +12,10 @@ export const Referral: React.FC = () => {
   const [perPage] = useState(3);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const total = array.length;
+  const total = referralInfo.length;
   const firstItem = (currentPage - 1) * perPage;
   const lastItem = currentPage * perPage;
-  const itemsPerPage = array.slice(firstItem, lastItem);
+  const itemsPerPage = referralInfo.slice(firstItem, lastItem);
   let newHash: string;
 
   const handleOnPageChange = (page: number | string) => {
@@ -74,8 +74,8 @@ export const Referral: React.FC = () => {
         </div>
 
         <div className="referral__catalog d-flex flex-row justify-content-between align-items-center">
-          {itemsPerPage.map(each => (
-            <ReferraCard key={each} />
+          {itemsPerPage.map(person => (
+            <ReferralCard key={person.slug} personInfo={person} />
           ))}
         </div>
 

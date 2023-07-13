@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { General } from '../../shared/general';
 import { Profile } from '../../shared/profile';
 import { EditProfile } from '../editProfile';
@@ -10,6 +10,10 @@ import { EditResume } from '../editResume';
 import { CreateProject } from '../createProject';
 import { AllWallets } from '../allWallets';
 import { Transfer } from '../transfer';
+import { Reporting } from '../reporting';
+import { ReferralPerson } from '../../../types/referralPerson';
+
+import referralInfo from '../../../api/referralPerson.json';
 
 type Props = {
   purpose: string;
@@ -17,9 +21,33 @@ type Props = {
   employees?: Employee[];
   recruteir?: Recruiter;
   recruteirs?: Recruiter[];
+  referralPerson?: ReferralPerson;
 };
 
-export const Info: React.FC<Props> = ({ purpose, employee, employees }) => {
+export const Info: React.FC<Props> = ({
+  purpose,
+  employee,
+  employees,
+}) => {
+  const [personInfo, setPersonInfo] = useState<ReferralPerson | null>(null);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const slug = window.location.hash.substring(5);
+      const foundPersonInfo = referralInfo.find(person => person.slug === slug);
+
+      setPersonInfo(foundPersonInfo || null);
+    };
+
+    handleHashChange(); // Handle initial hash on component mount
+
+    window.addEventListener('hashchange', handleHashChange); // Listen for hash change events
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange); // Cleanup the event listener
+    };
+  }, []);
+
   let title;
   let content;
 
@@ -52,7 +80,8 @@ export const Info: React.FC<Props> = ({ purpose, employee, employees }) => {
     content = <Transfer />;
   } else if (purpose === 'reporting') {
     title = 'Reporting on payments';
-    content = <Transfer />;
+
+    content = personInfo ? <Reporting personInfo={personInfo} /> : null;
   } else {
     title = '';
     content = '';

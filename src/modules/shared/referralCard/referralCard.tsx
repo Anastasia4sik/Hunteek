@@ -2,25 +2,29 @@ import React from 'react';
 
 import { UserPhoto } from '../userPhoto';
 
-import photo from '../../../img/photo/user.png';
+import { ReferralPerson } from '../../../types/referralPerson';
 
-export const ReferraCard: React.FC = () => {
+type Props = {
+  personInfo: ReferralPerson,
+};
+
+export const ReferralCard: React.FC<Props> = ({ personInfo }) => {
   return (
-    <a href="#reporting-of-payments" className="referral__card d-flex flex-column align-items-center block">
-      <UserPhoto size={20} photo={photo} />
+    <a href={`#ref-${personInfo.slug}`} className="referral__card d-flex flex-column align-items-center block">
+      <UserPhoto size={20} photo={personInfo.photo} />
 
       <div className="referral__card__user d-flex flex-column align-items-center">
         <p className="referral__card__name list-text">
-          Olena Maccorter
+          {personInfo.name}
         </p>
 
         <p className="referral__card__number light-text">
-          36578
+          {personInfo.number}
         </p>
       </div>
 
       <p className="referral__card__amount list-text">
-        1200.00
+        {personInfo.amount}
       </p>
     </a>
   );

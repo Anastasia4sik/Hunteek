@@ -1,0 +1,35 @@
+.reporting {
+  &__top {
+    margin-bottom: 480px;
+
+    &__name,
+    &__profit,
+    &__number {
+      color: $grey-text;
+    }
+
+    &__photo {
+      margin-bottom: 18px;
+    }
+
+    &__number {
+      margin-bottom: 16px;
+    }
+  }
+  padding: 0 30px;
+
+  &__catalog {
+    width: 100%;
+    position: relative;
+
+    &::-webkit-scrollbar {
+      height: 6px;
+
+
+  
+      @include onBigDesktop {
+        height: 8px;
+      }
+    }
+  }
+}
