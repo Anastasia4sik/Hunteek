@@ -27,6 +27,8 @@ export const MyProfile: React.FC = () => {
         setLocation('edit-profile');
       } else if (window.location.hash === '#block-user') {
         setLocation('block');
+      } else if (window.location.hash === '#rating') {
+        setLocation('rating');
       } else {
         setLocation('general');
       }

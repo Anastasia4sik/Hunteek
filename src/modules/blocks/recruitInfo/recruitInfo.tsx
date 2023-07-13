@@ -43,7 +43,9 @@ export const RecruitInfo: React.FC<Props> = ({ recruiter }) => {
                   {`${name} ${lastname}`}
                 </p>
 
-                <Rate />
+                <a href="#rating">
+                  <Rate />
+                </a>
 
                 <p className="recruitInfo__user__info__location small-text">
                   {`${homeCountry}, ${homeCity}`}

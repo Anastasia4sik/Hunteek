@@ -78,6 +78,8 @@ export const Info: React.FC<Props> = ({
   } else if (purpose === 'transfer') {
     title = 'Transfer of funds';
     content = <Transfer />;
+  } else if (purpose === 'rating') {
+    content = <Transfer />;
   } else if (purpose === 'reporting') {
     title = 'Reporting on payments';
 
@@ -90,9 +92,13 @@ export const Info: React.FC<Props> = ({
   return (
     <div className="info block">
       <div className="info__container">
-        <h3 className="info__title main-text d-block text-center">
-          {title}
-        </h3>
+        {purpose === 'rating' ? (
+          null
+        ) : (
+          <h3 className="info__title main-text d-block text-center">
+            {title}
+          </h3>
+        )}
 
         {content}
       </div>

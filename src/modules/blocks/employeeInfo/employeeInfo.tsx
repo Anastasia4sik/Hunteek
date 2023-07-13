@@ -45,7 +45,9 @@ export const EmployeeInfo: React.FC<Props> = ({ employee }) => {
                     {name}
                   </p>
 
-                  <Rate />
+                  <a href="#rating">
+                    <Rate />
+                  </a>
 
                   <p className="employeeInfo__user__info__location small-text">
                     {`${homeCountry}, ${homeCity}`}
