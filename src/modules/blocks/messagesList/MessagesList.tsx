@@ -36,9 +36,8 @@ export const MessagesList: React.FC = () => {
 
   return (
     <div className="messages">
-      <div className="referral__container block">
-
-        <div className="referral__catalog d-flex flex-column justify-content-between align-items-center">
+      <div className="block">
+        <div className="d-flex flex-column justify-content-between">
           {itemsPerPage.map(message => (
             <Message key={message.slug} message={message} />
           ))}

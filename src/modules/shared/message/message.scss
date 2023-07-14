@@ -1,0 +1,57 @@
+.message {
+  padding: 16px 0;
+  margin: 0 30px;
+
+  @include onBigDesktop {
+    padding: 18px 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $grey-border;
+  }
+
+  &__top {
+    margin-bottom: 14px;
+  }
+
+  &__title {
+    gap: 22px;
+
+    &__photo {
+      border-radius: 50%;
+
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__content,
+  &__date {
+    color: $grey-text;
+  }
+
+  &__content {
+    margin-bottom: 14px;
+  }
+
+  &__btns {
+    gap: 4px;
+  }
+
+  &__btn {
+    border: none;
+    background-color: transparent;
+
+    &__img {
+      transition: filter 0.3s ease-in-out;
+
+      &:hover {
+        filter: brightness(1.5);
+      }
+    }
+  }
+}
