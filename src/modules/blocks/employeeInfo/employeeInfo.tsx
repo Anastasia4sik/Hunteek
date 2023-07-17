@@ -34,7 +34,7 @@ export const EmployeeInfo: React.FC<Props> = ({ employee }) => {
   return (
     <a href="my-profile/my-resume">
       <div className="employeeInfo block">
-        <div className="employeeInfo__content scroll">
+        <div className="employeeInfo__content">
           <div className="employeeInfo__user">
             <div className="employeeInfo__user__top d-flex flex-row align-items-start justify-content-between">
               <div className="employeeInfo__user__top__container d-flex flex-row align-items-center">

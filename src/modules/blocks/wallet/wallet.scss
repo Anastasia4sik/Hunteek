@@ -8,6 +8,8 @@
 
     height: calc(55vh - #{$header-height} - 21px);
 
+    margin-bottom: $main-gap;
+
     &__blocks {
       gap: 16px;
 

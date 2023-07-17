@@ -12,7 +12,7 @@ type Props = {
 export const BlockUser: React.FC<Props> = ({ employees }) => {
   return (
     <div className="blockUser">
-      <div className="blockUser__content scroll">
+      <div className="blockUser__content">
         <SearchUser />
 
         <div className="

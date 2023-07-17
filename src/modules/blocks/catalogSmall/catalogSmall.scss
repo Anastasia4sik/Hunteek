@@ -1,9 +1,16 @@
 .catalog {
-  min-width: 800px;
+
+  &__sideinfo {
+    min-width: 800px;
+
+    @include onBigDesktop {
+      min-width: 1100px;
+    }
+  }
 
   &__container {
     padding: $main-p 30px 0;
-    margin-bottom: $main-p;
+    margin-bottom: 8px;
   }
 
   &__header {

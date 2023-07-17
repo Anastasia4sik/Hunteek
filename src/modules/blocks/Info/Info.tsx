@@ -14,6 +14,7 @@ import { Reporting } from '../reporting';
 import { ReferralPerson } from '../../../types/referralPerson';
 
 import referralInfo from '../../../api/referralPerson.json';
+import { Rating } from '../rating';
 
 type Props = {
   purpose: string;
@@ -79,7 +80,7 @@ export const Info: React.FC<Props> = ({
     title = 'Transfer of funds';
     content = <Transfer />;
   } else if (purpose === 'rating') {
-    content = <Transfer />;
+    content = <Rating />;
   } else if (purpose === 'reporting') {
     title = 'Reporting on payments';
 

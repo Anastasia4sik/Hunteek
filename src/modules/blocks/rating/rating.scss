@@ -1,0 +1,35 @@
+.rating {
+  padding: 48px 30px;
+
+  &__img {
+    margin: 0 auto 58px;
+  }
+
+  &__content {
+    gap: 36px;
+  }
+
+  &__block {
+    gap: 10px;
+  }
+
+  &__btn {
+    height: 36px;
+    width: 40%;
+
+    color: $white-text-main;
+
+    margin: 80px auto 0;
+  }
+}
+
+.withStar {
+  justify-content: center;
+  align-items: center;
+
+  width: 22vw;
+
+  &__img {
+    filter: brightness(0.5);
+  }
+}

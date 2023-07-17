@@ -33,7 +33,7 @@ export const Resume: React.FC<Props> = ({ employee }) => {
 
   return (
     <div className="resume">
-      <div className="resume__content scroll">
+      <div className="resume__content">
         <div className="resume__main block">
           <div className="resume__main__top d-flex flex-row align-items-start justify-content-between">
             <div className="resume__main__top__container d-flex flex-row align-items-center">

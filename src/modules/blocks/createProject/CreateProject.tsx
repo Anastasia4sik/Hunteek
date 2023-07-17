@@ -11,7 +11,7 @@ import photo from '../../../img/photo/user.png';
 export const CreateProject: React.FC = () => {
   return (
     <div className="edit">
-      <form action="#" className="edit__content scroll">
+      <form action="#" className="edit__content">
         <fieldset className="edit__container">
           <label htmlFor="uploadPhoto" className="edit__label list-text"> Image </label>
 

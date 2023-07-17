@@ -68,7 +68,7 @@ export const Team: React.FC = () => {
 
                 <div className="card__info d-flex flex-column justify-content-center">
                   <p className="card__info__desc main-text">
-                    Kiev
+                    Kyiv
                   </p>
 
                   <p className="card__info__desc main-text">

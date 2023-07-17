@@ -13,6 +13,8 @@ import { Recruiter } from '../../types/Recruiter';
 import { Employee } from '../../types/Employee';
 import { EmployeeInfo } from '../blocks/employeeInfo';
 
+import starBig from '../../img/icons/card/rate/bigStar.svg';
+
 export const MyProfile: React.FC = () => {
   const [location, setLocation] = useState('');
   const [recruiters, setRecruiters] = useState<Recruiter[]>([]);
@@ -83,9 +85,15 @@ export const MyProfile: React.FC = () => {
               <RecruitInfo recruiter={recruiters[0]} />
 
               <div className="block content__top__empty">
-                <div className="content__top__empty__hide">
-                  <RecruitInfo recruiter={recruiters[0]} />
-                </div>
+                {location === 'rating' ? (
+                  <div className="content__top withStar d-flex">
+                    <img src={starBig} alt="Star Big" className="withStar__img" />
+                  </div>
+                ) : (
+                  <div className="content__top__empty__hide">
+                    <RecruitInfo recruiter={recruiters[0]} />
+                  </div>
+                )}
               </div>
             </div>
           )}

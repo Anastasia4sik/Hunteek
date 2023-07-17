@@ -5,7 +5,7 @@ import React from 'react';
 export const Transfer: React.FC = () => {
   return (
     <div className="edit">
-      <form action="#" className="edit__content scroll">
+      <form action="#" className="edit__content">
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text">
             Wallet

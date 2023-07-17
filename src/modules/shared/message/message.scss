@@ -1,21 +1,29 @@
 .message {
-  padding: 16px 0;
-  margin: 0 30px;
+  padding: 12px 24px;
 
   @include onBigDesktop {
-    padding: 18px 0;
+    padding: 18px 30px;
   }
 
-  &:hover {
-    cursor: pointer;
-  }
+  transition: all 0.1s ease-in-out;
 
   &:not(:last-of-type) {
     border-bottom: 1px solid $grey-border;
   }
 
+  &:hover {
+    cursor: pointer;
+
+    border-left: 5px solid #296051;
+    margin: 12px 0;
+  }
+
   &__top {
-    margin-bottom: 14px;
+    margin-bottom: 8px;
+
+    @include onBigDesktop {
+      margin-bottom: 14px;
+    }
   }
 
   &__title {
@@ -35,7 +43,11 @@
   }
 
   &__content {
-    margin-bottom: 14px;
+    margin-bottom: 6px;
+
+    @include onBigDesktop {
+      margin-bottom: 14px;
+    }
   }
 
   &__btns {

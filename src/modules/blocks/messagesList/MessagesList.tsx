@@ -1,13 +1,15 @@
 /* eslint-disable max-len */
 /* eslint-disable no-alert */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Pagination } from '../../shared/pagination';
 
 import messages from '../../../api/messages.json';
 import { Message } from '../../shared/message';
 
 export const MessagesList: React.FC = () => {
-  const [perPage] = useState(5);
+  const [largePerPage] = useState(5);
+  const [smallPerPage] = useState(6);
+  const [perPage, setPerPage] = useState(largePerPage); // Start with the largePerPage value
   const [currentPage, setCurrentPage] = useState(1);
 
   const total = messages.length;
@@ -15,6 +17,24 @@ export const MessagesList: React.FC = () => {
   const lastItem = currentPage * perPage;
   const itemsPerPage = messages.slice(firstItem, lastItem);
   let newHash: string;
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1670) {
+        setPerPage(smallPerPage);
+      } else {
+        setPerPage(largePerPage);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [largePerPage, smallPerPage]);
 
   const handleOnPageChange = (page: number | string) => {
     if (typeof page === 'number') {
