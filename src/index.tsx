@@ -12,6 +12,8 @@ import { Team } from './modules/Team';
 import { MyWalletCatFull } from './modules/MyWalletCatFull';
 import { Messages } from './modules/Messages';
 
+import { Login } from './modules/Login';
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
@@ -32,6 +34,8 @@ ReactDOM.render(
           <Route path="teams" element={<Team />} />
 
           <Route path="messages" element={<Messages />} />
+
+          <Route path="login" element={<Login />} />
         </Route>
       </Routes>
     </Router>

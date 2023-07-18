@@ -32,7 +32,7 @@ export const Profile: React.FC<Props> = ({ employee }) => {
 
   return (
     <div className="profile">
-      <div className="profile__content scroll">
+      <div className="profile__content">
         <div className="profile__user">
           <div className="profile__user__top d-flex flex-row align-items-center">
             <UserPhoto size={20} photo={photo} />

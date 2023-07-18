@@ -52,7 +52,7 @@ export const MyWallet: React.FC = () => {
             <>
               <Referral />
 
-              <CatalogFull isShorter />
+              <CatalogFull forSideInfo />
             </>
           ) : (
             <>

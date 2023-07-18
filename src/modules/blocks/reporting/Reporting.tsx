@@ -38,7 +38,7 @@ export const Reporting: React.FC<Props> = ({ personInfo }) => {
         </div>
 
         <div className="reporting__catalog scroll">
-          <CatalogFull isShorter forSideInfo />
+          <CatalogFull forSideInfo />
         </div>
       </div>
     </div>

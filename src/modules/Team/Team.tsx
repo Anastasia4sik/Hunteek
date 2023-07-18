@@ -8,17 +8,23 @@ import { Info } from '../blocks/Info';
 import { Rate } from '../shared/rate';
 import { UserPhoto } from '../shared/userPhoto';
 
+import { Employee } from '../../types/Employee';
+import { getEmployees } from '../../api/api';
+
 import photo from '../../img/photo/user.png';
 import eye from '../../img/icons/card/eye.svg';
 import message from '../../img/icons/card/message.svg';
 
 export const Team: React.FC = () => {
   const [location, setLocation] = useState('');
+  const [employees, setEmployees] = useState<Employee[]>([]);
 
   useEffect(() => {
     const handleHashChange = () => {
       if (window.location.hash === '#create-project') {
         setLocation('project');
+      } else if (window.location.hash === '#create-resume') {
+        setLocation('team');
       } else {
         setLocation('general');
       }
@@ -31,6 +37,12 @@ export const Team: React.FC = () => {
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
     };
+  }, []);
+
+  useEffect(() => {
+    getEmployees().then(data => {
+      setEmployees(data);
+    });
   }, []);
 
   return (
@@ -51,7 +63,7 @@ export const Team: React.FC = () => {
                 </h3>
               </div>
 
-              <a href="#profile">
+              <a href="#team">
                 <div className="card__person">
                   <div className="card__person__inner d-flex flex-row justify-content-between align-items-center">
                     <div className="card__person__content d-flex flex-column">
@@ -106,7 +118,7 @@ export const Team: React.FC = () => {
 
       </div>
 
-      <Info purpose={location} />
+      <Info purpose={location} employee={employees[0]} />
     </div>
   );
 };

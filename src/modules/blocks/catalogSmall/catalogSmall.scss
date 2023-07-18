@@ -1,16 +1,13 @@
 .catalog {
-
   &__sideinfo {
-    min-width: 800px;
-
-    @include onBigDesktop {
-      min-width: 1100px;
-    }
+      min-width: max-content;
   }
 
   &__container {
     padding: $main-p 30px 0;
     margin-bottom: 8px;
+
+    width: 48vw;
   }
 
   &__header {
@@ -25,7 +22,7 @@
     }
 
     &__btn {
-      height: 43px;
+      height: 36px;
 
       padding: 0 30px;  
 
@@ -35,6 +32,10 @@
       color: $white-text-main;
 
       cursor: pointer;
+
+      @include onBigDesktop {
+        height: 44px;
+      }
     }
   }
 

@@ -68,7 +68,7 @@ export const Info: React.FC<Props> = ({
     title = 'Block a user';
     content = <BlockUser employees={employees} />;
   } else if (purpose === 'project') {
-    title = 'Create a vacancy';
+    title = 'Create a project';
     content = <CreateProject />;
   } else if (purpose === 'cryptoWallets') {
     title = 'All Cryptocurrency Wallet';
@@ -83,8 +83,10 @@ export const Info: React.FC<Props> = ({
     content = <Rating />;
   } else if (purpose === 'reporting') {
     title = 'Reporting on payments';
-
     content = personInfo ? <Reporting personInfo={personInfo} /> : null;
+  } else if (purpose === 'team') {
+    title = 'Create a new smart contract resume';
+    content = <EditResume employee={employee} />;
   } else {
     title = '';
     content = '';

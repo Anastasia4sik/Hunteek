@@ -118,6 +118,35 @@
       }
     }
   }
+
+  &__messages {
+    gap: 18px;
+
+    padding: 9px 30px;
+
+    &__item {
+      gap: 10px;
+
+      color: $grey-text;
+
+      transition: filter 0.3s ease-in-out;
+
+      &--delete {
+        border-bottom: 1px solid $grey-border;
+
+        padding-bottom: 15px;
+      }
+
+      &:hover {
+        filter: brightness(2);
+      }
+
+      &__img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
 }
 
 .checkbox-label {

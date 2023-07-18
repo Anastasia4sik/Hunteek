@@ -1,6 +1,14 @@
 import React from 'react';
 
+const amountArray = [0, 1, 2, 3, 4, 5];
+
 export const CatalogSmall: React.FC = () => {
+  if (window.innerWidth <= 1670) {
+    amountArray.length = 5;
+  } else {
+    amountArray.length = 6;
+  }
+
   return (
     <div className="catalog">
       <div className="catalog__container block">
@@ -42,7 +50,7 @@ export const CatalogSmall: React.FC = () => {
         </div>
 
         <ul>
-          {[0, 1, 2, 3, 4, 5].map(each => (
+          {amountArray.map(each => (
             <li key={each}>
               <div className="catalog__item d-flex flex-row justify-content-between align-items-center">
                 <p className="catalog__item__date bold-text">
