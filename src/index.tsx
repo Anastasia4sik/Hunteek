@@ -37,6 +37,7 @@ ReactDOM.render(
 
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Login />} />
+          <Route path="code" element={<Login />} />
         </Route>
       </Routes>
     </Router>

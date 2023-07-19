@@ -6,56 +6,85 @@ import { useLocation } from 'react-router-dom';
 
 import { SignIn } from '../blocks/SignIn';
 import { Register } from '../blocks/Register';
+import { EnterCode } from '../blocks/EnterCode';
 
 export const Login: React.FC = () => {
-  const location = useLocation(); // Get the current location using the useLocation hook
-  const isRegisterPage = location.pathname === '/register';
+  const location = useLocation();
+  const path = location.pathname;
+  let headerText;
+
+  if (path === '/register') {
+    headerText = 'Register to continue';
+  } else if (path === '/code') {
+    headerText = 'Code';
+  } else {
+    headerText = 'Sign in to continue';
+  }
+
+  let content;
+
+  switch (path) {
+    case '/register':
+      content = <Register />;
+      break;
+    case '/code':
+      content = <EnterCode />;
+      break;
+    default:
+      content = <SignIn />;
+      break;
+  }
 
   return (
     <div className="login position-relative">
       <div className="login__content position-absolute">
         <h1 className="login__title bold-text d-flex justify-content-center">
-          {isRegisterPage ? 'Register to continue' : 'Sign in to continue'}
+          {headerText}
         </h1>
 
         <form action="#" className="login__form d-flex flex-column">
-          {isRegisterPage ? <Register /> : <SignIn />}
+          {content}
 
           <div className="login__form__bottom d-flex flex-row justify-content-between align-items-center">
-            <div className="login__form__bottom__remember d-flex flex-row align-items-start">
-              <input type="checkbox" id="rememberMe" className="login__form__bottom__remember__input" />
+            {path !== '/code' ? (
+              <div className="login__form__bottom__remember d-flex flex-row align-items-start">
+                <input type="checkbox" id="rememberMe" className="login__form__bottom__remember__input" />
 
-              <label htmlFor="rememberMe" className="list-text login__form__bottom__remember__label">
-                Remember me
-              </label>
-            </div>
+                <label htmlFor="rememberMe" className="list-text login__form__bottom__remember__label">
+                  Remember me
+                </label>
+              </div>
+            ) : null}
 
             <div className="login__form__bottom__btns d-flex flex-row align-items-center">
-              {isRegisterPage ? (
-                <>
-                  <a href="/login" className="login__form__bottom__btn login__form__bottom__btn--register list-text">
-                    Login
-                  </a>
-
-                  <button type="button" className="login__form__bottom__btn login__form__bottom__btn--login btn-grey list-text">
-                    Register
-                  </button>
-                </>
+              {path === '/code' ? (
+                <a
+                  href="/"
+                  className="login__form__bottom__btn login__form__bottom__btn--main btn-grey list-text"
+                >
+                  Continue
+                </a>
               ) : (
                 <>
-                  <a href="/register" className="login__form__bottom__btn login__form__bottom__btn--register list-text">
-                    Register
+                  <a
+                    href={path === '/register' ? '/login' : '/register'}
+                    className="login__form__bottom__btn login__form__bottom__btn--sec list-text"
+                  >
+                    {path === '/register' ? 'Login' : 'Register'}
                   </a>
 
-                  <button type="button" className="login__form__bottom__btn login__form__bottom__btn--login btn-grey list-text">
-                    Login
-                  </button>
+                  <a
+                    href={path === '/register' ? '/code' : '/register'}
+                    className="login__form__bottom__btn login__form__bottom__btn--main btn-grey list-text"
+                  >
+                    {path === '/register' ? 'Register' : 'Login'}
+                  </a>
                 </>
               )}
             </div>
           </div>
 
-          {isRegisterPage ? (
+          {path === '/register' ? (
             <p className="list-text login__form__desc text-center">
               By signing up I agree with
               {' '}
