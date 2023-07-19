@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import profile from '../../../img/icons/header/profile.svg';
 import key from '../../../img/icons/login/key.svg';
@@ -6,6 +6,20 @@ import email from '../../../img/icons/login/email.svg';
 import phone from '../../../img/icons/login/phone.svg';
 
 export const Register: React.FC = () => {
+  const [password, setPassword] = useState('');
+  const [repeatPassword, setRepeatPassword] = useState('');
+  const [passwordMatch, setPasswordMatch] = useState(true);
+  const [submitted] = useState(false);
+
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value);
+  };
+
+  const handleRepeatPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setRepeatPassword(event.target.value);
+    setPasswordMatch(event.target.value === password);
+  };
+
   return (
     <div className="login__form__inputs d-flex flex-column">
       <div className="login__form__block position-relative">
@@ -31,7 +45,7 @@ export const Register: React.FC = () => {
         />
 
         <input
-          type="text"
+          type="email"
           placeholder="E-mail address"
           className="login__form__input"
           required
@@ -65,6 +79,8 @@ export const Register: React.FC = () => {
           placeholder="Create a password"
           className="login__form__input login__form__input--2"
           required
+          value={password}
+          onChange={handlePasswordChange}
         />
       </div>
 
@@ -78,9 +94,15 @@ export const Register: React.FC = () => {
         <input
           type="text"
           placeholder="Repeat the created password"
-          className="login__form__input login__form__input--2"
+          className={`login__form__input login__form__input--2 ${!passwordMatch && 'login__form__input--invalid'}`}
           required
+          value={repeatPassword}
+          onChange={handleRepeatPasswordChange}
         />
+
+        {!passwordMatch && submitted && (
+          <p className="login__form__message">Passwords do not match.</p>
+        )}
       </div>
     </div>
   );

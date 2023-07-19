@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-console */
-import React from 'react';
+import React, { useState } from 'react';
+import classNames from 'classnames';
 import { useLocation } from 'react-router-dom';
 
 import { SignIn } from '../blocks/SignIn';
@@ -9,6 +10,8 @@ import { Register } from '../blocks/Register';
 import { EnterCode } from '../blocks/EnterCode';
 
 export const Login: React.FC = () => {
+  const [, setSubmitted] = useState(false);
+
   const location = useLocation();
   const path = location.pathname;
   let headerText;
@@ -35,6 +38,11 @@ export const Login: React.FC = () => {
       break;
   }
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
     <div className="login position-relative">
       <div className="login__content position-absolute">
@@ -42,10 +50,15 @@ export const Login: React.FC = () => {
           {headerText}
         </h1>
 
-        <form action="#" className="login__form d-flex flex-column">
+        <form action="#" className="login__form d-flex flex-column" onSubmit={handleSubmit}>
           {content}
 
-          <div className="login__form__bottom d-flex flex-row justify-content-between align-items-center">
+          <div className={classNames(
+            'login__form__bottom d-flex flex-row align-items-center',
+            { 'justify-content-end': path === '/code' },
+            { 'justify-content-between': path !== '/code' },
+          )}
+          >
             {path !== '/code' ? (
               <div className="login__form__bottom__remember d-flex flex-row align-items-start">
                 <input type="checkbox" id="rememberMe" className="login__form__bottom__remember__input" />
@@ -58,12 +71,12 @@ export const Login: React.FC = () => {
 
             <div className="login__form__bottom__btns d-flex flex-row align-items-center">
               {path === '/code' ? (
-                <a
-                  href="/"
+                <button
+                  type="submit"
                   className="login__form__bottom__btn login__form__bottom__btn--main btn-grey list-text"
                 >
                   Continue
-                </a>
+                </button>
               ) : (
                 <>
                   <a
@@ -73,12 +86,12 @@ export const Login: React.FC = () => {
                     {path === '/register' ? 'Login' : 'Register'}
                   </a>
 
-                  <a
-                    href={path === '/register' ? '/code' : '/register'}
+                  <button
+                    type="submit"
                     className="login__form__bottom__btn login__form__bottom__btn--main btn-grey list-text"
                   >
                     {path === '/register' ? 'Register' : 'Login'}
-                  </a>
+                  </button>
                 </>
               )}
             </div>
@@ -98,9 +111,7 @@ export const Login: React.FC = () => {
                 Privacy policy
               </a>
             </p>
-          ) : (
-            ''
-          )}
+          ) : null}
         </form>
 
       </div>
