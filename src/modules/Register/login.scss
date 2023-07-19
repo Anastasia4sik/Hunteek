@@ -11,7 +11,7 @@
     border: none;
     border-radius: 30px;
 
-    top: 20%;
+    top: 30%;
     left: 35%;
 
     background-color: $grey-dark;
@@ -35,14 +35,16 @@
     padding: 48px 70px;
     margin: 0 auto;
 
-    &__inputs {
-      gap: 16px;
-
-      margin-bottom: 20px;
-    }
-
     &__block {
       height: 100%;
+
+      &--1 {
+        margin-bottom: 16px;
+      }
+
+      &--2 {
+        margin-bottom: 20px;
+      }
     }
 
     &__img {
@@ -124,23 +126,6 @@
           height: 50px;
         }
       };
-    }
-
-    &__desc {
-      color: $grey-text;
-
-      margin-top: 30px;
-
-      &__link {
-        text-decoration: underline;
-
-        transition: all 0.3s ease-in-out;
-
-        &:hover {
-          color: $white-text-sec;
-          text-decoration: underline;
-        }
-      }
     }
   }
 }

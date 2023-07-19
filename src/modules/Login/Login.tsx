@@ -1,30 +1,25 @@
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-console */
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
-import profile from '../../img/icons/header/profile.svg';
-import key from '../../img/icons/key.svg';
+import { SignIn } from '../blocks/SignIn';
+import { Register } from '../blocks/Register';
 
 export const Login: React.FC = () => {
+  const location = useLocation(); // Get the current location using the useLocation hook
+  const isRegisterPage = location.pathname === '/register';
+
   return (
     <div className="login position-relative">
       <div className="login__content position-absolute">
         <h1 className="login__title bold-text d-flex justify-content-center">
-          Sign in to continue
+          {isRegisterPage ? 'Register to continue' : 'Sign in to continue'}
         </h1>
 
         <form action="#" className="login__form d-flex flex-column">
-          <div className="login__form__block login__form__block--1 position-relative">
-            <img src={profile} alt="Name or Phone" className="login__form__img login__form__img--profile position-absolute" />
-
-            <input type="text" placeholder="Enter Name or Phone" className="login__form__input" />
-          </div>
-
-          <div className="login__form__block login__form__block--2 position-relative">
-            <img src={key} alt="Password" className="login__form__img login__form__img--password position-absolute" />
-
-            <input type="text" placeholder="Enter Password" className="login__form__input login__form__input--2" />
-          </div>
+          {isRegisterPage ? <Register /> : <SignIn />}
 
           <div className="login__form__bottom d-flex flex-row justify-content-between align-items-center">
             <div className="login__form__bottom__remember d-flex flex-row align-items-start">
@@ -35,17 +30,50 @@ export const Login: React.FC = () => {
               </label>
             </div>
 
-            <div className="login__form__bottom__btns d-flex flex-row">
-              <button type="button" className="login__form__bottom__btn login__form__bottom__btn--register list-text">
-                Register
-              </button>
+            <div className="login__form__bottom__btns d-flex flex-row align-items-center">
+              {isRegisterPage ? (
+                <>
+                  <a href="/login" className="login__form__bottom__btn login__form__bottom__btn--register list-text">
+                    Login
+                  </a>
 
-              <button type="button" className="login__form__bottom__btn login__form__bottom__btn--login btn-grey list-text">
-                Login
-              </button>
+                  <button type="button" className="login__form__bottom__btn login__form__bottom__btn--login btn-grey list-text">
+                    Register
+                  </button>
+                </>
+              ) : (
+                <>
+                  <a href="/register" className="login__form__bottom__btn login__form__bottom__btn--register list-text">
+                    Register
+                  </a>
+
+                  <button type="button" className="login__form__bottom__btn login__form__bottom__btn--login btn-grey list-text">
+                    Login
+                  </button>
+                </>
+              )}
             </div>
           </div>
+
+          {isRegisterPage ? (
+            <p className="list-text login__form__desc text-center">
+              By signing up I agree with
+              {' '}
+              <a href="/terms-of-service" className="login__form__desc__link">
+                Terms of service
+              </a>
+              {' '}
+              and processing of personal data as started in the
+              {' '}
+              <a href="/terms-of-service" className="login__form__desc__link">
+                Privacy policy
+              </a>
+            </p>
+          ) : (
+            ''
+          )}
         </form>
+
       </div>
     </div>
   );

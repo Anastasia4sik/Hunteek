@@ -36,6 +36,7 @@ ReactDOM.render(
           <Route path="messages" element={<Messages />} />
 
           <Route path="login" element={<Login />} />
+          <Route path="register" element={<Login />} />
         </Route>
       </Routes>
     </Router>
