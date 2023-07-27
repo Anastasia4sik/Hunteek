@@ -6,22 +6,18 @@ import classNames from 'classnames';
 import logo from '../../../img/icons/logo.svg';
 import home from '../../../img/icons/menu/home.svg';
 import news from '../../../img/icons/menu/news.svg';
-import subsc from '../../../img/icons/menu/subsc.svg';
 import team from '../../../img/icons/menu/team.svg';
 import project from '../../../img/icons/menu/project.svg';
-import task from '../../../img/icons/menu/task.svg';
 import message from '../../../img/icons/menu/message.svg';
-import analytics from '../../../img/icons/menu/analytics.svg';
 
 export const Menu: React.FC = () => {
   const isHome = window.location.pathname === '/';
   const isNews = window.location.pathname === '/news';
-  const isSubs = window.location.pathname === '/subscriptions';
-  const isTeam = window.location.pathname === '/teams';
+  const isSupport = window.location.pathname === '/support';
+  const isMessages = window.location.pathname === '/messages';
+  const isWallet = window.location.pathname === '/my-wallet';
   const isProjects = window.location.pathname === '/projects';
-  const isTask = window.location.pathname === '/task';
-  const isMessage = window.location.pathname === '/messages';
-  const isAnalytics = window.location.pathname === '/analytics';
+  const isFeedback = window.location.pathname === '/feedback';
 
   return (
     <div className="menu d-flex flex-column">
@@ -57,30 +53,6 @@ export const Menu: React.FC = () => {
             </a>
 
             <a
-              href="/subscriptions"
-              className={classNames(
-                'menu__nav__item list-text d-flex flex-row align-items-center',
-                { menu__nav__item__selected: isSubs },
-              )}
-            >
-              <img src={subsc} alt="Subscriptions" className="menu__nav__item__img" />
-
-              Subscriptions
-            </a>
-
-            <a
-              href="/teams"
-              className={classNames(
-                'menu__nav__item list-text d-flex flex-row align-items-center',
-                { menu__nav__item__selected: isTeam },
-              )}
-            >
-              <img src={team} alt="Team" className="menu__nav__item__img" />
-
-              Team
-            </a>
-
-            <a
               href="/projects"
               className={classNames(
                 'menu__nav__item list-text d-flex flex-row align-items-center',
@@ -89,43 +61,66 @@ export const Menu: React.FC = () => {
             >
               <img src={project} alt="Project" className="menu__nav__item__img" />
 
-              Project
-            </a>
-
-            <a
-              href="/task"
-              className={classNames(
-                'menu__nav__item list-text d-flex flex-row align-items-center',
-                { menu__nav__item__selected: isTask },
-              )}
-            >
-              <img src={task} alt="Task" className="menu__nav__item__img" />
-
-              Task
+              My Projects
             </a>
 
             <a
               href="/messages"
               className={classNames(
                 'menu__nav__item list-text d-flex flex-row align-items-center',
-                { menu__nav__item__selected: isMessage },
+                { menu__nav__item__selected: isMessages },
               )}
             >
               <img src={message} alt="Message" className="menu__nav__item__img" />
 
-              Message
+              My Messages
             </a>
 
             <a
-              href="/analytics"
+              href="/my-wallet"
               className={classNames(
                 'menu__nav__item list-text d-flex flex-row align-items-center',
-                { menu__nav__item__selected: isAnalytics },
+                { menu__nav__item__selected: isWallet },
               )}
             >
-              <img src={analytics} alt="Analytics" className="menu__nav__item__img" />
+              <img src={project} alt="Team" className="menu__nav__item__img" />
 
-              Analytics
+              My Wallet
+            </a>
+
+            <a
+              href="/my-profile"
+              className={classNames(
+                'menu__nav__item list-text d-flex flex-row align-items-center',
+              )}
+            >
+              <img src={team} alt="Team" className="menu__nav__item__img" />
+
+              My Profile
+            </a>
+
+            <a
+              href="/support"
+              className={classNames(
+                'menu__nav__item list-text d-flex flex-row align-items-center',
+                { menu__nav__item__selected: isSupport },
+              )}
+            >
+              <img src={team} alt="Support" className="menu__nav__item__img" />
+
+              Support
+            </a>
+
+            <a
+              href="/feedback"
+              className={classNames(
+                'menu__nav__item list-text d-flex flex-row align-items-center',
+                { menu__nav__item__selected: isFeedback },
+              )}
+            >
+              <img src={message} alt="Message" className="menu__nav__item__img" />
+
+              Send Feedback
             </a>
           </nav>
 

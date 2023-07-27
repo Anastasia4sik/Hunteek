@@ -38,11 +38,26 @@ export const Header: React.FC = () => {
   return (
     <div className="header d-flex flex-row align-items-center">
       <select className="header__select list-text" name="Language" id="language">
-        <option value="" selected disabled hidden>
+        <option
+          value=""
+          selected
+          disabled
+          hidden
+        >
           Language
         </option>
-        <option value="English">English</option>
-        <option value="Ukrainian">Ukrainian</option>
+
+        <option
+          value="English"
+        >
+          English
+        </option>
+
+        <option
+          value="Ukrainian"
+        >
+          Ukrainian
+        </option>
       </select>
 
       <div className="header__search position-relative">

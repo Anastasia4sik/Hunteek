@@ -21,15 +21,10 @@ export const Select: React.FC<Props> = ({
   setIsReferralChecked,
 }) => {
   const [isOpen1, setIsOpen1] = useState(false);
-  const [isOpen2, setIsOpen2] = useState(false);
   const [isOpen3, setIsOpen3] = useState(false);
 
   const handleToggle1 = () => {
     setIsOpen1(!isOpen1);
-  };
-
-  const handleToggle2 = () => {
-    setIsOpen2(!isOpen2);
   };
 
   const handleToggle3 = () => {
@@ -349,108 +344,6 @@ export const Select: React.FC<Props> = ({
               )}
             </div>
 
-            {!isMy && (
-              <div className={`select--2 celect__content  ${isOpen2 ? 'open' : ''}`}>
-                <div
-                  className={`select__header d-flex flex-row justify-content-between ${isOpen2 ? 'select__header--active' : ''}`}
-                  role="button"
-                  tabIndex={0}
-                  onClick={handleToggle2}
-                  onKeyDown={handleKeyDown}
-                >
-                  <span className="select__option list-text">Seller type</span>
-
-                  {!isOpen2 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
-                </div>
-
-                <ul
-                  className={`
-                  select__option__list
-                  select__option__list--2
-                  ${isOpen2 ? 'select__option__list--open' : 'select__option__list--close'}`}
-                >
-                  <li className="
-                  list-text
-                  select__option__list__item"
-                  >
-                    <label htmlFor="first-checkbox" className="checkbox-label list-text">
-                      <input
-                        type="checkbox"
-                        id="first-checkbox"
-                        name="option"
-                        value="first"
-
-                      />
-                      <span>first</span>
-                    </label>
-                  </li>
-
-                  <li className="
-                  list-text
-                  select__option__list__item"
-                  >
-                    <label htmlFor="second-checkbox" className="checkbox-label list-text">
-                      <input
-                        type="checkbox"
-                        id="second-checkbox"
-                        name="option"
-                        value="second"
-
-                      />
-                      <span>second</span>
-                    </label>
-                  </li>
-
-                  <li className="
-                  list-text
-                  select__option__list__item"
-                  >
-                    <label htmlFor="third-checkbox" className="checkbox-label list-text">
-                      <input
-                        type="checkbox"
-                        id="third-checkbox"
-                        name="option"
-                        value="third"
-                      />
-                      <span>third</span>
-                    </label>
-                  </li>
-
-                  <li className="
-                  list-text
-                  select__option__list__item"
-                  >
-                    <label htmlFor="fourth-checkbox" className="checkbox-label list-text">
-                      <input
-                        type="checkbox"
-                        id="fourth-checkbox"
-                        name="option"
-                        value="fourth"
-
-                      />
-                      <span>fourth</span>
-                    </label>
-                  </li>
-
-                  <li className="
-                  list-text
-                  select__option__list__item
-                  select__option__list__item--last"
-                  >
-                    <label htmlFor="fifth-checkbox" className="checkbox-label list-text">
-                      <input
-                        type="checkbox"
-                        id="fifth-checkbox"
-                        name="option"
-                        value="fifth"
-
-                      />
-                      <span>fifth</span>
-                    </label>
-                  </li>
-                </ul>
-              </div>
-            )}
           </>
         )}
       </div>
