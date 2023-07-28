@@ -21,23 +21,23 @@ ReactDOM.render(
         <Route path="/" element={<App />}>
           <Route index element={<Main />} />
 
-          <Route path="my-profile" element={<MyProfile />} />
+          <Route path="/my-profile" element={<MyProfile />} />
 
-          <Route path="my-profile/my-resume" element={<MyResume />} />
+          <Route path="/my-profile/my-resume" element={<MyResume />} />
 
-          <Route path="my-wallet" element={<MyWallet />} />
+          <Route path="/my-wallet" element={<MyWallet />} />
 
-          <Route path="my-wallet/catalog-full" element={<MyWalletCatFull />} />
+          <Route path="/my-wallet/catalog-full" element={<MyWalletCatFull />} />
 
-          <Route path="projects" element={<Projects />} />
+          <Route path="/projects" element={<Projects />} />
 
-          <Route path="teams" element={<Team />} />
+          <Route path="/teams" element={<Team />} />
 
-          <Route path="messages" element={<Messages />} />
+          <Route path="/messages" element={<Messages />} />
 
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Login />} />
-          <Route path="code" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Login />} />
+          <Route path="/code" element={<Login />} />
         </Route>
       </Routes>
     </Router>
