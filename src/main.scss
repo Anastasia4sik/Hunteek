@@ -10,16 +10,26 @@
 @import './modules/shared/pagination/pagination.scss';
 @import './modules/shared/searchUser/searchUser.scss';
 @import './modules/shared/userPhoto/userPhoto.scss';
+@import './modules/shared/message/message.scss';
 
 @import './modules/blocks/Header/header.scss';
 @import './modules/blocks/Info/info.scss';
 @import './modules/blocks/Menu/menu.scss';
 @import './modules/blocks/recruitInfo/recruitInfo.scss';
+@import './modules/blocks/employeeInfo/employeeInfo.scss';
 @import './modules/blocks/Select/select.scss';
 @import './modules/blocks/banlist/banlist.scss';
 @import './modules/blocks/blockUser/blockUser.scss';
-@import './modules/blocks/editPRofile/editProfile.scss';
+@import './modules/blocks/editProfile/edit.scss';
+@import './modules/blocks/resume/resume.scss';
+@import './modules/blocks/wallet/wallet.scss';
+@import './modules/blocks/catalogSmall/catalogSmall.scss';
+@import './modules/blocks/allWallets/allWallets.scss';
+@import './modules/blocks/referral/referral.scss';
+@import './modules/blocks/reporting/reporting.scss';
+@import './modules/blocks/rating/rating.scss';
 
 
 @import './modules/Main/main.scss';
 @import './modules/MyProfile/myProfile.scss';
+@import './modules/Login/login.scss';

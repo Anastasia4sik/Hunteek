@@ -2,18 +2,34 @@ import React from 'react';
 
 import unlock from '../../../img/icons/unlock.svg';
 import { UserPhoto } from '../userPhoto';
+import { Employee } from '../../../types/Employee';
 
-export const BanItem: React.FC = () => {
+type Props = {
+  employee: Employee,
+};
+
+export const BanItem: React.FC<Props> = ({ employee }) => {
+  if (!employee) {
+    return null;
+  }
+
+  const {
+    name,
+    photo,
+    homeCity,
+    homeCountry,
+  } = employee;
+
   return (
     <div className="banItem d-flex flex-row justify-content-between align-items-center">
-      <UserPhoto size={5} height={100} />
+      <UserPhoto size={4} height={120} photo={photo} />
 
       <p className="banItem__name bold-text">
-        Yuri Kudin
+        {name}
       </p>
 
       <p className="banItem__location bold-text">
-        Ukraine, Lviv
+        {`${homeCountry}, ${homeCity}`}
       </p>
 
       <p className="banItem__date bold-text">

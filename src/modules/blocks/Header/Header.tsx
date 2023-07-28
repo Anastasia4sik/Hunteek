@@ -7,7 +7,7 @@ import chart from '../../../img/icons/header/chart.svg';
 import menu from '../../../img/icons/header/menu.svg';
 import time from '../../../img/icons/header/time.svg';
 import video from '../../../img/icons/header/video.svg';
-import category from '../../../img/icons/header/category.svg';
+import projects from '../../../img/icons/header/category.svg';
 import dollar from '../../../img/icons/header/dollar.svg';
 import profile from '../../../img/icons/header/profile.svg';
 
@@ -38,11 +38,26 @@ export const Header: React.FC = () => {
   return (
     <div className="header d-flex flex-row align-items-center">
       <select className="header__select list-text" name="Language" id="language">
-        <option value="" selected disabled hidden>
+        <option
+          value=""
+          selected
+          disabled
+          hidden
+        >
           Language
         </option>
-        <option value="English">English</option>
-        <option value="Ukrainian">Ukrainian</option>
+
+        <option
+          value="English"
+        >
+          English
+        </option>
+
+        <option
+          value="Ukrainian"
+        >
+          Ukrainian
+        </option>
       </select>
 
       <div className="header__search position-relative">
@@ -110,10 +125,10 @@ export const Header: React.FC = () => {
           </a>
 
           <a href="/">
-            <img src={category} alt="Categories" className="header__menu__nav__img" />
+            <img src={projects} alt="Projects" className="header__menu__nav__img" />
           </a>
 
-          <a href="/">
+          <a href="/my-wallet">
             <img src={dollar} alt="Money" className="header__menu__nav__img" />
           </a>
 

@@ -10,11 +10,14 @@
   background-color: $black-header;
   position: fixed;
 
+  z-index: 3;
+
   &__select {
     background-color: $black-header;
     border: none;
 
     height: 50%;
+    width: 100px;
 
     color: $white-text-sec;
   }
@@ -45,7 +48,7 @@
 
     &__btn {
       right: 7px;
-      top: 10%;
+      top: 5%;
 
       height: 44px;
       width: 74px;

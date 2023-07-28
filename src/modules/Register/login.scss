@@ -1,0 +1,131 @@
+.login {
+  background-image: url('../../img/photo/bc.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  height: 100vh;
+  &__content {
+    width: 30.2vw;
+    height: min-content;
+  
+    border: none;
+    border-radius: 30px;
+
+    top: 30%;
+    left: 35%;
+
+    background-color: $grey-dark;
+  }
+
+  &__title {
+      background: linear-gradient(94.52deg, #296051 0%, #3B6078 100%);
+    
+      font-size: 24px;
+      padding: 16px 0;
+    
+      border-top-right-radius: 30px;
+      border-top-left-radius: 30px;
+ 
+      @include onBigDesktop {
+        padding: 24px 0;
+      }
+  }
+
+  &__form {
+    padding: 48px 70px;
+    margin: 0 auto;
+
+    &__block {
+      height: 100%;
+
+      &--1 {
+        margin-bottom: 16px;
+      }
+
+      &--2 {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__img {
+      &--profile {
+        left: 3%;
+        top: 25%;
+
+        filter: brightness(0.8);
+      }
+
+      &--password {
+        top: 30%;
+        left: 4%;
+      }
+    }
+    
+    &__input {
+      padding: 14px 50px;
+
+      width: 100%;
+
+      background-color: $grey-light;
+
+      border: none;
+      border-radius: 10px;
+
+      color: $white-text-sec;
+
+      &::placeholder {
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+
+    &__bottom {
+      &__remember {
+        
+        &__label {
+          color: $grey-text;
+          font-weight: 400;
+
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            cursor: pointer;
+  
+            color: $white-text-main
+          }
+        }
+      }
+
+      &__btns {
+        gap: 15px;
+      }
+
+      &__btn {
+        font-weight: 600;
+        font-size: 16px;
+
+        &--register {
+          background-color: transparent;
+          border: none;
+
+          color: $grey-text;
+
+          transition: color 0.3s ease-in-out;
+
+          &:hover {
+            color: $white-text-main;
+          }
+        }
+
+        &--login {
+          background-repeat: 100px;
+
+          color: $white-text-main;
+
+          width: 100px;
+          height: 50px;
+        }
+      };
+    }
+  }
+}

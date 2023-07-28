@@ -8,6 +8,7 @@ type Props = {
   perPage: number,
   currentPage: number,
   onPageChange: (page: number | string) => void,
+  withBullets?: boolean,
 };
 
 export const Pagination: React.FC<Props> = (props) => {
@@ -16,10 +17,19 @@ export const Pagination: React.FC<Props> = (props) => {
     perPage,
     currentPage,
     onPageChange,
+    withBullets,
   } = props;
 
   const lastPage = Math.ceil(total / perPage);
-  let numbersOfPages: number[] | string[] | (number | string)[] = getNumbers(Math.max(1, currentPage - 1), Math.min(lastPage, currentPage + 1));
+  let numbersOfPages: number[] | string[] | (number | string)[] = withBullets
+    ? getNumbers(
+      Math.max(1, currentPage - 1),
+      Math.min(lastPage, currentPage + 1),
+    )
+    : getNumbers(
+      Math.max(1, currentPage - 1),
+      Math.min(lastPage, currentPage + 1),
+    );
 
   if (currentPage === 1) {
     numbersOfPages = [' ', ...numbersOfPages];
@@ -27,12 +37,15 @@ export const Pagination: React.FC<Props> = (props) => {
     numbersOfPages = [...numbersOfPages, ' '];
   }
 
+  const centerIndex = Math.floor(numbersOfPages.length / 2);
+
   return (
-    <ul className="pagination justify-content-center pag">
+    <ul className="pagination justify-content-center pag align-items-center">
       {/* prev page btn */}
-      <li className={classNames('pag__item', {
-        disabled: currentPage === 1,
-      })}
+      <li
+        className={classNames('pag__item', {
+          disabled: currentPage === 1,
+        })}
       >
         <a
           data-cy="prevLink"
@@ -50,10 +63,11 @@ export const Pagination: React.FC<Props> = (props) => {
       </li>
 
       {/* pages */}
-      {numbersOfPages.map((page: number | string) => (
+      {numbersOfPages.map((page: number | string, index: number) => (
         <li
           className={classNames('pag__item', {
             pag__active: page === currentPage,
+            center: index === centerIndex,
           })}
           key={page}
         >
@@ -63,15 +77,24 @@ export const Pagination: React.FC<Props> = (props) => {
             href={`#${page}`}
             onClick={() => onPageChange(page)}
           >
-            {page}
+            {withBullets ? (
+              <div
+                className={classNames('bullet', {
+                  active: page === currentPage,
+                })}
+              />
+            ) : (
+              page
+            )}
           </a>
         </li>
       ))}
 
       {/* next page btn */}
-      <li className={classNames('pag__item', {
-        disabled: currentPage === lastPage,
-      })}
+      <li
+        className={classNames('pag__item', {
+          disabled: currentPage === lastPage,
+        })}
       >
         <a
           data-cy="nextLink"

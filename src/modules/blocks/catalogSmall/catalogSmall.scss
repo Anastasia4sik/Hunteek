@@ -1,0 +1,70 @@
+.catalog {
+  &__sideinfo {
+      min-width: max-content;
+  }
+
+  &__container {
+    padding: $main-p 30px 0;
+    margin-bottom: 8px;
+
+    width: 48vw;
+  }
+
+  &__header {
+    margin-bottom: 8px;
+
+    @include onBigDesktop {
+      margin-bottom: 14px;
+    }
+
+    &__targets {
+      gap: 8px;
+    }
+
+    &__btn {
+      height: 36px;
+
+      padding: 0 30px;  
+
+      gap: 5px;
+
+      background-color: $grey-light;
+      color: $white-text-main;
+
+      cursor: pointer;
+
+      @include onBigDesktop {
+        height: 44px;
+      }
+    }
+  }
+
+  &__table {
+    margin-bottom: 8px;
+
+    color: $grey-text;
+
+    @include onBigDesktop {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__item {
+    height: 48px;
+    padding: 10px 0;
+
+    border-top: 2px solid $black-main;
+
+    @include onBigDesktop {
+      height: 46px;
+    }
+
+    &__download {
+      gap: 8px;
+
+      &__img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

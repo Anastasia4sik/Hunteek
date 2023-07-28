@@ -2,6 +2,21 @@
   gap: 4px;
 
   &__stars {
-    gap: 2px
+    gap: 2px;
+
+    &__item.bigger {
+      width: 23px;
+      height: 21px;
+    }
+  }
+
+  &__desc {
+    color: $grey-text;
+
+    margin-bottom: 0;
+
+    &.bigger {
+      font-size: 18px;
+    }
   }
 }

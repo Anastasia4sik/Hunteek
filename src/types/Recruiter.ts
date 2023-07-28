@@ -4,6 +4,8 @@ export interface Recruiter {
   lastname: string;
   photo: string;
   desc: string;
+  homeCity: string;
+  homeCountry: string;
   email: string;
   phone: string;
   telegram: string;

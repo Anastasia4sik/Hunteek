@@ -4,33 +4,58 @@ import React from 'react';
 import { Rate } from '../rate';
 import { UserPhoto } from '../userPhoto';
 
-export const Profile: React.FC = () => {
+import { Employee } from '../../../types/Employee';
+
+type Props = {
+  employee: Employee | undefined,
+};
+
+export const Profile: React.FC<Props> = ({ employee }) => {
+  if (!employee) {
+    return null;
+  }
+
+  const {
+    name,
+    photo,
+    desc,
+    timeZone,
+    homeCountry,
+    homeCity,
+    workTerm,
+    workTime,
+    whereToWork,
+    englishLevel,
+    expierence,
+    skills,
+  } = employee;
+
   return (
     <div className="profile">
-      <div className="profile__content scroll">
+      <div className="profile__content">
         <div className="profile__user">
           <div className="profile__user__top d-flex flex-row align-items-center">
-            <UserPhoto size={20} />
+            <UserPhoto size={20} photo={photo} />
 
             <div className="profile__user__info d-flex flex-column">
               <p className="profile__user__info__name big-text">
-                Yuri Kudin
+                { name }
               </p>
 
               <Rate />
 
               <p className="profile__user__info__location small-text">
-                Ukraine, Lviv
+                {`${homeCountry}, ${homeCity}`}
               </p>
 
               <p className="profile__user__info__add small-text">
-                Remote
+                { whereToWork }
               </p>
             </div>
           </div>
 
           <p className="profile__user__desc bold-text">
-            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual.
+            { desc }
           </p>
         </div>
 
@@ -41,7 +66,7 @@ export const Profile: React.FC = () => {
             </p>
 
             <p className="list-text">
-              Kyiv UTC+2
+              { timeZone }
             </p>
           </div>
 
@@ -51,7 +76,7 @@ export const Profile: React.FC = () => {
             </p>
 
             <p className="list-text">
-              Long-term
+              { workTerm }
             </p>
           </div>
 
@@ -61,7 +86,7 @@ export const Profile: React.FC = () => {
             </p>
 
             <p className="list-text">
-              Part-time
+              { workTime }
             </p>
           </div>
 
@@ -71,7 +96,7 @@ export const Profile: React.FC = () => {
             </p>
 
             <p className="list-text">
-              B2
+              { englishLevel }
             </p>
           </div>
 
@@ -81,7 +106,7 @@ export const Profile: React.FC = () => {
             </p>
 
             <p className="list-text">
-              5
+              { expierence }
             </p>
           </div>
         </div>
@@ -92,7 +117,7 @@ export const Profile: React.FC = () => {
           </h5>
 
           <p className="profile__skills__desc list-text">
-            CSS, HTML, JavaScript
+            { skills }
           </p>
         </div>
       </div>

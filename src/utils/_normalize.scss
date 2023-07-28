@@ -4,6 +4,23 @@
   box-sizing: border-box;
 
   scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+
+    @include onBigDesktop {
+      width: 8px;
+    }
+  }
+  
+  &::-webkit-scrollbar-track {
+    background-color: $grey-scroll;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: $grey-text;
+    border-radius: 5px;
+  }
 }
 
 html,
@@ -19,6 +36,8 @@ body {
 
 .light-mode {
   background-color: white;
+
+  color: black;
 }
 
 .black-mode {
@@ -49,11 +68,12 @@ body {
 .main-text {
   font-weight: 600;
 
-  line-height: 25px;
+  line-height: 22px;
 
-  font-size: 14px;
+  font-size: 13px;
 
   @include onBigDesktop {
+    line-height: 25px;
     font-size: 18px;
   }
 }
@@ -95,14 +115,28 @@ body {
 }
 
 .btn-grey {
-  transition: background-color 0.3s ease-in-out; 
+  transition: all 0.3s ease-in-out; 
 
+  border: none;
+  border-radius: 100px;
+
+  background-color: $grey-light;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  
   &:hover {
+    color: $white-text-sec;
     background-color: $grey-hover;
   }
 }
 
 .scroll {
+  overflow-x: scroll;
+
   &::-webkit-scrollbar {
     width: 6px;
 
@@ -120,3 +154,57 @@ body {
     border-radius: 5px;
   }
 }
+
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid $grey-text;
+  border-radius: 3px;
+  background-color: transparent;
+  cursor: pointer;
+
+  margin-right: 10px;
+
+  &:checked {
+    background-image: url('../img/icons/check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("../img/icons/arrow_down_grey.svg");
+  background-repeat: no-repeat;
+  background-position-x: 97%;
+  background-position-y: 50%;
+
+  border: 1px solid #dfdfdf;
+}
+
+.bullet {
+  width: 10px;
+  height: 10px;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: $grey-text;
+  
+  &.active {
+    background-color: $white-text-main;
+  }
+}
+
+.pag__item {
+  &.disabled {
+    filter: brightness(0.5);
+  }
+}
+

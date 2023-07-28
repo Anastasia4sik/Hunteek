@@ -3,7 +3,7 @@ import React from 'react';
 type Props = {
   size: number;
   height?: number;
-  photo: string;
+  photo: string | undefined;
 };
 
 export const UserPhoto: React.FC<Props> = ({ size, height, photo }) => {

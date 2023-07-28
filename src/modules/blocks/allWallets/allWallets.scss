@@ -1,0 +1,32 @@
+.wallets {
+  padding: 0 12px;
+
+  gap: 14px;
+
+  @include onBigDesktop {
+    padding: 0 30px;
+  }
+
+  &__block {
+    padding: 30px 0;
+    width: 46%;
+
+    gap: 12px;
+
+    background-color: $grey-light;
+    
+    @include onBigDesktop {
+      width: 48%;
+    }
+    
+    &__add {
+      transition: background-color 0.3s ease-in-out;
+      
+          &:hover {
+            background-color: #646262;
+      
+            cursor: pointer;
+          }
+    }
+  }
+}

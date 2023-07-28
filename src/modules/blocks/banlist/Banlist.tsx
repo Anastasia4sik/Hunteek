@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
 import { Pagination } from '../../shared/pagination';
-import { getNumbers } from '../../../helpers';
+// import { getNumbers } from '../../../helpers';
 import { BanItem } from '../../shared/banItem';
 
 import lock from '../../../img/icons/lock.svg';
 import { SearchUser } from '../../shared/searchUser';
+import { Employee } from '../../../types/Employee';
 
-export const Banlist: React.FC = () => {
+type Props = {
+  employees: Employee[],
+};
+
+export const Banlist: React.FC<Props> = ({ employees }) => {
   const [perPage] = useState(4);
   const [currentPage, setCurrentPage] = useState(1);
-  // items in list
-  const [total] = useState(36);
 
-  const firstItem = (currentPage - 1) * perPage + 1;
-  const lastItem = Math.min(perPage * currentPage, total);
-  const itemsPerPage = getNumbers(firstItem, lastItem);
+  if (!employees) {
+    return null;
+  }
+
+  const total = employees.length;
+  const firstItem = (currentPage - 1) * perPage;
+  const lastItem = currentPage * perPage;
+  const itemsPerPage = employees.slice(firstItem, lastItem);
 
   const handleOnPageChange = (page: number | string) => {
     if (typeof page === 'number') {
@@ -34,12 +42,12 @@ export const Banlist: React.FC = () => {
             Ban List
           </p>
 
-          <div className="banlist__header__targets d-flex lfex-row">
+          <div className="banlist__header__targets d-flex flex-row">
             <div className="banlist__header__search">
               <SearchUser />
             </div>
 
-            <a href="#block-user" className="banlist__header__btn d-flex flex-row align-items-center border-0 rounded-pill btn-grey">
+            <a href="#block-user" className="banlist__header__btn d-flex flex-row btn-grey">
               <img src={lock} alt="Lock" className="banlist__header__btn__img" />
 
               <p className="banlist__header__btn__p bold-text">
@@ -72,12 +80,12 @@ export const Banlist: React.FC = () => {
         </div>
 
         <ul>
-          {itemsPerPage.map(item => (
+          {itemsPerPage.map(employee => (
             <li
-              key={item}
+              key={employee.slug}
               data-cy="item"
             >
-              <BanItem />
+              <BanItem employee={employee} />
             </li>
           ))}
         </ul>

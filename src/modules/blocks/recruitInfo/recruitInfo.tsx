@@ -5,28 +5,54 @@ import edit from '../../../img/icons/edit.svg';
 import { Rate } from '../../shared/rate';
 import { UserPhoto } from '../../shared/userPhoto';
 
-export const RecruitInfo: React.FC = () => {
+import { Recruiter } from '../../../types/Recruiter';
+
+type Props = {
+  recruiter: Recruiter,
+};
+
+export const RecruitInfo: React.FC<Props> = ({ recruiter }) => {
+  if (!recruiter) {
+    return null;
+  }
+
+  const {
+    name,
+    lastname,
+    photo,
+    desc,
+    homeCity,
+    homeCountry,
+    email,
+    phone,
+    telegram,
+    linkedin,
+    github,
+  } = recruiter;
+
   return (
     <div className="recruitInfo block">
-      <div className="recruitInfo__content scroll">
+      <div className="recruitInfo__content">
         <div className="recruitInfo__user">
           <div className="recruitInfo__user__top d-flex flex-row align-items-start justify-content-between">
             <div className="recruitInfo__user__top__container d-flex flex-row align-items-center">
-              <UserPhoto size={24} />
+              <UserPhoto size={35} photo={photo} />
 
               <div className="recruitInfo__user__info d-flex flex-column">
                 <p className="recruitInfo__user__info__name big-text">
-                  Yuri Kudin
+                  {`${name} ${lastname}`}
                 </p>
 
-                <Rate />
+                <a href="#rating">
+                  <Rate />
+                </a>
 
                 <p className="recruitInfo__user__info__location small-text">
-                  Ukraine, Lviv
+                  {`${homeCountry}, ${homeCity}`}
                 </p>
 
                 <p className="recruitInfo__user__info__add small-text">
-                  Remote
+                  Recruiter
                 </p>
               </div>
             </div>
@@ -39,7 +65,7 @@ export const RecruitInfo: React.FC = () => {
           </div>
 
           <p className="recruitInfo__user__desc bold-text">
-            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual.
+            {desc}
           </p>
         </div>
 
@@ -50,7 +76,7 @@ export const RecruitInfo: React.FC = () => {
             </p>
 
             <a href="mailto:gp.ugspl@gmail.com" className="list-text">
-              gp.ugspl@gmail.com
+              {email}
             </a>
           </div>
 
@@ -60,7 +86,7 @@ export const RecruitInfo: React.FC = () => {
             </p>
 
             <a href="tel:+380991053517" className="list-text">
-              +380 99 105 35 17
+              {phone}
             </a>
           </div>
 
@@ -70,7 +96,7 @@ export const RecruitInfo: React.FC = () => {
             </p>
 
             <a href="https://web.telegram.org/k/" className="list-text">
-              Nikname
+              {telegram}
             </a>
           </div>
 
@@ -80,7 +106,7 @@ export const RecruitInfo: React.FC = () => {
             </p>
 
             <a href="https://www.linkedin.com/feed/" className="list-text">
-              https://www.linkedin.com/feed/
+              {linkedin}
             </a>
           </div>
 
@@ -90,7 +116,7 @@ export const RecruitInfo: React.FC = () => {
             </p>
 
             <a href="https://github.com/" className="list-text">
-              https://github.com/
+              {github}
             </a>
           </div>
         </div>

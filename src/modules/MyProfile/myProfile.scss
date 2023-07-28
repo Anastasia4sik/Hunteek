@@ -1,5 +1,4 @@
 .content {
-  
   &__middle {
     display: grid;
     
@@ -11,15 +10,16 @@
 
     width: 49vw;
 
-    gap: $main-gap;
     
     @include onBigDesktop {
-      width: 46vw;
+      width: 48vw;
     }
   }
   
   &__top {
     gap: $main-gap;
+
+    margin-bottom: $main-gap;
 
     height: 40vh;
 
@@ -31,6 +31,10 @@
       &__hide {
         visibility: hidden;
       }
+    }
+
+    &__resume {
+      gap: $main-gap;
     }
   }
 }
