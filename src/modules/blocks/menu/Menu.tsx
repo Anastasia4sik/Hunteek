@@ -41,7 +41,7 @@ export const Menu: React.FC = () => {
             </a>
 
             <a
-              href="/login"
+              href="/"
               className={classNames(
                 'menu__nav__item list-text d-flex flex-row align-items-center',
                 { menu__nav__item__selected: isNews },
@@ -100,7 +100,7 @@ export const Menu: React.FC = () => {
             </a>
 
             <a
-              href="/support"
+              href="/"
               className={classNames(
                 'menu__nav__item list-text d-flex flex-row align-items-center',
                 { menu__nav__item__selected: isSupport },
@@ -112,7 +112,7 @@ export const Menu: React.FC = () => {
             </a>
 
             <a
-              href="/feedback"
+              href="/"
               className={classNames(
                 'menu__nav__item list-text d-flex flex-row align-items-center',
                 { menu__nav__item__selected: isFeedback },
