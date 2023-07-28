@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { Employee } from '../types/Employee';
 import { Recruiter } from '../types/Recruiter';
 

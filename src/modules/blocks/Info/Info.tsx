@@ -1,8 +1,7 @@
-/* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import { General } from '../../shared/general';
 import { Profile } from '../../shared/profile';
-import { EditProfile } from '../editProfile';
+import { EditProfile } from '../editPRofile';
 import { BlockUser } from '../blockUser';
 import { Employee } from '../../../types/Employee';
 import { Recruiter } from '../../../types/Recruiter';

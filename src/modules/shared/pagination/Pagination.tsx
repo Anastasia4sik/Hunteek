@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import classNames from 'classnames';
 import React from 'react';
 import { getNumbers } from '../../../helpers';

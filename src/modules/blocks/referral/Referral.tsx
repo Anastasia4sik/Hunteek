@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable no-alert */
 import React, { RefObject, useRef, useState } from 'react';
 import { ReferralCard } from '../../shared/referralCard';
 import { Pagination } from '../../shared/pagination';

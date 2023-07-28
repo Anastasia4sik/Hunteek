@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-console */
 import React from 'react';
 
 import profile from '../../img/icons/header/profile.svg';

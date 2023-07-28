@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 

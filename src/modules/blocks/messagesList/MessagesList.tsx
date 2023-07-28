@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable no-alert */
 import React, { useEffect, useState } from 'react';
 import { Pagination } from '../../shared/pagination';
 

@@ -1,6 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-console */
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { useLocation } from 'react-router-dom';

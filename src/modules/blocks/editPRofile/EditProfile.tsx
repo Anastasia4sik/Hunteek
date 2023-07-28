@@ -1,12 +1,9 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable max-len */
 import React from 'react';
 
 import delet from '../../../img/icons/delete.svg';
 import upload from '../../../img/icons/upload.svg';
 import { UserPhoto } from '../../shared/userPhoto';
 
-// eslint-disable-next-line import/no-unresolved
 import { Employee } from '../../../types/Employee';
 
 type Props = {

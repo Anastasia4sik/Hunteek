@@ -5,7 +5,6 @@ export const SearchUser: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const performSearch = () => {
-    // eslint-disable-next-line no-console
     console.log('Performing search:', searchQuery);
   };
 

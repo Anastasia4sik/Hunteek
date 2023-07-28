@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useState } from 'react';
 
 import arrow from '../../../img/icons/arrow_down.svg';
