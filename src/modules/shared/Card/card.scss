@@ -46,14 +46,12 @@
 
   &__person,
   &__info {
-    margin: 6px $main-p 0;
+    margin: 12px $main-p 0;
     padding-bottom: 6px;
 
     border-bottom: 1px solid $grey-border;
 
     @include onBigDesktop {
-      margin: 12px $main-p 0;
-
       padding-bottom: 12px;
     }
 

@@ -6,6 +6,7 @@ import plus from '../../../img/icons/message/plus.svg';
 import trash from '../../../img/icons/message/trash.svg';
 import bell from '../../../img/icons/message/bell.svg';
 import check from '../../../img/icons/message/check.svg';
+import dollar from '../../../img/icons/header/dollar.svg';
 
 type Props = {
   setIsBanListChecked?: (isChecked: boolean) => void,
@@ -36,6 +37,7 @@ export const Select: React.FC<Props> = ({
   };
 
   const isMy = window.location.pathname.includes('my');
+  const isWallet = window.location.pathname.includes('my-wallet');
   const isProject = window.location.pathname.includes('projects');
   const isTeam = window.location.pathname.includes('team');
   const isMessage = window.location.pathname.includes('messages');
@@ -103,49 +105,45 @@ export const Select: React.FC<Props> = ({
               </a>
             )}
 
-            <div className={`${isMy ? 'select--3' : 'select--1'} celect__content  ${isOpen1 ? 'open' : ''}`}>
-              <div
-                className={`${isMy ? 'select__header--profile' : ''} select__header d-flex flex-row justify-content-between ${isOpen1 ? 'select__header--active' : ''}`}
-                role="button"
-                tabIndex={0}
-                onClick={handleToggle1}
-                onKeyDown={handleKeyDown}
-              >
-                {!isMy ? (
-                  <span className="select__option list-text">Specilization</span>
-                ) : (
+            {isWallet ? (
+              <div className={`${isWallet ? 'select--3' : 'select--1'} celect__content  ${isOpen1 ? 'open' : ''}`}>
+                <div
+                  className={`${isMy ? 'select__header--profile' : ''} select__header d-flex flex-row justify-content-between ${isOpen1 ? 'select__header--active' : ''}`}
+                  role="button"
+                  tabIndex={0}
+                  onClick={handleToggle3}
+                  onKeyDown={handleKeyDown}
+                >
                   <div className="d-flex flex-row align-items-center select__profile">
-                    <img src={user} alt="User" />
+                    <img src={dollar} alt="Wallet" />
 
                     <span className="select__option list-text">
-                      My profile
+                      My Wallet
                     </span>
                   </div>
-                )}
 
-                {!isOpen1 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
-              </div>
+                  {!isOpen3 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+                </div>
 
-              {!isMy ? (
                 <ul
                   className={`
                     select__option__list
-                    select__option__list--1
-                    ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
+                    select__option__list--3
+                    ${isOpen3 ? 'select__option__list--open' : 'select__option__list--close'}`}
                 >
                   <li className="
                     list-text
                     select__option__list__item"
                   >
-                    <label htmlFor="android-checkbox" className="checkbox-label list-text">
+                    <label htmlFor="Balance-checkbox" className="checkbox-label list-text">
                       <input
                         type="checkbox"
-                        id="android-checkbox"
+                        id="Balance-checkbox"
                         name="option"
-                        value="Android"
+                        value="Balance"
 
                       />
-                      <span>Android</span>
+                      <span>My Balance</span>
                     </label>
                   </li>
 
@@ -153,131 +151,80 @@ export const Select: React.FC<Props> = ({
                     list-text
                     select__option__list__item"
                   >
-                    <label htmlFor="iOS-checkbox" className="checkbox-label list-text">
+                    <label htmlFor="Contracts-checkbox" className="checkbox-label list-text">
                       <input
                         type="checkbox"
-                        id="iOS-checkbox"
+                        id="Contracts-checkbox"
                         name="option"
-                        value="iOS / macOS"
+                        value="Contracts"
 
                       />
-                      <span>iOS / macOS</span>
-                    </label>
-                  </li>
-
-                  <li className="
-                    list-text
-                    select__option__list__item"
-                  >
-                    <label htmlFor="C-checkbox" className="checkbox-label list-text">
-                      <input
-                        type="checkbox"
-                        id="C-checkbox"
-                        name="option"
-                        value="C/C++/Embedded"
-
-                      />
-                      <span>C / C++ / Embedded</span>
-                    </label>
-                  </li>
-
-                  <li className="
-                    list-text
-                    select__option__list__item"
-                  >
-                    <label htmlFor="Golang-checkbox" className="checkbox-label list-text">
-                      <input
-                        type="checkbox"
-                        id="Golang-checkbox"
-                        name="option"
-                        value="Golang"
-
-                      />
-                      <span>Golang</span>
+                      <span>My Smart Contracts</span>
                     </label>
                   </li>
 
                   <li className="
                     list-text
                     select__option__list__item
-                    select__option__list__item--last"
+                    select__option__list__item--border"
                   >
-                    <label htmlFor="Scala-checkbox" className="checkbox-label list-text">
+                    <label htmlFor="Referral-checkbox" className="checkbox-label list-text">
                       <input
                         type="checkbox"
-                        id="Scala-checkbox"
+                        id="Referral-checkbox"
                         name="option"
-                        value="Scala"
-
+                        value="Referral"
+                        onChange={handleReferralChange}
                       />
-                      <span>Scala</span>
+                      <span>Referral system</span>
                     </label>
                   </li>
                 </ul>
-              ) : (
-                <ul
-                  className={`
+              </div>
+            ) : (
+              <div className={`${isMy ? 'select--3' : 'select--1'} celect__content  ${isOpen1 ? 'open' : ''}`}>
+                <div
+                  className={`${isMy ? 'select__header--profile' : ''} select__header d-flex flex-row justify-content-between ${isOpen1 ? 'select__header--active' : ''}`}
+                  role="button"
+                  tabIndex={0}
+                  onClick={handleToggle1}
+                  onKeyDown={handleKeyDown}
+                >
+                  {!isMy ? (
+                    <span className="select__option list-text">Specilization</span>
+                  ) : (
+                    <div className="d-flex flex-row align-items-center select__profile">
+                      <img src={user} alt="User" />
+
+                      <span className="select__option list-text">
+                        My profile
+                      </span>
+                    </div>
+                  )}
+
+                  {!isOpen1 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+                </div>
+
+                {!isMy ? (
+                  <ul
+                    className={`
                       select__option__list
                       select__option__list--1
                       ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
-                >
-                  <li className="
-                      list-text
-                      select__option__list__item"
-                  >
-                    <label htmlFor="resume-checkbox" className="checkbox-label list-text">
-                      <input
-                        type="checkbox"
-                        id="resume-checkbox"
-                        name="option"
-                        value="resume"
-                        onChange={handleResumeChange}
-                      />
-                      <span>My Resume</span>
-                    </label>
-                  </li>
-
-                  <li className="
-                      list-text
-                      select__option__list__item
-                      select__option__list__item--border"
-                  >
-                    <label htmlFor="wallet-checkbox" className="d-flex flex-row justify-content-between select__option__list__item--wallet">
-                      <div className={`select--4 celect__content ${isOpen3 ? 'open' : ''}`}>
-                        <input
-                          type="checkbox"
-                          id="wallet-checkbox"
-                          name="option"
-                          value="wallet"
-                          onClick={handleToggle3}
-                          onKeyDown={handleKeyDown}
-                        />
-                        <span className="select__option list-text">My Wallet</span>
-                      </div>
-
-                      {!isOpen3 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
-                    </label>
-                  </li>
-
-                  <ul
-                    className={`
-                      select__option__list
-                      select__option__list--3
-                      ${isOpen3 ? 'select__option__list--open' : 'select__option__list--close'}`}
                   >
                     <li className="
                       list-text
                       select__option__list__item"
                     >
-                      <label htmlFor="Balance-checkbox" className="checkbox-label list-text">
+                      <label htmlFor="android-checkbox" className="checkbox-label list-text">
                         <input
                           type="checkbox"
-                          id="Balance-checkbox"
+                          id="android-checkbox"
                           name="option"
-                          value="Balance"
+                          value="Android"
 
                         />
-                        <span>My Balance</span>
+                        <span>Android</span>
                       </label>
                     </li>
 
@@ -285,63 +232,118 @@ export const Select: React.FC<Props> = ({
                       list-text
                       select__option__list__item"
                     >
-                      <label htmlFor="Contracts-checkbox" className="checkbox-label list-text">
+                      <label htmlFor="iOS-checkbox" className="checkbox-label list-text">
                         <input
                           type="checkbox"
-                          id="Contracts-checkbox"
+                          id="iOS-checkbox"
                           name="option"
-                          value="Contracts"
+                          value="iOS / macOS"
 
                         />
-                        <span>My Smart Contracts</span>
+                        <span>iOS / macOS</span>
                       </label>
                     </li>
 
                     <li className="
                       list-text
-                      select__option__list__item
-                      select__option__list__item--border"
+                      select__option__list__item"
                     >
-                      <label htmlFor="Referral-checkbox" className="checkbox-label list-text">
+                      <label htmlFor="C-checkbox" className="checkbox-label list-text">
                         <input
                           type="checkbox"
-                          id="Referral-checkbox"
+                          id="C-checkbox"
                           name="option"
-                          value="Referral"
-                          onChange={handleReferralChange}
+                          value="C/C++/Embedded"
+
                         />
-                        <span>Referral system</span>
+                        <span>C / C++ / Embedded</span>
                       </label>
                     </li>
-                  </ul>
 
-                  <ul
-                    className={`
-                    select__option__list
-                    select__option__list--3
-                    ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
-                  >
+                    <li className="
+                      list-text
+                      select__option__list__item"
+                    >
+                      <label htmlFor="Golang-checkbox" className="checkbox-label list-text">
+                        <input
+                          type="checkbox"
+                          id="Golang-checkbox"
+                          name="option"
+                          value="Golang"
+
+                        />
+                        <span>Golang</span>
+                      </label>
+                    </li>
+
                     <li className="
                       list-text
                       select__option__list__item
                       select__option__list__item--last"
                     >
-                      <label htmlFor="BanList-checkbox" className="checkbox-label list-text">
+                      <label htmlFor="Scala-checkbox" className="checkbox-label list-text">
                         <input
                           type="checkbox"
-                          id="BanList-checkbox"
+                          id="Scala-checkbox"
                           name="option"
-                          value="BanList"
-                          onChange={handleBanListChange}
+                          value="Scala"
+
                         />
-                        <span>BanList</span>
+                        <span>Scala</span>
                       </label>
                     </li>
                   </ul>
-                </ul>
-              )}
-            </div>
+                ) : (
+                  <ul
+                    className={`
+                        select__option__list
+                        select__option__list--1
+                        ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
+                  >
+                    <li className="
+                        list-text
+                        select__option__list__item"
+                    >
+                      <label htmlFor="resume-checkbox" className="checkbox-label list-text">
+                        <input
+                          type="checkbox"
+                          id="resume-checkbox"
+                          name="option"
+                          value="resume"
+                          onChange={handleResumeChange}
+                        />
+                        <span>My Resume</span>
+                      </label>
+                    </li>
 
+                    <ul
+                      className={`
+                      select__option__list
+                      select__option__list--3
+                      ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
+                    >
+                      <li className="
+                        list-text
+                        select__option__list__item
+                        select__option__list__item--last
+                        select__option__list__item--border"
+                      >
+                        <label htmlFor="BanList-checkbox" className="checkbox-label list-text">
+                          <input
+                            type="checkbox"
+                            id="BanList-checkbox"
+                            name="option"
+                            value="BanList"
+                            onChange={handleBanListChange}
+                          />
+                          <span>BanList</span>
+                        </label>
+                      </li>
+                    </ul>
+                  </ul>
+                )}
+              </div>
+            )}
           </>
         )}
       </div>

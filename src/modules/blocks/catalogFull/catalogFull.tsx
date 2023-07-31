@@ -17,6 +17,7 @@ export const CatalogFull: React.FC<Props> = ({ forSideInfo }) => {
   const [perPage, setPerPage] = useState(largePerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
+  
   const total = array.length;
   const firstItem = (currentPage - 1) * perPage;
   const lastItem = currentPage * perPage;
@@ -75,28 +76,28 @@ export const CatalogFull: React.FC<Props> = ({ forSideInfo }) => {
             </p>
 
             <div className="catalog__header__targets d-flex flex-row">
-              <a href="#filter" className="catalog__header__btn d-flex flex-row btn-grey ">
+              <button className="catalog__header__btn d-flex flex-row btn-grey ">
                 <img src={filter} alt="Filter" className="catalog__header__btn__img" />
 
                 <p className="catalog__header__btn__p bold-text">
                   Filter
                 </p>
-              </a>
+              </button>
 
-              <a href="#download" className="catalog__header__btn d-flex flex-row btn-grey">
+              <button className="catalog__header__btn d-flex flex-row btn-grey">
                 <img src={upload} alt="Download" className="catalog__item__download__img" />
 
                 <p className="catalog__header__btn__p bold-text">
                   Download All
                 </p>
-              </a>
+              </button>
             </div>
           </div>
 
           <div className="catalog__table d-flex flex-row justify-content-between align-items-center">
             <p className="catalog__table__item bold-text">
               Date
-              <span className="invisible">........</span>
+              <span className="invisible">.....</span>
             </p>
 
             <p className="catalog__table__item bold-text">
