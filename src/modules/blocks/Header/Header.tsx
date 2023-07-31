@@ -118,8 +118,8 @@ export const Header: React.FC = () => {
         </div>
 
         <div className="header__menu__nav d-flex align-items-center">
-          <a href="/">
-            <img src={video} alt="Video" className="header__menu__nav__img" />
+          <a href="/" title="Video team meetings are coming soon">
+            <img src={video} alt="Video" className="header__menu__nav__img header__menu__nav__img--video" />
           </a>
 
           <a href="/">
