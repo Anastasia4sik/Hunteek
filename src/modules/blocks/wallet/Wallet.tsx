@@ -41,17 +41,13 @@ export const Wallet: React.FC = () => {
             <div className="wallet__top__blocks__item justify-content-center wallet__top__right__block--1 block d-flex flex-column align-items-center">
               <div className="wallet__top__blocks__item__text d-flex flex-column align-items-center">
                 <h3 className="big-text wallet__top__blocks__item__title">
-                  Fiat Wallet
+                  Current amount
                 </h3>
 
                 <p className="wallet__top__blocks__item__desc list-text">
-                  Added 3 Wallet
+                  $13.176.3570
                 </p>
               </div>
-
-              <a href="#fiat-wallets" className="wallet__top__blocks__item__btn btn-grey">
-                Show all wallets
-              </a>
             </div>
 
           </div>
