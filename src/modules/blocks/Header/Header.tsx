@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { KeyboardEventHandler, useState } from 'react';
 import search from '../../../img/icons/search.svg';
 
 import chart from '../../../img/icons/header/chart.svg';
@@ -8,31 +8,14 @@ import video from '../../../img/icons/header/video.svg';
 import projects from '../../../img/icons/header/category.svg';
 import dollar from '../../../img/icons/header/dollar.svg';
 import profile from '../../../img/icons/header/profile.svg';
+type Props = {
+  searchQuery?: string;
+  handleInputChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleKeyPress?: KeyboardEventHandler<HTMLInputElement>;
+  handleSearchClick?: () => void;
+};
 
-export const Header: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const performSearch = () => {
-    console.log('Performing search:', searchQuery);
-  };
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(event.target.value);
-  };
-
-  const handleSearchClick = () => {
-    performSearch();
-    setSearchQuery('');
-  };
-
-  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
-      performSearch();
-
-      setSearchQuery('');
-    }
-  };
-
+export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handleKeyPress, handleSearchClick }) => {
   return (
     <div className="header d-flex flex-row align-items-center">
       <select className="header__select list-text" name="Language" id="language">

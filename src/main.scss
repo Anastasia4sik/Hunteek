@@ -3,7 +3,6 @@
 @import './utils/normalize';
 @import './utils/reset';
 
-@import './modules/shared/profile/profile.scss';
 @import './modules/shared/rate/rate.scss';
 @import './modules/shared/Card/card.scss';
 @import './modules/shared/banItem/banItem.scss';
@@ -12,23 +11,25 @@
 @import './modules/shared/userPhoto/userPhoto.scss';
 @import './modules/shared/message/message.scss';
 
+@import './modules/blocks/content/banlist/banlist.scss';
+@import './modules/blocks/content/catalogSmall/catalogSmall.scss';
+@import './modules/blocks/content/employeeInfo/employeeInfo.scss';
+@import './modules/blocks/content/recruitInfo/recruitInfo.scss';
+@import './modules/blocks/content/referral/referral.scss';
+@import './modules/blocks/content/resume/resume.scss';
+@import './modules/blocks/content/wallet/wallet.scss';
+
+@import './modules/blocks/sideInfo/profile/profile.scss';
+@import './modules/blocks/sideInfo/editProfile/edit.scss';
+@import './modules/blocks/sideInfo/blockUser/blockUser.scss';
+@import './modules/blocks/sideInfo/allWallets/allWallets.scss';
+@import './modules/blocks/sideInfo/rating/rating.scss';
+@import './modules/blocks/sideInfo/reporting/reporting.scss';
+
 @import './modules/blocks/Header/header.scss';
 @import './modules/blocks/Info/info.scss';
 @import './modules/blocks/menu/menu.scss';
-@import './modules/blocks/recruitInfo/recruitInfo.scss';
-@import './modules/blocks/employeeInfo/employeeInfo.scss';
 @import './modules/blocks/select/select.scss';
-@import './modules/blocks/banlist/banlist.scss';
-@import './modules/blocks/blockUser/blockUser.scss';
-@import './modules/blocks/editPRofile/edit.scss';
-@import './modules/blocks/resume/resume.scss';
-@import './modules/blocks/wallet/wallet.scss';
-@import './modules/blocks/catalogSmall/catalogSmall.scss';
-@import './modules/blocks/allWallets/allWallets.scss';
-@import './modules/blocks/referral/referral.scss';
-@import './modules/blocks/reporting/reporting.scss';
-@import './modules/blocks/rating/rating.scss';
-
 
 @import './modules/Main/main.scss';
 @import './modules/MyProfile/myProfile.scss';

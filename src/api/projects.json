@@ -1,0 +1,56 @@
+[
+  {
+    "slug": 1,
+    "company_name": "Google",
+    "photo": "https://www.pngplay.com/wp-content/uploads/14/Gingerbread-Man-PNG-Photo-Image.png",
+    "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
+    "position": "Need a specialist who works in OKCMS",
+    "workTime": 99,
+    "salary": 784
+  },
+  {
+    "slug": 2,
+    "company_name": "Facebook",
+    "photo": "https://www.pngplay.com/wp-content/uploads/14/Gingerbread-Man-PNG-Photo-Image.png",
+    "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
+    "position": "Need a specialist who works in OKCMS",
+    "workTime": 99,
+    "salary": 784
+  },
+  {
+    "slug": 3,
+    "company_name": "Redwing",
+    "photo": "https://www.pngplay.com/wp-content/uploads/14/Gingerbread-Man-PNG-Photo-Image.png",
+    "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
+    "position": "Need a specialist who works in React",
+    "workTime": 99,
+    "salary": 784
+  },
+  {
+    "slug": 4,
+    "company_name": "SoftServe",
+    "photo": "https://www.pngplay.com/wp-content/uploads/14/Gingerbread-Man-PNG-Photo-Image.png",
+    "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
+    "position": "Need a specialist who works in OKCMS",
+    "workTime": 99,
+    "salary": 784
+  },
+  {
+    "slug": 5,
+    "company_name": "GlobalLogic",
+    "photo": "https://www.pngplay.com/wp-content/uploads/14/Gingerbread-Man-PNG-Photo-Image.png",
+    "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
+    "position": "Need a specialist who works in OKCMS",
+    "workTime": 99,
+    "salary": 784
+  },
+  {
+    "slug": 6,
+    "company_name": "ELITEX",
+    "photo": "https://www.pngplay.com/wp-content/uploads/14/Gingerbread-Man-PNG-Photo-Image.png",
+    "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
+    "position": "Need a specialist who works in OKCMS",
+    "workTime": 99,
+    "salary": 784
+  }
+]

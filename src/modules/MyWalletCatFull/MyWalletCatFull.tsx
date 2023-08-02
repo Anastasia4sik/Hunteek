@@ -3,7 +3,7 @@ import { Menu } from '../blocks/menu';
 import { Header } from '../blocks/Header';
 import { Select } from '../blocks/select';
 import { Info } from '../blocks/Info';
-import { CatalogFull } from '../blocks/catalogFull';
+import { CatalogFull } from '../blocks/content/catalogFull';
 
 export const MyWalletCatFull: React.FC = () => {
   return (

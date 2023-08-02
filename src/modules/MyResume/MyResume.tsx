@@ -6,7 +6,7 @@ import { Select } from '../blocks/select';
 import { Info } from '../blocks/Info';
 
 import { getEmployees } from '../../api/api';
-import { Resume } from '../blocks/resume';
+import { Resume } from '../blocks/content/resume';
 import { Employee } from '../../types/Employee';
 
 export const MyResume: React.FC = () => {
