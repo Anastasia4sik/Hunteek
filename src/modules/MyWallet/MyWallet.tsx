@@ -3,10 +3,10 @@ import { Menu } from '../blocks/menu';
 import { Header } from '../blocks/Header';
 import { Select } from '../blocks/select';
 import { Info } from '../blocks/Info';
-import { Wallet } from '../blocks/wallet';
-import { CatalogSmall } from '../blocks/catalogSmall';
-import { Referral } from '../blocks/referral';
-import { CatalogFull } from '../blocks/catalogFull';
+import { Wallet } from '../blocks/content/wallet';
+import { CatalogSmall } from '../blocks/content/catalogSmall';
+import { Referral } from '../blocks/content/referral';
+import { CatalogFull } from '../blocks/content/catalogFull';
 
 export const MyWallet: React.FC = () => {
   const [location, setLocation] = useState('');

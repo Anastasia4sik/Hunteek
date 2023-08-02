@@ -4,13 +4,13 @@ import { Menu } from '../blocks/menu';
 import { Header } from '../blocks/Header';
 import { Select } from '../blocks/select';
 import { Info } from '../blocks/Info';
-import { RecruitInfo } from '../blocks/recruitInfo';
-import { Banlist } from '../blocks/banlist';
+import { RecruitInfo } from '../blocks/content/recruitInfo';
+import { Banlist } from '../blocks/content/banlist';
 
 import { getRecruiters, getEmployees } from '../../api/api';
 import { Recruiter } from '../../types/Recruiter';
 import { Employee } from '../../types/Employee';
-import { EmployeeInfo } from '../blocks/employeeInfo';
+import { EmployeeInfo } from '../blocks/content/employeeInfo';
 
 import starBig from '../../img/icons/card/rate/bigStar.svg';
 

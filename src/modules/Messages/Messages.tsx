@@ -7,7 +7,7 @@ import { Info } from '../blocks/Info';
 
 import { getEmployees } from '../../api/api';
 import { Employee } from '../../types/Employee';
-import { MessagesList } from '../blocks/messagesList';
+import { MessagesList } from '../blocks/content/messagesList';
 
 export const Messages: React.FC = () => {
   const [location, setLocation] = useState('');

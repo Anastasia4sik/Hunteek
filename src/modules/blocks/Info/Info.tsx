@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { General } from '../../shared/general';
-import { Profile } from '../../shared/profile';
-import { EditProfile } from '../editPRofile';
-import { BlockUser } from '../blockUser';
+
+import { General } from '../sideInfo/general';
+import { Profile } from '../sideInfo/profile';
+import { EditProfile } from '../sideInfo/editProfile';
+import { BlockUser } from '../sideInfo/blockUser';
 import { Employee } from '../../../types/Employee';
 import { Recruiter } from '../../../types/Recruiter';
-import { EditResume } from '../editResume';
-import { CreateProject } from '../createProject';
-import { AllWallets } from '../allWallets';
-import { Transfer } from '../transfer';
-import { Reporting } from '../reporting';
+import { EditResume } from '../sideInfo/editResume';
+import { CreateProject } from '../sideInfo/createProject';
+import { AllWallets } from '../sideInfo/allWallets';
+import { Transfer } from '../sideInfo/transfer';
+import { Reporting } from '../sideInfo/reporting';
 import { ReferralPerson } from '../../../types/referralPerson';
 
 import referralInfo from '../../../api/referralPerson.json';
-import { Rating } from '../rating';
+import { Rating } from '../sideInfo/rating';
 
 type Props = {
   purpose: string;
