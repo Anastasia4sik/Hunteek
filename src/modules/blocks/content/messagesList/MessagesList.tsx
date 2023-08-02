@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 
 import { Pagination } from '../../../shared/pagination';
 
 import messages from '../../../../api/messages.json';
 import { Message } from '../../../shared/message';
 
-export const MessagesList: React.FC = () => {
+type Props = {
+  searchQuery: string;
+};
+
+export const MessagesList: React.FC<Props> = ({ searchQuery }) => {
   const [largePerPage] = useState(5);
   const [smallPerPage] = useState(6);
   const [perPage, setPerPage] = useState(largePerPage); // Start with the largePerPage value
@@ -57,7 +61,9 @@ export const MessagesList: React.FC = () => {
     <div className="messages">
       <div className="block">
         <div className="d-flex flex-column justify-content-between">
-          {itemsPerPage.map(message => (
+          {itemsPerPage
+            .filter((message) => message.name.toLowerCase().includes(searchQuery.toLowerCase()))
+            .map(message => (
             <Message key={message.slug} message={message} />
           ))}
         </div>

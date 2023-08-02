@@ -8,8 +8,12 @@ import { Info } from '../blocks/Info';
 import { Employee } from '../../types/Employee';
 import { getEmployees } from '../../api/api';
 
+import { handleInputChange, handleSearchClick, handleKeyPress } from '../../helpers/search';
+
 export const Main: React.FC = () => {
   const [location, setLocation] = useState('');
+  const [employees, setEmployees] = useState<Employee[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -29,8 +33,6 @@ export const Main: React.FC = () => {
     };
   }, []);
 
-  const [employees, setEmployees] = useState<Employee[]>([]);
-
   useEffect(() => {
     getEmployees().then(data => {
       setEmployees(data);
@@ -41,14 +43,21 @@ export const Main: React.FC = () => {
     <div className="main">
       <Menu />
 
-      <Header />
+      <Header
+        searchQuery={searchQuery}
+        handleInputChange={() => {handleInputChange(event, setSearchQuery)}}
+        handleKeyPress={() => handleKeyPress(event, setSearchQuery)}
+        handleSearchClick={handleSearchClick}
+      />
 
       <div className="content d-flex flex-row">
         <Select />
 
         <div className="main__catalog">
-          {employees.map((employee) => (
-            <Card key={employee.slug} employee={employee} />
+          {employees
+            .filter((employee) => employee.position.toLowerCase().includes(searchQuery.toLowerCase()))
+            .map((employee) => (
+              <Card key={employee.slug} employee={employee} />
           ))}
         </div>
 

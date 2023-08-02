@@ -11,8 +11,16 @@ import photo from '../../img/photo/user.png';
 import time from '../../img/icons/header/time.svg';
 import wallet from '../../img/icons/card/wallet.svg';
 
+import { Project } from '../../types/Project';
+
+import { getProjects } from '../../api/api';
+
+import { handleInputChange, handleSearchClick, handleKeyPress } from '../../helpers/search';
+
 export const Projects: React.FC = () => {
   const [location, setLocation] = useState('');
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -32,21 +40,34 @@ export const Projects: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    getProjects().then(data => {
+      setProjects(data);
+    });
+  }, []);
+
   return (
     <div className="main">
       <Menu />
 
-      <Header />
+      <Header
+        searchQuery={searchQuery}
+        handleInputChange={() => {handleInputChange(event, setSearchQuery)}}
+        handleKeyPress={() => handleKeyPress(event, setSearchQuery)}
+        handleSearchClick={handleSearchClick}
+      />
 
       <div className="content d-flex flex-row">
         <Select />
 
         <div className="main__catalog">
-          {[0, 1, 2, 3, 4, 5].map((each) => (
-            <div key={each} className="card block">
+          {projects
+            .filter((project) => project.position.toLowerCase().includes(searchQuery.toLowerCase()))
+            .map((project) => (
+            <div key={project.slug} className="card block">
               <div className="card__title text-center">
                 <h3 className="card__title__p text-center main-text">
-                  Need a specialist who works in OKCMS
+                  {project.position}
                 </h3>
               </div>
 
@@ -54,19 +75,19 @@ export const Projects: React.FC = () => {
                 <div className="card__person__inner d-flex flex-row justify-content-between align-items-center">
                   <div className="card__person__content d-flex flex-column">
                     <p className="card__person__name main-text">
-                      Company Name
+                      {project.company_name}
                     </p>
 
                     <Rate />
                   </div>
 
-                  <UserPhoto size={20} photo={photo} />
+                  <UserPhoto size={20} photo={project.photo} />
                 </div>
               </div>
 
               <div className="card__info--projects d-flex flex-column justify-content-center">
                 <p className="card__info__desc main-text">
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...
+                  {project.desc}
                 </p>
               </div>
 
@@ -74,13 +95,13 @@ export const Projects: React.FC = () => {
                 <div className="card__media__item d-flex flex-row">
                   <img src={time} alt="Time" />
 
-                  <p className="card__media__item__desc main-text">99h</p>
+                  <p className="card__media__item__desc main-text">{`${project.workTime}h`}</p>
                 </div>
 
                 <div className="card__media__item d-flex flex-row">
                   <img src={wallet} alt="Money" />
 
-                  <p className="card__media__item__desc main-text">$784</p>
+                  <p className="card__media__item__desc main-text">{`$${project.salary}`}</p>
                 </div>
               </div>
 
@@ -90,7 +111,6 @@ export const Projects: React.FC = () => {
             </div>
           ))}
         </div>
-
       </div>
 
       <Info purpose={location} />

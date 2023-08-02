@@ -14,10 +14,14 @@ import { EmployeeInfo } from '../blocks/content/employeeInfo';
 
 import starBig from '../../img/icons/card/rate/bigStar.svg';
 
+import { handleInputChange, handleSearchClick, handleKeyPress } from '../../helpers/search';
+
 export const MyProfile: React.FC = () => {
   const [location, setLocation] = useState('');
   const [recruiters, setRecruiters] = useState<Recruiter[]>([]);
   const [employees, setEmployees] = useState<Employee[]>([]);
+
+  const [searchQuery, setSearchQuery] = useState('');
 
   const [isBanListChecked, setIsBanListChecked] = useState(false);
   const [isResumeChecked, setIsResumeChecked] = useState(false);
@@ -60,7 +64,12 @@ export const MyProfile: React.FC = () => {
     <div className="main">
       <Menu />
 
-      <Header />
+      <Header
+        searchQuery={searchQuery}
+        handleInputChange={() => {handleInputChange(event, setSearchQuery)}}
+        handleKeyPress={() => handleKeyPress(event, setSearchQuery)}
+        handleSearchClick={handleSearchClick}
+      />
 
       <div className="content d-flex flex-row">
         <Select
@@ -97,7 +106,7 @@ export const MyProfile: React.FC = () => {
             </div>
           )}
 
-          {isBanListChecked && <Banlist employees={employees} />}
+          {isBanListChecked && <Banlist employees={employees} searchQuery={searchQuery} />}
         </div>
 
       </div>

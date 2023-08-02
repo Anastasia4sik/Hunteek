@@ -9,9 +9,12 @@ import { getEmployees } from '../../api/api';
 import { Employee } from '../../types/Employee';
 import { MessagesList } from '../blocks/content/messagesList';
 
+import { handleInputChange, handleSearchClick, handleKeyPress } from '../../helpers/search';
+
 export const Messages: React.FC = () => {
   const [location, setLocation] = useState('');
   const [employees, setEmployees] = useState<Employee[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -41,13 +44,18 @@ export const Messages: React.FC = () => {
     <div className="main">
       <Menu />
 
-      <Header />
+      <Header
+        searchQuery={searchQuery}
+        handleInputChange={() => {handleInputChange(event, setSearchQuery)}}
+        handleKeyPress={() => handleKeyPress(event, setSearchQuery)}
+        handleSearchClick={handleSearchClick}
+      />
 
       <div className="content d-flex flex-row">
         <Select />
 
         <div className="content__middle d-flex flex-column">
-          <MessagesList />
+          <MessagesList searchQuery={searchQuery} />
         </div>
 
       </div>

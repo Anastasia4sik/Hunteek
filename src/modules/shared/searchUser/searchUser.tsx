@@ -1,30 +1,14 @@
-import React, { useState } from 'react';
+import React, { KeyboardEventHandler, useState } from 'react';
 import search from '../../../img/icons/search.svg';
 
-export const SearchUser: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+type Props = {
+  searchQuery?: string;
+  handleInputChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleKeyPress?: KeyboardEventHandler<HTMLInputElement>;
+  handleSearchClick?: () => void;
+};
 
-  const performSearch = () => {
-    console.log('Performing search:', searchQuery);
-  };
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(event.target.value);
-  };
-
-  const handleSearchClick = () => {
-    performSearch();
-    setSearchQuery('');
-  };
-
-  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
-      performSearch();
-
-      setSearchQuery('');
-    }
-  };
-
+export const SearchUser: React.FC<Props> = ({ searchQuery, handleInputChange, handleKeyPress, handleSearchClick }) => {
   return (
     <div className="searchUser position-relative">
       <i className="bx bx-search-alt"></i>

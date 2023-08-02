@@ -7,13 +7,17 @@ import lock from '../../../../img/icons/lock.svg';
 import { SearchUser } from '../../../shared/searchUser';
 import { Employee } from '../../../../types/Employee';
 
+import { handleInputChange, handleSearchClick, handleKeyPress } from '../../../../helpers/search';
+
 type Props = {
   employees: Employee[],
+  searchQuery: string,
 };
 
 export const Banlist: React.FC<Props> = ({ employees }) => {
   const [perPage] = useState(4);
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState('');
 
   if (!employees) {
     return null;
@@ -44,7 +48,12 @@ export const Banlist: React.FC<Props> = ({ employees }) => {
 
           <div className="banlist__header__targets d-flex flex-row">
             <div className="banlist__header__search">
-              <SearchUser />
+              <SearchUser
+                searchQuery={searchQuery}
+                handleInputChange={() => {handleInputChange(event, setSearchQuery)}}
+                handleKeyPress={() => handleKeyPress(event, setSearchQuery)}
+                handleSearchClick={handleSearchClick}
+              />
             </div>
 
             <a href="#block-user" className="banlist__header__btn d-flex flex-row btn-grey">
@@ -80,7 +89,9 @@ export const Banlist: React.FC<Props> = ({ employees }) => {
         </div>
 
         <ul>
-          {itemsPerPage.map(employee => (
+          {itemsPerPage
+          .filter((employee) => employee.name.toLowerCase().includes(searchQuery.toLowerCase()))
+          .map(employee => (
             <li
               key={employee.slug}
               data-cy="item"

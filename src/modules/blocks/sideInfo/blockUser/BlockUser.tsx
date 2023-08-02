@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SearchUser } from '../../../shared/searchUser';
 import { UserPhoto } from '../../../shared/userPhoto';
 
 import lock from '../../../../img/icons/lock_red.svg';
 import { Employee } from '../../../../types/Employee';
 
+import { handleInputChange, handleSearchClick, handleKeyPress } from '../../../../helpers/search';
+
 type Props = {
   employees: Employee[] | undefined,
 };
 
 export const BlockUser: React.FC<Props> = ({ employees }) => {
+  const [searchQuery, setSearchQuery] = useState('');
+
   return (
     <div className="blockUser">
       <div className="blockUser__content">
-        <SearchUser />
+        <SearchUser
+          searchQuery={searchQuery}
+          handleInputChange={() => {handleInputChange(event, setSearchQuery)}}
+          handleKeyPress={() => handleKeyPress(event, setSearchQuery)}
+          handleSearchClick={handleSearchClick}
+        />
 
         <div className="
           blockUser__list
@@ -22,7 +31,8 @@ export const BlockUser: React.FC<Props> = ({ employees }) => {
           flex-wrap
           justify-content-between"
         >
-          {employees?.map((employee) => (
+          {employees?.filter((employee) => employee.name.toLowerCase().includes(searchQuery.toLowerCase()))
+          .map((employee) => (
             <div
               key={employee.slug}
               className="
