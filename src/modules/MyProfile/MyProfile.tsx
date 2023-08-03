@@ -111,7 +111,7 @@ export const MyProfile: React.FC = () => {
 
       </div>
 
-      <Info purpose={location} employee={employees[0]} employees={employees} />
+      <Info purpose={location} recruteir={recruiters[0]} employees={employees} />
     </div>
   );
 };
