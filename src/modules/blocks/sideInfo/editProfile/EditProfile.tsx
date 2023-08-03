@@ -43,7 +43,7 @@ export const EditProfile: React.FC<Props> = ({ employee }) => {
             Name
           </legend>
 
-          <input type="text" id="name" placeholder="None" className="edit__input edit__input--name list-text" />
+          <input type="text" id="name" placeholder={employee?.name} className="edit__input edit__input--name list-text" />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
@@ -51,7 +51,7 @@ export const EditProfile: React.FC<Props> = ({ employee }) => {
             Last Name
           </legend>
 
-          <input type="text" id="lastName" placeholder="None" className="edit__input edit__input--lastName list-text" />
+          <input type="text" id="lastName" placeholder={employee?.name} className="edit__input edit__input--lastName list-text" />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">

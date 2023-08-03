@@ -1,6 +1,7 @@
 export interface Employee {
-  slug: number;
+  slug: string;
   name: string;
+  lastname: string;
   photo: string;
   desc: string;
   position: string;

@@ -1,11 +1,11 @@
-import React, { KeyboardEventHandler, useState } from 'react';
+import React, { KeyboardEventHandler, MouseEventHandler } from 'react';
 import search from '../../../img/icons/search.svg';
 
 type Props = {
   searchQuery?: string;
   handleInputChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleKeyPress?: KeyboardEventHandler<HTMLInputElement>;
-  handleSearchClick?: () => void;
+  handleSearchClick?: MouseEventHandler<HTMLButtonElement> | undefined;
 };
 
 export const SearchUser: React.FC<Props> = ({ searchQuery, handleInputChange, handleKeyPress, handleSearchClick }) => {

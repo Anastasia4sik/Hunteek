@@ -1,6 +1,6 @@
 [
   {
-    "slug": 1,
+    "slug": "Google-OKCMS-1",
     "company_name": "Google",
     "photo": "https://www.pngplay.com/wp-content/uploads/14/Gingerbread-Man-PNG-Photo-Image.png",
     "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
@@ -9,7 +9,7 @@
     "salary": 784
   },
   {
-    "slug": 2,
+    "slug": "Facebook-OKCMS-2",
     "company_name": "Facebook",
     "photo": "https://www.pngplay.com/wp-content/uploads/14/Gingerbread-Man-PNG-Photo-Image.png",
     "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
@@ -18,7 +18,7 @@
     "salary": 784
   },
   {
-    "slug": 3,
+    "slug": "Redwing-React-3",
     "company_name": "Redwing",
     "photo": "https://www.pngplay.com/wp-content/uploads/14/Gingerbread-Man-PNG-Photo-Image.png",
     "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
@@ -27,7 +27,7 @@
     "salary": 784
   },
   {
-    "slug": 4,
+    "slug": "SoftServe-OKCMS-4",
     "company_name": "SoftServe",
     "photo": "https://www.pngplay.com/wp-content/uploads/14/Gingerbread-Man-PNG-Photo-Image.png",
     "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
@@ -36,7 +36,7 @@
     "salary": 784
   },
   {
-    "slug": 5,
+    "slug": "GlobalLogic-OKCMS-5",
     "company_name": "GlobalLogic",
     "photo": "https://www.pngplay.com/wp-content/uploads/14/Gingerbread-Man-PNG-Photo-Image.png",
     "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
@@ -45,7 +45,7 @@
     "salary": 784
   },
   {
-    "slug": 6,
+    "slug": "ELITEX-OKCMS-6",
     "company_name": "ELITEX",
     "photo": "https://www.pngplay.com/wp-content/uploads/14/Gingerbread-Man-PNG-Photo-Image.png",
     "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",

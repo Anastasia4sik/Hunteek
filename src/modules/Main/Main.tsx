@@ -55,7 +55,18 @@ export const Main: React.FC = () => {
 
         <div className="main__catalog">
           {employees
-            .filter((employee) => employee.position.toLowerCase().includes(searchQuery.toLowerCase()))
+            .filter((employee) => {
+              const slug = employee.slug.toLowerCase().replace(/-/g, ' ');
+              const query = searchQuery.toLowerCase();
+        
+              if (!query) {
+                return true;
+              }
+        
+              const searchWords = query.split(' ');
+        
+              return searchWords.every((word) => slug.includes(word));
+            })
             .map((employee) => (
               <Card key={employee.slug} employee={employee} />
           ))}

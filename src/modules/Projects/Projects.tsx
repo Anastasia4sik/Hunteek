@@ -62,7 +62,18 @@ export const Projects: React.FC = () => {
 
         <div className="main__catalog">
           {projects
-            .filter((project) => project.position.toLowerCase().includes(searchQuery.toLowerCase()))
+            .filter((project) => {
+              const slug = project.slug.toLowerCase().replace(/-/g, ' ');
+              const query = searchQuery.toLowerCase();
+        
+              if (!query) {
+                return true;
+              }
+        
+              const searchWords = query.split(' ');
+        
+              return searchWords.every((word) => slug.includes(word));
+            })
             .map((project) => (
             <div key={project.slug} className="card block">
               <div className="card__title text-center">

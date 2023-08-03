@@ -1,5 +1,5 @@
 export interface Recruiter {
-  slug: number,
+  slug: string,
   name: string;
   lastname: string;
   photo: string;
