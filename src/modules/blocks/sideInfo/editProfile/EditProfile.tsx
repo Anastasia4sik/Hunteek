@@ -4,13 +4,31 @@ import delet from '../../../../img/icons/delete.svg';
 import upload from '../../../../img/icons/upload.svg';
 import { UserPhoto } from '../../../shared/userPhoto';
 
-import { Employee } from '../../../../types/Employee';
+import { Recruiter } from '../../../../types/Recruiter';
 
 type Props = {
-  employee: Employee | undefined,
+  recruteir: Recruiter | undefined,
 };
 
-export const EditProfile: React.FC<Props> = ({ employee }) => {
+export const EditProfile: React.FC<Props> = ({ recruteir }) => {
+  if (recruteir === undefined) {
+    return null;
+  }
+
+  const {
+    name,
+    lastname,
+    photo,
+    desc,
+    homeCountry,
+    homeCity,
+    email,
+    phone,
+    telegram,
+    linkedin,
+    github,
+  } = recruteir;
+
   return (
     <div className="edit">
       <form action="#" className="edit__content">
@@ -18,7 +36,7 @@ export const EditProfile: React.FC<Props> = ({ employee }) => {
           <label htmlFor="uploadPhoto" className="edit__label list-text"> Image </label>
 
           <div className="edit__photo d-flex flex-row align-items-center justify-content-between">
-            <UserPhoto size={20} photo={employee?.photo} />
+            <UserPhoto size={20} photo={photo} />
 
             <div className="edit__photo__upload">
               <label htmlFor="uploadPhoto" className="edit__photo__upload__label btn-grey">
@@ -43,7 +61,7 @@ export const EditProfile: React.FC<Props> = ({ employee }) => {
             Name
           </legend>
 
-          <input type="text" id="name" placeholder="None" className="edit__input edit__input--name list-text" />
+          <input type="text" id="name" placeholder={name} className="edit__input edit__input--name list-text" />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
@@ -51,7 +69,7 @@ export const EditProfile: React.FC<Props> = ({ employee }) => {
             Last Name
           </legend>
 
-          <input type="text" id="lastName" placeholder="None" className="edit__input edit__input--lastName list-text" />
+          <input type="text" id="lastName" placeholder={lastname} className="edit__input edit__input--lastName list-text" />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
@@ -59,7 +77,7 @@ export const EditProfile: React.FC<Props> = ({ employee }) => {
             Description
           </legend>
 
-          <textarea id="desc" placeholder="None" className="edit__input edit__input--desc list-text" />
+          <textarea id="desc" placeholder={desc} className="edit__input edit__input--desc list-text" />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
@@ -67,7 +85,7 @@ export const EditProfile: React.FC<Props> = ({ employee }) => {
             Email
           </legend>
 
-          <input type="email" id="email" placeholder="None" className="edit__input edit__input--email list-text" />
+          <input type="email" id="email" placeholder={email} className="edit__input edit__input--email list-text" />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
@@ -75,7 +93,7 @@ export const EditProfile: React.FC<Props> = ({ employee }) => {
             Phone
           </legend>
 
-          <input type="number" id="phone" placeholder="None" className="edit__input edit__input--phone list-text" />
+          <input type="number" id="phone" placeholder={phone} className="edit__input edit__input--phone list-text" />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
@@ -83,7 +101,7 @@ export const EditProfile: React.FC<Props> = ({ employee }) => {
             Telegram
           </legend>
 
-          <input type="url" id="telegram" placeholder="None" className="edit__input edit__input--telegram list-text" />
+          <input type="url" id="telegram" placeholder={telegram} className="edit__input edit__input--telegram list-text" />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
@@ -91,7 +109,7 @@ export const EditProfile: React.FC<Props> = ({ employee }) => {
             Linkedin
           </legend>
 
-          <input type="url" id="linkedin" placeholder="None" className="edit__input edit__input--linkedin list-text" />
+          <input type="url" id="linkedin" placeholder={linkedin} className="edit__input edit__input--linkedin list-text" />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
@@ -99,7 +117,7 @@ export const EditProfile: React.FC<Props> = ({ employee }) => {
             GitHub
           </legend>
 
-          <input type="url" id="github" placeholder="None" className="edit__input edit__input--github list-text" />
+          <input type="url" id="github" placeholder={github} className="edit__input edit__input--github list-text" />
         </fieldset>
 
         <button type="submit" className="edit__btn btn-grey">

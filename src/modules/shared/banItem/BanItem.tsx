@@ -15,6 +15,7 @@ export const BanItem: React.FC<Props> = ({ employee }) => {
 
   const {
     name,
+    lastname,
     photo,
     homeCity,
     homeCountry,
@@ -25,7 +26,7 @@ export const BanItem: React.FC<Props> = ({ employee }) => {
       <UserPhoto size={4} height={120} photo={photo} />
 
       <p className="banItem__name bold-text">
-        {name}
+        {`${name} ${lastname}`}
       </p>
 
       <p className="banItem__location bold-text">

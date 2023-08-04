@@ -18,6 +18,7 @@ export const Resume: React.FC<Props> = ({ employee }) => {
 
   const {
     name,
+    lastname,
     photo,
     desc,
     position,
@@ -41,7 +42,7 @@ export const Resume: React.FC<Props> = ({ employee }) => {
 
               <div className="resume__main__info d-flex flex-column">
                 <p className="resume__main__info__name big-text">
-                  {name}
+                  {`${name} ${lastname}`}
                 </p>
 
                 <Rate />

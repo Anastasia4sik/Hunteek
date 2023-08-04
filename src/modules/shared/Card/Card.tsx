@@ -14,6 +14,7 @@ type Props = {
 export const Card: React.FC<Props> = ({ employee }) => {
   const {
     name,
+    lastname,
     photo,
     position,
     workCity,
@@ -34,7 +35,7 @@ export const Card: React.FC<Props> = ({ employee }) => {
           <div className="card__person__inner d-flex flex-row justify-content-between align-items-center">
             <div className="card__person__content d-flex flex-column">
               <p className="card__person__name main-text">
-                { name }
+                {`${name} ${lastname}`}
               </p>
 
               <Rate />

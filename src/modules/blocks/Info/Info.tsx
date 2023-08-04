@@ -21,7 +21,7 @@ type Props = {
   employee?: Employee;
   employees?: Employee[];
   recruteir?: Recruiter;
-  recruteirs?: Recruiter[];
+  recruiters?: Recruiter[];
   referralPerson?: ReferralPerson;
 };
 
@@ -29,6 +29,7 @@ export const Info: React.FC<Props> = ({
   purpose,
   employee,
   employees,
+  recruteir,
 }) => {
   const [personInfo, setPersonInfo] = useState<ReferralPerson | null>(null);
 
@@ -60,7 +61,7 @@ export const Info: React.FC<Props> = ({
     content = <Profile employee={employee} />;
   } else if (purpose === 'edit-profile') {
     title = 'Edit Profile';
-    content = <EditProfile employee={employee} />;
+    content = <EditProfile recruteir={recruteir} />;
   } else if (purpose === 'edit-resume') {
     title = 'Edit Resume';
     content = <EditResume employee={employee} />;

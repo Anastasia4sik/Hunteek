@@ -125,6 +125,12 @@
     }
   }
 
+  &__input {
+    &--desc {
+      height: 125px;
+    }
+  }
+
   &__btn {
     width: 100%;
   }

@@ -19,6 +19,26 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
     setSelectedTimezone(event.target.value);
   };
 
+  if (employee === undefined) {
+    return null;
+  }
+
+  const {
+    name,
+    lastname,
+    photo,
+    desc,
+    position,
+    timeZone,
+    homeCountry,
+    homeCity,
+    workTerm,
+    workTime,
+    englishLevel,
+    expierence,
+    skills,
+  } = employee;
+
   return (
     <div className="edit">
       <form action="#" className="edit__content">
@@ -26,7 +46,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
           <legend className="edit__label list-text"> Image </legend>
 
           <div className="edit__photo d-flex flex-row align-items-center justify-content-between">
-            <UserPhoto size={20} photo={employee?.photo} />
+            <UserPhoto size={20} photo={photo} />
 
             <div className="edit__photo__upload">
               <label htmlFor="uploadPhoto" className="edit__photo__upload__label btn-grey">
@@ -49,7 +69,13 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text"> Name </legend>
 
-          <input type="text" id="name" placeholder="What is your name?" className="edit__input list-text" />
+          <input type="text" id="name" placeholder={`${name} ${lastname}`} className="edit__input list-text" />
+        </fieldset>
+
+        <fieldset className="edit__container d-flex flex-column">
+          <legend className="edit__label list-text"> Position </legend>
+
+          <input type="text" id="name" placeholder={position} className="edit__input list-text" />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
@@ -57,7 +83,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
             Description
           </legend>
 
-          <textarea id="desc" placeholder="Tell us about yourself" className="edit__input edit__input--desc list-text" />
+          <textarea id="desc" placeholder={desc} className="edit__input edit__input--desc list-text" />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
@@ -70,7 +96,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
             id="timezone"
             className="list-text edit__input"
           >
-            <option value="" disabled selected hidden>None</option>
+            <option value="" disabled selected hidden>{timeZone}</option>
 
             {timeZones.map((timezone) => (
               <option key={timezone.offset} value={timezone.offset}>
@@ -88,6 +114,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
               type="checkbox"
               id="Long-term"
               className="list-text"
+              checked={workTerm === "Long-term"}
             />
             <label htmlFor="Long-term" className="list-text">
               Long-term
@@ -99,6 +126,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
               type="checkbox"
               id="Short-term"
               className="list-text"
+              checked={workTerm === "Short-term"}
             />
             <label htmlFor="Short-term" className="list-text">
               Short-term
@@ -116,6 +144,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
               type="checkbox"
               id="Part-time"
               className="list-text"
+              checked={workTime === "Part-time"}
             />
             <label htmlFor="Part-time" className="list-text">
               Part-time
@@ -127,6 +156,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
               type="checkbox"
               id="Full-time"
               className="list-text"
+              checked={workTime === "Full-time"}
             />
             <label htmlFor="Full-time" className="list-text">
               Full-time
@@ -143,7 +173,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
             id="english"
             className="list-text edit__input"
           >
-            <option value="" disabled selected hidden>None</option>
+            <option value="" disabled selected hidden>{englishLevel}</option>
 
             <option value="A1">A1</option>
 
@@ -162,7 +192,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text"> Location </legend>
 
-          <input type="text" id="location" placeholder="Country, city" className="edit__input list-text" />
+          <input type="text" id="location" placeholder={`${homeCountry}, ${homeCity}`} className="edit__input list-text" />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
@@ -170,7 +200,15 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
             Skills
           </legend>
 
-          <textarea id="skills" placeholder="What your skills are?" className="edit__input list-text" />
+          <textarea id="skills" placeholder={skills} className="edit__input list-text" />
+        </fieldset>
+
+        <fieldset className="edit__container d-flex flex-column">
+          <legend className="edit__label list-text">
+            Years of expierience
+          </legend>
+
+          <input id="expierence" placeholder={`${expierence}`} className="edit__input list-text" />
         </fieldset>
 
         <button type="submit" className="edit__btn btn-grey">

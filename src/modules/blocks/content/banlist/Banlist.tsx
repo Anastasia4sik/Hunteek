@@ -38,6 +38,18 @@ export const Banlist: React.FC<Props> = ({ employees }) => {
     }
   };
 
+  const matchSearchQuery = (slug: string, searchQuery: string) => {
+    const slugWords = slug && slug.split('-');
+    const searchWords = searchQuery && searchQuery.toLowerCase().split(' ');
+  
+    if (!searchWords || searchWords.length === 0) {
+      return true; // If searchQuery is empty, show all employees
+    }
+  
+    // Check if all words in searchQuery are present in the slug
+    return searchWords.every((word: any) => slugWords && slugWords.some((slugWord: string | any[]) => slugWord.includes(word)));
+  };
+
   return (
     <div className="banlist">
       <div className="banlist__container block">
@@ -47,12 +59,12 @@ export const Banlist: React.FC<Props> = ({ employees }) => {
           </p>
 
           <div className="banlist__header__targets d-flex flex-row">
-            <div className="banlist__header__search">
+            <div className="banlist__heade   r__search">
               <SearchUser
                 searchQuery={searchQuery}
-                handleInputChange={() => {handleInputChange(event, setSearchQuery)}}
-                handleKeyPress={() => handleKeyPress(event, setSearchQuery)}
-                handleSearchClick={handleSearchClick}
+                handleInputChange={(event) => {handleInputChange(event, setSearchQuery)}}
+                handleKeyPress={(event) => handleKeyPress(event, setSearchQuery)}
+                handleSearchClick={(event) => handleSearchClick(event, setSearchQuery)}
               />
             </div>
 
@@ -90,15 +102,23 @@ export const Banlist: React.FC<Props> = ({ employees }) => {
 
         <ul>
           {itemsPerPage
-          .filter((employee) => employee.name.toLowerCase().includes(searchQuery.toLowerCase()))
-          .map(employee => (
-            <li
-              key={employee.slug}
-              data-cy="item"
-            >
-              <BanItem employee={employee} />
-            </li>
-          ))}
+            .filter((employee) => {
+              const slug = employee.slug.toLowerCase().replace(/-/g, ' ');
+              const query = searchQuery.toLowerCase();
+        
+              if (!query) {
+                return true;
+              }
+        
+              const searchWords = query.split(' ');
+        
+              return searchWords.every((word) => slug.includes(word));
+            })
+            .map((employee) => (
+              <li key={employee.slug} data-cy="item">
+                <BanItem employee={employee} />
+              </li>
+            ))}
         </ul>
       </div>
 
