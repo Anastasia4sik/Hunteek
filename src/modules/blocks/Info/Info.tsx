@@ -15,6 +15,7 @@ import { ReferralPerson } from '../../../types/referralPerson';
 
 import referralInfo from '../../../api/referralPerson.json';
 import { Rating } from '../sideInfo/rating';
+import { News } from '../../News';
 
 type Props = {
   purpose: string;
@@ -88,6 +89,9 @@ export const Info: React.FC<Props> = ({
   } else if (purpose === 'team') {
     title = 'Create a new smart contract resume';
     content = <EditResume employee={employee} />;
+  } else if (purpose === 'news') {
+    title = 'News';
+    content = <General />;
   } else {
     title = '';
     content = '';

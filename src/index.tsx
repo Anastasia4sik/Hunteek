@@ -11,7 +11,9 @@ import { Projects } from './modules/Projects';
 import { Team } from './modules/Team';
 import { MyWalletCatFull } from './modules/MyWalletCatFull';
 import { Messages } from './modules/Messages';
+
 import { Login } from './modules/Login';
+import { News } from './modules/News';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,49 +22,24 @@ ReactDOM.render(
         <Route path="/" element={<App />}>
           <Route index element={<Main />} />
 
-          <Route path="my-profile" element={<MyProfile />}>
-            <Route path="my-resume" element={<MyResume />} />
-          </Route>
+          <Route path="/my-profile" element={<MyProfile />} />
 
-          <Route path="my-wallet" element={<MyWallet />}>
-            <Route path="catalog-full" element={<MyWalletCatFull />} />
-          </Route>
+          <Route path="/my-profile/my-resume" element={<MyResume />} />
 
-          <Route path="projects" element={<Projects />} />
+          <Route path="/my-wallet" element={<MyWallet />} />
 
-          <Route path="teams" element={<Team />} />
+          <Route path="/my-wallet/catalog-full" element={<MyWalletCatFull />} />
 
-          <Route path="messages" element={<Messages />} />
+          <Route path="/projects" element={<Projects />} />
 
-          <Route path="login" element={<Login />} />
+          <Route path="/teams" element={<Team />} />
 
-          <Route path="register" element={<Login />} />
+          <Route path="/messages" element={<Messages />} />
+          <Route path="/news" element={<News />} />
 
-          <Route path="code" element={<Login />} />
-        </Route>
-
-        <Route path=":lang">
-          <Route index element={<Main />} />
-
-          <Route path="my-profile" element={<MyProfile />}>
-            <Route path="my-resume" element={<MyResume />} />
-          </Route>
-
-          <Route path="my-wallet" element={<MyWallet />}>
-            <Route path="catalog-full" element={<MyWalletCatFull />} />
-          </Route>
-
-          <Route path="projects" element={<Projects />} />
-
-          <Route path="teams" element={<Team />} />
-
-          <Route path="messages" element={<Messages />} />
-
-          <Route path="login" element={<Login />} />
-
-          <Route path="register" element={<Login />} />
-
-          <Route path="code" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Login />} />
+          <Route path="/code" element={<Login />} />
         </Route>
       </Routes>
     </Router>

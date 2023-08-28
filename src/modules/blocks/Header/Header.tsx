@@ -33,11 +33,11 @@ export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handle
   return (
     <div className="header d-flex flex-row align-items-center">
       <div className="header__lang d-flex flex-row">
-        <a href="/ua" className="header__lang__item header__lang__item--ua">
+        <a href="/" className="header__lang__item header__lang__item--ua">
           <img src={ua} alt="Ukrainian" className="header__lang__item__img"/>
         </a>
 
-        <a href="/en" className="header__lang__item header__lang__item--eng">
+        <a href="/" className="header__lang__item header__lang__item--eng">
           <img src={eng} alt="Engish" className="header__lang__item__img"/>
         </a>
       </div>

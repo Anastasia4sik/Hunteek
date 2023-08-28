@@ -1,0 +1,57 @@
+.newsCard {
+  width: $newsCard-width;
+  &__title {
+    background: $green-main;
+
+    padding: 1.5vh 1vh;
+    margin-bottom: 30px;
+
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+    @include onBigDesktop {
+      padding: $main-p;
+    }
+
+    
+    &__p {
+      max-width: 70%;
+
+      margin: 0 auto;
+
+      color: $white-text-main;
+
+      @include onBigDesktop{
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    padding: 0 30px;
+
+    margin-bottom: 15px;
+  }
+
+  &__desc {
+    padding-bottom: 15px;
+    margin: 0 30px 15px;
+    color: $grey-text;
+
+    border-bottom: 1px solid $grey-border;
+  }
+
+  &__bottom {
+    padding: 0 30px;
+    margin-bottom: 20px;
+    color: $grey-text;
+
+    &__link {
+      transition: color .3s ease-in-out;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
