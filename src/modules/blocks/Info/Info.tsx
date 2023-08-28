@@ -90,7 +90,10 @@ export const Info: React.FC<Props> = ({
     title = 'Create a new smart contract resume';
     content = <EditResume employee={employee} />;
   } else if (purpose === 'news') {
-    title = 'News';
+    title = 'News page';
+    content = <General />;
+  } else if (purpose === 'support') {
+    title = 'Support page';
     content = <General />;
   } else {
     title = '';

@@ -98,7 +98,7 @@ export const Menu: React.FC = () => {
             </a>
 
             <a
-              href="/"
+              href="/support"
               className={classNames(
                 'menu__nav__item list-text d-flex flex-row align-items-center',
                 { menu__nav__item__selected: isSupport },

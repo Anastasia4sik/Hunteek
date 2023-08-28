@@ -14,6 +14,7 @@ import { Messages } from './modules/Messages';
 
 import { Login } from './modules/Login';
 import { News } from './modules/News';
+import { Support } from './modules/Support';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -35,6 +36,9 @@ ReactDOM.render(
           <Route path="/teams" element={<Team />} />
 
           <Route path="/messages" element={<Messages />} />
+
+          <Route path="/support" element={<Support />} />
+
           <Route path="/news" element={<News />} />
 
           <Route path="/login" element={<Login />} />
