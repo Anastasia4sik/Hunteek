@@ -19,21 +19,21 @@ type Props = {
 };
 
 export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handleKeyPress, handleSearchClick }) => {
-  const uaLang = document.querySelector('.header__lang__item--ua');
-  const engLang = document.querySelector('.header__lang__item--eng');
+  // const uaLang = document.querySelector('.header__lang__item--ua');
+  // const engLang = document.querySelector('.header__lang__item--eng');
 
-  if (window.location.pathname.includes('/en')) {
-    uaLang?.classList.add('langSmall');
-    engLang?.classList.remove('langSmall');
-  } else {
-    uaLang?.classList.remove('langSmall');
-    engLang?.classList.add('langSmall');
-  }
+  // if (window.location.pathname.includes('/en')) {
+  //   uaLang?.classList.add('langSmall');
+  //   engLang?.classList.remove('langSmall');
+  // } else {
+  //   uaLang?.classList.remove('langSmall');
+  //   engLang?.classList.add('langSmall');
+  // }
 
   return (
     <div className="header d-flex flex-row align-items-center">
       <div className="header__lang d-flex flex-row">
-        <a href="/" className="header__lang__item header__lang__item--ua">
+        <a href="/" className="header__lang__item header__lang__item--ua langSmall">
           <img src={ua} alt="Ukrainian" className="header__lang__item__img"/>
         </a>
 
