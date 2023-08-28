@@ -12,14 +12,20 @@
 
   z-index: 3;
 
-  &__select {
-    background-color: $black-header;
-    border: none;
+  &__lang {
+    gap: 5px;
 
-    height: 50%;
-    width: 100px;
+    &__item {
+      transition: all .3s ease-in-out;
 
-    color: $white-text-sec;
+      &:hover {
+        width: 30px;
+      }
+
+      &__img {
+        width: 100%;
+      }
+    }
   }
 
   &__search {   
@@ -110,5 +116,9 @@
       }
     }
   }
+}
+
+.langSmall {
+  width: 20px;
 }
 

@@ -8,6 +8,9 @@ import video from '../../../img/icons/header/video.svg';
 import projects from '../../../img/icons/header/category.svg';
 import dollar from '../../../img/icons/header/dollar.svg';
 import profile from '../../../img/icons/header/profile.svg';
+
+import ua from '../../../img/icons/flags/ua.png';
+import eng from '../../../img/icons/flags/eng.png';
 type Props = {
   searchQuery?: string;
   handleInputChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -16,30 +19,28 @@ type Props = {
 };
 
 export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handleKeyPress, handleSearchClick }) => {
+  const uaLang = document.querySelector('.header__lang__item--ua');
+  const engLang = document.querySelector('.header__lang__item--eng');
+
+  if (window.location.pathname.includes('/en')) {
+    uaLang?.classList.add('langSmall');
+    engLang?.classList.remove('langSmall');
+  } else {
+    uaLang?.classList.remove('langSmall');
+    engLang?.classList.add('langSmall');
+  }
+
   return (
     <div className="header d-flex flex-row align-items-center">
-      <select className="header__select list-text" name="Language" id="language">
-        <option
-          value=""
-          selected
-          disabled
-          hidden
-        >
-          Language
-        </option>
+      <div className="header__lang d-flex flex-row">
+        <a href="/ua" className="header__lang__item header__lang__item--ua">
+          <img src={ua} alt="Ukrainian" className="header__lang__item__img"/>
+        </a>
 
-        <option
-          value="English"
-        >
-          English
-        </option>
-
-        <option
-          value="Ukrainian"
-        >
-          Ukrainian
-        </option>
-      </select>
+        <a href="/en" className="header__lang__item header__lang__item--eng">
+          <img src={eng} alt="Engish" className="header__lang__item__img"/>
+        </a>
+      </div>
 
       <div className="header__search position-relative">
         <i className="bx bx-search-alt"></i>

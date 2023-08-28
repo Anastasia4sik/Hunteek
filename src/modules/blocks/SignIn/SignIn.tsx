@@ -15,7 +15,7 @@ export const SignIn: React.FC = () => {
       <div className="login__form__block login__form__block--last position-relative">
         <img src={key} alt="Password" className="login__form__img login__form__img--password position-absolute" />
 
-        <input type="text" placeholder="Enter Password" className="login__form__input login__form__input--2" />
+        <input type="password" placeholder="Enter Password" className="login__form__input login__form__input--2" />
       </div>
     </div>
   );

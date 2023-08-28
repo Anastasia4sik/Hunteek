@@ -75,7 +75,7 @@ export const Register: React.FC = () => {
         />
 
         <input
-          type="text"
+          type="password"
           placeholder="Create a password"
           className="login__form__input login__form__input--2"
           required
@@ -92,7 +92,7 @@ export const Register: React.FC = () => {
         />
 
         <input
-          type="text"
+          type="password"
           placeholder="Repeat the created password"
           className={`login__form__input login__form__input--2 ${!passwordMatch && 'login__form__input--invalid'}`}
           required
