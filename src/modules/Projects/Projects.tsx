@@ -26,6 +26,8 @@ export const Projects: React.FC = () => {
     const handleHashChange = () => {
       if (window.location.hash === '#create-project') {
         setLocation('project');
+      } else if (window.location.hash === '#feedback') {
+        setLocation('feedback');
       } else {
         setLocation('general');
       }

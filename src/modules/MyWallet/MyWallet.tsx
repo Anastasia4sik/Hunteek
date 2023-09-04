@@ -24,6 +24,8 @@ export const MyWallet: React.FC = () => {
         setLocation('fiatWallets');
       } else if (hash.includes('#ref-')) {
         setLocation('reporting');
+      } else if (window.location.hash === '#feedback') {
+        setLocation('feedback');
       } else {
         setLocation('general');
       }

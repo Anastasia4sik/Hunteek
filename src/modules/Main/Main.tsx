@@ -19,6 +19,8 @@ export const Main: React.FC = () => {
     const handleHashChange = () => {
       if (window.location.hash === '#profile') {
         setLocation('profile');
+      } else if (window.location.hash === '#feedback') {
+        setLocation('feedback');
       } else {
         setLocation('general');
       }

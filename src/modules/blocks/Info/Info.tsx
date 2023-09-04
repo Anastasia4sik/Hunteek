@@ -16,6 +16,7 @@ import { ReferralPerson } from '../../../types/referralPerson';
 import referralInfo from '../../../api/referralPerson.json';
 import { Rating } from '../sideInfo/rating';
 import { News } from '../../News';
+import { Feedback } from '../sideInfo/feedback';
 
 type Props = {
   purpose: string;
@@ -95,6 +96,9 @@ export const Info: React.FC<Props> = ({
   } else if (purpose === 'support') {
     title = 'Support page';
     content = <General />;
+  } else if (purpose === 'feedback') {
+    title = 'Send a feedack';
+    content = <Feedback />;
   } else {
     title = '';
     content = '';

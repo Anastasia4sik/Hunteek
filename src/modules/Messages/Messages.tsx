@@ -20,6 +20,8 @@ export const Messages: React.FC = () => {
     const handleHashChange = () => {
       if (window.location.hash === '#edit-resume') {
         setLocation('edit-resume');
+      } else if (window.location.hash === '#feedback') {
+        setLocation('feedback');
       } else {
         setLocation('general');
       }

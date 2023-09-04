@@ -34,6 +34,8 @@ export const MyProfile: React.FC = () => {
         setLocation('block');
       } else if (window.location.hash === '#rating') {
         setLocation('rating');
+      } else if (window.location.hash === '#feedback') {
+        setLocation('feedback');
       } else {
         setLocation('general');
       }
