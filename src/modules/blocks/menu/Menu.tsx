@@ -92,9 +92,20 @@ export const Menu: React.FC = () => {
                 'menu__nav__item list-text d-flex flex-row align-items-center',
               )}
             >
-              <img src={team} alt="Team" className="menu__nav__item__img" />
+              <img src={team} alt="Profile" className="menu__nav__item__img" />
 
               My Profile
+            </a>
+
+            <a
+              href="/my-team"
+              className={classNames(
+                'menu__nav__item list-text d-flex flex-row align-items-center',
+              )}
+            >
+              <img src={team} alt="Team" className="menu__nav__item__img" />
+
+              My Team
             </a>
 
             <a

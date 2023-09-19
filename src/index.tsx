@@ -33,7 +33,7 @@ ReactDOM.render(
 
           <Route path="/projects" element={<Projects />} />
 
-          <Route path="/teams" element={<Team />} />
+          <Route path="/my-team" element={<Team />} />
 
           <Route path="/messages" element={<Messages />} />
 
