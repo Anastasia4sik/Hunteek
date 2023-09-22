@@ -9,7 +9,7 @@ import salaries from '../../../helpers/salaries.js';
 import reits from '../../../helpers/reits.js';
 import countries from '../../../helpers/countries.js';
 import speakLanguages from '../../../helpers/speakLanguages.js';
-
+import experiences from '../../../helpers/experiences.js';
 
 export const MainSelect = () => {
   const [isOpen1, setIsOpen1] = useState(false);
@@ -101,7 +101,8 @@ export const MainSelect = () => {
               ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
           >
             {languages.map((language: string) => (
-              <li className="
+              <li key={language} 
+                className="
                 list-text
                 select__option__list__item"
               >
@@ -193,7 +194,7 @@ export const MainSelect = () => {
               ${isOpen3 ? 'select__option__list--open' : 'select__option__list--close'}`}
           >
             {levels.map((level: string) => (
-              <li className="
+              <li key={level} className="
                 list-text
                 select__option__list__item"
               >
@@ -231,20 +232,20 @@ export const MainSelect = () => {
               select__option__list--1
               ${isOpen4 ? 'select__option__list--open' : 'select__option__list--close'}`}
           >
-            {levels.map((level: string) => (
-              <li className="
+            {experiences.map((experience: string) => (
+              <li key={experience} className="
                 list-text
                 select__option__list__item"
               >
-                <label htmlFor={`${level}-checkbox`} className="checkbox-label list-text">
+                <label htmlFor={`${experience}-checkbox`} className="checkbox-label list-text">
                   <input
                     type="checkbox"
-                    id={`${level}-checkbox`}
+                    id={`${experience}-checkbox`}
                     name="option"
-                    value={level}
+                    value={experience}
 
                   />
-                  <span>{level}</span>
+                  <span>{experience}</span>
                 </label>
               </li>
             ))}
@@ -392,20 +393,20 @@ export const MainSelect = () => {
               select__option__list--1
               ${isOpen7 ? 'select__option__list--open' : 'select__option__list--close'}`}
           >
-              {companyTypes.map((types: string) => (
-              <li className="
+              {companyTypes.map((type: string) => (
+              <li key={type} className="
                 list-text
                 select__option__list__item"
               >
-                <label htmlFor={`${types}-checkbox`} className="checkbox-label list-text">
+                <label htmlFor={`${type}-checkbox`} className="checkbox-label list-text">
                   <input
                     type="checkbox"
-                    id={`${types}-checkbox`}
+                    id={`${type}-checkbox`}
                     name="option"
-                    value={types}
+                    value={type}
 
                   />
-                  <span>{types}</span>
+                  <span>{type}</span>
                 </label>
               </li>
             ))}
@@ -433,7 +434,7 @@ export const MainSelect = () => {
               ${isOpen8 ? 'select__option__list--open' : 'select__option__list--close'}`}
           >
               {salaries.map((salary: number) => (
-                <li className="
+                <li key={salary} className="
                   list-text
                   select__option__list__item"
                 >
@@ -477,7 +478,7 @@ export const MainSelect = () => {
               ${isOpen9 ? 'select__option__list--open' : 'select__option__list--close'}`}
           >
               {reits.map((reit: number) => (
-                <li className="
+                <li key={reit} className="
                   list-text
                   select__option__list__item"
                 >
@@ -518,7 +519,7 @@ export const MainSelect = () => {
               ${isOpen10 ? 'select__option__list--open' : 'select__option__list--close'}`}
           >
               {countries.map((country: string) => (
-                <li className="
+                <li key={country} className="
                   list-text
                   select__option__list__item"
                 >
@@ -559,7 +560,7 @@ export const MainSelect = () => {
               ${isOpen11 ? 'select__option__list--open' : 'select__option__list--close'}`}
           >
               {speakLanguages.map((language: string) => (
-                <li className="
+                <li key={language} className="
                   list-text
                   select__option__list__item"
                 >

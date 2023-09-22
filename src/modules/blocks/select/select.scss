@@ -11,6 +11,7 @@
   top: calc(#{$header-height} + 21px);
 
   padding: $main-p 8px $main-p 16px;
+  overflow-y: scroll;
 
   @include onBigDesktop {
     padding: $main-p 6px $main-p 12px;
@@ -21,11 +22,9 @@
   }
   
   &__container {
-    margin-bottom: $main-gap;
     display: flex;
     flex-direction: column;
     min-height: calc(100%);
-
 
     &__btn {
       height: 36px;

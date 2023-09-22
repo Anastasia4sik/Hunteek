@@ -184,106 +184,15 @@ export const Select: React.FC<Props> = ({
                   </li>
                 </ul>
               </div>
-            ) : (
-              <MainSelect />
-              // <div className={`${isMy ? 'select--3' : 'select--1'} select__content  ${isOpen1 ? 'open' : ''}`}>
-              //   <div
-              //     className={`${isMy ? 'select__header--profile' : ''} select__header d-flex flex-row justify-content-between ${isOpen1 ? 'select__header--active' : ''}`}
-              //     role="button"
-              //     tabIndex={0}
-              //     onClick={handleToggle1}
-              //     onKeyDown={handleKeyDown}
-              //   >
-              //     {!isMy ? (
-              //       <span className="select__option list-text">Specilization</span>
-              //     ) : (
-              //       <div className="d-flex flex-row align-items-center select__profile">
-              //         <img src={user} alt="User" />
+            ) : ( !isMy ? <MainSelect /> : (
+                <div className="d-flex flex-row align-items-center select__profile">
+                  <img src={user} alt="User" />
 
-              //         <span className="select__option list-text">
-              //           My profile
-              //         </span>
-              //       </div>
-              //     )}
-
-              //     {!isOpen1 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
-              //   </div>
-
-              //   {!isMy ? (
-              //     <ul
-              //       className={`
-              //         select__option__list
-              //         select__option__list--1
-              //         ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
-              //     >
-              //       {languages.map((language: string) => (
-              //         <li className="
-              //           list-text
-              //           select__option__list__item"
-              //         >
-              //           <label htmlFor={`${language}-checkbox`} className="checkbox-label list-text">
-              //             <input
-              //               type="checkbox"
-              //               id={`${language}-checkbox`}
-              //               name="option"
-              //               value={language}
-
-              //             />
-              //             <span>{language}</span>
-              //           </label>
-              //         </li>
-              //       ))}
-              //     </ul>
-              //   ) : (
-              //     <ul
-              //       className={`
-              //           select__option__list
-              //           select__option__list--1
-              //           ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
-              //     >
-              //       <li className="
-              //           list-text
-              //           select__option__list__item"
-              //       >
-              //         <label htmlFor="resume-checkbox" className="checkbox-label list-text">
-              //           <input
-              //             type="checkbox"
-              //             id="resume-checkbox"
-              //             name="option"
-              //             value="resume"
-              //             onChange={handleResumeChange}
-              //           />
-              //           <span>My Resume</span>
-              //         </label>
-              //       </li>
-
-              //       <ul
-              //         className={`
-              //         select__option__list
-              //         select__option__list--3
-              //         ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
-              //       >
-              //         <li className="
-              //           list-text
-              //           select__option__list__item
-              //           select__option__list__item--last
-              //           select__option__list__item--border"
-              //         >
-              //           <label htmlFor="BanList-checkbox" className="checkbox-label list-text">
-              //             <input
-              //               type="checkbox"
-              //               id="BanList-checkbox"
-              //               name="option"
-              //               value="BanList"
-              //               onChange={handleBanListChange}
-              //             />
-              //             <span>BanList</span>
-              //           </label>
-              //         </li>
-              //       </ul>
-              //     </ul>
-              //   )}
-              // </div>
+                  <span className="select__option list-text">
+                    My profile
+                  </span>
+                </div>
+              )
             )}
           </>
         )}
