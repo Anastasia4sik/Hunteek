@@ -8,8 +8,8 @@ import companyTypes from '../../../helpers/companyType.js';
 import salaries from '../../../helpers/salaries.js';
 import reits from '../../../helpers/reits.js';
 import countries from '../../../helpers/countries.js';
-import speakLanguages from '../../../helpers/speakLanguages.js';
 import experiences from '../../../helpers/experiences.js';
+import speakLanguages from '../../../helpers/speakLanguages.js';
 
 export const MainSelect = () => {
   const [isOpen1, setIsOpen1] = useState(false);
@@ -78,7 +78,7 @@ export const MainSelect = () => {
 
   return (
     <div className="select block">
-      <div className="select__container">
+      <div className={`select__container ${!isMy && 'scroll'}`}>
         {/* program languages */}
         <div className={`${isMy ? 'select--3' : 'select--1'} select__content big  ${isOpen1 ? 'open' : ''}`}>
           <div

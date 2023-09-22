@@ -35,7 +35,7 @@ ReactDOM.render(
 
           <Route path="/my-team" element={<Team />} />
 
-          <Route path="/messages" element={<Messages />} />
+          <Route path="/my-messages" element={<Messages />} />
 
           <Route path="/support" element={<Support />} />
 
