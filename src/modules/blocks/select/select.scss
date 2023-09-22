@@ -9,11 +9,14 @@
 
   position: fixed;
   top: calc(#{$header-height} + 21px);
-
-  padding: $main-p 4px $main-p 16px;
-
-  @include onBigDesktop {
-    padding-left: 12px;
+  padding: 15px;
+  
+  &__main {
+    padding: $main-p 4px $main-p 16px;
+  
+    @include onBigDesktop {
+      padding-left: 12px;
+    }
   }
   
   &__profile {
@@ -23,18 +26,17 @@
   &__container {
     display: flex;
     flex-direction: column;
-    height: calc(100%);
+    height: 100%;
 
-    padding-right: 6px;
+    &__main {
+      padding-right: 6px;
+
+    }
 
     &__btn {
       height: 36px;
 
-      margin: 14px 16px 0;
-
       @include onBigDesktop {
-        margin: 15px 25px 0;
-
         height: 46px;
       }
     }
@@ -48,13 +50,13 @@
     }
   }
 
-  &--3 {
-    padding: $main-p 0 $main-p 16px;
+  // &--3 {
+  //   padding: $main-p 0 $main-p 16px;
 
-    @include onBigDesktop {
-      padding: $main-p 0 $main-p 12px;
-    }
-  }
+  //   @include onBigDesktop {
+  //     padding: $main-p 0 $main-p 12px;
+  //   }
+  // }
 
   &--2 {
     padding: 15px 16px;

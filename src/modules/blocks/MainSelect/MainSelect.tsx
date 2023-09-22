@@ -24,6 +24,8 @@ export const MainSelect = () => {
   const [isOpen10, setIsOpen10] = useState(false);
   const [isOpen11, setIsOpen11] = useState(false);
 
+  const isProject = window.location.pathname.includes('projects');
+
   const handleToggle1 = () => {
     setIsOpen1(!isOpen1);
   };
@@ -77,8 +79,8 @@ export const MainSelect = () => {
   const isMy = window.location.pathname.includes('my');
 
   return (
-    <div className="select block">
-      <div className={`select__container ${!isMy && 'scroll'}`}>
+    <div className="select select__main block">
+      <div className="select__container select__container__main scroll">
         {/* program languages */}
         <div className={`${isMy ? 'select--3' : 'select--1'} select__content big  ${isOpen1 ? 'open' : ''}`}>
           <div
@@ -120,137 +122,144 @@ export const MainSelect = () => {
             ))}
           </ul>
         </div>
-        {/* Job search activity */}
-        <div className={`select--1 select__content  ${isOpen2 ? 'open' : ''}`}>
-          <div
-            className={`select__header d-flex flex-row justify-content-between ${isOpen2 ? 'select__header--active' : ''}`}
-            role="button"
-            tabIndex={0}
-            onClick={handleToggle2}
-            onKeyDown={handleKeyDown}
-          >
-              <span className="select__option list-text">Job search activity</span>
 
-            {!isOpen2 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
-          </div>
-
-          <ul
-            className={`
-              select__option__list
-              select__option__list--1
-              ${isOpen2 ? 'select__option__list--open' : 'select__option__list--close'}`}
-          >
-              <li className="
-                list-text
-                select__option__list__item"
+        {!isProject && (
+          <>
+            {/* Job search activity */}
+            <div className={`select--1 select__content  ${isOpen2 ? 'open' : ''}`}>
+              <div
+                className={`select__header d-flex flex-row justify-content-between ${isOpen2 ? 'select__header--active' : ''}`}
+                role="button"
+                tabIndex={0}
+                onClick={handleToggle2}
+                onKeyDown={handleKeyDown}
               >
-                <label htmlFor='active-checkbox' className="checkbox-label list-text">
-                  <input
-                    type="checkbox"
-                    id='active-checkbox'
-                    name="option"
-                    value='active'
+                  <span className="select__option list-text">Job search activity</span>
 
-                  />
-                  <span>Active</span>
-                </label>
-              </li>
+                {!isOpen2 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+              </div>
 
-              <li className="
-                list-text
-                select__option__list__item"
+              <ul
+                className={`
+                  select__option__list
+                  select__option__list--1
+                  ${isOpen2 ? 'select__option__list--open' : 'select__option__list--close'}`}
               >
-                <label htmlFor='passive-checkbox' className="checkbox-label list-text">
-                  <input
-                    type="checkbox"
-                    id='passive-checkbox'
-                    name="option"
-                    value='passive'
+                  <li className="
+                    list-text
+                    select__option__list__item"
+                  >
+                    <label htmlFor='active-checkbox' className="checkbox-label list-text">
+                      <input
+                        type="checkbox"
+                        id='active-checkbox'
+                        name="option"
+                        value='active'
 
-                  />
-                  <span>Passive</span>
-                </label>
-              </li>
-          </ul>
-        </div>
-        {/* English level */}
-        <div className={`select--1 select__content  ${isOpen3 ? 'open' : ''}`}>
-          <div
-            className={`select__header d-flex flex-row justify-content-between ${isOpen3 ? 'select__header--active' : ''}`}
-            role="button"
-            tabIndex={0}
-            onClick={handleToggle3}
-            onKeyDown={handleKeyDown}
-          >
-              <span className="select__option list-text">English level</span>
+                      />
+                      <span>Active</span>
+                    </label>
+                  </li>
 
-            {!isOpen3 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
-          </div>
+                  <li className="
+                    list-text
+                    select__option__list__item"
+                  >
+                    <label htmlFor='passive-checkbox' className="checkbox-label list-text">
+                      <input
+                        type="checkbox"
+                        id='passive-checkbox'
+                        name="option"
+                        value='passive'
 
-          <ul
-            className={`
-              select__option__list
-              select__option__list--1
-              ${isOpen3 ? 'select__option__list--open' : 'select__option__list--close'}`}
-          >
-            {levels.map((level: string) => (
-              <li key={level} className="
-                list-text
-                select__option__list__item"
+                      />
+                      <span>Passive</span>
+                    </label>
+                  </li>
+              </ul>
+            </div>
+
+            {/* English level */}
+            <div className={`select--1 select__content  ${isOpen3 ? 'open' : ''}`}>
+              <div
+                className={`select__header d-flex flex-row justify-content-between ${isOpen3 ? 'select__header--active' : ''}`}
+                role="button"
+                tabIndex={0}
+                onClick={handleToggle3}
+                onKeyDown={handleKeyDown}
               >
-                <label htmlFor={`${level}-checkbox`} className="checkbox-label list-text">
-                  <input
-                    type="checkbox"
-                    id={`${level}-checkbox`}
-                    name="option"
-                    value={level}
+                  <span className="select__option list-text">English level</span>
 
-                  />
-                  <span>{level}</span>
-                </label>
-              </li>
-            ))}
-          </ul>
-        </div>
-        {/* experience */}
-        <div className={`select--1 select__content  ${isOpen4 ? 'open' : ''}`}>
-          <div
-            className={`select__header d-flex flex-row justify-content-between ${isOpen4 ? 'select__header--active' : ''}`}
-            role="button"
-            tabIndex={0}
-            onClick={handleToggle4}
-            onKeyDown={handleKeyDown}
-          >
-              <span className="select__option list-text">Work Experience</span>
+                {!isOpen3 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+              </div>
 
-            {!isOpen4 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
-          </div>
-
-          <ul
-            className={`
-              select__option__list
-              select__option__list--1
-              ${isOpen4 ? 'select__option__list--open' : 'select__option__list--close'}`}
-          >
-            {experiences.map((experience: string) => (
-              <li key={experience} className="
-                list-text
-                select__option__list__item"
+              <ul
+                className={`
+                  select__option__list
+                  select__option__list--1
+                  ${isOpen3 ? 'select__option__list--open' : 'select__option__list--close'}`}
               >
-                <label htmlFor={`${experience}-checkbox`} className="checkbox-label list-text">
-                  <input
-                    type="checkbox"
-                    id={`${experience}-checkbox`}
-                    name="option"
-                    value={experience}
+                {levels.map((level: string) => (
+                  <li key={level} className="
+                    list-text
+                    select__option__list__item"
+                  >
+                    <label htmlFor={`${level}-checkbox`} className="checkbox-label list-text">
+                      <input
+                        type="checkbox"
+                        id={`${level}-checkbox`}
+                        name="option"
+                        value={level}
 
-                  />
-                  <span>{experience}</span>
-                </label>
-              </li>
-            ))}
-          </ul>
-        </div>
+                      />
+                      <span>{level}</span>
+                    </label>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* experience */}
+            <div className={`select--1 select__content  ${isOpen4 ? 'open' : ''}`}>
+              <div
+                className={`select__header d-flex flex-row justify-content-between ${isOpen4 ? 'select__header--active' : ''}`}
+                role="button"
+                tabIndex={0}
+                onClick={handleToggle4}
+                onKeyDown={handleKeyDown}
+              >
+                  <span className="select__option list-text">Work Experience</span>
+
+                {!isOpen4 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+              </div>
+
+              <ul
+                className={`
+                  select__option__list
+                  select__option__list--1
+                  ${isOpen4 ? 'select__option__list--open' : 'select__option__list--close'}`}
+              >
+                {experiences.map((experience: string) => (
+                  <li key={experience} className="
+                    list-text
+                    select__option__list__item"
+                  >
+                    <label htmlFor={`${experience}-checkbox`} className="checkbox-label list-text">
+                      <input
+                        type="checkbox"
+                        id={`${experience}-checkbox`}
+                        name="option"
+                        value={experience}
+
+                      />
+                      <span>{experience}</span>
+                    </label>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </>
+        )}
         {/* Type of work */}
         <div className={`select--1 select__content  ${isOpen5 ? 'open' : ''}`}>
           <div

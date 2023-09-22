@@ -42,9 +42,11 @@ export const Select: React.FC<Props> = ({
   const isMy = window.location.pathname.includes('my');
   const isWallet = window.location.pathname.includes('my-wallet');
   const isProject = window.location.pathname.includes('projects');
-  const isTeam = window.location.pathname.includes('team');
+  const isTeam = window.location.pathname.includes('my-team');
   const isMessage = window.location.pathname.includes('messages');
   const isNews = window.location.pathname.includes('news');
+  const isSupport = window.location.pathname.includes('support');
+  const isProfile = window.location.pathname.includes('my-profile');
 
   const handleBanListChange = (e: { target: { checked: any; }; }) => {
     setIsBanListChecked ? setIsBanListChecked(e.target.checked) : null;
@@ -58,7 +60,7 @@ export const Select: React.FC<Props> = ({
     setIsReferralChecked ? setIsReferralChecked(e.target.checked) : null;
   };
 
-  if (isMy || isNews) {
+  if (isMy || isNews || isSupport) {
     return (
       <div className="select block">
         <div className="select__container">
@@ -110,7 +112,7 @@ export const Select: React.FC<Props> = ({
                 </a>
               )}
   
-              {isWallet ? (
+              {isWallet && (
                 <div className={`${isWallet ? 'select--3' : 'select--1'} select__content  ${isOpen1 ? 'open' : ''}`}>
                   <div
                     className={`${isMy ? 'select__header--profile' : ''} select__header d-flex flex-row justify-content-between ${isOpen1 ? 'select__header--active' : ''}`}
@@ -186,20 +188,84 @@ export const Select: React.FC<Props> = ({
                     </li>
                   </ul>
                 </div>
-              ) : (
-                  <div className="d-flex flex-row align-items-center select__profile">
-                    <img src={user} alt="User" />
-  
-                    <span className="select__option list-text">
-                      My profile
-                    </span>
+              )}
+
+              {isProfile && (
+                <>
+                  <div className={`select--3 celect__content  ${isOpen1 ? 'open' : ''}`}>
+                    <div
+                      className={`select__header d-flex flex-row justify-content-between ${isOpen1 ? 'select__header--active' : ''}`}
+                      role="button"
+                      tabIndex={0}
+                      onClick={handleToggle1}
+                      onKeyDown={handleKeyDown}
+                    >
+                        <div className="d-flex flex-row align-items-center select__profile">
+                          <img src={user} alt="User" />
+
+                          <span className="select__option list-text">
+                            My profile
+                          </span>
+                        </div>
+
+                        {!isOpen1 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+                    </div>
+
+                    <ul
+                      className={`select__option__list
+                      select__option__list--1
+                      ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
+                    >
+                      <li className="
+                        list-text
+                        select__option__list__item"
+                      >
+                        <label htmlFor="resume-checkbox" className="checkbox-label list-text">
+                          <input
+                            type="checkbox"
+                            id="resume-checkbox"
+                            name="option"
+                            value="resume"
+                            onChange={handleResumeChange}
+                          />
+
+                          <span>My Resume</span>
+                        </label>
+                      </li>
+
+                      <ul
+                        className={`
+                        select__option__list
+                        select__option__list--3
+                        ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
+                      >
+                        <li className="
+                          list-text
+                          select__option__list__item
+                          select__option__list__item--last
+                          select__option__list__item--border"
+                        >
+                          <label htmlFor="BanList-checkbox" className="checkbox-label list-text">
+                            <input
+                              type="checkbox"
+                              id="BanList-checkbox"
+                              name="option"
+                              value="BanList"
+                              onChange={handleBanListChange}
+                            />
+                            <span>BanList</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </ul>
                   </div>
+                </>
               )}
             </>
           )}
         </div>
       </div>
-    );
+    )
   }
   
   return (
