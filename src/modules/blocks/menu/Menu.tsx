@@ -8,6 +8,8 @@ import team from '../../../img/icons/menu/team.svg';
 import project from '../../../img/icons/menu/project.svg';
 import message from '../../../img/icons/menu/message.svg';
 
+import { useTranslation } from 'react-i18next';
+
 export const Menu: React.FC = () => {
   const isHome = window.location.pathname === '/';
   const isNews = window.location.pathname === '/news';
@@ -16,6 +18,8 @@ export const Menu: React.FC = () => {
   const isWallet = window.location.pathname === '/my-wallet';
   const isProjects = window.location.pathname === '/projects';
   const isFeedback = window.location.pathname === '/feedback';
+
+  const { t } = useTranslation();
 
   return (
     <div className="menu d-flex flex-column">
@@ -35,7 +39,7 @@ export const Menu: React.FC = () => {
             >
               <img src={home} alt="Home" className="menu__nav__item__img" />
 
-              Home
+              {t('menu__home')}
             </a>
 
             <a
@@ -47,7 +51,7 @@ export const Menu: React.FC = () => {
             >
               <img src={news} alt="News" className="menu__nav__item__img" />
 
-              News
+              {t('menu__news')}
             </a>
 
             <a
@@ -59,7 +63,7 @@ export const Menu: React.FC = () => {
             >
               <img src={project} alt="Project" className="menu__nav__item__img" />
 
-              My Projects
+              {t('menu__proj')}
             </a>
 
             <a
@@ -71,7 +75,7 @@ export const Menu: React.FC = () => {
             >
               <img src={message} alt="Message" className="menu__nav__item__img" />
 
-              My Messages
+              {t('menu__mes')}
             </a>
 
             <a
@@ -81,9 +85,9 @@ export const Menu: React.FC = () => {
                 { menu__nav__item__selected: isWallet },
               )}
             >
-              <img src={project} alt="Team" className="menu__nav__item__img" />
+              <img src={project} alt="Wallet" className="menu__nav__item__img" />
 
-              My Wallet
+              {t('menu__wallet')}
             </a>
 
             <a
@@ -93,8 +97,8 @@ export const Menu: React.FC = () => {
               )}
             >
               <img src={team} alt="Profile" className="menu__nav__item__img" />
-
-              My Profile
+              
+              {t('menu__profile')}
             </a>
 
             <a
@@ -105,7 +109,7 @@ export const Menu: React.FC = () => {
             >
               <img src={team} alt="Team" className="menu__nav__item__img" />
 
-              My Team
+              {t('menu__team')}
             </a>
 
             <a
@@ -117,7 +121,7 @@ export const Menu: React.FC = () => {
             >
               <img src={team} alt="Support" className="menu__nav__item__img" />
 
-              Support
+              {t('menu__support')}
             </a>
 
             <a
@@ -129,12 +133,14 @@ export const Menu: React.FC = () => {
             >
               <img src={message} alt="Message" className="menu__nav__item__img" />
 
-              Send Feedback
+              {t('menu__feedback')}
             </a>
           </nav>
 
           <div className="menu__theme">
-            <p className="menu__theme__text list-text">Theme:</p>
+            <p className="menu__theme__text list-text">
+              {t('menu__theme')}
+            </p>
 
             <label className="menu__theme__btn">
               <input type="checkbox"></input>

@@ -1,6 +1,8 @@
 import React, { KeyboardEventHandler, MouseEventHandler } from 'react';
 import search from '../../../img/icons/search.svg';
 
+import { useTranslation } from 'react-i18next';
+
 type Props = {
   searchQuery?: string;
   handleInputChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -9,6 +11,8 @@ type Props = {
 };
 
 export const SearchUser: React.FC<Props> = ({ searchQuery, handleInputChange, handleKeyPress, handleSearchClick }) => {
+  const { t } = useTranslation();
+  
   return (
     <div className="searchUser position-relative">
       <i className="bx bx-search-alt"></i>
@@ -16,7 +20,7 @@ export const SearchUser: React.FC<Props> = ({ searchQuery, handleInputChange, ha
       <input
         className="searchUser__input border-0 rounded-pill main-text"
         type="text"
-        placeholder="Enter a name to search for"
+        placeholder={t('search__desc')}
         value={searchQuery}
         onChange={handleInputChange}
         onKeyPress={handleKeyPress}
@@ -30,7 +34,7 @@ export const SearchUser: React.FC<Props> = ({ searchQuery, handleInputChange, ha
         <img src={search} alt="Search" className="searchUser__btn__img" />
 
         <p className="bold-text">
-          Search
+          {t('search')}
         </p>
       </button>
     </div>

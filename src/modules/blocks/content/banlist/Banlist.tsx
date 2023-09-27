@@ -8,6 +8,7 @@ import { SearchUser } from '../../../shared/searchUser';
 import { Employee } from '../../../../types/Employee';
 
 import { handleInputChange, handleSearchClick, handleKeyPress } from '../../../../helpers/search';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   employees: Employee[],
@@ -50,16 +51,18 @@ export const Banlist: React.FC<Props> = ({ employees }) => {
     return searchWords.every((word: any) => slugWords && slugWords.some((slugWord: string | any[]) => slugWord.includes(word)));
   };
 
+  const { t } = useTranslation();
+
   return (
     <div className="banlist">
       <div className="banlist__container block">
         <div className="banlist__header d-flex flex-row justify-content-between align-items-center">
           <p className="banlist__header__title big-text">
-            Ban List
+            {t('ban__title')}
           </p>
 
           <div className="banlist__header__targets d-flex flex-row">
-            <div className="banlist__heade   r__search">
+            <div className="banlist__heade r__search">
               <SearchUser
                 searchQuery={searchQuery}
                 handleInputChange={(event) => {handleInputChange(event, setSearchQuery)}}
@@ -72,7 +75,7 @@ export const Banlist: React.FC<Props> = ({ employees }) => {
               <img src={lock} alt="Lock" className="banlist__header__btn__img" />
 
               <p className="banlist__header__btn__p bold-text">
-                Block a user
+                {t('ban__block')}
               </p>
             </a>
           </div>
@@ -80,23 +83,23 @@ export const Banlist: React.FC<Props> = ({ employees }) => {
 
         <div className="banlist__table d-flex flex-row justify-content-between align-items-center">
           <p className="banlist__table__item bold-text">
-            Photo
+            {t('ban__photo')}
           </p>
 
           <p className="banlist__table__item bold-text">
-            Name
+            {t('ban__name')}
           </p>
 
           <p className="banlist__table__item bold-text">
-            Location
+            {t('location')}
           </p>
 
           <p className="banlist__table__item bold-text">
-            Date of blocking
+            {t('ban__date')}
           </p>
 
           <p className="banlist__table__item bold-text">
-            Action
+            {t('ban__action')}
           </p>
         </div>
 

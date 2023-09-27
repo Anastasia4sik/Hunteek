@@ -4,6 +4,8 @@ import './main.scss';
 
 export const App: React.FC = () => {
   return (
-    <Outlet />
+    <>
+      <Outlet />
+    </>
   );
 };

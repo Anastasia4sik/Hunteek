@@ -5,6 +5,7 @@ import upload from '../../../../img/icons/upload.svg';
 import filter from '../../../../img/icons/filter.svg';
 
 import { Pagination } from '../../../shared/pagination';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   forSideInfo?: boolean,
@@ -63,6 +64,8 @@ export const CatalogFull: React.FC<Props> = ({ forSideInfo }) => {
     console.log(newHash);
   };
 
+  const { t } = useTranslation();
+
   return (
     <>
       <div className={classNames(
@@ -73,7 +76,7 @@ export const CatalogFull: React.FC<Props> = ({ forSideInfo }) => {
         <div className="catalog__container block">
           <div className="catalog__header d-flex flex-row justify-content-between align-items-center">
             <p className="catalog__header__title big-text">
-              Catalog of accounting and reports
+              {t('catalog__title')}
             </p>
 
             <div className="catalog__header__targets d-flex flex-row">
@@ -81,7 +84,7 @@ export const CatalogFull: React.FC<Props> = ({ forSideInfo }) => {
                 <img src={filter} alt="Filter" className="catalog__header__btn__img" />
 
                 <p className="catalog__header__btn__p bold-text">
-                  Filter
+                  {t('filter')}
                 </p>
               </button>
 
@@ -89,7 +92,7 @@ export const CatalogFull: React.FC<Props> = ({ forSideInfo }) => {
                 <img src={upload} alt="Download" className="catalog__item__download__img" />
 
                 <p className="catalog__header__btn__p bold-text">
-                  Download All
+                  {t('download__all')}
                 </p>
               </button>
             </div>
@@ -97,32 +100,32 @@ export const CatalogFull: React.FC<Props> = ({ forSideInfo }) => {
 
           <div className="catalog__table d-flex flex-row justify-content-between align-items-center">
             <p className="catalog__table__item bold-text">
-              Date
+              {t('date')}
               <span className="invisible">.....</span>
             </p>
 
             <p className="catalog__table__item bold-text">
-              ID
+              {t('id')}
             </p>
 
             <p className="catalog__table__item bold-text">
-              Amount
+              {t('amount')}
             </p>
 
             <p className="catalog__table__item bold-text">
-              VAT
+              {t('vat')}
             </p>
 
             <p className="catalog__table__item bold-text">
-              Profit
+              {t('profit')}
             </p>
 
             <p className="catalog__table__item bold-text">
-              ID Referral
+              {t('id__referral')}
             </p>
 
             <p className="catalog__table__item bold-text">
-              Link
+              {t('link')}
             </p>
           </div>
 
@@ -151,14 +154,14 @@ export const CatalogFull: React.FC<Props> = ({ forSideInfo }) => {
                   </p>
 
                   <p className="catalog__item__referral bold-text">
-                    No referral
+                    {t('no__referral')}
                   </p>
 
                   <a href="#download" className="catalog__item__download bold-text d-flex flex-row align-items-center">
                     <img src={upload} alt="Download" className="catalog__item__download__img" />
 
                     <p className="catalog__header__btn__p bold-text">
-                      Download
+                      {t('download')}
                     </p>
                   </a>
                 </div>

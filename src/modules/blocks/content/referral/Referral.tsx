@@ -4,6 +4,7 @@ import { ReferralCard } from '../../../shared/referralCard';
 import { Pagination } from '../../../shared/pagination';
 
 import referralInfo from '../../../../api/referralPerson.json';
+import { useTranslation } from 'react-i18next';
 
 export const Referral: React.FC = () => {
   const inputRef: RefObject<HTMLInputElement> = useRef(null);
@@ -50,6 +51,8 @@ export const Referral: React.FC = () => {
     }
   };
 
+  const { t } = useTranslation();
+
   return (
     <div className="referral">
       <div className="referral__container">
@@ -68,7 +71,7 @@ export const Referral: React.FC = () => {
             className=" btn-grey referral__copy__btn bold-text position-absolute"
             onClick={handleCopyPlaceholder}
           >
-            Copy
+            {t('copy')}
           </button>
         </div>
 

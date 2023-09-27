@@ -5,6 +5,7 @@ import { Rate } from '../../../shared/rate';
 import { UserPhoto } from '../../../shared/userPhoto';
 
 import { Recruiter } from '../../../../types/Recruiter';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   recruiter: Recruiter,
@@ -29,6 +30,8 @@ export const RecruitInfo: React.FC<Props> = ({ recruiter }) => {
     github,
   } = recruiter;
 
+  const { t } = useTranslation();
+
   return (
     <div className="recruitInfo block">
       <div className="recruitInfo__content">
@@ -51,7 +54,7 @@ export const RecruitInfo: React.FC<Props> = ({ recruiter }) => {
                 </p>
 
                 <p className="recruitInfo__user__info__add small-text">
-                  Recruiter
+                  {t('recruiter')}
                 </p>
               </div>
             </div>
@@ -59,7 +62,9 @@ export const RecruitInfo: React.FC<Props> = ({ recruiter }) => {
             <a href="#edit-profile" className="recruitInfo__user__edit d-flex flex-row align-items-center">
               <img src={edit} alt="Edit" className="recruitInfo__user__edit__img" />
 
-              <p className="small-text"> Edit Profile</p>
+              <p className="small-text">
+                {t('edit__profile')}
+              </p>
             </a>
           </div>
 
@@ -81,7 +86,7 @@ export const RecruitInfo: React.FC<Props> = ({ recruiter }) => {
 
           <div className="recruitInfo__social--2 d-flex flex-row justify-content-between">
             <p className="bold-text">
-              Phone:
+              {t('phone')}
             </p>
 
             <a href="tel:+380991053517" className="list-text">

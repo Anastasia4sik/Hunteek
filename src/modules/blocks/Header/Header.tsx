@@ -11,6 +11,10 @@ import profile from '../../../img/icons/header/profile.svg';
 
 import ua from '../../../img/icons/flags/ua.png';
 import eng from '../../../img/icons/flags/eng.png';
+
+import i18n from "i18next";
+import { useTranslation } from 'react-i18next';
+
 type Props = {
   searchQuery?: string;
   handleInputChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -19,27 +23,46 @@ type Props = {
 };
 
 export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handleKeyPress, handleSearchClick }) => {
-  // const uaLang = document.querySelector('.header__lang__item--ua');
-  // const engLang = document.querySelector('.header__lang__item--eng');
+  const uaLang = document.querySelector('.header__lang__item--ua');
+  const enLang = document.querySelector('.header__lang__item--en');
 
-  // if (window.location.pathname.includes('/en')) {
-  //   uaLang?.classList.add('langSmall');
-  //   engLang?.classList.remove('langSmall');
-  // } else {
-  //   uaLang?.classList.remove('langSmall');
-  //   engLang?.classList.add('langSmall');
-  // }
+  function changeLanguage(language: string) {
+    i18n.changeLanguage(language);
+    
+    if (i18n.language === 'en') {
+      uaLang?.classList.add('langSmall');
+      enLang?.classList.remove('langSmall');
+    } else {
+      enLang?.classList.add('langSmall');
+      uaLang?.classList.remove('langSmall');
+    }
+  }
+
+  const { t } = useTranslation();
 
   return (
     <div className="header d-flex flex-row align-items-center">
       <div className="header__lang d-flex flex-row">
-        <a href="/" className="header__lang__item header__lang__item--ua langSmall">
-          <img src={ua} alt="Ukrainian" className="header__lang__item__img"/>
-        </a>
+          <img
+            src={ua}
+            alt="Ukrainian"
+            className="
+              header__lang__item
+              header__lang__item--ua
+              langSmall
+            "
+            onClick={() => changeLanguage('ua')}
+          />
 
-        <a href="/" className="header__lang__item header__lang__item--eng">
-          <img src={eng} alt="Engish" className="header__lang__item__img"/>
-        </a>
+          <img
+            src={eng}
+            alt="Engish"
+            className="
+              header__lang__item
+              header__lang__item--en
+            "
+            onClick={() => changeLanguage('en')}
+          />
       </div>
 
       <div className="header__search position-relative">
@@ -48,7 +71,7 @@ export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handle
         <input
           className="header__search__input border-0 rounded-pill main-text"
           type="text"
-          placeholder="Search"
+          placeholder={t('search')}
           value={searchQuery}
           onChange={handleInputChange}
           onKeyPress={handleKeyPress}
@@ -102,7 +125,7 @@ export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handle
         </div>
 
         <div className="header__menu__nav d-flex align-items-center">
-          <a href="/" title="Video team meetings are coming soon">
+          <a href="/" title={t('video__desc')}>
             <img src={video} alt="Video" className="header__menu__nav__img header__menu__nav__img--video" />
           </a>
 

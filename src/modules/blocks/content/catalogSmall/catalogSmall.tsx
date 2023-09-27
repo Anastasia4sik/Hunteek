@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const amountArray = [0, 1, 2, 3, 4, 5];
 
@@ -9,43 +10,45 @@ export const CatalogSmall: React.FC = () => {
     amountArray.length = 6;
   }
 
+  const { t } = useTranslation();
+
   return (
     <div className="catalog">
       <div className="catalog__container block">
         <div className="catalog__header d-flex flex-row justify-content-between align-items-center">
           <p className="catalog__header__title big-text">
-            Catalog of accounting and reports
+            {t('catalog__title')}
           </p>
 
           <a href="/my-wallet/catalog-full" className="catalog__header__btn d-flex flex-row btn-grey bold-text">
-            Show All Transaction
+            {t('catalog__show__all')}
           </a>
         </div>
 
         <div className="catalog__table d-flex flex-row justify-content-between align-items-center">
           <p className="catalog__table__item bold-text">
-            Date
+            {t('date')}
             <span className="invisible">........</span>
           </p>
 
           <p className="catalog__table__item bold-text">
-            ID
+            {t('id')}
           </p>
 
           <p className="catalog__table__item bold-text">
-            Amount
+            {t('amount')}
           </p>
 
           <p className="catalog__table__item bold-text">
-            VAT
+            {t('vat')}
           </p>
 
           <p className="catalog__table__item bold-text">
-            Profit
+            {t('profit')}
           </p>
 
           <p className="catalog__table__item bold-text">
-            ID Referral
+            {t('id__referral')}
           </p>
         </div>
 
@@ -74,7 +77,7 @@ export const CatalogSmall: React.FC = () => {
                 </p>
 
                 <p className="catalogSmall__item__referral bold-text">
-                  No referral
+                  {t('no__referral')}
                 </p>
               </div>
             </li>
