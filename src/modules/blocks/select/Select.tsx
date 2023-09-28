@@ -10,6 +10,7 @@ import dollar from '../../../img/icons/header/dollar.svg';
 
 import languages from '../../../helpers/programLanguages.js'
 import { MainSelect } from '../MainSelect';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   setIsBanListChecked?: (isChecked: boolean) => void,
@@ -60,6 +61,8 @@ export const Select: React.FC<Props> = ({
     setIsReferralChecked ? setIsReferralChecked(e.target.checked) : null;
   };
 
+  const { t } = useTranslation();
+
   if (isMy || isNews || isSupport) {
     return (
       <div className="select block">
@@ -70,7 +73,7 @@ export const Select: React.FC<Props> = ({
                 <img src={plus} alt="Write a message" className="select__messages__item__img" />
   
                 <p className="list-text">
-                  Write a message
+                  {t('sel__write__mes')}
                 </p>
               </a>
   
@@ -78,7 +81,7 @@ export const Select: React.FC<Props> = ({
                 <img src={trash} alt="Delete message" className="select__messages__item__img" />
   
                 <p className="list-text">
-                  Trash
+                  {t('sel__trash')}
                 </p>
               </a>
   
@@ -86,7 +89,7 @@ export const Select: React.FC<Props> = ({
                 <img src={bell} alt="New message" className="select__messages__item__img" />
   
                 <p className="list-text">
-                  New messages
+                  {t('sel__new__mes')}
                 </p>
               </a>
   
@@ -94,7 +97,7 @@ export const Select: React.FC<Props> = ({
                 <img src={check} alt="Viewed messages" className="select__messages__item__img" />
   
                 <p className="list-text">
-                  Viewed messages
+                  {t('sel__viewed__mes')}
                 </p>
               </a>
             </div>
@@ -102,13 +105,13 @@ export const Select: React.FC<Props> = ({
             <>
               {isProject && (
                 <a href="#create-project" className="select__container__btn btn-grey list-text">
-                  Create a project
+                  {t('sel__create__proj')}
                 </a>
               )}
   
               {isTeam && (
                 <a href="#create-resume" className="select__container__btn btn-grey list-text">
-                  Create a resume
+                  {t('sel__create__resume')}
                 </a>
               )}
   
@@ -125,7 +128,7 @@ export const Select: React.FC<Props> = ({
                       <img src={dollar} alt="Wallet" />
   
                       <span className="select__option list-text">
-                        My Wallet
+                        {t('my__wallet')}
                       </span>
                     </div>
   
@@ -150,7 +153,9 @@ export const Select: React.FC<Props> = ({
                           value="Balance"
   
                         />
-                        <span>My Balance</span>
+                        <span>
+                          {t('my__balance')}
+                        </span>
                       </label>
                     </li>
   
@@ -166,7 +171,9 @@ export const Select: React.FC<Props> = ({
                           value="Contracts"
   
                         />
-                        <span>My Smart Contracts</span>
+                        <span>
+                          {t('sel__smart__contract')}
+                        </span>
                       </label>
                     </li>
   
@@ -183,7 +190,9 @@ export const Select: React.FC<Props> = ({
                           value="Referral"
                           onChange={handleReferralChange}
                         />
-                        <span>Referral system</span>
+                        <span>
+                          {t('sel__referral')}
+                        </span>
                       </label>
                     </li>
                   </ul>
@@ -204,7 +213,7 @@ export const Select: React.FC<Props> = ({
                           <img src={user} alt="User" />
 
                           <span className="select__option list-text">
-                            My profile
+                            {t('my__profile')}
                           </span>
                         </div>
 
@@ -229,7 +238,9 @@ export const Select: React.FC<Props> = ({
                             onChange={handleResumeChange}
                           />
 
-                          <span>My Resume</span>
+                          <span>
+                            {t('my__resume')}
+                          </span>
                         </label>
                       </li>
 
@@ -253,7 +264,9 @@ export const Select: React.FC<Props> = ({
                               value="BanList"
                               onChange={handleBanListChange}
                             />
-                            <span>BanList</span>
+                            <span>
+                              {t('banlist')}
+                            </span>
                           </label>
                         </li>
                       </ul>

@@ -11,6 +11,8 @@ import countries from '../../../helpers/countries.js';
 import experiences from '../../../helpers/experiences.js';
 import speakLanguages from '../../../helpers/speakLanguages.js';
 
+import { useTranslation } from 'react-i18next';
+
 export const MainSelect = () => {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
@@ -78,6 +80,8 @@ export const MainSelect = () => {
 
   const isMy = window.location.pathname.includes('my');
 
+  const { t } = useTranslation();
+
   return (
     <div className="select select__main block">
       <div className="select__container select__container__main scroll">
@@ -90,7 +94,9 @@ export const MainSelect = () => {
             onClick={handleToggle1}
             onKeyDown={handleKeyDown}
           >
-              <span className="select__option list-text">Specilization</span>
+              <span className="select__option list-text">
+                {t('sel__spec')}
+              </span>
 
             {!isOpen1 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
           </div>
@@ -134,7 +140,9 @@ export const MainSelect = () => {
                 onClick={handleToggle2}
                 onKeyDown={handleKeyDown}
               >
-                  <span className="select__option list-text">Job search activity</span>
+                  <span className="select__option list-text">
+                    {t('sel__job__search')}
+                  </span>
 
                 {!isOpen2 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
               </div>
@@ -157,7 +165,9 @@ export const MainSelect = () => {
                         value='active'
 
                       />
-                      <span>Active</span>
+                      <span>
+                        {t('active')}
+                      </span>
                     </label>
                   </li>
 
@@ -173,7 +183,9 @@ export const MainSelect = () => {
                         value='passive'
 
                       />
-                      <span>Passive</span>
+                      <span>
+                        {t('passive')}
+                      </span>
                     </label>
                   </li>
               </ul>
@@ -188,7 +200,9 @@ export const MainSelect = () => {
                 onClick={handleToggle3}
                 onKeyDown={handleKeyDown}
               >
-                  <span className="select__option list-text">English level</span>
+                  <span className="select__option list-text">
+                    {t('sel__english')}
+                  </span>
 
                 {!isOpen3 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
               </div>
@@ -228,7 +242,9 @@ export const MainSelect = () => {
                 onClick={handleToggle4}
                 onKeyDown={handleKeyDown}
               >
-                  <span className="select__option list-text">Work Experience</span>
+                  <span className="select__option list-text">
+                    {t('sel__experience')}
+                  </span>
 
                 {!isOpen4 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
               </div>
@@ -269,7 +285,9 @@ export const MainSelect = () => {
             onClick={handleToggle5}
             onKeyDown={handleKeyDown}
           >
-              <span className="select__option list-text">Type of work</span>
+              <span className="select__option list-text">
+                {t('sel__work__type')}
+              </span>
 
             {!isOpen5 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
           </div>
@@ -292,7 +310,9 @@ export const MainSelect = () => {
                     value='office'
 
                   />
-                  <span>In the office</span>
+                  <span>
+                    {t('office__work')}
+                  </span>
                 </label>
               </li>
 
@@ -308,7 +328,9 @@ export const MainSelect = () => {
                     value='remote'
 
                   />
-                  <span>Remote work</span>
+                  <span>
+                    {t('remote__work')}
+                  </span>
                 </label>
               </li>
 
@@ -324,7 +346,9 @@ export const MainSelect = () => {
                     value='mixed'
 
                   />
-                  <span>Mixed (partly office and partly remote)</span>
+                  <span>
+                    {t('mixed__work')}
+                  </span>
                 </label>
               </li>
           </ul>
@@ -338,7 +362,9 @@ export const MainSelect = () => {
             onClick={handleToggle6}
             onKeyDown={handleKeyDown}
           >
-              <span className="select__option list-text">Project employment</span>
+              <span className="select__option list-text">
+                {t('sel__proj__employ')}
+              </span>
 
             {!isOpen6 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
           </div>
@@ -361,7 +387,9 @@ export const MainSelect = () => {
                     value='full'
 
                   />
-                  <span>Full-time</span>
+                  <span>
+                    {t('full__time')}
+                  </span>
                 </label>
               </li>
 
@@ -377,7 +405,9 @@ export const MainSelect = () => {
                     value='part'
 
                   />
-                  <span>Part-time</span>
+                  <span>
+                    {t('part__time')}
+                  </span>
                 </label>
               </li>
           </ul>
@@ -391,7 +421,9 @@ export const MainSelect = () => {
             onClick={handleToggle7}
             onKeyDown={handleKeyDown}
           >
-              <span className="select__option list-text">Type of company</span>
+              <span className="select__option list-text">
+                {t('sel__company__type')}
+              </span>
 
             {!isOpen7 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
           </div>
@@ -430,7 +462,9 @@ export const MainSelect = () => {
             onClick={handleToggle8}
             onKeyDown={handleKeyDown}
           >
-              <span className="select__option list-text">Salary (per month) from</span>
+              <span className="select__option list-text">
+                {t('sel__salary')}
+              </span>
 
             {!isOpen8 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
           </div>
@@ -474,7 +508,9 @@ export const MainSelect = () => {
             onClick={handleToggle9}
             onKeyDown={handleKeyDown}
           >
-              <span className="select__option list-text">Reit per hour</span>
+              <span className="select__option list-text">
+                {t('sel__reit')}
+              </span>
 
             {!isOpen9 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
           </div>
@@ -515,7 +551,9 @@ export const MainSelect = () => {
             onClick={handleToggle10}
             onKeyDown={handleKeyDown}
           >
-              <span className="select__option list-text">Country of project origin</span>
+              <span className="select__option list-text">
+                {t('sel__country__proj')}
+              </span>
 
             {!isOpen10 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
           </div>
@@ -556,7 +594,9 @@ export const MainSelect = () => {
             onClick={handleToggle11}
             onKeyDown={handleKeyDown}
           >
-              <span className="select__option list-text">Languages of communication</span>
+              <span className="select__option list-text">
+                {t('sel__languages')}
+              </span>
 
             {!isOpen11 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
           </div>

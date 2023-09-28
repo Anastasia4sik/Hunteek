@@ -1,6 +1,10 @@
 import React from 'react';
 
+import { useTranslation } from 'react-i18next';
+
 export const AllWallets: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="wallets d-flex flex-wrap">
       <div className="wallets__block block d-flex flex-column align-items-center">
@@ -39,7 +43,7 @@ export const AllWallets: React.FC = () => {
         </h3>
 
         <p className="wallets__block__desc list-text">
-          Add Wallet
+          {t('add__wallet')}
         </p>
       </a>
     </div>

@@ -7,12 +7,16 @@ import { Employee } from '../../../../types/Employee';
 
 import { handleInputChange, handleSearchClick, handleKeyPress } from '../../../../helpers/search';
 
+import { useTranslation } from 'react-i18next';
+
 type Props = {
   employees: Employee[] | undefined,
 };
 
 export const BlockUser: React.FC<Props> = ({ employees }) => {
   const [searchQuery, setSearchQuery] = useState('');
+
+  const { t } = useTranslation();
 
   return (
     <div className="blockUser">
@@ -75,7 +79,7 @@ export const BlockUser: React.FC<Props> = ({ employees }) => {
                   <img src={lock} alt="Lock" />
 
                   <p className="small-text">
-                    Block
+                    {t('block')}
                   </p>
                 </a>
               </div>

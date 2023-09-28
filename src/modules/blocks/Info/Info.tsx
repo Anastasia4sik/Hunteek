@@ -18,6 +18,8 @@ import { Rating } from '../sideInfo/rating';
 import { News } from '../../News';
 import { Feedback } from '../sideInfo/feedback';
 
+import { useTranslation } from 'react-i18next';
+
 type Props = {
   purpose: string;
   employee?: Employee;
@@ -52,52 +54,54 @@ export const Info: React.FC<Props> = ({
     };
   }, []);
 
+  const { t } = useTranslation();
+
   let title;
   let content;
 
   if (purpose === 'general') {
-    title = 'Information about the page';
+    title = t('info__general');
     content = <General />;
   } else if (purpose === 'profile') {
-    title = 'Profile';
+    title = t('info__profile');
     content = <Profile employee={employee} />;
   } else if (purpose === 'edit-profile') {
-    title = 'Edit Profile';
+    title = t('info__edit__profile');
     content = <EditProfile recruteir={recruteir} />;
   } else if (purpose === 'edit-resume') {
-    title = 'Edit Resume';
+    title = t('info__edit__resume');
     content = <EditResume employee={employee} />;
   } else if (purpose === 'block') {
-    title = 'Block a user';
+    title = t('info__block');
     content = <BlockUser employees={employees} />;
   } else if (purpose === 'project') {
-    title = 'Create a project';
+    title = t('info__create__project');
     content = <CreateProject />;
   } else if (purpose === 'cryptoWallets') {
-    title = 'All Cryptocurrency Wallet';
+    title = t('info__crypto__wallets');
     content = <AllWallets />;
   } else if (purpose === 'fiatWallets') {
-    title = 'All Fiat Wallet';
+    title = t('info__fiat__wallets');
     content = <AllWallets />;
   } else if (purpose === 'transfer') {
-    title = 'Transfer of funds';
+    title = t('info__transfer');
     content = <Transfer />;
   } else if (purpose === 'rating') {
     content = <Rating />;
   } else if (purpose === 'reporting') {
-    title = 'Reporting on payments';
+    title = t('info__report');
     content = personInfo ? <Reporting personInfo={personInfo} /> : null;
   } else if (purpose === 'team') {
-    title = 'Create a new smart contract resume';
+    title = t('info__smart__contract');
     content = <EditResume employee={employee} />;
   } else if (purpose === 'news') {
-    title = 'News page';
+    title = t('info__news');
     content = <General />;
   } else if (purpose === 'support') {
-    title = 'Support page';
+    title = t('info__support');
     content = <General />;
   } else if (purpose === 'feedback') {
-    title = 'Send a feedack';
+    title = t('info__feedback');
     content = <Feedback />;
   } else {
     title = '';

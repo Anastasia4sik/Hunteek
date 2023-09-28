@@ -87,7 +87,7 @@ export const Menu: React.FC = () => {
             >
               <img src={project} alt="Wallet" className="menu__nav__item__img" />
 
-              {t('menu__wallet')}
+              {t('my__wallet')}
             </a>
 
             <a
@@ -98,7 +98,7 @@ export const Menu: React.FC = () => {
             >
               <img src={team} alt="Profile" className="menu__nav__item__img" />
               
-              {t('menu__profile')}
+              {t('my__profile')}
             </a>
 
             <a

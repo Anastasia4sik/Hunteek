@@ -33,14 +33,18 @@ i18n
           "desc": "Description",
           "added": "Added",
           "wallet": "Wallet",
-
+          "my__wallet": "My Wallet",
+          "my__profile": "My Profile",
+          "my__balance": "My Balance",
+          "my__resume": "My Resume",
+          "banlist": "BanList",
+          "block": "Block",
+          
           // menu
           "menu__home": "Home",
           "menu__news": "News",
           "menu__proj": "My Projects",
           "menu__mes": "My Messages",
-          "menu__wallet": "My Wallet",
-          "menu__profile": "My Profile",
           "menu__team": "My Team",
           "menu__support": "Support",
           "menu__feedback": "Send Feedback",
@@ -81,6 +85,7 @@ i18n
           "crypto__wallet": "Cryptocurrency Wallet",
           "wallet__show__all": "Show all wallets",
           "cur__amount": "Current amount",
+          "add__wallet": "Add Wallet",
 
           // info
           "time__zone": "Time zone:",
@@ -93,6 +98,54 @@ i18n
           "edit__profile": "Edit Profile",
           "edit__resume": "Edit Resume",
           "recruiter": "Recruiter",
+
+          // about page
+          "info__general": "Information about the page",
+          "info__profile": "Profile",
+          "info__edit__profile": "Edit Profile",
+          "info__edit__resume": "Edit Resume",
+          "info__block": "Block a user",
+          "info__create__project": "Create a project",
+          "info__crypto__wallets": "All Cryptocurrency Wallets",
+          "info__fiat__wallets": "All Fiat Wallets",
+          "info__transfer": "Transfer of funds",
+          "info__report": "Reporting on payments",
+          "info__smart__contract": "Create a new smart contract resume",
+          "info__news": "News page",
+          "info__support": "Support page",
+          "info__feedback": "Send a feedack",
+
+          // select
+          "sel__spec": "Specilization",
+          "sel__job__search": "Job search activity",
+          "active": "Active",
+          "passive": "Passive",
+          "sel__english": "English level",
+          "sel__experience": "Work Experience",
+          "sel__work__type": "Type of work",
+          "office__work": "In the office",
+          "remote__work": "Remote work",
+          "mixed__work": "Mixed (partly office and partly remote)",
+          "sel__proj__employ": "Project employment",
+          "full__time": "Full-time",
+          "part__time": "Part-time",
+          "sel__company__type": "Type of company",
+          "sel__salary": "Salary (per month) from",
+          "sel__reit": "Reit per hour",
+          "sel__country__proj": "Country of project origin",
+          "sel__languages": "Languages of communication",
+
+          // select message
+          "sel__write__mes": "Write a message",
+          "sel__trash": "Trash",
+          "sel__new__mes": "New messages",
+          "sel__viewed__mes": "Viewed messages",
+          
+          // select other
+          "sel__create__proj": "Create a project",
+          "sel__create__resume": "Create a resume",
+          "sel__smart__contract": "My Smart Contracts",
+          "sel__referral": "Referral system",
         }
       },
       ua: {
@@ -106,14 +159,18 @@ i18n
           "location": "Місце",
           "added": "Додано",
           "wallet": "Гаманці",
+          "my__wallet": "Мій Гаманець",
+          "my__profile": "Мій Профіль",
+          "my__balance": "Мій Баланс",
+          "my__resume": "Моє Резюме",
+          "banlist": "Чорний список",
+          "block": "Заблокувати",
 
           // menu
           "menu__home": "Головна",
           "menu__news": "Новини",
           "menu__proj": "Мої Проєкти",
           "menu__mes": "Мої Повідомлення",
-          "menu__wallet": "Мій Гаманець",
-          "menu__profile": "Мій Профіль",
           "menu__team": "Моя Команда",
           "menu__support": "Підтримка",
           "menu__feedback": "Надіслати Відгук",
@@ -153,6 +210,7 @@ i18n
           "crypto__wallet": "Криптовалютний гаманець",
           "wallet__show__all": "Переглянути всі гаманці",
           "cur__amount": "Поточна сума",
+          "add__wallet": "Додати Гаманець",
 
           // info
           "time__zone": "Часова зона:",
@@ -165,6 +223,54 @@ i18n
           "edit__profile": "Редагувати профіль",
           "edit__resume": "Редагувати резюме",
           "recruiter": "Рекрутер",
+
+          // about page
+          "info__general": "Інформація про сторінку",
+          "info__profile": "Профіль",
+          "info__edit__profile": "Відредагуйте Профіль",
+          "info__edit__resume": "Відредагуйте Резюме",
+          "info__block": "Заблокуйте користувача",
+          "info__create__project": "Створить проєкт",
+          "info__crypto__wallets": "Всі Криптовалютні Гаманці",
+          "info__fiat__wallets": "Всі Fiat Гаманці",
+          "info__transfer": "Переказ коштів",
+          "info__report": "Звітність про платежі",
+          "info__smart__contract": "Створіть нове резюме смарт-контракту",
+          "info__news": "Сторінка Новин",
+          "info__support": "Сторінка Підтримки",
+          "info__feedback": "Надіслати Відгук",
+
+          // select
+          "sel__spec": "Спеціалізація",
+          "sel__job__search": "Активність пошуку роботи",
+          "active": "Активний",
+          "passive": "Пасивний",
+          "sel__english": "Рівень Англійської",
+          "sel__experience": "Досвід Роботи",
+          "sel__work__type": "Тип роботи",
+          "office__work": "Робота в офісі",
+          "remote__work": "Віддалена робота",
+          "mixed__work": "Змішана (частково в офісі, частково віддалена)",
+          "sel__proj__employ": "Зайнятість у проєкті",
+          "full__time": "Повна зайнятість",
+          "part__time": "Часткова зайнятість",
+          "sel__company__type": "Тип компанії",
+          "sel__salary": "Зарплата (в місяць) від",
+          "sel__reit": "Рейт на годину",
+          "sel__country__proj": "Країна походження проєкту",
+          "sel__languages": "Мови спілкування",
+
+          // select message
+          "sel__write__mes": "Написати повідомлення",
+          "sel__trash": "Кошик",
+          "sel__new__mes": "Нові повідомлення",
+          "sel__viewed__mes": "Переглянуті повідомлення",
+          
+          // select other
+          "sel__create__proj": "Створити проєкт",
+          "sel__create__resume": "Створити резюме",
+          "sel__smart__contract": "Мої Smart Контракти",
+          "sel__referral": "Реферальна система",
         }
       }
     },

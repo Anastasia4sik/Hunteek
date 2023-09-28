@@ -1,4 +1,4 @@
-import React, { KeyboardEventHandler, useState } from 'react';
+import React, { KeyboardEventHandler, useEffect, useRef, useState } from 'react';
 import search from '../../../img/icons/search.svg';
 
 import chart from '../../../img/icons/header/chart.svg';
@@ -23,20 +23,34 @@ type Props = {
 };
 
 export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handleKeyPress, handleSearchClick }) => {
-  const uaLang = document.querySelector('.header__lang__item--ua');
-  const enLang = document.querySelector('.header__lang__item--en');
+  const [selectedLanguage, setSelectedLanguage] = useState(localStorage.getItem('selectedLanguage') || 'en');
+  
+  // Get references to the elements with useRef
+  const uaLangRef = useRef<HTMLImageElement | null>(null);
+  const enLangRef = useRef<HTMLImageElement | null>(null);
 
   function changeLanguage(language: string) {
     i18n.changeLanguage(language);
+    setSelectedLanguage(language);
+
+    localStorage.setItem('selectedLanguage', language);
+
+    console.log(localStorage.selectedLanguage);
     
-    if (i18n.language === 'en') {
-      uaLang?.classList.add('langSmall');
-      enLang?.classList.remove('langSmall');
+    // Use refs to update class names
+    if (language === 'en') {
+      uaLangRef.current?.classList.add('langSmall');
+      enLangRef.current?.classList.remove('langSmall');
     } else {
-      enLang?.classList.add('langSmall');
-      uaLang?.classList.remove('langSmall');
+      enLangRef.current?.classList.add('langSmall');
+      uaLangRef.current?.classList.remove('langSmall');
     }
   }
+
+  // useEffect to set the initial language when the component mounts
+  useEffect(() => {
+    i18n.changeLanguage(selectedLanguage);
+  }, [selectedLanguage]);
 
   const { t } = useTranslation();
 
@@ -46,22 +60,25 @@ export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handle
           <img
             src={ua}
             alt="Ukrainian"
-            className="
+            className={`
               header__lang__item
               header__lang__item--ua
-              langSmall
-            "
+              ${selectedLanguage === 'en' ? 'langSmall' : ''}
+            `}
             onClick={() => changeLanguage('ua')}
+            ref={uaLangRef}
           />
 
           <img
             src={eng}
             alt="Engish"
-            className="
+            className={`
               header__lang__item
               header__lang__item--en
-            "
+              ${selectedLanguage === 'ua' ? 'langSmall' : ''}
+            `}
             onClick={() => changeLanguage('en')}
+            ref={enLangRef}
           />
       </div>
 
