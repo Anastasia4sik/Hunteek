@@ -11,7 +11,7 @@ import countries from '../../../helpers/countries.js';
 import experiences from '../../../helpers/experiences.js';
 import speakLanguages from '../../../helpers/speakLanguages.js';
 
-import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 export const MainSelect = () => {
   const [isOpen1, setIsOpen1] = useState(false);
@@ -80,11 +80,16 @@ export const MainSelect = () => {
 
   const isMy = window.location.pathname.includes('my');
 
-  const { t } = useTranslation();
 
   return (
     <div className="select select__main block">
       <div className="select__container select__container__main scroll">
+        {isProject && (
+          <a href="#create-project" className="select__container__btn btn-grey list-text">
+            {t('create__project')}
+          </a>
+        )}
+
         {/* program languages */}
         <div className={`${isMy ? 'select--3' : 'select--1'} select__content big  ${isOpen1 ? 'open' : ''}`}>
           <div

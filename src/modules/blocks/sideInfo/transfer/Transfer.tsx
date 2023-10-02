@@ -1,19 +1,24 @@
 import React from 'react';
 
+import { t } from 'i18next';
+
 export const Transfer: React.FC = () => {
+
   return (
     <div className="edit">
       <form action="#" className="edit__content">
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text">
-            Wallet
+            {t('wallet')}
           </legend>
 
           <select
             id="wallet"
             className="list-text edit__input"
           >
-            <option value="" disabled selected hidden>None</option>
+            <option value="" disabled selected hidden>
+              {t('none')}
+            </option>
 
             <option value="BTC - 0.312422 BTC">BTC - 0.312422 BTC</option>
 
@@ -25,14 +30,16 @@ export const Transfer: React.FC = () => {
 
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text">
-            Type of payment
+            {t('payment__type')}
           </legend>
 
           <select
             id="paymentType"
             className="list-text edit__input"
           >
-            <option value="" disabled selected hidden>None</option>
+            <option value="" disabled selected hidden>
+              {t('none')}
+            </option>
 
             <option value="1">first</option>
 
@@ -44,32 +51,32 @@ export const Transfer: React.FC = () => {
 
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text">
-            Card number or ID
+            {t('card__num__ID')}
           </legend>
 
-          <input type="number" id="number" placeholder="None" className="edit__input list-text" />
+          <input type="number" id="number" placeholder={t('none')} className="edit__input list-text" />
         </fieldset>
 
         <div className="edit__container__row d-flex flex-row justify-content-between">
           <fieldset className="edit__container d-flex flex-column">
             <legend className="edit__label list-text">
-              Amount
+              {t('amount')}
             </legend>
 
-            <input type="number" id="amount" placeholder="None" className="edit__input list-text" />
+            <input type="number" id="amount" placeholder={t('none')} className="edit__input list-text" />
           </fieldset>
 
           <fieldset className="edit__container d-flex flex-column">
             <legend className="edit__label list-text">
-              Currency
+              {t('currency')}
             </legend>
 
-            <input type="number" id="currency" placeholder="None" className="edit__input list-text" />
+            <input type="number" id="currency" placeholder={t('none')} className="edit__input list-text" />
           </fieldset>
         </div>
 
         <button type="submit" className="edit__btn btn-grey">
-          Submit
+          {t('submit')}
         </button>
       </form>
     </div>

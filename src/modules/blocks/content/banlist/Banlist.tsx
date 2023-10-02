@@ -8,7 +8,7 @@ import { SearchUser } from '../../../shared/searchUser';
 import { Employee } from '../../../../types/Employee';
 
 import { handleInputChange, handleSearchClick, handleKeyPress } from '../../../../helpers/search';
-import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 type Props = {
   employees: Employee[],
@@ -51,7 +51,6 @@ export const Banlist: React.FC<Props> = ({ employees }) => {
     return searchWords.every((word: any) => slugWords && slugWords.some((slugWord: string | any[]) => slugWord.includes(word)));
   };
 
-  const { t } = useTranslation();
 
   return (
     <div className="banlist">
@@ -87,7 +86,7 @@ export const Banlist: React.FC<Props> = ({ employees }) => {
           </p>
 
           <p className="banlist__table__item bold-text">
-            {t('ban__name')}
+            {t('name')}
           </p>
 
           <p className="banlist__table__item bold-text">

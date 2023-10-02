@@ -10,7 +10,7 @@ import dollar from '../../../img/icons/header/dollar.svg';
 
 import languages from '../../../helpers/programLanguages.js'
 import { MainSelect } from '../MainSelect';
-import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 type Props = {
   setIsBanListChecked?: (isChecked: boolean) => void,
@@ -42,7 +42,6 @@ export const Select: React.FC<Props> = ({
 
   const isMy = window.location.pathname.includes('my');
   const isWallet = window.location.pathname.includes('my-wallet');
-  const isProject = window.location.pathname.includes('projects');
   const isTeam = window.location.pathname.includes('my-team');
   const isMessage = window.location.pathname.includes('messages');
   const isNews = window.location.pathname.includes('news');
@@ -61,7 +60,6 @@ export const Select: React.FC<Props> = ({
     setIsReferralChecked ? setIsReferralChecked(e.target.checked) : null;
   };
 
-  const { t } = useTranslation();
 
   if (isMy || isNews || isSupport) {
     return (
@@ -102,13 +100,7 @@ export const Select: React.FC<Props> = ({
               </a>
             </div>
           ) : (
-            <>
-              {isProject && (
-                <a href="#create-project" className="select__container__btn btn-grey list-text">
-                  {t('sel__create__proj')}
-                </a>
-              )}
-  
+            <>  
               {isTeam && (
                 <a href="#create-resume" className="select__container__btn btn-grey list-text">
                   {t('sel__create__resume')}

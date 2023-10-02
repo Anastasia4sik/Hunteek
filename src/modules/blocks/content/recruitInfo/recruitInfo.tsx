@@ -5,7 +5,7 @@ import { Rate } from '../../../shared/rate';
 import { UserPhoto } from '../../../shared/userPhoto';
 
 import { Recruiter } from '../../../../types/Recruiter';
-import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 type Props = {
   recruiter: Recruiter,
@@ -30,7 +30,6 @@ export const RecruitInfo: React.FC<Props> = ({ recruiter }) => {
     github,
   } = recruiter;
 
-  const { t } = useTranslation();
 
   return (
     <div className="recruitInfo block">

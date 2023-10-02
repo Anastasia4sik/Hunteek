@@ -39,6 +39,26 @@ i18n
           "my__resume": "My Resume",
           "banlist": "BanList",
           "block": "Block",
+          "unban": "Unban",
+          "name": "Name",
+          "lastname": "Last Name",
+          "phone__num": "Phone",
+          "attach__files": "Attach your files here",
+          "send__feedback": "Send a feedback",
+          "about__page": "About the page",
+          "hire": "Hire the talent",
+          "read__more": "Read more",
+          "stop__cooperation": "Terminate cooperation",
+
+          // side info
+          "image": "Image",
+          "upload": "Upload Image",
+          "vacancy": "Vacancy",
+          "position": "Position",
+          "none": "None",
+          "company__name": "Company Name",
+          "salary": "Salary",
+          "submit": "Submit",
           
           // menu
           "menu__home": "Home",
@@ -57,7 +77,6 @@ i18n
           "ban__title": "Ban List",
           "ban__block": "Block a user",
           "ban__photo": "Photo",
-          "ban__name": "Name",
           "location": "Location",
           "ban__date": "Date of blocking",
           "ban__action": "Action",
@@ -86,18 +105,23 @@ i18n
           "wallet__show__all": "Show all wallets",
           "cur__amount": "Current amount",
           "add__wallet": "Add Wallet",
+          "payment__type": "Type of payment",
+          "card__num__ID": "Card number or ID",
+          "currency": "Currency",
 
           // info
-          "time__zone": "Time zone:",
-          "work__term": "Work term:",
-          "work__time": "Work time:",
-          "eng__level": "Level of English:",
-          "experience": "Years of experience:",
-          "skills": "Skills:",
+          "time__zone": "Time zone",
+          "work__term": "Work term",
+          "work__time": "Work time",
+          "eng__level": "Level of English",
+          "experience": "Years of experience",
+          "skills": "Skills",
           "phone": "Phone:",
           "edit__profile": "Edit Profile",
           "edit__resume": "Edit Resume",
           "recruiter": "Recruiter",
+          "long__term": "Long-term",
+          "short__term": "Short-term",
 
           // about page
           "info__general": "Information about the page",
@@ -105,7 +129,6 @@ i18n
           "info__edit__profile": "Edit Profile",
           "info__edit__resume": "Edit Resume",
           "info__block": "Block a user",
-          "info__create__project": "Create a project",
           "info__crypto__wallets": "All Cryptocurrency Wallets",
           "info__fiat__wallets": "All Fiat Wallets",
           "info__transfer": "Transfer of funds",
@@ -142,10 +165,17 @@ i18n
           "sel__viewed__mes": "Viewed messages",
           
           // select other
-          "sel__create__proj": "Create a project",
+          "create__project": "Create a project",
           "sel__create__resume": "Create a resume",
           "sel__smart__contract": "My Smart Contracts",
           "sel__referral": "Referral system",
+
+          // rating
+          "overall_rat": "Overall rating",
+          "operation__speed": "Speed of operation",
+          "work__quality": "Quality of work",
+          "work__price": "Price of work",
+          "evaluate": "Evaluate",
         }
       },
       ua: {
@@ -165,6 +195,26 @@ i18n
           "my__resume": "Моє Резюме",
           "banlist": "Чорний список",
           "block": "Заблокувати",
+          "unban": "Розблокувати",
+          "name": "Ім'я",
+          "lastname": "Прізвище",
+          "phone__num": "Номер телефону",
+          "attach__files": "Під'єднайте файл тут",
+          "send__feedback": "Надіслати відгук",
+          "about__page": "Про цю сторінку",
+          "hire": "Найняти працівника",
+          "read__more": "Дізнатися більше",
+          "stop__cooperation": "Припинити співпрацю",
+
+          // side info
+          "image": "Фото",
+          "upload": "Завантажити",
+          "vacancy": "Вакансія",
+          "position": "Посада",
+          "none": "Ви ще нічого не ввели",
+          "company__name": "Назва компанії",
+          "salary": "Заробітна плата",
+          "submit": "Підтвердити",
 
           // menu
           "menu__home": "Головна",
@@ -183,7 +233,6 @@ i18n
           "ban__title": "Чорний список",
           "ban__block": "Заблокувати",
           "ban__photo": "Фото",
-          "ban__name": "Ім'я",
           "ban__date": "Дата блокування",
           "ban__action": "Дії",
 
@@ -211,18 +260,23 @@ i18n
           "wallet__show__all": "Переглянути всі гаманці",
           "cur__amount": "Поточна сума",
           "add__wallet": "Додати Гаманець",
+          "payment__type": "Тип оплати",
+          "card__num__ID": "Номер картки або ID",
+          "currency": "Валюта",
 
           // info
-          "time__zone": "Часова зона:",
-          "work__term": "Термін роботи:",
-          "work__time": "Робочий час:",
-          "eng__level": "Рівень англійської:",
-          "experience": "Роки досвіду:",
-          "skills": "Навички:",
+          "time__zone": "Часова зона",
+          "work__term": "Термін роботи",
+          "work__time": "Робочий час",
+          "eng__level": "Рівень англійської",
+          "experience": "Роки досвіду",
+          "skills": "Навички",
           "phone": "Номер телефону:",
           "edit__profile": "Редагувати профіль",
           "edit__resume": "Редагувати резюме",
           "recruiter": "Рекрутер",
+          "long__term": "Довгий термін",
+          "short__term": "Короткий термін",
 
           // about page
           "info__general": "Інформація про сторінку",
@@ -230,7 +284,6 @@ i18n
           "info__edit__profile": "Відредагуйте Профіль",
           "info__edit__resume": "Відредагуйте Резюме",
           "info__block": "Заблокуйте користувача",
-          "info__create__project": "Створить проєкт",
           "info__crypto__wallets": "Всі Криптовалютні Гаманці",
           "info__fiat__wallets": "Всі Fiat Гаманці",
           "info__transfer": "Переказ коштів",
@@ -267,10 +320,17 @@ i18n
           "sel__viewed__mes": "Переглянуті повідомлення",
           
           // select other
-          "sel__create__proj": "Створити проєкт",
+          "create__project": "Створити проєкт",
           "sel__create__resume": "Створити резюме",
           "sel__smart__contract": "Мої Smart Контракти",
           "sel__referral": "Реферальна система",
+          
+          // rating
+          "overall_rat": "Загальний рейтинг",
+          "operation__speed": "Швидкість роботи",
+          "work__quality": "Якість роботи",
+          "work__price": "Вартість роботи",
+          "evaluate": "Оцінити",
         }
       }
     },

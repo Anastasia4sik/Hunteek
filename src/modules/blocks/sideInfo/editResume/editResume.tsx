@@ -7,6 +7,9 @@ import { UserPhoto } from '../../../shared/userPhoto';
 import { Employee } from '../../../../types/Employee';
 
 import { timeZones } from '../../../../helpers/timezones';
+import levels from '../../../../helpers/langLevels.js';
+
+import { t } from 'i18next';
 
 type Props = {
   employee: Employee | undefined,
@@ -39,11 +42,14 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
     skills,
   } = employee;
 
+
   return (
     <div className="edit">
       <form action="#" className="edit__content">
         <fieldset className="edit__container">
-          <legend className="edit__label list-text"> Image </legend>
+          <legend className="edit__label list-text"> 
+            {t('image')}
+          </legend>
 
           <div className="edit__photo d-flex flex-row align-items-center justify-content-between">
             <UserPhoto size={20} photo={photo} />
@@ -53,7 +59,9 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
                 <div className="edit__photo__upload__label__content d-flex align-items-center flex-row">
                   <img src={upload} alt="Upload Icon" className="edit__photo__upload__label__icon" />
 
-                  <span className="edit__photo__upload__label__text bold-text">Upload Image</span>
+                  <span className="edit__photo__upload__label__text bold-text">
+                    {t('upload')}
+                  </span>
                 </div>
               </label>
 
@@ -67,20 +75,24 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
-          <legend className="edit__label list-text"> Name </legend>
+          <legend className="edit__label list-text"> 
+            {t('name')}
+          </legend>
 
           <input type="text" id="name" placeholder={`${name} ${lastname}`} className="edit__input list-text" />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
-          <legend className="edit__label list-text"> Position </legend>
+          <legend className="edit__label list-text">
+            Position
+          </legend>
 
           <input type="text" id="name" placeholder={position} className="edit__input list-text" />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text">
-            Description
+            {t('desc')}
           </legend>
 
           <textarea id="desc" placeholder={desc} className="edit__input edit__input--desc list-text" />
@@ -88,7 +100,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
 
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text">
-            Time zone
+            {t('time__zone')}
           </legend>
 
           <select
@@ -107,7 +119,8 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
-          <legend className="edit__label list-text">Work term</legend>
+          <legend className="edit__label list-text">
+          </legend>
 
           <div className="d-flex flex-row">
             <input
@@ -117,7 +130,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
               checked={workTerm === "Long-term"}
             />
             <label htmlFor="Long-term" className="list-text">
-              Long-term
+              {t('long__term')}
             </label>
           </div>
 
@@ -129,14 +142,14 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
               checked={workTerm === "Short-term"}
             />
             <label htmlFor="Short-term" className="list-text">
-              Short-term
+              {t('short__term')}
             </label>
           </div>
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text">
-            Work time
+            {t('work__time')}
           </legend>
 
           <div className="d-flex flex-row">
@@ -147,7 +160,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
               checked={workTime === "Part-time"}
             />
             <label htmlFor="Part-time" className="list-text">
-              Part-time
+              {t('part__time')}
             </label>
           </div>
 
@@ -159,14 +172,14 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
               checked={workTime === "Full-time"}
             />
             <label htmlFor="Full-time" className="list-text">
-              Full-time
+              {t('full__time')}
             </label>
           </div>
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text">
-            Level of English
+            {t('eng__level')}
           </legend>
 
           <select
@@ -175,29 +188,32 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
           >
             <option value="" disabled selected hidden>{englishLevel}</option>
 
-            <option value="A1">A1</option>
-
-            <option value="A2">A2</option>
-
-            <option value="B1">B1</option>
-
-            <option value="B2">B2</option>
-
-            <option value="C1">C1</option>
-
-            <option value="C2">C2</option>
+            {levels.map((level: string) => (
+              <option
+                value={level}
+              >
+                {level}
+              </option>
+            ))}
           </select>
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
-          <legend className="edit__label list-text"> Location </legend>
+          <legend className="edit__label list-text"> 
+            {t('location')}
+          </legend>
 
-          <input type="text" id="location" placeholder={`${homeCountry}, ${homeCity}`} className="edit__input list-text" />
+          <input
+            type="text"
+            id="location"
+            placeholder={`${homeCountry}, ${homeCity}`}
+            className="edit__input list-text"
+          />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text">
-            Skills
+            {t('skills')}
           </legend>
 
           <textarea id="skills" placeholder={skills} className="edit__input list-text" />
@@ -205,14 +221,18 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
 
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text">
-            Years of expierience
+            {t('experience')}
           </legend>
 
-          <input id="expierence" placeholder={`${expierence}`} className="edit__input list-text" />
+          <input
+            id="expierence"
+            placeholder={`${expierence}`}
+            className="edit__input list-text"
+          />
         </fieldset>
 
         <button type="submit" className="edit__btn btn-grey">
-          Submit
+          {t('submit')}
         </button>
       </form>
     </div>

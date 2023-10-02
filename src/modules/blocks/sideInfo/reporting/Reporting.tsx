@@ -4,12 +4,14 @@ import { UserPhoto } from '../../../shared/userPhoto';
 
 import { ReferralPerson } from '../../../../types/referralPerson';
 import { CatalogFull } from '../../content/catalogFull';
+import { t } from 'i18next';
 
 type Props = {
   personInfo: ReferralPerson,
 };
 
 export const Reporting: React.FC<Props> = ({ personInfo }) => {
+
   return (
     <div className="reporting d-flex flex-column align-items-center justify-content-center">
       <div className="reporting__content">
@@ -27,7 +29,7 @@ export const Reporting: React.FC<Props> = ({ personInfo }) => {
           </p>
 
           <p className="main-text reporting__top__profit">
-            Profit
+            {t('profit')}
           </p>
 
           <p className="main-text reporting__top__amount">

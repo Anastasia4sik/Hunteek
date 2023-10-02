@@ -6,7 +6,7 @@ import { Rate } from '../../../shared/rate';
 import { UserPhoto } from '../../../shared/userPhoto';
 
 import { Employee } from '../../../../types/Employee';
-import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 type Props = {
   employee: Employee,
@@ -33,7 +33,6 @@ export const Resume: React.FC<Props> = ({ employee }) => {
     skills,
   } = employee;
 
-  const { t } = useTranslation();
 
   return (
     <div className="resume">
@@ -84,7 +83,7 @@ export const Resume: React.FC<Props> = ({ employee }) => {
             align-items-center"
           >
             <p className="big-text resume__info__item__title">
-              {t('time__zone')}
+              {t('time__zone')}:
             </p>
 
             <p className="bold-text">
@@ -101,7 +100,7 @@ export const Resume: React.FC<Props> = ({ employee }) => {
             align-items-center"
           >
             <p className="big-text resume__info__item__title">
-              {t('work__term')}
+              {t('work__term')}:
             </p>
 
             <p className="bold-text">
@@ -118,7 +117,7 @@ export const Resume: React.FC<Props> = ({ employee }) => {
             align-items-center"
           >
             <p className="big-text resume__info__item__title">
-              {t('work__time')}
+              {t('work__time')}:
             </p>
 
             <p className="bold-text">
@@ -135,7 +134,7 @@ export const Resume: React.FC<Props> = ({ employee }) => {
             align-items-center"
           >
             <p className="big-text resume__info__item__title">
-              {t('eng__level')}
+              {t('eng__level')}:
             </p>
 
             <p className="bold-text">
@@ -152,7 +151,7 @@ export const Resume: React.FC<Props> = ({ employee }) => {
             align-items-center"
           >
             <p className="big-text resume__info__item__title">
-              {t('experience')}
+              {t('experience')}:
             </p>
 
             <p className="bold-text">
@@ -180,7 +179,7 @@ export const Resume: React.FC<Props> = ({ employee }) => {
 
         <div className="resume__skills block d-flex flex-column align-items-center">
           <h5 className="resume__skills__title big-text">
-            {t('skills')}
+            {t('skills')}:
           </h5>
 
           <p className="resume__skills__desc bold-text">

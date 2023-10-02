@@ -1,6 +1,7 @@
 import React from 'react';
 
 import photo from '../../../img/photo/news/first.png'
+import { t } from 'i18next';
 
 export const NewsCard: React.FC = () => {
   return (
@@ -19,7 +20,7 @@ export const NewsCard: React.FC = () => {
 
       <div className="newsCard__bottom d-flex flex-row justify-content-between">
         <a href="https://www.wired.com/tag/programming/" className="newsCard__bottom__link" target='_blank'>
-          Read more
+          {t('read__more')}:
         </a>
 
         <p className="newsCard__bottom__date">

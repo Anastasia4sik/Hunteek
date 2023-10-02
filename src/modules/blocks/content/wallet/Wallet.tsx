@@ -1,8 +1,7 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 export const Wallet: React.FC = () => {
-  const { t } = useTranslation();
 
   return (
     <div className="wallet">

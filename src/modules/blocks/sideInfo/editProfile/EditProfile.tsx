@@ -6,6 +6,8 @@ import { UserPhoto } from '../../../shared/userPhoto';
 
 import { Recruiter } from '../../../../types/Recruiter';
 
+import { t } from 'i18next';
+
 type Props = {
   recruteir: Recruiter | undefined,
 };
@@ -20,8 +22,6 @@ export const EditProfile: React.FC<Props> = ({ recruteir }) => {
     lastname,
     photo,
     desc,
-    homeCountry,
-    homeCity,
     email,
     phone,
     telegram,
@@ -29,11 +29,14 @@ export const EditProfile: React.FC<Props> = ({ recruteir }) => {
     github,
   } = recruteir;
 
+
   return (
     <div className="edit">
       <form action="#" className="edit__content">
         <fieldset className="edit__container">
-          <label htmlFor="uploadPhoto" className="edit__label list-text"> Image </label>
+          <label htmlFor="uploadPhoto" className="edit__label list-text"> 
+            {t('image')}
+          </label>
 
           <div className="edit__photo d-flex flex-row align-items-center justify-content-between">
             <UserPhoto size={20} photo={photo} />
@@ -43,7 +46,9 @@ export const EditProfile: React.FC<Props> = ({ recruteir }) => {
                 <div className="edit__photo__upload__label__content d-flex align-items-center flex-row">
                   <img src={upload} alt="Upload Icon" className="edit__photo__upload__label__icon" />
 
-                  <span className="edit__photo__upload__label__text bold-text">Upload Image</span>
+                  <span className="edit__photo__upload__label__text bold-text">
+                    {t('upload')}
+                  </span>
                 </div>
               </label>
 
@@ -58,7 +63,7 @@ export const EditProfile: React.FC<Props> = ({ recruteir }) => {
 
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text">
-            Name
+            {t('name')}
           </legend>
 
           <input type="text" id="name" placeholder={name} className="edit__input edit__input--name list-text" />
@@ -66,7 +71,7 @@ export const EditProfile: React.FC<Props> = ({ recruteir }) => {
 
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text">
-            Last Name
+            {t('lastname')}
           </legend>
 
           <input type="text" id="lastName" placeholder={lastname} className="edit__input edit__input--lastName list-text" />
@@ -74,7 +79,7 @@ export const EditProfile: React.FC<Props> = ({ recruteir }) => {
 
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text">
-            Description
+            {t('desc')}
           </legend>
 
           <textarea id="desc" placeholder={desc} className="edit__input edit__input--desc list-text" />
@@ -90,7 +95,7 @@ export const EditProfile: React.FC<Props> = ({ recruteir }) => {
 
         <fieldset className="edit__container d-flex flex-column">
           <legend className="edit__label list-text">
-            Phone
+            {t('phone__num')}
           </legend>
 
           <input type="number" id="phone" placeholder={phone} className="edit__input edit__input--phone list-text" />
@@ -121,7 +126,7 @@ export const EditProfile: React.FC<Props> = ({ recruteir }) => {
         </fieldset>
 
         <button type="submit" className="edit__btn btn-grey">
-          Submit
+          {t('submit')}
         </button>
       </form>
     </div>

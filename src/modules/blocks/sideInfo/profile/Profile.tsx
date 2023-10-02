@@ -4,6 +4,7 @@ import { Rate } from '../../../shared/rate';
 import { UserPhoto } from '../../../shared/userPhoto';
 
 import { Employee } from '../../../../types/Employee';
+import { t } from 'i18next';
 
 type Props = {
   employee: Employee | undefined,
@@ -28,6 +29,7 @@ export const Profile: React.FC<Props> = ({ employee }) => {
     expierence,
     skills,
   } = employee;
+
 
   return (
     <div className="profile">
@@ -61,7 +63,7 @@ export const Profile: React.FC<Props> = ({ employee }) => {
         <div className="profile__time d-flex flex-column">
           <div className="profile__time--1 d-flex flex-row justify-content-between">
             <p className="bold-text">
-              Time zone:
+              {t('time__zone')}:
             </p>
 
             <p className="list-text">
@@ -71,8 +73,8 @@ export const Profile: React.FC<Props> = ({ employee }) => {
 
           <div className="profile__time--2 d-flex flex-row justify-content-between">
             <p className="bold-text">
-              Work term:
-            </p>
+              {t('work__term')}:
+          </p>
 
             <p className="list-text">
               { workTerm }
@@ -81,7 +83,7 @@ export const Profile: React.FC<Props> = ({ employee }) => {
 
           <div className="profile__time--3 d-flex flex-row justify-content-between">
             <p className="bold-text">
-              Work time:
+              {t('work__time')}:
             </p>
 
             <p className="list-text">
@@ -91,7 +93,7 @@ export const Profile: React.FC<Props> = ({ employee }) => {
 
           <div className="profile__time--4 d-flex flex-row justify-content-between">
             <p className="bold-text">
-              Level of English:
+              {t('eng__level')}:
             </p>
 
             <p className="list-text">
@@ -101,7 +103,7 @@ export const Profile: React.FC<Props> = ({ employee }) => {
 
           <div className="profile__time--5 d-flex flex-row justify-content-between">
             <p className="bold-text">
-              Years of experience:
+              {t('experience')}:
             </p>
 
             <p className="list-text">
@@ -112,7 +114,7 @@ export const Profile: React.FC<Props> = ({ employee }) => {
 
         <div className="profile__skills d-flex flex-column">
           <h5 className="profile__skills__title bold-text">
-            Skills:
+            {t('skills')}:
           </h5>
 
           <p className="profile__skills__desc list-text">

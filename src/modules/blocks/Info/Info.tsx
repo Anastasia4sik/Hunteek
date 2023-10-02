@@ -18,7 +18,7 @@ import { Rating } from '../sideInfo/rating';
 import { News } from '../../News';
 import { Feedback } from '../sideInfo/feedback';
 
-import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 type Props = {
   purpose: string;
@@ -54,7 +54,6 @@ export const Info: React.FC<Props> = ({
     };
   }, []);
 
-  const { t } = useTranslation();
 
   let title;
   let content;
@@ -75,7 +74,7 @@ export const Info: React.FC<Props> = ({
     title = t('info__block');
     content = <BlockUser employees={employees} />;
   } else if (purpose === 'project') {
-    title = t('info__create__project');
+    title = t('create__project');
     content = <CreateProject />;
   } else if (purpose === 'cryptoWallets') {
     title = t('info__crypto__wallets');

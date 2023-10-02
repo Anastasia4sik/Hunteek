@@ -7,7 +7,7 @@ import { Employee } from '../../../../types/Employee';
 
 import { handleInputChange, handleSearchClick, handleKeyPress } from '../../../../helpers/search';
 
-import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 type Props = {
   employees: Employee[] | undefined,
@@ -16,7 +16,6 @@ type Props = {
 export const BlockUser: React.FC<Props> = ({ employees }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
-  const { t } = useTranslation();
 
   return (
     <div className="blockUser">

@@ -1,10 +1,12 @@
 import React from 'react';
+import { t } from 'i18next';
 
 export const General: React.FC = () => {
+
   return (
     <div className="info__content block">
       <h4 className="info__content__title main-text">
-        About the page
+        {t('about__page')}
       </h4>
 
       <p className="info__content__desc list-text">

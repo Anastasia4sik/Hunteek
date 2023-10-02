@@ -36,6 +36,8 @@
     &__btn {
       height: 36px;
 
+      margin-bottom: 15px;
+
       @include onBigDesktop {
         height: 46px;
       }

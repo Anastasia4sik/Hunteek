@@ -3,6 +3,7 @@ import React from 'react';
 import unlock from '../../../img/icons/unlock.svg';
 import { UserPhoto } from '../userPhoto';
 import { Employee } from '../../../types/Employee';
+import { t } from 'i18next';
 
 type Props = {
   employee: Employee,
@@ -20,6 +21,7 @@ export const BanItem: React.FC<Props> = ({ employee }) => {
     homeCity,
     homeCountry,
   } = employee;
+
 
   return (
     <div className="banItem d-flex flex-row justify-content-between align-items-center">
@@ -40,7 +42,7 @@ export const BanItem: React.FC<Props> = ({ employee }) => {
       <a href="/" className="banItem__unban d-flex flex-row">
         <img src={unlock} alt="Unban" />
         <p className="bold-text">
-          Unban
+          {t('unban')}
         </p>
       </a>
     </div>

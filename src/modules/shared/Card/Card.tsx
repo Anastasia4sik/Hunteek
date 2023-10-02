@@ -6,6 +6,7 @@ import { Rate } from '../rate';
 import { UserPhoto } from '../userPhoto';
 
 import { Employee } from '../../../types/Employee';
+import { t } from 'i18next';
 
 type Props = {
   employee: Employee,
@@ -75,7 +76,9 @@ export const Card: React.FC<Props> = ({ employee }) => {
       </a>
 
       <div className="card__btn">
-        <button type="button" className="card__btn__button main-text btn-grey">Hire the talent</button>
+        <button type="button" className="card__btn__button main-text btn-grey">
+          {t('hire')}
+        </button>
       </div>
     </div>
   );

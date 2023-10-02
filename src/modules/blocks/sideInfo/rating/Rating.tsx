@@ -3,8 +3,10 @@ import React from 'react';
 import starBig from '../../../../img/icons/card/rate/bigStar.svg';
 
 import { Rate } from '../../../shared/rate';
+import { t } from 'i18next';
 
 export const Rating: React.FC = () => {
+
   return (
     <div className="rating d-flex flex-column">
       <img src={starBig} alt="Star" className="rating__img" />
@@ -12,7 +14,7 @@ export const Rating: React.FC = () => {
       <div className="rating__content d-flex flex-column">
         <div className="rating__block">
           <p className="big-text">
-            Overall rating
+            {t('overall_rat')}
           </p>
 
           <Rate forRatingBlock />
@@ -20,7 +22,7 @@ export const Rating: React.FC = () => {
 
         <div className="rating__block">
           <p className="big-text">
-            Speed of operation
+            {t('operation__speed')}
           </p>
 
           <Rate forRatingBlock />
@@ -28,7 +30,7 @@ export const Rating: React.FC = () => {
 
         <div className="rating__block">
           <p className="big-text">
-            Quality of work
+            {t('work__quality')}
           </p>
 
           <Rate forRatingBlock />
@@ -36,7 +38,7 @@ export const Rating: React.FC = () => {
 
         <div className="rating__block">
           <p className="big-text">
-            Price of work
+            {t('work__price')}
           </p>
 
           <Rate forRatingBlock />
@@ -44,7 +46,7 @@ export const Rating: React.FC = () => {
       </div>
 
       <button type="submit" className="rating__btn btn-grey">
-        Evaluate
+        {t('evaluate')}
       </button>
     </div>
   );
