@@ -6,9 +6,10 @@ import photo from '../../../../img/photo/user.png';
 
 import { UserPhoto } from '../../../shared/userPhoto';
 
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 export const CreateProject: React.FC = () => {
+  const { t } = useTranslation();
 
   return (
     <div className="edit">

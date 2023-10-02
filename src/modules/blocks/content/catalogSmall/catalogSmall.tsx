@@ -1,5 +1,5 @@
 import React from 'react';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 const amountArray = [0, 1, 2, 3, 4, 5];
 
@@ -10,6 +10,7 @@ export const CatalogSmall: React.FC = () => {
     amountArray.length = 6;
   }
 
+  const { t } = useTranslation();
 
   return (
     <div className="catalog">

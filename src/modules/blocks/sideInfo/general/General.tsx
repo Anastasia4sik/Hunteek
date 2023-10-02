@@ -1,7 +1,8 @@
 import React from 'react';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 export const General: React.FC = () => {
+  const { t } = useTranslation();
 
   return (
     <div className="info__content block">

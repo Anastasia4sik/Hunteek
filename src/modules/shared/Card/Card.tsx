@@ -6,7 +6,7 @@ import { Rate } from '../rate';
 import { UserPhoto } from '../userPhoto';
 
 import { Employee } from '../../../types/Employee';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   employee: Employee,
@@ -22,6 +22,8 @@ export const Card: React.FC<Props> = ({ employee }) => {
     whereToWork,
     typeOfWork,
   } = employee;
+
+  const { t } = useTranslation();
 
   return (
     <div className="card block">

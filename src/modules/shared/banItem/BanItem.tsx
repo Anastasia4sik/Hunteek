@@ -3,7 +3,7 @@ import React from 'react';
 import unlock from '../../../img/icons/unlock.svg';
 import { UserPhoto } from '../userPhoto';
 import { Employee } from '../../../types/Employee';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   employee: Employee,
@@ -22,6 +22,7 @@ export const BanItem: React.FC<Props> = ({ employee }) => {
     homeCountry,
   } = employee;
 
+  const { t } = useTranslation();
 
   return (
     <div className="banItem d-flex flex-row justify-content-between align-items-center">

@@ -13,7 +13,7 @@ import ua from '../../../img/icons/flags/ua.png';
 import eng from '../../../img/icons/flags/eng.png';
 
 import i18n from "i18next";
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   searchQuery?: string;
@@ -52,6 +52,7 @@ export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handle
     i18n.changeLanguage(selectedLanguage);
   }, [selectedLanguage]);
 
+  const { t } = useTranslation();
 
   return (
     <div className="header d-flex flex-row align-items-center">

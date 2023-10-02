@@ -3,9 +3,10 @@ import React from 'react';
 import starBig from '../../../../img/icons/card/rate/bigStar.svg';
 
 import { Rate } from '../../../shared/rate';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 export const Rating: React.FC = () => {
+  const { t } = useTranslation();
 
   return (
     <div className="rating d-flex flex-column">

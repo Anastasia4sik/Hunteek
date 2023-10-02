@@ -13,7 +13,7 @@ import { getEmployees } from '../../api/api';
 import photo from '../../img/photo/user.png';
 import eye from '../../img/icons/card/eye.svg';
 import message from '../../img/icons/card/message.svg';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 export const Team: React.FC = () => {
   const [location, setLocation] = useState('');
@@ -44,6 +44,8 @@ export const Team: React.FC = () => {
       setEmployees(data);
     });
   }, []);
+
+  const { t } = useTranslation();
 
   return (
     <div className="main">

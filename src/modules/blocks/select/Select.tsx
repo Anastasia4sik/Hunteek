@@ -10,7 +10,7 @@ import dollar from '../../../img/icons/header/dollar.svg';
 
 import languages from '../../../helpers/programLanguages.js'
 import { MainSelect } from '../MainSelect';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   setIsBanListChecked?: (isChecked: boolean) => void,
@@ -60,6 +60,7 @@ export const Select: React.FC<Props> = ({
     setIsReferralChecked ? setIsReferralChecked(e.target.checked) : null;
   };
 
+  const { t } = useTranslation();
 
   if (isMy || isNews || isSupport) {
     return (

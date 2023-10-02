@@ -1,9 +1,11 @@
 import React from 'react';
 
 import photo from '../../../img/photo/news/first.png'
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 export const NewsCard: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="newsCard block">
       <div className="newsCard__title text-center">

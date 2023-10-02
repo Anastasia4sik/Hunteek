@@ -11,7 +11,7 @@ import countries from '../../../helpers/countries.js';
 import experiences from '../../../helpers/experiences.js';
 import speakLanguages from '../../../helpers/speakLanguages.js';
 
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 export const MainSelect = () => {
   const [isOpen1, setIsOpen1] = useState(false);
@@ -80,6 +80,7 @@ export const MainSelect = () => {
 
   const isMy = window.location.pathname.includes('my');
 
+  const { t } = useTranslation();
 
   return (
     <div className="select select__main block">

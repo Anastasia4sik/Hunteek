@@ -8,7 +8,7 @@ import { SearchUser } from '../../../shared/searchUser';
 import { Employee } from '../../../../types/Employee';
 
 import { handleInputChange, handleSearchClick, handleKeyPress } from '../../../../helpers/search';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   employees: Employee[],
@@ -50,7 +50,7 @@ export const Banlist: React.FC<Props> = ({ employees }) => {
     // Check if all words in searchQuery are present in the slug
     return searchWords.every((word: any) => slugWords && slugWords.some((slugWord: string | any[]) => slugWord.includes(word)));
   };
-
+  const { t } = useTranslation();
 
   return (
     <div className="banlist">

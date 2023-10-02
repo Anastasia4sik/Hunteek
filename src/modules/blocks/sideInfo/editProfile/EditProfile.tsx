@@ -6,7 +6,7 @@ import { UserPhoto } from '../../../shared/userPhoto';
 
 import { Recruiter } from '../../../../types/Recruiter';
 
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   recruteir: Recruiter | undefined,
@@ -29,6 +29,7 @@ export const EditProfile: React.FC<Props> = ({ recruteir }) => {
     github,
   } = recruteir;
 
+  const { t } = useTranslation();
 
   return (
     <div className="edit">

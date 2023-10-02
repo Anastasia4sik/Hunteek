@@ -6,7 +6,7 @@ import { UserPhoto } from '../../../shared/userPhoto';
 
 import { Employee } from '../../../../types/Employee';
 
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   employee: Employee,
@@ -32,6 +32,7 @@ export const EmployeeInfo: React.FC<Props> = ({ employee }) => {
     skills,
   } = employee;
 
+  const { t } = useTranslation();
 
   return (
     <a href="my-profile/my-resume">

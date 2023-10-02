@@ -8,7 +8,7 @@ import team from '../../../img/icons/menu/team.svg';
 import project from '../../../img/icons/menu/project.svg';
 import message from '../../../img/icons/menu/message.svg';
 
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 export const Menu: React.FC = () => {
   const isHome = window.location.pathname === '/';
@@ -19,6 +19,7 @@ export const Menu: React.FC = () => {
   const isProjects = window.location.pathname === '/projects';
   const isFeedback = window.location.pathname === '/feedback';
 
+  const { t } = useTranslation();
 
   return (
     <div className="menu d-flex flex-column">

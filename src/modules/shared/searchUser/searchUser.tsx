@@ -1,7 +1,7 @@
 import React, { KeyboardEventHandler, MouseEventHandler } from 'react';
 import search from '../../../img/icons/search.svg';
 
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   searchQuery?: string;
@@ -11,7 +11,8 @@ type Props = {
 };
 
 export const SearchUser: React.FC<Props> = ({ searchQuery, handleInputChange, handleKeyPress, handleSearchClick }) => {
-  
+  const { t } = useTranslation();
+
   return (
     <div className="searchUser position-relative">
       <i className="bx bx-search-alt"></i>

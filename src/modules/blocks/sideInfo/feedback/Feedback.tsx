@@ -1,9 +1,10 @@
 import React from 'react';
 
 import upload from '../../../../img/icons/upload.svg';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 export const Feedback: React.FC = () => {
+  const { t } = useTranslation();
 
   return (
     <div className="edit">

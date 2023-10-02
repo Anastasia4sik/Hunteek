@@ -4,13 +4,14 @@ import { UserPhoto } from '../../../shared/userPhoto';
 
 import { ReferralPerson } from '../../../../types/referralPerson';
 import { CatalogFull } from '../../content/catalogFull';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   personInfo: ReferralPerson,
 };
 
 export const Reporting: React.FC<Props> = ({ personInfo }) => {
+  const { t } = useTranslation();
 
   return (
     <div className="reporting d-flex flex-column align-items-center justify-content-center">

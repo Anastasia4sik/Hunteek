@@ -18,7 +18,7 @@ import { Rating } from '../sideInfo/rating';
 import { News } from '../../News';
 import { Feedback } from '../sideInfo/feedback';
 
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   purpose: string;
@@ -54,6 +54,7 @@ export const Info: React.FC<Props> = ({
     };
   }, []);
 
+  const { t } = useTranslation();
 
   let title;
   let content;

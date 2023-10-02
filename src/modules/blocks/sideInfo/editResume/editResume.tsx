@@ -9,7 +9,7 @@ import { Employee } from '../../../../types/Employee';
 import { timeZones } from '../../../../helpers/timezones';
 import levels from '../../../../helpers/langLevels.js';
 
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   employee: Employee | undefined,
@@ -42,6 +42,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
     skills,
   } = employee;
 
+  const { t } = useTranslation();
 
   return (
     <div className="edit">

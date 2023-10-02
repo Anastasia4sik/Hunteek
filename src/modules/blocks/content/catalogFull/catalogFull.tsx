@@ -5,7 +5,7 @@ import upload from '../../../../img/icons/upload.svg';
 import filter from '../../../../img/icons/filter.svg';
 
 import { Pagination } from '../../../shared/pagination';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   forSideInfo?: boolean,
@@ -64,6 +64,7 @@ export const CatalogFull: React.FC<Props> = ({ forSideInfo }) => {
     console.log(newHash);
   };
 
+  const { t } = useTranslation();
 
   return (
     <>
