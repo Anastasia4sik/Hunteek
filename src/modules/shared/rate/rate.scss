@@ -10,10 +10,21 @@
     }
   }
 
+  &__star {
+    transition: all .5s ease-in-out;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__input {
+    &:hover {
+      cursor: default;
+    }
+  }
+
   &__desc {
     color: $grey-text;
-
-    margin-bottom: 0;
 
     &.bigger {
       font-size: 18px;
