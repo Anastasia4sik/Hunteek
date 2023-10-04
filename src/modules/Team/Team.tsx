@@ -73,7 +73,7 @@ export const Team: React.FC = () => {
                         Ivan Kadylo
                       </p>
 
-                      <Rate />
+                      <Rate rateIs={5}/>
                     </div>
 
                     <UserPhoto size={24} photo={photo} />

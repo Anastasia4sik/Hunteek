@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
-
-import star from '../../../img/icons/card/rate/star.svg';
 
 import { FaStar } from 'react-icons/fa';
 
 type Props = {
   forRatingBlock?: boolean,
+  rateIs?: number,
 };
 
-export const Rate: React.FC<Props> = ({ forRatingBlock }) => {
+export const Rate: React.FC<Props> = ({ forRatingBlock, rateIs }) => {
   const [isRating, setIsRating] = useState(0);
   const [isColorRate, setIsColorRate] = useState(0);
 
@@ -54,37 +52,24 @@ export const Rate: React.FC<Props> = ({ forRatingBlock }) => {
   return (
     <div className="rate d-flex flex-row align-items-center text-center">
       <div className="rate__stars d-flex flex-row align-items-center">
-        <img
-          src={star}
-          alt="Star"
-          className='rate__stars__item'
-        />
-        <img
-          src={star}
-          alt="Star"
-          className='rate__stars__item'
-        />
-        <img
-          src={star}
-          alt="Star"
-          className='rate__stars__item'
-        />
-        <img
-          src={star}
-          alt="Star"
-          className='rate__stars__item'
-        />
-        <img
-          src={star}
-          alt="Star"
-          className='rate__stars__item'
-        />
+        {[...Array(5)].map((star, index) => {
+          const rating = index + 1;
+          return (
+            <FaStar
+              key={star}
+              size={11}
+              className="rate__stars__item"
+              color={
+                rating <= (rateIs ?? 0) ? "#F1A449" : "grey"
+              }
+            />
+          );
+        })}
       </div>
 
       <p className='rate__desc small-text'
       >
-        (5/5)
-
+        {`(${rateIs}/5)`}
       </p>
     </div>
   );

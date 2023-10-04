@@ -91,7 +91,7 @@ export const Projects: React.FC = () => {
                       {project.company_name}
                     </p>
 
-                    <Rate />
+                    <Rate rateIs={project.rate}/>
                   </div>
 
                   <UserPhoto size={20} photo={project.photo} />

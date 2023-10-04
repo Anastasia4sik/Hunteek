@@ -11,4 +11,5 @@ export interface Recruiter {
   telegram: string;
   linkedin: string;
   github: string;
+  rate: number;
 }

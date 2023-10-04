@@ -21,6 +21,7 @@ export const Card: React.FC<Props> = ({ employee }) => {
     workCity,
     whereToWork,
     typeOfWork,
+    rate,
   } = employee;
 
   const { t } = useTranslation();
@@ -41,7 +42,7 @@ export const Card: React.FC<Props> = ({ employee }) => {
                 {`${name} ${lastname}`}
               </p>
 
-              <Rate />
+              <Rate rateIs={rate}/>
             </div>
 
             <UserPhoto size={24} photo={photo} />

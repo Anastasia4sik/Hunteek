@@ -15,5 +15,6 @@ export interface Employee {
   typeOfWork: string;
   englishLevel: string;
   expierence: number;
-  skills: string
+  skills: string;
+  rate: number;
 }

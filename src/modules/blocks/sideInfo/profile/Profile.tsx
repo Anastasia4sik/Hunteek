@@ -28,6 +28,7 @@ export const Profile: React.FC<Props> = ({ employee }) => {
     englishLevel,
     expierence,
     skills,
+    rate,
   } = employee;
 
   const { t } = useTranslation();
@@ -44,7 +45,7 @@ export const Profile: React.FC<Props> = ({ employee }) => {
                 { name }
               </p>
 
-              <Rate />
+              <Rate rateIs={rate}/>
 
               <p className="profile__user__info__location small-text">
                 {`${homeCountry}, ${homeCity}`}

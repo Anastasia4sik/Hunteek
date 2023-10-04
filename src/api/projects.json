@@ -6,7 +6,8 @@
     "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
     "position": "Need a specialist who works in OKCMS",
     "workTime": 99,
-    "salary": 784
+    "salary": 784,
+    "rate": 4 
   },
   {
     "slug": "Facebook-OKCMS-2",
@@ -15,7 +16,8 @@
     "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
     "position": "Need a specialist who works in OKCMS",
     "workTime": 99,
-    "salary": 784
+    "salary": 784,
+    "rate": 4 
   },
   {
     "slug": "Redwing-React-3",
@@ -24,7 +26,8 @@
     "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
     "position": "Need a specialist who works in React",
     "workTime": 99,
-    "salary": 784
+    "salary": 784,
+    "rate": 4 
   },
   {
     "slug": "SoftServe-OKCMS-4",
@@ -33,7 +36,8 @@
     "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
     "position": "Need a specialist who works in OKCMS",
     "workTime": 99,
-    "salary": 784
+    "salary": 784,
+    "rate": 4 
   },
   {
     "slug": "GlobalLogic-OKCMS-5",
@@ -42,7 +46,8 @@
     "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
     "position": "Need a specialist who works in OKCMS",
     "workTime": 99,
-    "salary": 784
+    "salary": 784,
+    "rate": 4 
   },
   {
     "slug": "ELITEX-OKCMS-6",
@@ -51,6 +56,7 @@
     "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...",
     "position": "Need a specialist who works in OKCMS",
     "workTime": 99,
-    "salary": 784
+    "salary": 784,
+    "rate": 4 
   }
 ]

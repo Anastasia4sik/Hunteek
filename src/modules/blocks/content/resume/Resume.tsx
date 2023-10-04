@@ -31,6 +31,7 @@ export const Resume: React.FC<Props> = ({ employee }) => {
     englishLevel,
     expierence,
     skills,
+    rate,
   } = employee;
 
   const { t } = useTranslation();
@@ -48,7 +49,7 @@ export const Resume: React.FC<Props> = ({ employee }) => {
                   {`${name} ${lastname}`}
                 </p>
 
-                <Rate />
+                <Rate rateIs={rate}/>
 
                 <p className="resume__main__info__add small-text">
                   {position}

@@ -16,7 +16,8 @@
     "typeOfWork": "Product",
     "englishLevel": "B2",
     "expierence": 5,
-    "skills": "CSS, HTML, JavaScript"
+    "skills": "CSS, HTML, JavaScript",
+    "rate": 4
   },
   {
     "slug": "Rita-Kudin-Middle-Front-Developer-Vue-2",
@@ -35,7 +36,8 @@
     "typeOfWork": "Product",
     "englishLevel": "B2",
     "expierence": 5,
-    "skills": "CSS, HTML, JavaScript"
+    "skills": "CSS, HTML, JavaScript",
+    "rate": 4
   },
   {
     "slug": "Yuri-Kudin-Middle-Front-Developer-Vue-3",
@@ -54,7 +56,8 @@
     "typeOfWork": "Product",
     "englishLevel": "B2",
     "expierence": 5,
-    "skills": "CSS, HTML, JavaScript"
+    "skills": "CSS, HTML, JavaScript",
+    "rate": 4
   },
   {
     "slug": "Yuri-Kudin-Middle-Front-Developer-Vue-4",
@@ -73,7 +76,8 @@
     "typeOfWork": "Product",
     "englishLevel": "B2",
     "expierence": 5,
-    "skills": "CSS, HTML, JavaScript"
+    "skills": "CSS, HTML, JavaScript",
+    "rate": 4
   },
   {
     "slug": "Vasyl-Kudin-Middle-Front-Developer-Vue-5",
@@ -92,7 +96,8 @@
     "typeOfWork": "Product",
     "englishLevel": "B2",
     "expierence": 5,
-    "skills": "CSS, HTML, JavaScript"
+    "skills": "CSS, HTML, JavaScript",
+    "rate": 4
   },
   {
     "slug": "George-Kudin-Middle-Front-Developer-Vue-6",
@@ -111,6 +116,7 @@
     "typeOfWork": "Product",
     "englishLevel": "B2",
     "expierence": 5,
-    "skills": "CSS, HTML, JavaScript"
+    "skills": "CSS, HTML, JavaScript",
+    "rate": 4
   }
 ]

@@ -28,6 +28,7 @@ export const RecruitInfo: React.FC<Props> = ({ recruiter }) => {
     telegram,
     linkedin,
     github,
+    rate,
   } = recruiter;
 
   const { t } = useTranslation();
@@ -46,7 +47,7 @@ export const RecruitInfo: React.FC<Props> = ({ recruiter }) => {
                 </p>
 
                 <a href="#rating">
-                  <Rate />
+                  <Rate rateIs={rate}/>
                 </a>
 
                 <p className="recruitInfo__user__info__location small-text">

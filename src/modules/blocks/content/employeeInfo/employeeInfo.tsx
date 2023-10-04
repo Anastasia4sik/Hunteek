@@ -30,6 +30,7 @@ export const EmployeeInfo: React.FC<Props> = ({ employee }) => {
     englishLevel,
     expierence,
     skills,
+    rate,
   } = employee;
 
   const { t } = useTranslation();
@@ -49,7 +50,7 @@ export const EmployeeInfo: React.FC<Props> = ({ employee }) => {
                   </p>
 
                   <a href="#rating">
-                    <Rate />
+                    <Rate rateIs={rate}/>
                   </a>
 
                   <p className="employeeInfo__user__info__location small-text">

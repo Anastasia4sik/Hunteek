@@ -6,4 +6,5 @@ export interface Project {
   position: string;
   workTime: number;
   salary: number;
+  rate: number;
 }
