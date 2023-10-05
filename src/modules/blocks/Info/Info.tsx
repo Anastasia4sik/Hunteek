@@ -66,10 +66,10 @@ export const Info: React.FC<Props> = ({
     title = t('info__profile');
     content = <Profile employee={employee} />;
   } else if (purpose === 'edit-profile') {
-    title = t('info__edit__profile');
+    title = t('edit__profile');
     content = <EditProfile recruteir={recruteir} />;
   } else if (purpose === 'edit-resume') {
-    title = t('info__edit__resume');
+    title = t('edit__resume');
     content = <EditResume employee={employee} />;
   } else if (purpose === 'block') {
     title = t('info__block');

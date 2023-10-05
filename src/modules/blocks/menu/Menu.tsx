@@ -67,6 +67,17 @@ export const Menu: React.FC = () => {
             </a>
 
             <a
+              href="/my-team"
+              className={classNames(
+                'menu__nav__item list-text d-flex flex-row align-items-center',
+              )}
+            >
+              <img src={team} alt="Team" className="menu__nav__item__img" />
+
+              {t('menu__team')}
+            </a>
+
+            <a
               href="/my-messages"
               className={classNames(
                 'menu__nav__item list-text d-flex flex-row align-items-center',
@@ -99,17 +110,6 @@ export const Menu: React.FC = () => {
               <img src={team} alt="Profile" className="menu__nav__item__img" />
               
               {t('my__profile')}
-            </a>
-
-            <a
-              href="/my-team"
-              className={classNames(
-                'menu__nav__item list-text d-flex flex-row align-items-center',
-              )}
-            >
-              <img src={team} alt="Team" className="menu__nav__item__img" />
-
-              {t('menu__team')}
             </a>
 
             <a

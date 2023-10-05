@@ -126,8 +126,6 @@ i18n
           // about page
           "info__general": "Information about the page",
           "info__profile": "Profile",
-          "info__edit__profile": "Edit Profile",
-          "info__edit__resume": "Edit Resume",
           "info__block": "Block a user",
           "info__crypto__wallets": "All Cryptocurrency Wallets",
           "info__fiat__wallets": "All Fiat Wallets",
@@ -281,8 +279,6 @@ i18n
           // about page
           "info__general": "Інформація про сторінку",
           "info__profile": "Профіль",
-          "info__edit__profile": "Відредагуйте Профіль",
-          "info__edit__resume": "Відредагуйте Резюме",
           "info__block": "Заблокуйте користувача",
           "info__crypto__wallets": "Всі Криптовалютні Гаманці",
           "info__fiat__wallets": "Всі Fiat Гаманці",

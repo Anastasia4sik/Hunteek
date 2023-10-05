@@ -49,9 +49,7 @@ export const EmployeeInfo: React.FC<Props> = ({ employee }) => {
                     {name}
                   </p>
 
-                  <a href="#rating">
-                    <Rate rateIs={rate}/>
-                  </a>
+                  <Rate rateIs={rate}/>
 
                   <p className="employeeInfo__user__info__location small-text">
                     {`${homeCountry}, ${homeCity}`}
@@ -62,14 +60,6 @@ export const EmployeeInfo: React.FC<Props> = ({ employee }) => {
                   </p>
                 </div>
               </div>
-
-              <a href="#edit-profile" className="employeeInfo__user__edit d-flex flex-row align-items-center">
-                <img src={edit} alt="Edit" className="employeeInfo__user__edit__img" />
-
-                <p className="small-text">
-                  {t('edit')}
-                </p>
-              </a>
             </div>
 
             <p className="employeeInfo__user__desc bold-text">
