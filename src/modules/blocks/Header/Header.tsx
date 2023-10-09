@@ -25,7 +25,6 @@ type Props = {
 export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handleKeyPress, handleSearchClick }) => {
   const [selectedLanguage, setSelectedLanguage] = useState(localStorage.getItem('selectedLanguage') || 'en');
   
-  // Get references to the elements with useRef
   const uaLangRef = useRef<HTMLImageElement | null>(null);
   const enLangRef = useRef<HTMLImageElement | null>(null);
 
@@ -34,10 +33,7 @@ export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handle
     setSelectedLanguage(language);
 
     localStorage.setItem('selectedLanguage', language);
-
-    console.log(localStorage.selectedLanguage);
     
-    // Use refs to update class names
     if (language === 'en') {
       uaLangRef.current?.classList.add('langSmall');
       enLangRef.current?.classList.remove('langSmall');
@@ -47,7 +43,6 @@ export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handle
     }
   }
 
-  // useEffect to set the initial language when the component mounts
   useEffect(() => {
     i18n.changeLanguage(selectedLanguage);
   }, [selectedLanguage]);

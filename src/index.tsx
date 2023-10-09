@@ -49,6 +49,7 @@ i18n
           "hire": "Hire the talent",
           "read__more": "Read more",
           "stop__cooperation": "Terminate cooperation",
+          "complete__project": "Complete the project",
 
           // side info
           "image": "Image",
@@ -174,6 +175,17 @@ i18n
           "work__quality": "Quality of work",
           "work__price": "Price of work",
           "evaluate": "Evaluate",
+
+          // popups
+          "blocked__user": "You have blocked the user",
+          "unblocked__user": "You have unblocked the user",
+          "project__added": "Your project will be added to the list soon",
+          "profile__edited": "Profile edited successfully",
+          "resume__edited": "Resume edited successfully",
+          "feedback__sent": "Your feedback has been successfully sent",
+          "evaluated__rate": "Your rating will be credited",
+          "success__transfer": "The transfer was successful",
+          "message__sent": "The message was sent to",
         }
       },
       ua: {
@@ -203,6 +215,7 @@ i18n
           "hire": "Найняти працівника",
           "read__more": "Дізнатися більше",
           "stop__cooperation": "Припинити співпрацю",
+          "complete__project": "Приєднатися до проєкту",
 
           // side info
           "image": "Фото",
@@ -327,6 +340,17 @@ i18n
           "work__quality": "Якість роботи",
           "work__price": "Вартість роботи",
           "evaluate": "Оцінити",
+
+          // popups
+          "blocked__user": "Ви заблокували користувача",
+          "unblocked__user": "Ви розблокували користувача",
+          "project__added": "Ваш проєкт буде скоро додано до списку",
+          "profile__edited": "Профіль успішно відредаговано",
+          "resume__edited": "Резюме успішно відредаговано",
+          "feedback__sent": "Ваш відгук успішно надісланий",
+          "evaluated__rate": "Ваш рейтинг буде зараховано",
+          "success__transfer": "Переказ коштів пройшов успішно",
+          "message__sent": "Повідомлення надіслано",
         }
       }
     },

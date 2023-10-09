@@ -96,7 +96,7 @@ export const CreateProject: React.FC<Props> = () => {
       </div>
 
       {isPopupVisible && (
-        <Popup text={'Your project will be added to the list soon'} onClose={togglePopup} />
+        <Popup text={t('project__added')} onClose={togglePopup} />
       )}
     </>
   );

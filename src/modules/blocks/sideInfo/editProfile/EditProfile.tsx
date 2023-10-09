@@ -143,7 +143,7 @@ export const EditProfile: React.FC<Props> = ({ recruteir }) => {
       </form>
 
       {isPopupVisible && (
-        <Popup text={'Profile edited successfully'} onClose={togglePopup} />
+        <Popup text={t('profile__edited')} onClose={togglePopup} />
       )}
     </div>
   );

@@ -87,7 +87,7 @@ export const BlockUser: React.FC<Props> = ({ employees }) => {
                     flex-row
                     align-items-center
                   "
-                  onClick={() => togglePopup(`You have blocked the user ${employee.name}`)}
+                  onClick={() => togglePopup(`${t('blocked__user')} ${employee.name}`)}
                 >
                   <img src={lock} alt="Lock" />
 

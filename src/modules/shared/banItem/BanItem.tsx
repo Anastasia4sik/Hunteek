@@ -54,7 +54,7 @@ export const BanItem: React.FC<Props> = ({ employee }) => {
       <button
         type="button"
         className="banItem__unban d-flex flex-row align-items-center"
-        onClick={() => togglePopup(`You have unblocked the user ${employee.name}`)}
+        onClick={() => togglePopup(`${t('unblocked__user')} ${employee.name}`)}
       >
         <img src={unlock} alt="Unban" />
         <p className="bold-text">

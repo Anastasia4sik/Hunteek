@@ -60,8 +60,6 @@ export const CatalogFull: React.FC<Props> = ({ forSideInfo }) => {
     const newHashWithCurrent = currentHash ? `${currentHash}${newHash}` : newHash;
 
     window.location.hash = newHashWithCurrent;
-
-    console.log(newHash);
   };
 
   const { t } = useTranslation();

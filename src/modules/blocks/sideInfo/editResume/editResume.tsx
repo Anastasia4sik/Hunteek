@@ -249,7 +249,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
       </form>
 
       {isPopupVisible && (
-        <Popup text={'Resume edited successfully'} onClose={togglePopup} />
+        <Popup text={t('resume__edited')} onClose={togglePopup} />
       )}
     </div>
   );

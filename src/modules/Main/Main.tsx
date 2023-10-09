@@ -11,6 +11,8 @@ import { getEmployees } from '../../api/api';
 import { handleInputChange, handleSearchClick, handleKeyPress } from '../../helpers/search';
 import { Popup } from '../Popup';
 
+import { useTranslation } from 'react-i18next';
+
 export const Main: React.FC = () => {
   const [location, setLocation] = useState('');
   const [employees, setEmployees] = useState<Employee[]>([]);
@@ -51,6 +53,8 @@ export const Main: React.FC = () => {
     }
   };
 
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="main">
@@ -85,7 +89,7 @@ export const Main: React.FC = () => {
                   key={employee.slug}
                   employee={employee}
                   isPopupVisible={isPopupVisible}
-                  togglePopup={() => togglePopup(`The message was sent to ${employee.name}`)}
+                  togglePopup={() => togglePopup(`${t('message__sent')} ${employee.name}`)}
                 />
             ))}
           </div>

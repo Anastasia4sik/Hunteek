@@ -63,7 +63,7 @@ export const Rating: React.FC = () => {
 
       {isPopupVisible && (
         <Popup
-          text={'Your rating will be credited'}
+          text={t('evaluated__rate')}
           onClose={togglePopup}
         />
       )}

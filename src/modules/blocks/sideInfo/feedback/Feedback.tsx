@@ -62,7 +62,7 @@ export const Feedback: React.FC = () => {
       </form>
 
       {isPopupVisible && (
-        <Popup text={'Your feedback has been successfully sent'} onClose={togglePopup} />
+        <Popup text={t('success__transfer')} onClose={togglePopup} />
       )}
     </div>
   );

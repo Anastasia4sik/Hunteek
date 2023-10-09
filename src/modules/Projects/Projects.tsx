@@ -7,7 +7,6 @@ import { Info } from '../blocks/Info';
 import { Rate } from '../shared/rate';
 import { UserPhoto } from '../shared/userPhoto';
 
-import photo from '../../img/photo/user.png';
 import time from '../../img/icons/header/time.svg';
 import wallet from '../../img/icons/card/wallet.svg';
 
@@ -17,6 +16,8 @@ import { getProjects } from '../../api/api';
 
 import { handleInputChange, handleSearchClick, handleKeyPress } from '../../helpers/search';
 import { Popup } from '../Popup';
+
+import { useTranslation } from 'react-i18next';
 
 export const Projects: React.FC = () => {
   const [location, setLocation] = useState('');
@@ -57,6 +58,8 @@ export const Projects: React.FC = () => {
       setPopupText(popupText);
     }
   };
+
+  const { t } = useTranslation();
 
   return (
     <div className="main">
@@ -132,9 +135,9 @@ export const Projects: React.FC = () => {
                 <button
                   type="button"
                   className="card__btn__button main-text btn-grey"
-                  onClick={() => togglePopup(`The message was sent to ${project.company_name}`)}
+                  onClick={() => togglePopup(`${t('message__sent')} ${project.company_name}`)}
                 >
-                  Complete the project
+                  {t('complete__project')}
                 </button>
               </div>
             </div>

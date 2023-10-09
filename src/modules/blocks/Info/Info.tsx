@@ -15,7 +15,6 @@ import { ReferralPerson } from '../../../types/referralPerson';
 
 import referralInfo from '../../../api/referralPerson.json';
 import { Rating } from '../sideInfo/rating';
-import { News } from '../../News';
 import { Feedback } from '../sideInfo/feedback';
 
 import { useTranslation } from 'react-i18next';
@@ -36,8 +35,6 @@ export const Info: React.FC<Props> = ({
   recruteir,
 }) => {
   const [personInfo, setPersonInfo] = useState<ReferralPerson | null>(null);
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const [popupText, setPopupText] = useState('');
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -47,12 +44,12 @@ export const Info: React.FC<Props> = ({
       setPersonInfo(foundPersonInfo || null);
     };
 
-    handleHashChange(); // Handle initial hash on component mount
+    handleHashChange();
 
-    window.addEventListener('hashchange', handleHashChange); // Listen for hash change events
+    window.addEventListener('hashchange', handleHashChange);
 
     return () => {
-      window.removeEventListener('hashchange', handleHashChange); // Cleanup the event listener
+      window.removeEventListener('hashchange', handleHashChange);
     };
   }, []);
 
@@ -60,13 +57,6 @@ export const Info: React.FC<Props> = ({
 
   let title;
   let content;
-
-  const togglePopup = (popupText: string) => {
-    setIsPopupVisible(!isPopupVisible);
-    if (popupText) {
-      setPopupText(popupText);
-    }
-  };
 
   if (purpose === 'general') {
     title = t('info__general');
