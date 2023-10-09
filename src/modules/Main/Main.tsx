@@ -9,11 +9,14 @@ import { Employee } from '../../types/Employee';
 import { getEmployees } from '../../api/api';
 
 import { handleInputChange, handleSearchClick, handleKeyPress } from '../../helpers/search';
+import { Popup } from '../Popup';
 
 export const Main: React.FC = () => {
   const [location, setLocation] = useState('');
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [popupText, setPopupText] = useState('');
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -41,41 +44,59 @@ export const Main: React.FC = () => {
     });
   }, []);
 
+  const togglePopup = (popupText: string) => {
+    setIsPopupVisible(!isPopupVisible);
+    if (popupText) {
+      setPopupText(popupText);
+    }
+  };
+
   return (
-    <div className="main">
-      <Menu />
+    <>
+      <div className="main">
+        <Menu />
 
-      <Header
-        searchQuery={searchQuery}
-        handleInputChange={() => {handleInputChange(event, setSearchQuery)}}
-        handleKeyPress={() => handleKeyPress(event, setSearchQuery)}
-        handleSearchClick={handleSearchClick}
-      />
+        <Header
+          searchQuery={searchQuery}
+          handleInputChange={() => {handleInputChange(event, setSearchQuery)}}
+          handleKeyPress={() => handleKeyPress(event, setSearchQuery)}
+          handleSearchClick={handleSearchClick}
+        />
 
-      <div className="content d-flex flex-row">
-        <Select />
+        <div className="content d-flex flex-row">
+          <Select />
 
-        <div className="main__catalog">
-          {employees
-            .filter((employee) => {
-              const slug = employee.slug.toLowerCase().replace(/-/g, ' ');
-              const query = searchQuery.toLowerCase();
-        
-              if (!query) {
-                return true;
-              }
-        
-              const searchWords = query.split(' ');
-        
-              return searchWords.every((word) => slug.includes(word));
-            })
-            .map((employee) => (
-              <Card key={employee.slug} employee={employee} />
-          ))}
+          <div className="main__catalog">
+            {employees
+              .filter((employee) => {
+                const slug = employee.slug.toLowerCase().replace(/-/g, ' ');
+                const query = searchQuery.toLowerCase();
+          
+                if (!query) {
+                  return true;
+                }
+          
+                const searchWords = query.split(' ');
+          
+                return searchWords.every((word) => slug.includes(word));
+              })
+              .map((employee) => (
+                <Card
+                  key={employee.slug}
+                  employee={employee}
+                  isPopupVisible={isPopupVisible}
+                  togglePopup={() => togglePopup(`The message was sent to ${employee.name}`)}
+                />
+            ))}
+          </div>
+
+          <Info purpose={location} employee={employees[0]} employees={employees} />
         </div>
-
-        <Info purpose={location} employee={employees[0]} employees={employees} />
+        
+        {isPopupVisible && (
+          <Popup text={popupText} onClose={() => togglePopup('')} />
+        )}
       </div>
-    </div>
+    </>
   );
 };

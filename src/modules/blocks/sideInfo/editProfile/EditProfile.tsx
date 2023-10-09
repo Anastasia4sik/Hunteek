@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import delet from '../../../../img/icons/delete.svg';
 import upload from '../../../../img/icons/upload.svg';
@@ -7,12 +7,15 @@ import { UserPhoto } from '../../../shared/userPhoto';
 import { Recruiter } from '../../../../types/Recruiter';
 
 import { useTranslation } from 'react-i18next';
+import { Popup } from '../../../Popup';
 
 type Props = {
   recruteir: Recruiter | undefined,
 };
 
 export const EditProfile: React.FC<Props> = ({ recruteir }) => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
   if (recruteir === undefined) {
     return null;
   }
@@ -30,6 +33,10 @@ export const EditProfile: React.FC<Props> = ({ recruteir }) => {
   } = recruteir;
 
   const { t } = useTranslation();
+
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
 
   return (
     <div className="edit">
@@ -126,10 +133,18 @@ export const EditProfile: React.FC<Props> = ({ recruteir }) => {
           <input type="url" id="github" placeholder={github} className="edit__input edit__input--github list-text" />
         </fieldset>
 
-        <button type="submit" className="edit__btn btn-grey">
+        <button
+          type="button"
+          className="edit__btn btn-grey"
+          onClick={() => setIsPopupVisible(true)}
+        >
           {t('submit')}
         </button>
       </form>
+
+      {isPopupVisible && (
+        <Popup text={'Profile edited successfully'} onClose={togglePopup} />
+      )}
     </div>
   );
 };

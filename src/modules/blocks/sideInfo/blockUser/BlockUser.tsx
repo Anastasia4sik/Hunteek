@@ -5,6 +5,8 @@ import { UserPhoto } from '../../../shared/userPhoto';
 import lock from '../../../../img/icons/lock_red.svg';
 import { Employee } from '../../../../types/Employee';
 
+import { Popup } from '../../../Popup';
+
 import { handleInputChange, handleSearchClick, handleKeyPress } from '../../../../helpers/search';
 
 import { useTranslation } from 'react-i18next';
@@ -15,8 +17,17 @@ type Props = {
 
 export const BlockUser: React.FC<Props> = ({ employees }) => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [popupText, setPopupText] = useState('');
 
   const { t } = useTranslation();
+
+  const togglePopup = (popupText: string) => {
+    setIsPopupVisible(!isPopupVisible);
+    if (popupText) {
+      setPopupText(popupText);
+    }
+  };
 
   return (
     <div className="blockUser">
@@ -68,24 +79,33 @@ export const BlockUser: React.FC<Props> = ({ employees }) => {
                   {`${employee.homeCountry}, ${employee.homeCity}`}
                 </p>
 
-                <a
-                  href="/"
+                <button
+                  type="button"
                   className="
                     blockUser__list__card__block
                     d-flex
                     flex-row
-                    align-items-center"
+                    align-items-center
+                  "
+                  onClick={() => togglePopup(`You have blocked the user ${employee.name}`)}
                 >
                   <img src={lock} alt="Lock" />
 
                   <p className="small-text">
                     {t('block')}
                   </p>
-                </a>
+                </button>
               </div>
             ))}
         </div>
       </div>
+
+      {isPopupVisible && (
+        <Popup
+          text={popupText}
+          onClose={() => togglePopup('')}
+        />
+      )}
     </div>
   );
 };

@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import upload from '../../../../img/icons/upload.svg';
 import { useTranslation } from 'react-i18next';
+import { Popup } from '../../../Popup';
 
 export const Feedback: React.FC = () => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
   const { t } = useTranslation();
+
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
 
   return (
     <div className="edit">
@@ -45,10 +52,18 @@ export const Feedback: React.FC = () => {
           <textarea id="email" placeholder={t('none')} className="edit__input edit__input--name list-text" />
         </fieldset>
 
-        <button type="submit" className="edit__btn btn-grey">
+        <button
+          type="button"
+          className="edit__btn btn-grey"
+          onClick={() => setIsPopupVisible(true)}
+        >
           {t('send__feedback')}
         </button>
       </form>
+
+      {isPopupVisible && (
+        <Popup text={'Your feedback has been successfully sent'} onClose={togglePopup} />
+      )}
     </div>
   );
 };

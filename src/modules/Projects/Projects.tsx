@@ -16,11 +16,14 @@ import { Project } from '../../types/Project';
 import { getProjects } from '../../api/api';
 
 import { handleInputChange, handleSearchClick, handleKeyPress } from '../../helpers/search';
+import { Popup } from '../Popup';
 
 export const Projects: React.FC = () => {
   const [location, setLocation] = useState('');
   const [projects, setProjects] = useState<Project[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [popupText, setPopupText] = useState('');
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -47,6 +50,13 @@ export const Projects: React.FC = () => {
       setProjects(data);
     });
   }, []);
+
+  const togglePopup = (popupText: string) => {
+    setIsPopupVisible(!isPopupVisible);
+    if (popupText) {
+      setPopupText(popupText);
+    }
+  };
 
   return (
     <div className="main">
@@ -119,7 +129,13 @@ export const Projects: React.FC = () => {
               </div>
 
               <div className="card__btn">
-                <button type="button" className="card__btn__button main-text btn-grey">Complete the project</button>
+                <button
+                  type="button"
+                  className="card__btn__button main-text btn-grey"
+                  onClick={() => togglePopup(`The message was sent to ${project.company_name}`)}
+                >
+                  Complete the project
+                </button>
               </div>
             </div>
           ))}
@@ -127,6 +143,10 @@ export const Projects: React.FC = () => {
       </div>
 
       <Info purpose={location} />
+
+      {isPopupVisible && (
+        <Popup text={popupText} onClose={() => togglePopup('')} />
+      )}
     </div>
   );
 };

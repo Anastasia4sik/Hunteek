@@ -6,10 +6,11 @@ import { UserPhoto } from '../../../shared/userPhoto';
 
 import { Employee } from '../../../../types/Employee';
 
-import { timeZones } from '../../../../helpers/timezones';
-import levels from '../../../../helpers/langLevels.js';
+import { timeZones } from '../../../../helpers/arrays/timezones';
+import levels from '../../../../helpers/arrays/langLevels.js';
 
 import { useTranslation } from 'react-i18next';
+import { Popup } from '../../../Popup';
 
 type Props = {
   employee: Employee | undefined,
@@ -17,6 +18,7 @@ type Props = {
 
 export const EditResume: React.FC<Props> = ({ employee }) => {
   const [, setSelectedTimezone] = useState('');
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const handleTimezoneChanged = (event: { target: { value: React.SetStateAction<string>; }; }) => {
     setSelectedTimezone(event.target.value);
@@ -43,6 +45,10 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
   } = employee;
 
   const { t } = useTranslation();
+
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
 
   return (
     <div className="edit">
@@ -192,6 +198,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
             {levels.map((level: string) => (
               <option
                 value={level}
+                key={level}
               >
                 {level}
               </option>
@@ -232,10 +239,18 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
           />
         </fieldset>
 
-        <button type="submit" className="edit__btn btn-grey">
+        <button
+          type="button"
+          className="edit__btn btn-grey"
+          onClick={() => setIsPopupVisible(true)}
+        >
           {t('submit')}
         </button>
       </form>
+
+      {isPopupVisible && (
+        <Popup text={'Resume edited successfully'} onClose={togglePopup} />
+      )}
     </div>
   );
 };

@@ -8,7 +8,7 @@ import bell from '../../../img/icons/message/bell.svg';
 import check from '../../../img/icons/message/check.svg';
 import dollar from '../../../img/icons/header/dollar.svg';
 
-import languages from '../../../helpers/programLanguages.js'
+import languages from '../../../helpers/arrays/programLanguages.js'
 import { MainSelect } from '../MainSelect';
 import { useTranslation } from 'react-i18next';
 

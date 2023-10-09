@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 
 import arrow from '../../../img/icons/arrow_down.svg';
 
-import languages from '../../../helpers/programLanguages.js';
-import levels from '../../../helpers/langLevels.js';
-import companyTypes from '../../../helpers/companyType.js';
-import salaries from '../../../helpers/salaries.js';
-import reits from '../../../helpers/reits.js';
-import countries from '../../../helpers/countries.js';
-import experiences from '../../../helpers/experiences.js';
-import speakLanguages from '../../../helpers/speakLanguages.js';
+import languages from '../../../helpers/arrays/programLanguages.js';
+import levels from '../../../helpers/arrays/langLevels.js';
+import companyTypes from '../../../helpers/arrays/companyType.js';
+import salaries from '../../../helpers/arrays/salaries.js';
+import reits from '../../../helpers/arrays/reits.js';
+import countries from '../../../helpers/arrays/countries.js';
+import experiences from '../../../helpers/arrays/experiences.js';
+import speakLanguages from '../../../helpers/arrays/speakLanguages.js';
 
 import { useTranslation } from 'react-i18next';
 

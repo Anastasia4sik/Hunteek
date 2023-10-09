@@ -1,15 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import unlock from '../../../img/icons/unlock.svg';
 import { UserPhoto } from '../userPhoto';
 import { Employee } from '../../../types/Employee';
 import { useTranslation } from 'react-i18next';
+import { Popup } from '../../Popup';
 
 type Props = {
   employee: Employee,
 };
 
 export const BanItem: React.FC<Props> = ({ employee }) => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [popupText, setPopupText] = useState('');
+
   if (!employee) {
     return null;
   }
@@ -23,6 +27,13 @@ export const BanItem: React.FC<Props> = ({ employee }) => {
   } = employee;
 
   const { t } = useTranslation();
+
+  const togglePopup = (popupText: string) => {
+    setIsPopupVisible(!isPopupVisible);
+    if (popupText) {
+      setPopupText(popupText);
+    }
+  };
 
   return (
     <div className="banItem d-flex flex-row justify-content-between align-items-center">
@@ -40,12 +51,23 @@ export const BanItem: React.FC<Props> = ({ employee }) => {
         12.02.2023
       </p>
 
-      <a href="/" className="banItem__unban d-flex flex-row">
+      <button
+        type="button"
+        className="banItem__unban d-flex flex-row align-items-center"
+        onClick={() => togglePopup(`You have unblocked the user ${employee.name}`)}
+      >
         <img src={unlock} alt="Unban" />
         <p className="bold-text">
           {t('unban')}
         </p>
-      </a>
+      </button>
+
+      {isPopupVisible && (
+        <Popup
+          text={popupText}
+          onClose={() => togglePopup('')}
+        />
+      )}
     </div>
   );
 };

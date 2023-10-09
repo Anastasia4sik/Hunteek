@@ -36,6 +36,8 @@ export const Info: React.FC<Props> = ({
   recruteir,
 }) => {
   const [personInfo, setPersonInfo] = useState<ReferralPerson | null>(null);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [popupText, setPopupText] = useState('');
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -58,6 +60,13 @@ export const Info: React.FC<Props> = ({
 
   let title;
   let content;
+
+  const togglePopup = (popupText: string) => {
+    setIsPopupVisible(!isPopupVisible);
+    if (popupText) {
+      setPopupText(popupText);
+    }
+  };
 
   if (purpose === 'general') {
     title = t('info__general');

@@ -56,7 +56,7 @@ export const Rate: React.FC<Props> = ({ forRatingBlock, rateIs }) => {
           const rating = index + 1;
           return (
             <FaStar
-              key={star}
+              key={index}
               size={11}
               className="rate__stars__item"
               color={

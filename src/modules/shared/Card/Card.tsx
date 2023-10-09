@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import eye from '../../../img/icons/card/eye.svg';
 import message from '../../../img/icons/card/message.svg';
@@ -10,9 +10,15 @@ import { useTranslation } from 'react-i18next';
 
 type Props = {
   employee: Employee,
+  isPopupVisible: boolean;
+  togglePopup: () => void;
 };
 
-export const Card: React.FC<Props> = ({ employee }) => {
+export const Card: React.FC<Props> = ({
+  employee,
+  isPopupVisible,
+  togglePopup,
+}) => {
   const {
     name,
     lastname,
@@ -25,6 +31,12 @@ export const Card: React.FC<Props> = ({ employee }) => {
   } = employee;
 
   const { t } = useTranslation();
+
+  const showPopup = () => {
+    if (!isPopupVisible) {
+      togglePopup();
+    }
+  };
 
   return (
     <div className="card block">
@@ -79,7 +91,12 @@ export const Card: React.FC<Props> = ({ employee }) => {
       </a>
 
       <div className="card__btn">
-        <button type="button" className="card__btn__button main-text btn-grey">
+        <button
+          type="button"
+          className="card__btn__button main-text btn-grey"
+          id="CardBtn"
+          onClick={showPopup}
+        >
           {t('hire')}
         </button>
       </div>

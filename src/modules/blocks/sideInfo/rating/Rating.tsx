@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import starBig from '../../../../img/icons/card/rate/bigStar.svg';
 
 import { Rate } from '../../../shared/rate';
 import { useTranslation } from 'react-i18next';
+import { Popup } from '../../../Popup';
 
 export const Rating: React.FC = () => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
   const { t } = useTranslation();
+
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
 
   return (
     <div className="rating d-flex flex-column">
@@ -46,9 +53,20 @@ export const Rating: React.FC = () => {
         </div>
       </div>
 
-      <button type="submit" className="rating__btn btn-grey">
+      <button
+        type="button"
+        className="rating__btn btn-grey"
+        onClick={() => setIsPopupVisible(true)}
+      >
         {t('evaluate')}
       </button>
+
+      {isPopupVisible && (
+        <Popup
+          text={'Your rating will be credited'}
+          onClose={togglePopup}
+        />
+      )}
     </div>
   );
 };

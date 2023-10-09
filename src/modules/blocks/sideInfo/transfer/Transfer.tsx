@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
+import { Popup } from '../../../Popup';
 
 export const Transfer: React.FC = () => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
   const { t } = useTranslation();
+
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
 
   return (
     <div className="edit">
@@ -76,10 +83,18 @@ export const Transfer: React.FC = () => {
           </fieldset>
         </div>
 
-        <button type="submit" className="edit__btn btn-grey">
+        <button
+          type="button"
+          className="edit__btn btn-grey"
+          onClick={() => setIsPopupVisible(true)}
+        >
           {t('submit')}
         </button>
       </form>
+
+      {isPopupVisible && (
+        <Popup text={'The transfer was successful'} onClose={togglePopup} />
+      )}
     </div>
   );
 };
