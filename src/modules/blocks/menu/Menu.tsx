@@ -7,6 +7,10 @@ import news from '../../../img/icons/menu/news.svg';
 import team from '../../../img/icons/menu/team.svg';
 import project from '../../../img/icons/menu/project.svg';
 import message from '../../../img/icons/menu/message.svg';
+import wallet from '../../../img/icons/menu/wallet.svg';
+import profile from '../../../img/icons/menu/profile.svg';
+import support from '../../../img/icons/menu/support.svg';
+import review from '../../../img/icons/menu/review.svg';
 
 import { useTranslation } from 'react-i18next';
 
@@ -96,7 +100,7 @@ export const Menu: React.FC = () => {
                 { menu__nav__item__selected: isWallet },
               )}
             >
-              <img src={project} alt="Wallet" className="menu__nav__item__img" />
+              <img src={wallet} alt="Wallet" className="menu__nav__item__img" />
 
               {t('my__wallet')}
             </a>
@@ -107,7 +111,7 @@ export const Menu: React.FC = () => {
                 'menu__nav__item list-text d-flex flex-row align-items-center',
               )}
             >
-              <img src={team} alt="Profile" className="menu__nav__item__img" />
+              <img src={profile} alt="Profile" className="menu__nav__item__img" />
               
               {t('my__profile')}
             </a>
@@ -119,12 +123,24 @@ export const Menu: React.FC = () => {
                 { menu__nav__item__selected: isSupport },
               )}
             >
-              <img src={team} alt="Support" className="menu__nav__item__img" />
+              <img src={support} alt="Support" className="menu__nav__item__img" />
 
               {t('menu__support')}
             </a>
 
             <a
+              href="/review"
+              className={classNames(
+                'menu__nav__item list-text d-flex flex-row align-items-center',
+                { menu__nav__item__selected: isSupport },
+              )}
+            >
+              <img src={review} alt="Review" className="menu__nav__item__img" />
+
+              {t('menu__review')}
+            </a>
+
+            {/* <a
               href="#feedback"
               className={classNames(
                 'menu__nav__item list-text d-flex flex-row align-items-center',
@@ -134,7 +150,7 @@ export const Menu: React.FC = () => {
               <img src={message} alt="Message" className="menu__nav__item__img" />
 
               {t('menu__feedback')}
-            </a>
+            </a> */}
           </nav>
 
           <div className="menu__theme">

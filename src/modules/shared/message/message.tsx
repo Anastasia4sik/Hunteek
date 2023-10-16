@@ -3,7 +3,6 @@ import React from 'react';
 import { Messages } from '../../../types/Messages';
 
 import trash from '../../../img/icons/message/trash.svg';
-import select from '../../../img/icons/message/select.svg';
 
 type Props = {
   message: Messages,
@@ -22,10 +21,6 @@ export const Message: React.FC<Props> = ({ message }) => {
         </div>
 
         <div className="message__btns d-flex flex-row">
-          <button type="button" className="message__btn">
-            <img src={select} alt="Select" className="message__btn__img" />
-          </button>
-
           <button type="button" className="message__btn">
             <img src={trash} alt="Trash" className="message__btn__img" />
           </button>

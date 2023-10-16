@@ -1,11 +1,8 @@
 import React, { KeyboardEventHandler, useEffect, useRef, useState } from 'react';
 import search from '../../../img/icons/search.svg';
 
-import chart from '../../../img/icons/header/chart.svg';
-import menu from '../../../img/icons/header/menu.svg';
 import time from '../../../img/icons/header/time.svg';
 import video from '../../../img/icons/header/video.svg';
-import projects from '../../../img/icons/header/category.svg';
 import dollar from '../../../img/icons/header/dollar.svg';
 import profile from '../../../img/icons/header/profile.svg';
 
@@ -114,17 +111,6 @@ export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handle
                 1
               </p>
             </div>
-
-            <div className="header__menu__info__top__icons">
-              <a href="/">
-                <img src={chart} alt="Chart" className="header__menu__info__top__icons__chart" />
-              </a>
-
-              <a href="/">
-                <img src={menu} alt="Menu" className="header__menu__info__top__icons__menu" />
-              </a>
-            </div>
-
           </div>
 
           <div className="header__menu__info__bottom d-flex flex-row">
@@ -139,10 +125,6 @@ export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handle
         <div className="header__menu__nav d-flex align-items-center">
           <a href="/" title={t('video__desc')}>
             <img src={video} alt="Video" className="header__menu__nav__img header__menu__nav__img--video" />
-          </a>
-
-          <a href="/">
-            <img src={projects} alt="Projects" className="header__menu__nav__img" />
           </a>
 
           <a href="/my-wallet">

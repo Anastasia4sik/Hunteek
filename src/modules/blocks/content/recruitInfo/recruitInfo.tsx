@@ -100,7 +100,7 @@ export const RecruitInfo: React.FC<Props> = ({ recruiter }) => {
               Telegram:
             </p>
 
-            <a href="https://web.telegram.org/k/" className="list-text">
+            <a href="https://web.telegram.org/k/" target='_blank' className="list-text">
               {telegram}
             </a>
           </div>
@@ -110,7 +110,7 @@ export const RecruitInfo: React.FC<Props> = ({ recruiter }) => {
               Linkedin:
             </p>
 
-            <a href="https://www.linkedin.com/feed/" className="list-text">
+            <a href="https://www.linkedin.com/feed/" target='_blank' className="list-text">
               {linkedin}
             </a>
           </div>
@@ -120,7 +120,7 @@ export const RecruitInfo: React.FC<Props> = ({ recruiter }) => {
               GitHub:
             </p>
 
-            <a href="https://github.com/" className="list-text">
+            <a href="https://github.com/" target='_blank' className="list-text">
               {github}
             </a>
           </div>
