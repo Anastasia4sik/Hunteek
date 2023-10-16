@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import classNames from 'classnames';
 import logo from '../../../img/icons/logo.svg';
@@ -15,18 +15,46 @@ import review from '../../../img/icons/menu/review.svg';
 import { useTranslation } from 'react-i18next';
 
 export const Menu: React.FC = () => {
+  const [isLightTheme, setIsLightTheme] = useState(() => {
+    const storedTheme = localStorage.getItem('theme');
+    return storedTheme === 'light';
+  });
+
+  const handleThemeChange = () => {
+    setIsLightTheme(!isLightTheme);
+  };
+
+  useEffect(() => {
+    localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+    const bodyElements = document.body.querySelectorAll('*');
+
+    if (isLightTheme) {
+      document.body.classList.add('light');
+
+      bodyElements.forEach((element) => {
+        element.classList.add('light');
+      });
+    } else {
+      document.body.classList.remove('light');
+
+      bodyElements.forEach((element) => {
+        element.classList.remove('light');
+      });
+    }
+  }, [isLightTheme]);
+
   const isHome = window.location.pathname === '/';
   const isNews = window.location.pathname === '/news';
   const isSupport = window.location.pathname === '/support';
   const isMessages = window.location.pathname === '/messages';
   const isWallet = window.location.pathname === '/my-wallet';
   const isProjects = window.location.pathname === '/projects';
-  const isFeedback = window.location.pathname === '/feedback';
+  // const isFeedback = window.location.pathname === '/feedback';
 
   const { t } = useTranslation();
 
   return (
-    <div className="menu d-flex flex-column">
+    <div className={`menu d-flex flex-column ${isLightTheme ? 'light' : ''}`}>
       <div className="menu__content">
         <a href="/" className="menu__logo">
           <img src={logo} alt="Logo" className="menu__logo__img" />
@@ -159,7 +187,12 @@ export const Menu: React.FC = () => {
             </p>
 
             <label className="menu__theme__btn">
-              <input type="checkbox"></input>
+              <input
+                type="checkbox"
+                checked={isLightTheme}
+                onChange={handleThemeChange}
+              >
+              </input>
 
               <span className="menu__theme__btn__slider round"></span>
             </label>

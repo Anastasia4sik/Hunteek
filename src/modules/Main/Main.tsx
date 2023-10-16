@@ -19,6 +19,9 @@ export const Main: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [popupText, setPopupText] = useState('');
+  const [isLightTheme] = useState(() => {
+    return localStorage.theme === 'light';
+  });
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -57,7 +60,7 @@ export const Main: React.FC = () => {
 
   return (
     <>
-      <div className="main">
+      <div className={`main ${isLightTheme ? 'light' : ''}`}>
         <Menu />
 
         <Header

@@ -5,7 +5,11 @@
   left: 0;
   top: 0;
   bottom: 0;
-  
+
+  &.light {
+    background-color: white;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -110,7 +114,6 @@
         bottom: 0;
         background-color: $grey-text;
         transition: .4s;
-
         
         &.round {
           border-radius: 34px;
@@ -134,9 +137,10 @@
 }
 
 input:checked + .menu__theme__btn__slider {
-  background-color: $white-text-main;
+  background-color: $popup-text;
 
   &:before {
     transform: translateX(15px);
+    background-color: $white-main;
   }
 }

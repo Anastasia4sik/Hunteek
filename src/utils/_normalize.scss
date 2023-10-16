@@ -34,16 +34,16 @@ body {
 
 }
 
-.light-mode {
-  background-color: white;
-
-  color: black;
-}
-
-.black-mode {
+.body {
   background-color: $black-main;
 
   color: $white-text-main;
+
+  &.light {
+    background-color: $white-main;
+  
+    color: $grey-light;
+  }
 }
 
 .block {
@@ -52,6 +52,12 @@ body {
   border-radius: 20px;
 
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+  &.light {
+    background-color: white;
+
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+  }
 }
 
 .big-text {
@@ -132,6 +138,16 @@ body {
     color: $white-text-sec;
     background-color: $grey-hover;
   }
+  
+  &.light {
+    background-color: $white-text-main;
+
+    color: $grey-light;
+
+    &:hover {
+      background-color: $white-hover;
+    }
+  }
 }
 
 .scroll {
@@ -152,6 +168,16 @@ body {
   &::-webkit-scrollbar-thumb {
     background-color: $grey-text;
     border-radius: 5px;
+  }
+
+  &.light {
+    &::-webkit-scrollbar-track {
+      background-color: $white-scroll;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $popup-text;
+    }
   }
 }
 
@@ -196,9 +222,17 @@ select {
   border-radius: 50%;
 
   background-color: $grey-text;
-  
+
   &.active {
     background-color: $white-text-main;
+  }
+
+  &.light {
+    background-color: $white-text-main;
+
+    &.active {
+      background-color: $black-main;
+    }
   }
 }
 
