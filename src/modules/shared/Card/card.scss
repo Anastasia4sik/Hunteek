@@ -14,6 +14,16 @@
     background-color: $black-header;
   }
 
+  &.light {
+    color: $popup-text;
+
+    &:hover {
+      background-color: $white-text-sec;
+
+      color: $grey-hover;
+    }
+  }
+
   @include onBigDesktop {
     width: $card-width-big;
   }
@@ -50,6 +60,10 @@
     padding-bottom: 6px;
 
     border-bottom: 1px solid $grey-border;
+
+    &.light {
+      border-color: $white-text-main;
+    }
 
     @include onBigDesktop {
       padding-bottom: 12px;

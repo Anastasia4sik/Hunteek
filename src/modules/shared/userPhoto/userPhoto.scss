@@ -1,8 +1,16 @@
-.photo {
-  width: 20%;
-  height: 20%;
-
-  background-color: white;
-
+.user {
+  border: 1px solid $grey-border;
   border-radius: 50%;
+  width: 40px;
+  height: 40px;
+
+  &.light {
+    border-color: $white-text-main;
+  }
+
+  &__photo {
+    border-radius: 50%;
+
+    background-color: white;
+  }
 }

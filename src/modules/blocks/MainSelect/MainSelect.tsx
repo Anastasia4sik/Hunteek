@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import arrow from '../../../img/icons/arrow_down.svg';
+import arrow_light from '../../../img/icons/arrow_down_light.svg';
 
 import languages from '../../../helpers/arrays/programLanguages.js';
 import levels from '../../../helpers/arrays/langLevels.js';
@@ -82,8 +83,40 @@ export const MainSelect = () => {
 
   const { t } = useTranslation();
 
+  const parentDiv = document.getElementById('select');
+  const childElements = parentDiv?.querySelectorAll('*');
+  const headers = document.querySelectorAll('.select__header');
+
+  if (localStorage.theme === 'light') {
+    parentDiv?.classList.add('light');
+
+    headers.forEach((element) => {
+      element.classList.add('light');
+    });
+    
+    if (childElements) {
+      for (let i = 0; i < childElements.length; i++) {
+        const child = childElements[i];
+        child.classList.add('light');
+      }
+    }
+  } else {
+    parentDiv?.classList.remove('light');
+
+    headers.forEach((element) => {
+      element.classList.remove('light');
+    });
+    
+    if (childElements) {
+      for (let i = 0; i < childElements.length; i++) {
+        const child = childElements[i];
+        child.classList.remove('light');
+      }
+    }
+  }
+
   return (
-    <div className="select select__main block">
+    <div className="select select__main block" id='select'>
       <div className="select__container select__container__main scroll">
         {isProject && (
           <a href="#create-project" className="select__container__btn btn-grey list-text">
@@ -92,9 +125,21 @@ export const MainSelect = () => {
         )}
 
         {/* program languages */}
-        <div className={`${isMy ? 'select--3' : 'select--1'} select__content big  ${isOpen1 ? 'open' : ''}`}>
+        <div className={
+          `${isMy ? 'select--3' : 'select--1'}
+          select__content
+          big
+          ${isOpen1 ? 'open' : ''}`
+        }>
           <div
-            className={`${isMy ? 'select__header--profile' : ''} select__header d-flex flex-row justify-content-between ${isOpen1 ? 'select__header--active' : ''}`}
+            className={
+              `${isMy ? 'select__header--profile' : ''}
+              select__header
+              d-flex
+              flex-row
+              justify-content-between
+              ${isOpen1 ? 'select__header--active' : ''}`
+            }
             role="button"
             tabIndex={0}
             onClick={handleToggle1}
@@ -104,7 +149,25 @@ export const MainSelect = () => {
                 {t('sel__spec')}
               </span>
 
-            {!isOpen1 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+            {!isOpen1 ?
+              <img
+                src={
+                  localStorage.theme === 'light' ?
+                  arrow_light :
+                  arrow
+                }
+                alt="Open" 
+              /> :
+              <img
+                src={
+                  localStorage.theme === 'light' ?
+                  arrow_light :
+                  arrow
+                }
+                alt="Close"
+                className="arrow-close"
+              />
+            }
           </div>
 
           <ul
@@ -150,7 +213,25 @@ export const MainSelect = () => {
                     {t('sel__job__search')}
                   </span>
 
-                {!isOpen2 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+                {!isOpen2 ? 
+                  <img
+                  src={
+                    localStorage.theme === 'light' ?
+                    arrow_light :
+                    arrow
+                  }
+                  alt="Open" 
+                /> :
+                <img
+                  src={
+                    localStorage.theme === 'light' ?
+                    arrow_light :
+                    arrow
+                  }
+                  alt="Close"
+                  className="arrow-close"
+                />
+              }
               </div>
 
               <ul
@@ -210,7 +291,25 @@ export const MainSelect = () => {
                     {t('sel__english')}
                   </span>
 
-                {!isOpen3 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+                {!isOpen3 ? 
+                  <img
+                    src={
+                      localStorage.theme === 'light' ?
+                      arrow_light :
+                      arrow
+                    }
+                    alt="Open" 
+                  /> :
+                  <img
+                    src={
+                      localStorage.theme === 'light' ?
+                      arrow_light :
+                      arrow
+                    }
+                    alt="Close"
+                    className="arrow-close"
+                  />
+                }
               </div>
 
               <ul
@@ -252,7 +351,25 @@ export const MainSelect = () => {
                     {t('sel__experience')}
                   </span>
 
-                {!isOpen4 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+                {!isOpen4 ? 
+                  <img
+                    src={
+                      localStorage.theme === 'light' ?
+                      arrow_light :
+                      arrow
+                    }
+                    alt="Open" 
+                  /> :
+                  <img
+                    src={
+                      localStorage.theme === 'light' ?
+                      arrow_light :
+                      arrow
+                    }
+                    alt="Close"
+                    className="arrow-close"
+                  />
+                }
               </div>
 
               <ul
@@ -295,7 +412,25 @@ export const MainSelect = () => {
                 {t('sel__work__type')}
               </span>
 
-            {!isOpen5 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+            {!isOpen5 ? 
+              <img
+                src={
+                  localStorage.theme === 'light' ?
+                  arrow_light :
+                  arrow
+                }
+                alt="Open" 
+              /> :
+              <img
+                src={
+                  localStorage.theme === 'light' ?
+                  arrow_light :
+                  arrow
+                }
+                alt="Close"
+                className="arrow-close"
+              />
+            }
           </div>
 
           <ul
@@ -372,7 +507,25 @@ export const MainSelect = () => {
                 {t('sel__proj__employ')}
               </span>
 
-            {!isOpen6 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+            {!isOpen6 ? 
+              <img
+                src={
+                  localStorage.theme === 'light' ?
+                  arrow_light :
+                  arrow
+                }
+                alt="Open" 
+              /> :
+              <img
+                src={
+                  localStorage.theme === 'light' ?
+                  arrow_light :
+                  arrow
+                }
+                alt="Close"
+                className="arrow-close"
+              />
+            }
           </div>
 
           <ul
@@ -431,7 +584,25 @@ export const MainSelect = () => {
                 {t('sel__company__type')}
               </span>
 
-            {!isOpen7 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+            {!isOpen7 ? 
+              <img
+                src={
+                  localStorage.theme === 'light' ?
+                  arrow_light :
+                  arrow
+                }
+                alt="Open" 
+              /> :
+              <img
+                src={
+                  localStorage.theme === 'light' ?
+                  arrow_light :
+                  arrow
+                }
+                alt="Close"
+                className="arrow-close"
+              />
+            }
           </div>
 
           <ul
@@ -472,7 +643,25 @@ export const MainSelect = () => {
                 {t('sel__salary')}
               </span>
 
-            {!isOpen8 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+            {!isOpen8 ? 
+              <img
+                src={
+                  localStorage.theme === 'light' ?
+                  arrow_light :
+                  arrow
+                }
+                alt="Open" 
+              /> :
+              <img
+                src={
+                  localStorage.theme === 'light' ?
+                  arrow_light :
+                  arrow
+                }
+                alt="Close"
+                className="arrow-close"
+              />
+            }
           </div>
 
           <ul
@@ -518,7 +707,25 @@ export const MainSelect = () => {
                 {t('sel__reit')}
               </span>
 
-            {!isOpen9 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+            {!isOpen9 ?
+             <img
+              src={
+                localStorage.theme === 'light' ?
+                arrow_light :
+                arrow
+              }
+              alt="Open" 
+              /> :
+              <img
+                src={
+                  localStorage.theme === 'light' ?
+                  arrow_light :
+                  arrow
+                }
+                alt="Close"
+                className="arrow-close"
+              />
+            }
           </div>
 
           <ul
@@ -561,7 +768,25 @@ export const MainSelect = () => {
                 {t('sel__country__proj')}
               </span>
 
-            {!isOpen10 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+            {!isOpen10 ? 
+              <img
+                src={
+                  localStorage.theme === 'light' ?
+                  arrow_light :
+                  arrow
+                }
+                alt="Open" 
+              /> :
+              <img
+                src={
+                  localStorage.theme === 'light' ?
+                  arrow_light :
+                  arrow
+                }
+                alt="Close"
+                className="arrow-close"
+              />
+            }
           </div>
 
           <ul
@@ -604,7 +829,25 @@ export const MainSelect = () => {
                 {t('sel__languages')}
               </span>
 
-            {!isOpen11 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+            {!isOpen11 ?  
+              <img
+                src={
+                  localStorage.theme === 'light' ?
+                  arrow_light :
+                  arrow
+                }
+                alt="Open" 
+              /> :
+              <img
+                src={
+                  localStorage.theme === 'light' ?
+                  arrow_light :
+                  arrow
+                }
+                alt="Close"
+                className="arrow-close"
+              />
+            }
           </div>
 
           <ul

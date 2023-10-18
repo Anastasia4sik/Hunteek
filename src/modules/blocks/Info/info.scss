@@ -29,6 +29,10 @@
   
     margin-bottom: 1.5vh;
 
+    &.light {
+      color: $white-text-main;
+    }
+
     @include onBigDesktop {
       margin-bottom: $main-p;
       padding: $main-p 0;
@@ -54,8 +58,6 @@
       height: calc(100vh - #{$header-height} - 180px);
     
       padding: 0 25px 25px 0;
-
-      overflow-y: scroll;
     }
   }
 }

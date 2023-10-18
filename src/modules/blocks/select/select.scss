@@ -7,6 +7,10 @@
 
   color: $grey-text;
 
+  &.light {
+    color: $grey-hover;
+  }
+
   position: fixed;
   top: calc(#{$header-height} + 21px);
   padding: 15px;
@@ -30,7 +34,6 @@
 
     &__main {
       padding-right: 6px;
-
     }
 
     &__btn {
@@ -52,14 +55,6 @@
     }
   }
 
-  // &--3 {
-  //   padding: $main-p 0 $main-p 16px;
-
-  //   @include onBigDesktop {
-  //     padding: $main-p 0 $main-p 12px;
-  //   }
-  // }
-
   &--2 {
     padding: 15px 16px;
 
@@ -71,6 +66,10 @@
   &--1,
   &--2 {
     border-bottom: 1px solid $grey-border;
+
+    &.light {
+      border-color: $white-text-main;
+    }
   }
 
   &__content {
@@ -89,14 +88,29 @@
   &__header {
     cursor: pointer;
 
-    &--active,
+    &--active {
+      color: $white-text-sec;
+
+      &.light {
+        color: $popup-text;
+      }
+    }
+
+    &.light:hover {
+      color: $grey-hover;
+    }
     &:hover {
       color: $white-text-sec;
     }
 
+
     &--profile {
       border-bottom: 1px solid $grey-border;
       padding-bottom: 5px;
+
+      &.light {
+        border-color: $white-text-main;
+      }
     }
   }
 
@@ -127,6 +141,10 @@
 
         &--border {
           border-bottom: 1px solid $grey-border;
+
+          &.light {
+            border-color: $white-text-main;
+          }
         }
 
         &--wallet {
@@ -144,8 +162,6 @@
   &__messages {
     gap: 18px;
 
-    // padding: 9px 30px;
-
     &__item {
       gap: 10px;
 
@@ -153,8 +169,16 @@
 
       transition: filter 0.3s ease-in-out;
 
+      &.light {
+        color: $grey-hover;
+      }
+
       &--delete {
         border-bottom: 1px solid $grey-border;
+
+        &.light {
+          border-color: $white-text-main;
+        }
 
         padding-bottom: 15px;
       }
@@ -181,9 +205,21 @@
   &:hover {
     color: $white-text-main;
   }
+
+  &.light {
+    color: $popup-text;
+
+    &:hover {
+      color: $grey-hover;
+    }
+  }
 }
 
 input[type="checkbox"]:checked ~ span {
+  &.light {
+    color: $grey-hover;
+  }
+
   color: $white-text-main;
 }
 

@@ -3,8 +3,11 @@ import search from '../../../img/icons/search.svg';
 
 import time from '../../../img/icons/header/time.svg';
 import video from '../../../img/icons/header/video.svg';
+import video_light from '../../../img/icons/header/video_light.svg';
 import dollar from '../../../img/icons/header/dollar.svg';
+import dollar_light from '../../../img/icons/header/dollar_light.svg';
 import profile from '../../../img/icons/header/profile.svg';
+import profile_light from '../../../img/icons/header/profile_light.svg';
 
 import ua from '../../../img/icons/flags/ua.png';
 import eng from '../../../img/icons/flags/eng.png';
@@ -19,7 +22,12 @@ type Props = {
   handleSearchClick?: () => void;
 };
 
-export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handleKeyPress, handleSearchClick }) => {
+export const Header: React.FC<Props> = ({
+  searchQuery,
+  handleInputChange,
+  handleKeyPress,
+  handleSearchClick,
+}) => {
   const [selectedLanguage, setSelectedLanguage] = useState(localStorage.getItem('selectedLanguage') || 'en');
   
   const uaLangRef = useRef<HTMLImageElement | null>(null);
@@ -124,15 +132,27 @@ export const Header: React.FC<Props> = ({ searchQuery, handleInputChange, handle
 
         <div className="header__menu__nav d-flex align-items-center">
           <a href="/" title={t('video__desc')}>
-            <img src={video} alt="Video" className="header__menu__nav__img header__menu__nav__img--video" />
+            <img
+              src={localStorage.theme === 'light' ? video_light : video}
+              alt="Video"
+              className="header__menu__nav__img header__menu__nav__img--video"
+            />
           </a>
 
           <a href="/my-wallet">
-            <img src={dollar} alt="Money" className="header__menu__nav__img" />
+            <img
+              src={localStorage.theme === 'light' ? dollar_light : dollar}
+              alt="Money"
+              className="header__menu__nav__img"
+            />
           </a>
 
           <a href="/my-profile">
-            <img src={profile} alt="Profile" className="header__menu__nav__img" />
+            <img
+              src={localStorage.theme === 'light' ? profile_light : profile}
+              alt="Profile"
+              className="header__menu__nav__img"
+            />
           </a>
         </div>
       </div>

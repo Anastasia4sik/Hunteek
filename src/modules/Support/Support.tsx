@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Menu } from '../blocks/menu';
 import { Header } from '../blocks/Header';
-import { Select } from '../blocks/select';
 import { Info } from '../blocks/Info';
 const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 
@@ -41,8 +40,6 @@ export const Support: React.FC = () => {
       />
 
       <div className="content d-flex flex-row">
-        <Select />
-
         <div className="support__list d-flex flex-column content__middle">
           {array.map((item) => (
             <p key={item} className="support__list__item">

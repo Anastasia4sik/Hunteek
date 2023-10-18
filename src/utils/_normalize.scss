@@ -195,6 +195,14 @@ input[type="checkbox"] {
 
   margin-right: 10px;
 
+  &.light {
+    border-color: popup-text;
+
+    &:checked {
+      background-image: url('../img/icons/check_light.svg');
+    }
+  }
+
   &:checked {
     background-image: url('../img/icons/check.svg');
     background-repeat: no-repeat;

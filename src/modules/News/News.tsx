@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Menu } from '../blocks/menu';
 import { Header } from '../blocks/Header';
-import { Select } from '../blocks/select';
 import { Info } from '../blocks/Info';
 import { NewsCard } from '../shared/NewsCard';
 
@@ -41,8 +40,6 @@ export const News: React.FC = () => {
       />
 
       <div className="content d-flex flex-row">
-        <Select />
-
         <div className="main__catalog news__catalog">
           <NewsCard />
 

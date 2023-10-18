@@ -13,6 +13,7 @@ import support from '../../../img/icons/menu/support.svg';
 import review from '../../../img/icons/menu/review.svg';
 
 import { useTranslation } from 'react-i18next';
+console.log('local', localStorage)
 
 export const Menu: React.FC = () => {
   const [isLightTheme, setIsLightTheme] = useState(() => {
@@ -20,12 +21,13 @@ export const Menu: React.FC = () => {
     return storedTheme === 'light';
   });
 
+
   const handleThemeChange = () => {
     setIsLightTheme(!isLightTheme);
   };
 
   useEffect(() => {
-    localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+    localStorage.setItem('theme', isLightTheme ? 'light' : '');
     const bodyElements = document.body.querySelectorAll('*');
 
     if (isLightTheme) {
@@ -191,6 +193,10 @@ export const Menu: React.FC = () => {
                 type="checkbox"
                 checked={isLightTheme}
                 onChange={handleThemeChange}
+                onClick={() => {
+                  window.location.reload();
+                }
+                }
               >
               </input>
 

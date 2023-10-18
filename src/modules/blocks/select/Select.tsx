@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 import arrow from '../../../img/icons/arrow_down.svg';
+import arrow_light from '../../../img/icons/arrow_down_light.svg';
+
 import user from '../../../img/icons/header/profile.svg';
 import plus from '../../../img/icons/message/plus.svg';
 import trash from '../../../img/icons/message/trash.svg';
@@ -8,7 +10,6 @@ import bell from '../../../img/icons/message/bell.svg';
 import check from '../../../img/icons/message/check.svg';
 import dollar from '../../../img/icons/header/dollar.svg';
 
-import languages from '../../../helpers/arrays/programLanguages.js'
 import { MainSelect } from '../MainSelect';
 import { useTranslation } from 'react-i18next';
 
@@ -44,8 +45,6 @@ export const Select: React.FC<Props> = ({
   const isWallet = window.location.pathname.includes('my-wallet');
   const isTeam = window.location.pathname.includes('my-team');
   const isMessage = window.location.pathname.includes('messages');
-  const isNews = window.location.pathname.includes('news');
-  const isSupport = window.location.pathname.includes('support');
   const isProfile = window.location.pathname.includes('my-profile');
 
   const handleBanListChange = (e: { target: { checked: any; }; }) => {
@@ -62,7 +61,7 @@ export const Select: React.FC<Props> = ({
 
   const { t } = useTranslation();
 
-  if (isMy || isNews || isSupport) {
+  if (isMy) {
     return (
       <div className="select block">
         <div className="select__container">
@@ -125,7 +124,25 @@ export const Select: React.FC<Props> = ({
                       </span>
                     </div>
   
-                    {!isOpen3 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+                    {!isOpen3 ?
+                      <img
+                        src={
+                          localStorage.theme === 'light' ?
+                          arrow_light :
+                          arrow
+                        }
+                        alt="Open" 
+                      /> :
+                      <img
+                        src={
+                          localStorage.theme === 'light' ?
+                          arrow_light :
+                          arrow
+                        }
+                        alt="Close"
+                        className="arrow-close"
+                      />
+                    }
                   </div>
   
                   <ul
@@ -210,7 +227,25 @@ export const Select: React.FC<Props> = ({
                           </span>
                         </div>
 
-                        {!isOpen1 ? <img src={arrow} alt="Open" /> : <img src={arrow} alt="Close" className="arrow-close" />}
+                        {!isOpen1 ?
+                          <img
+                            src={
+                              localStorage.theme === 'light' ?
+                              arrow_light :
+                              arrow
+                            }
+                            alt="Open" 
+                          /> :
+                          <img
+                            src={
+                              localStorage.theme === 'light' ?
+                              arrow_light :
+                              arrow
+                            }
+                            alt="Close"
+                            className="arrow-close"
+                          />
+                        }
                     </div>
 
                     <ul
@@ -273,9 +308,8 @@ export const Select: React.FC<Props> = ({
       </div>
     )
   }
-  
+
   return (
     <MainSelect />
   )
-
 };

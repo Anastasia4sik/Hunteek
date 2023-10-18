@@ -93,6 +93,7 @@ export const Main: React.FC = () => {
                   employee={employee}
                   isPopupVisible={isPopupVisible}
                   togglePopup={() => togglePopup(`${t('message__sent')} ${employee.name}`)}
+                  isLightTheme={isLightTheme}
                 />
             ))}
           </div>

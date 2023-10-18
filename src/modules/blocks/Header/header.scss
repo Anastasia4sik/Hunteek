@@ -10,7 +10,7 @@
   background-color: $black-header;
   position: fixed;
 
-  z-index: 3;
+  z-index: 2;
 
   &.light {
     background-color: white;
@@ -103,10 +103,6 @@
             padding: 4px 0 4px 8px;
 
             border-left: 2px solid $grey-border;
-
-            &.light {
-              border-color: $white-text-main;
-            }
           }
         }
       }
@@ -124,12 +120,22 @@
 
       gap: 8%;
 
+      &.light {
+        border-color: $white-text-main;
+      }
+
       &__img {
         width: 24px;
         height: 24px;
+
       }
     }
   }
+}
+
+.custom-svg {
+  background-color: red;
+  stroke: #393939;
 }
 
 .langSmall {
