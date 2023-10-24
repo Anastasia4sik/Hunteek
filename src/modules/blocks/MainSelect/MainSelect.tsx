@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import arrow from '../../../img/icons/arrow_down.svg';
 import arrow_light from '../../../img/icons/arrow_down_light.svg';
@@ -26,6 +26,9 @@ export const MainSelect = () => {
   const [isOpen9, setIsOpen9] = useState(false);
   const [isOpen10, setIsOpen10] = useState(false);
   const [isOpen11, setIsOpen11] = useState(false);
+  const [isLightTheme] = useState(() => {
+    return localStorage.theme === 'light';
+  });
 
   const isProject = window.location.pathname.includes('projects');
 
@@ -97,7 +100,15 @@ export const MainSelect = () => {
           `${isMy ? 'select--3' : 'select--1'}
           select__content
           big
-          ${isOpen1 ? 'open' : ''}`
+          ${
+            isOpen1 && isLightTheme
+              ? 'open light'
+            : isOpen1
+              ? 'open'
+            : isLightTheme
+              ? 'light'
+            : ''
+          }`
         }>
           <div
             className={
@@ -113,14 +124,14 @@ export const MainSelect = () => {
             onClick={handleToggle1}
             onKeyDown={handleKeyDown}
           >
-              <span className="select__option list-text">
+              <span className={`select__option list-text`}>
                 {t('sel__spec')}
               </span>
 
             {!isOpen1 ?
               <img
                 src={
-                  localStorage.theme === 'light' ?
+                  isLightTheme ?
                   arrow_light :
                   arrow
                 }
@@ -128,7 +139,7 @@ export const MainSelect = () => {
               /> :
               <img
                 src={
-                  localStorage.theme === 'light' ?
+                  isLightTheme ?
                   arrow_light :
                   arrow
                 }
@@ -143,7 +154,17 @@ export const MainSelect = () => {
               select__option__list
               scroll
               select__option__list--1
-              ${isOpen1 ? 'select__option__list--open' : 'select__option__list--close'}`}
+              ${
+                isLightTheme
+                  ? 'light'
+                : ''
+              }
+              ${
+                isOpen1
+                  ? 'select__option__list--open'
+                : 'select__option__list--close'
+              }
+            `}
           >
             {languages.map((language: string) => (
               <li key={language} 
@@ -169,7 +190,19 @@ export const MainSelect = () => {
         {!isProject && (
           <>
             {/* Job search activity */}
-            <div className={`select--1 select__content  ${isOpen2 ? 'open' : ''}`}>
+            <div className={
+              `select--1
+              select__content
+              ${
+                isOpen2 && isLightTheme
+                  ? 'open light'
+                : isOpen2
+                  ? 'open'
+                : isLightTheme
+                  ? 'light'
+                : ''
+              }`
+            }>
               <div
                 className={`select__header d-flex flex-row justify-content-between ${isOpen2 ? 'select__header--active' : ''}`}
                 role="button"
@@ -184,7 +217,7 @@ export const MainSelect = () => {
                 {!isOpen2 ? 
                   <img
                   src={
-                    localStorage.theme === 'light' ?
+                    isLightTheme ?
                     arrow_light :
                     arrow
                   }
@@ -192,7 +225,7 @@ export const MainSelect = () => {
                 /> :
                 <img
                   src={
-                    localStorage.theme === 'light' ?
+                    isLightTheme ?
                     arrow_light :
                     arrow
                   }
@@ -206,8 +239,17 @@ export const MainSelect = () => {
                 className={`
                   select__option__list
                   select__option__list--1
-                  ${isOpen2 ? 'select__option__list--open' : 'select__option__list--close'}`}
-              >
+                  ${
+                    isLightTheme
+                      ? 'light'
+                    : ''
+                  }
+                  ${
+                    isOpen2
+                      ? 'select__option__list--open'
+                    : 'select__option__list--close'
+                  }`
+                }>
                   <li className="
                     list-text
                     select__option__list__item"
@@ -247,7 +289,19 @@ export const MainSelect = () => {
             </div>
 
             {/* English level */}
-            <div className={`select--1 select__content  ${isOpen3 ? 'open' : ''}`}>
+            <div className={
+              `select--1
+              select__content
+              ${
+                isOpen3 && isLightTheme
+                  ? 'open light'
+                : isOpen3
+                  ? 'open'
+                : isLightTheme
+                  ? 'light'
+                : ''
+              }`
+            }>
               <div
                 className={`select__header d-flex flex-row justify-content-between ${isOpen3 ? 'select__header--active' : ''}`}
                 role="button"
@@ -262,7 +316,7 @@ export const MainSelect = () => {
                 {!isOpen3 ? 
                   <img
                     src={
-                      localStorage.theme === 'light' ?
+                      isLightTheme ?
                       arrow_light :
                       arrow
                     }
@@ -270,7 +324,7 @@ export const MainSelect = () => {
                   /> :
                   <img
                     src={
-                      localStorage.theme === 'light' ?
+                      isLightTheme ?
                       arrow_light :
                       arrow
                     }
@@ -284,8 +338,17 @@ export const MainSelect = () => {
                 className={`
                   select__option__list
                   select__option__list--1
-                  ${isOpen3 ? 'select__option__list--open' : 'select__option__list--close'}`}
-              >
+                  ${
+                    isLightTheme
+                      ? 'light'
+                    : ''
+                  }
+                  ${
+                    isOpen3
+                      ? 'select__option__list--open'
+                    : 'select__option__list--close'
+                  }`
+                }>
                 {levels.map((level: string) => (
                   <li key={level} className="
                     list-text
@@ -307,7 +370,19 @@ export const MainSelect = () => {
             </div>
 
             {/* experience */}
-            <div className={`select--1 select__content  ${isOpen4 ? 'open' : ''}`}>
+            <div className={
+              `select--1
+              select__content
+              ${
+                isOpen4 && isLightTheme
+                  ? 'open light'
+                : isOpen4
+                  ? 'open'
+                : isLightTheme
+                  ? 'light'
+                : ''
+              }`
+            }>
               <div
                 className={`select__header d-flex flex-row justify-content-between ${isOpen4 ? 'select__header--active' : ''}`}
                 role="button"
@@ -322,7 +397,7 @@ export const MainSelect = () => {
                 {!isOpen4 ? 
                   <img
                     src={
-                      localStorage.theme === 'light' ?
+                      isLightTheme ?
                       arrow_light :
                       arrow
                     }
@@ -330,7 +405,7 @@ export const MainSelect = () => {
                   /> :
                   <img
                     src={
-                      localStorage.theme === 'light' ?
+                      isLightTheme ?
                       arrow_light :
                       arrow
                     }
@@ -344,8 +419,17 @@ export const MainSelect = () => {
                 className={`
                   select__option__list
                   select__option__list--1
-                  ${isOpen4 ? 'select__option__list--open' : 'select__option__list--close'}`}
-              >
+                  ${
+                    isLightTheme
+                      ? 'light'
+                    : ''
+                  }
+                  ${
+                    isOpen4
+                      ? 'select__option__list--open'
+                    : 'select__option__list--close'
+                  }`
+                }>
                 {experiences.map((experience: string) => (
                   <li key={experience} className="
                     list-text
@@ -368,7 +452,19 @@ export const MainSelect = () => {
           </>
         )}
         {/* Type of work */}
-        <div className={`select--1 select__content  ${isOpen5 ? 'open' : ''}`}>
+        <div className={
+              `select--1
+              select__content
+              ${
+                isOpen5 && isLightTheme
+                  ? 'open light'
+                : isOpen5
+                  ? 'open'
+                : isLightTheme
+                  ? 'light'
+                : ''
+              }`
+            }>
           <div
             className={`select__header d-flex flex-row justify-content-between ${isOpen5 ? 'select__header--active' : ''}`}
             role="button"
@@ -383,7 +479,7 @@ export const MainSelect = () => {
             {!isOpen5 ? 
               <img
                 src={
-                  localStorage.theme === 'light' ?
+                  isLightTheme ?
                   arrow_light :
                   arrow
                 }
@@ -391,7 +487,7 @@ export const MainSelect = () => {
               /> :
               <img
                 src={
-                  localStorage.theme === 'light' ?
+                  isLightTheme ?
                   arrow_light :
                   arrow
                 }
@@ -405,8 +501,17 @@ export const MainSelect = () => {
             className={`
               select__option__list
               select__option__list--1
-              ${isOpen5 ? 'select__option__list--open' : 'select__option__list--close'}`}
-          >
+              ${
+                isLightTheme
+                  ? 'light'
+                : ''
+              }
+              ${
+                isOpen5
+                  ? 'select__option__list--open'
+                : 'select__option__list--close'
+              }`
+            }>
               <li className="
                 list-text
                 select__option__list__item"
@@ -463,7 +568,19 @@ export const MainSelect = () => {
           </ul>
         </div>
         {/* Project employment */}
-        <div className={`select--1 select__content  ${isOpen6 ? 'open' : ''}`}>
+        <div className={
+              `select--1
+              select__content
+              ${
+                isOpen6 && isLightTheme
+                  ? 'open light'
+                : isOpen6
+                  ? 'open'
+                : isLightTheme
+                  ? 'light'
+                : ''
+              }`
+            }>
           <div
             className={`select__header d-flex flex-row justify-content-between ${isOpen6 ? 'select__header--active' : ''}`}
             role="button"
@@ -478,7 +595,7 @@ export const MainSelect = () => {
             {!isOpen6 ? 
               <img
                 src={
-                  localStorage.theme === 'light' ?
+                  isLightTheme ?
                   arrow_light :
                   arrow
                 }
@@ -486,7 +603,7 @@ export const MainSelect = () => {
               /> :
               <img
                 src={
-                  localStorage.theme === 'light' ?
+                  isLightTheme ?
                   arrow_light :
                   arrow
                 }
@@ -500,8 +617,17 @@ export const MainSelect = () => {
             className={`
               select__option__list
               select__option__list--1
-              ${isOpen6 ? 'select__option__list--open' : 'select__option__list--close'}`}
-          >
+              ${
+                isLightTheme
+                  ? 'light'
+                : ''
+              }
+              ${
+                isOpen6
+                  ? 'select__option__list--open'
+                : 'select__option__list--close'
+              }`
+            }>
               <li className="
                 list-text
                 select__option__list__item"
@@ -540,7 +666,19 @@ export const MainSelect = () => {
           </ul>
         </div>
         {/* Company type */}
-        <div className={`select--1 select__content  ${isOpen7 ? 'open' : ''}`}>
+        <div className={
+              `select--1
+              select__content
+              ${
+                isOpen7 && isLightTheme
+                  ? 'open light'
+                : isOpen7
+                  ? 'open'
+                : isLightTheme
+                  ? 'light'
+                : ''
+              }`
+            }>
           <div
             className={`select__header d-flex flex-row justify-content-between ${isOpen7 ? 'select__header--active' : ''}`}
             role="button"
@@ -555,7 +693,7 @@ export const MainSelect = () => {
             {!isOpen7 ? 
               <img
                 src={
-                  localStorage.theme === 'light' ?
+                  isLightTheme ?
                   arrow_light :
                   arrow
                 }
@@ -563,7 +701,7 @@ export const MainSelect = () => {
               /> :
               <img
                 src={
-                  localStorage.theme === 'light' ?
+                  isLightTheme ?
                   arrow_light :
                   arrow
                 }
@@ -577,8 +715,17 @@ export const MainSelect = () => {
             className={`
               select__option__list
               select__option__list--1
-              ${isOpen7 ? 'select__option__list--open' : 'select__option__list--close'}`}
-          >
+              ${
+                isLightTheme
+                  ? 'light'
+                : ''
+              }
+              ${
+                isOpen7
+                  ? 'select__option__list--open'
+                : 'select__option__list--close'
+              }`
+            }>
               {companyTypes.map((type: string) => (
               <li key={type} className="
                 list-text
@@ -599,7 +746,20 @@ export const MainSelect = () => {
           </ul>
         </div>
         {/* Salary */}
-        <div className={`select--1 select__content big  ${isOpen8 ? 'open' : ''}`}>
+        <div className={
+              `select--1
+              select__content
+              big
+              ${
+                isOpen8 && isLightTheme
+                  ? 'open light'
+                : isOpen8
+                  ? 'open'
+                : isLightTheme
+                  ? 'light'
+                : ''
+              }`
+            }>
           <div
             className={`select__header d-flex flex-row justify-content-between ${isOpen8 ? 'select__header--active' : ''}`}
             role="button"
@@ -614,7 +774,7 @@ export const MainSelect = () => {
             {!isOpen8 ? 
               <img
                 src={
-                  localStorage.theme === 'light' ?
+                  isLightTheme ?
                   arrow_light :
                   arrow
                 }
@@ -622,7 +782,7 @@ export const MainSelect = () => {
               /> :
               <img
                 src={
-                  localStorage.theme === 'light' ?
+                  isLightTheme ?
                   arrow_light :
                   arrow
                 }
@@ -637,8 +797,17 @@ export const MainSelect = () => {
               select__option__list
               scroll
               select__option__list--1
-              ${isOpen8 ? 'select__option__list--open' : 'select__option__list--close'}`}
-          >
+              ${
+                isLightTheme
+                  ? 'light'
+                : ''
+              }
+              ${
+                isOpen8
+                  ? 'select__option__list--open'
+                : 'select__option__list--close'
+              }`
+            }>
               {salaries.map((salary: number) => (
                 <li key={salary} className="
                   list-text
@@ -663,7 +832,20 @@ export const MainSelect = () => {
           </ul>
         </div>
         {/* Reit per hour */}
-        <div className={`select--1 select__content big  ${isOpen9 ? 'open' : ''}`}>
+        <div className={
+              `select--1
+              select__content
+              big
+              ${
+                isOpen9 && isLightTheme
+                  ? 'open light'
+                : isOpen9
+                  ? 'open'
+                : isLightTheme
+                  ? 'light'
+                : ''
+              }`
+            }>
           <div
             className={`select__header d-flex flex-row justify-content-between ${isOpen9 ? 'select__header--active' : ''}`}
             role="button"
@@ -678,7 +860,7 @@ export const MainSelect = () => {
             {!isOpen9 ?
              <img
               src={
-                localStorage.theme === 'light' ?
+                isLightTheme ?
                 arrow_light :
                 arrow
               }
@@ -686,7 +868,7 @@ export const MainSelect = () => {
               /> :
               <img
                 src={
-                  localStorage.theme === 'light' ?
+                  isLightTheme ?
                   arrow_light :
                   arrow
                 }
@@ -701,8 +883,17 @@ export const MainSelect = () => {
               select__option__list
               scroll
               select__option__list--1
-              ${isOpen9 ? 'select__option__list--open' : 'select__option__list--close'}`}
-          >
+              ${
+                isLightTheme
+                  ? 'light'
+                : ''
+              }
+              ${
+                isOpen9
+                  ? 'select__option__list--open'
+                : 'select__option__list--close'
+              }`
+            }>
               {reits.map((reit: number) => (
                 <li key={reit} className="
                   list-text
@@ -724,7 +915,20 @@ export const MainSelect = () => {
           </ul>
         </div>
         {/* Countries */}
-        <div className={`select--1 select__content big  ${isOpen10 ? 'open' : ''}`}>
+        <div className={
+              `select--1
+              select__content
+              big
+              ${
+                isOpen10 && isLightTheme
+                  ? 'open light'
+                : isOpen10
+                  ? 'open'
+                : isLightTheme
+                  ? 'light'
+                : ''
+              }`
+            }>
           <div
             className={`select__header d-flex flex-row justify-content-between ${isOpen10 ? 'select__header--active' : ''}`}
             role="button"
@@ -739,7 +943,7 @@ export const MainSelect = () => {
             {!isOpen10 ? 
               <img
                 src={
-                  localStorage.theme === 'light' ?
+                  isLightTheme ?
                   arrow_light :
                   arrow
                 }
@@ -747,7 +951,7 @@ export const MainSelect = () => {
               /> :
               <img
                 src={
-                  localStorage.theme === 'light' ?
+                  isLightTheme ?
                   arrow_light :
                   arrow
                 }
@@ -762,8 +966,17 @@ export const MainSelect = () => {
               select__option__list
               scroll
               select__option__list--1
-              ${isOpen10 ? 'select__option__list--open' : 'select__option__list--close'}`}
-          >
+              ${
+                isLightTheme
+                  ? 'light'
+                : ''
+              }
+              ${
+                isOpen10
+                  ? 'select__option__list--open'
+                : 'select__option__list--close'
+              }`
+            }>
               {countries.map((country: string) => (
                 <li key={country} className="
                   list-text
@@ -785,7 +998,20 @@ export const MainSelect = () => {
           </ul>
         </div>
         {/* Languages of communication */}
-        <div className={`select--1 select__content big  ${isOpen11 ? 'open' : ''}`}>
+        <div className={
+              `select--1
+              select__content
+              big
+              ${
+                isOpen11 && isLightTheme
+                  ? 'open light'
+                : isOpen11
+                  ? 'open'
+                : isLightTheme
+                  ? 'light'
+                : ''
+              }`
+            }>
           <div
             className={`select__header d-flex flex-row justify-content-between ${isOpen11 ? 'select__header--active' : ''}`}
             role="button"
@@ -800,7 +1026,7 @@ export const MainSelect = () => {
             {!isOpen11 ?  
               <img
                 src={
-                  localStorage.theme === 'light' ?
+                  isLightTheme ?
                   arrow_light :
                   arrow
                 }
@@ -808,7 +1034,7 @@ export const MainSelect = () => {
               /> :
               <img
                 src={
-                  localStorage.theme === 'light' ?
+                  isLightTheme ?
                   arrow_light :
                   arrow
                 }
@@ -823,8 +1049,17 @@ export const MainSelect = () => {
               select__option__list
               scroll
               select__option__list--1
-              ${isOpen11 ? 'select__option__list--open' : 'select__option__list--close'}`}
-          >
+              ${
+                isLightTheme
+                  ? 'light'
+                : ''
+              }
+              ${
+                isOpen11
+                  ? 'select__option__list--open'
+                : 'select__option__list--close'
+              }`
+            }>
               {speakLanguages.map((language: string) => (
                 <li key={language} className="
                   list-text

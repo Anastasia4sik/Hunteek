@@ -117,6 +117,10 @@
   &__option {
     transition: all 0.3s ease-in-out;
 
+    &.light {
+      color: $grey-hover;
+    }
+
     &__list {
       margin-top: 15px;
 

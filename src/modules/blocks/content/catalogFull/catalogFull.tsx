@@ -18,7 +18,6 @@ export const CatalogFull: React.FC<Props> = ({ forSideInfo }) => {
   const [smallPerPage] = useState(11);
   const [perPage, setPerPage] = useState(largePerPage);
   const [currentPage, setCurrentPage] = useState(1);
-
   
   const total = array.length;
   const firstItem = (currentPage - 1) * perPage;

@@ -49,8 +49,13 @@
 
     &__link {
       transition: color .3s ease-in-out;
+
       &:hover {
         color: white;
+      }
+
+      &.light:hover {
+        color: $grey-hover;
       }
     }
   }
