@@ -25,6 +25,9 @@ export const Projects: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [popupText, setPopupText] = useState('');
+  const [isLightTheme] = useState(() => {
+    return localStorage.theme === 'light';
+  });
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -145,7 +148,7 @@ export const Projects: React.FC = () => {
         </div>
       </div>
 
-      <Info purpose={location} />
+      <Info isLightTheme={isLightTheme} purpose={location} />
 
       {isPopupVisible && (
         <Popup text={popupText} onClose={() => togglePopup('')} />

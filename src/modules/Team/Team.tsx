@@ -18,6 +18,9 @@ import { useTranslation } from 'react-i18next';
 export const Team: React.FC = () => {
   const [location, setLocation] = useState('');
   const [employees, setEmployees] = useState<Employee[]>([]);
+  const [isLightTheme] = useState(() => {
+    return localStorage.theme === 'light';
+  });
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -120,7 +123,7 @@ export const Team: React.FC = () => {
 
       </div>
 
-      <Info purpose={location} employee={employees[0]} />
+      <Info isLightTheme={isLightTheme} purpose={location} employee={employees[0]} />
     </div>
   );
 };

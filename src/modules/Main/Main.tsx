@@ -98,7 +98,7 @@ export const Main: React.FC = () => {
             ))}
           </div>
 
-          <Info purpose={location} employee={employees[0]} employees={employees} />
+          <Info isLightTheme={isLightTheme} purpose={location} employee={employees[0]} employees={employees} />
         </div>
         
         {isPopupVisible && (

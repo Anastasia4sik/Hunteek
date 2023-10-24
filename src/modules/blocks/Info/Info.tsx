@@ -26,6 +26,7 @@ type Props = {
   recruteir?: Recruiter;
   recruiters?: Recruiter[];
   referralPerson?: ReferralPerson;
+  isLightTheme?: boolean;
 };
 
 export const Info: React.FC<Props> = ({
@@ -33,6 +34,7 @@ export const Info: React.FC<Props> = ({
   employee,
   employees,
   recruteir,
+  isLightTheme,
 }) => {
   const [personInfo, setPersonInfo] = useState<ReferralPerson | null>(null);
 
@@ -60,7 +62,7 @@ export const Info: React.FC<Props> = ({
 
   if (purpose === 'general') {
     title = t('info__general');
-    content = <General />;
+    content = <General isLightTheme={isLightTheme} />;
   } else if (purpose === 'profile') {
     title = t('info__profile');
     content = <Profile employee={employee} />;
@@ -95,13 +97,13 @@ export const Info: React.FC<Props> = ({
     content = <EditResume employee={employee} />;
   } else if (purpose === 'news') {
     title = t('info__news');
-    content = <General />;
+    content = <General isLightTheme={isLightTheme}/>;
   } else if (purpose === 'support') {
     title = t('info__support');
-    content = <General />;
+    content = <General isLightTheme={isLightTheme}/>;
   } else if (purpose === 'feedback') {
     title = t('info__feedback');
-    content = <Feedback />;
+    content = <Feedback/>;
   } else {
     title = '';
     content = '';

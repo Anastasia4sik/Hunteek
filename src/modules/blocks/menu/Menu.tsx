@@ -21,7 +21,6 @@ export const Menu: React.FC = () => {
     return storedTheme === 'light';
   });
 
-
   const handleThemeChange = () => {
     setIsLightTheme(!isLightTheme);
   };

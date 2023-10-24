@@ -15,6 +15,9 @@ export const Messages: React.FC = () => {
   const [location, setLocation] = useState('');
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isLightTheme] = useState(() => {
+    return localStorage.theme === 'light';
+  });
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -62,7 +65,7 @@ export const Messages: React.FC = () => {
 
       </div>
 
-      <Info purpose={location} employee={employees[0]} />
+      <Info isLightTheme={isLightTheme} purpose={location} employee={employees[0]} />
     </div>
   );
 };

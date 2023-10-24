@@ -25,6 +25,9 @@ export const MyProfile: React.FC = () => {
 
   const [isBanListChecked, setIsBanListChecked] = useState(false);
   const [isResumeChecked, setIsResumeChecked] = useState(false);
+  const [isLightTheme] = useState(() => {
+    return localStorage.theme === 'light';
+  });
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -113,7 +116,7 @@ export const MyProfile: React.FC = () => {
 
       </div>
 
-      <Info purpose={location} recruteir={recruiters[0]} employees={employees} />
+      <Info isLightTheme={isLightTheme} purpose={location} recruteir={recruiters[0]} employees={employees} />
     </div>
   );
 };

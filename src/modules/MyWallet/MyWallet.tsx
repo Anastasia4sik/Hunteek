@@ -11,6 +11,9 @@ import { CatalogFull } from '../blocks/content/catalogFull';
 export const MyWallet: React.FC = () => {
   const [location, setLocation] = useState('');
   const [isReferralChecked, setIsReferralChecked] = useState(false);
+  const [isLightTheme] = useState(() => {
+    return localStorage.theme === 'light';
+  });
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -66,7 +69,7 @@ export const MyWallet: React.FC = () => {
         </div>
       </div>
 
-      <Info purpose={location} />
+      <Info isLightTheme={isLightTheme} purpose={location} />
     </div>
   );
 };

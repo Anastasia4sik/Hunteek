@@ -9,6 +9,9 @@ import { handleInputChange, handleSearchClick, handleKeyPress } from '../../help
 export const Support: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [location, setLocation] = useState('');
+  const [isLightTheme] = useState(() => {
+    return localStorage.theme === 'light';
+  });
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -48,7 +51,7 @@ export const Support: React.FC = () => {
           ))}
         </div>
 
-        <Info purpose={location} />
+        <Info isLightTheme={isLightTheme} purpose={location} />
       </div>
     </div>
   );

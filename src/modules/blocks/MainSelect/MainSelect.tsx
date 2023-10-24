@@ -83,38 +83,6 @@ export const MainSelect = () => {
 
   const { t } = useTranslation();
 
-  const parentDiv = document.getElementById('select');
-  const childElements = parentDiv?.querySelectorAll('*');
-  const headers = document.querySelectorAll('.select__header');
-
-  if (localStorage.theme === 'light') {
-    parentDiv?.classList.add('light');
-
-    headers.forEach((element) => {
-      element.classList.add('light');
-    });
-    
-    if (childElements) {
-      for (let i = 0; i < childElements.length; i++) {
-        const child = childElements[i];
-        child.classList.add('light');
-      }
-    }
-  } else {
-    parentDiv?.classList.remove('light');
-
-    headers.forEach((element) => {
-      element.classList.remove('light');
-    });
-    
-    if (childElements) {
-      for (let i = 0; i < childElements.length; i++) {
-        const child = childElements[i];
-        child.classList.remove('light');
-      }
-    }
-  }
-
   return (
     <div className="select select__main block" id='select'>
       <div className="select__container select__container__main scroll">
