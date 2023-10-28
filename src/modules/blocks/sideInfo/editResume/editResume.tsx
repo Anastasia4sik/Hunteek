@@ -1,29 +1,23 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 
 import delet from '../../../../img/icons/delete.svg';
+import delet_light from '../../../../img/icons/delete_light.svg';
 import upload from '../../../../img/icons/upload.svg';
+import upload_light from '../../../../img/icons/upload_light.svg';
+
 import { UserPhoto } from '../../../shared/userPhoto';
-
 import { Employee } from '../../../../types/Employee';
-
 import { timeZones } from '../../../../helpers/arrays/timezones';
-import levels from '../../../../helpers/arrays/langLevels.js';
-
-import { useTranslation } from 'react-i18next';
 import { Popup } from '../../../Popup';
+import { useTranslation } from 'react-i18next';
+
+import levels from '../../../../helpers/arrays/langLevels.js';
 
 type Props = {
   employee: Employee | undefined,
 };
 
 export const EditResume: React.FC<Props> = ({ employee }) => {
-  const [, setSelectedTimezone] = useState('');
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
-
-  const handleTimezoneChanged = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-    setSelectedTimezone(event.target.value);
-  };
-
   if (employee === undefined) {
     return null;
   }
@@ -44,14 +38,44 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
     skills,
   } = employee;
 
-  const { t } = useTranslation();
+  const [selectedTimezone, setSelectedTimezone] = useState(timeZone);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [isLightTheme] = useState(() => {
+    return localStorage.theme === 'light';
+  });
+
+  const parentBlock = document.querySelector('.info__container');
+
+  useEffect(() => {
+    if (isLightTheme) {
+        const editChildren = parentBlock?.querySelectorAll('*');
+  
+        editChildren?.forEach((child) => {
+          if (!child.classList.contains('light')) {
+            child.classList.add('light');
+          }
+        })
+    } else {
+        const editChildren = parentBlock?.querySelectorAll('*');
+  
+        editChildren?.forEach((child) => {
+          child.classList.remove('light');
+        })
+    }
+  })
+
+  const handleTimezoneChanged = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    setSelectedTimezone(event.target.value);
+  };
 
   const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible);
   };
+  
+  const { t } = useTranslation();
 
   return (
-    <div className="edit">
+    <div className="edit scroll">
       <form action="#" className="edit__content">
         <fieldset className="edit__container">
           <legend className="edit__label list-text"> 
@@ -59,12 +83,20 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
           </legend>
 
           <div className="edit__photo d-flex flex-row align-items-center justify-content-between">
-            <UserPhoto size={20} photo={photo} />
+            <UserPhoto size={100} photo={photo} />
 
             <div className="edit__photo__upload">
               <label htmlFor="uploadPhoto" className="edit__photo__upload__label btn-grey">
                 <div className="edit__photo__upload__label__content d-flex align-items-center flex-row">
-                  <img src={upload} alt="Upload Icon" className="edit__photo__upload__label__icon" />
+                  <img
+                    src={
+                      isLightTheme 
+                        ? upload_light
+                        : upload
+                    }
+                    alt="Upload Icon"
+                    className="edit__photo__upload__label__icon" 
+                  />
 
                   <span className="edit__photo__upload__label__text bold-text">
                     {t('upload')}
@@ -76,7 +108,15 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
             </div>
 
             <button type="button" className="edit__photo__delete btn-grey">
-              <img src={delet} alt="Delete" className="edit__photo__delete__img" />
+              <img
+                src={
+                  isLightTheme
+                    ? delet_light
+                    : delet
+                }
+                alt="Delete"
+                className="edit__photo__delete__img"
+              />
             </button>
           </div>
         </fieldset>
@@ -86,7 +126,12 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
             {t('name')}
           </legend>
 
-          <input type="text" id="name" placeholder={`${name} ${lastname}`} className="edit__input list-text" />
+          <input
+            type="text"
+            id="name"
+            placeholder={`${name} ${lastname}`}
+            className="edit__input list-text"
+          />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
@@ -94,7 +139,12 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
             Position
           </legend>
 
-          <input type="text" id="name" placeholder={position} className="edit__input list-text" />
+          <input
+            type="text"
+            id="name"
+            placeholder={position}
+            className="edit__input list-text"
+          />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
@@ -102,7 +152,11 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
             {t('desc')}
           </legend>
 
-          <textarea id="desc" placeholder={desc} className="edit__input edit__input--desc list-text" />
+          <textarea
+            id="desc"
+            placeholder={desc}
+            className="edit__input edit__input--desc list-text"
+          />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
@@ -114,9 +168,8 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
             onChange={handleTimezoneChanged}
             id="timezone"
             className="list-text edit__input"
+            defaultValue={selectedTimezone}
           >
-            <option value="" disabled selected hidden>{timeZone}</option>
-
             {timeZones.map((timezone) => (
               <option key={timezone.offset} value={timezone.offset}>
                 {`${timezone.name}, ${timezone.offset}`}
@@ -134,7 +187,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
               type="checkbox"
               id="Long-term"
               className="list-text"
-              checked={workTerm === "Long-term"}
+              defaultChecked={workTerm === "Long-term"}
             />
             <label htmlFor="Long-term" className="list-text">
               {t('long__term')}
@@ -146,7 +199,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
               type="checkbox"
               id="Short-term"
               className="list-text"
-              checked={workTerm === "Short-term"}
+              defaultChecked={workTerm === "Short-term"}
             />
             <label htmlFor="Short-term" className="list-text">
               {t('short__term')}
@@ -164,7 +217,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
               type="checkbox"
               id="Part-time"
               className="list-text"
-              checked={workTime === "Part-time"}
+              defaultChecked={workTime === "Part-time"}
             />
             <label htmlFor="Part-time" className="list-text">
               {t('part__time')}
@@ -176,7 +229,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
               type="checkbox"
               id="Full-time"
               className="list-text"
-              checked={workTime === "Full-time"}
+              defaultChecked={workTime === "Full-time"}
             />
             <label htmlFor="Full-time" className="list-text">
               {t('full__time')}
@@ -192,9 +245,8 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
           <select
             id="english"
             className="list-text edit__input"
+            defaultValue={englishLevel}
           >
-            <option value="" disabled selected hidden>{englishLevel}</option>
-
             {levels.map((level: string) => (
               <option
                 value={level}

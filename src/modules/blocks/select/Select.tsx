@@ -102,9 +102,14 @@ export const Select: React.FC<Props> = ({
           ) : (
             <>  
               {isTeam && (
-                <a href="#create-resume" className="select__container__btn btn-grey list-text">
-                  {t('sel__create__resume')}
-                </a>
+                <button
+                onClick={() => {
+                  window.location.hash = '#create-resume';
+                }}
+                className="select__container__btn btn-grey list-text"
+                >
+                {t('sel__create__resume')}
+                </button>
               )}
   
               {isWallet && (

@@ -13,7 +13,6 @@ import support from '../../../img/icons/menu/support.svg';
 import review from '../../../img/icons/menu/review.svg';
 
 import { useTranslation } from 'react-i18next';
-console.log('local', localStorage)
 
 export const Menu: React.FC = () => {
   const [isLightTheme, setIsLightTheme] = useState(() => {

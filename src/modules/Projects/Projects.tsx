@@ -62,6 +62,30 @@ export const Projects: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    const cards = document.querySelectorAll('.card');
+
+    if (isLightTheme) {
+      cards?.forEach((card) => {
+        const cardChildren = card?.querySelectorAll('*');
+
+        card.classList.add('light');
+        cardChildren.forEach((child) => {
+          child.classList.add('light');
+        })
+      })
+    } else {
+      cards?.forEach((card) => {
+        const cardChildren = card?.querySelectorAll('*');
+
+        card.classList.remove('light');
+        cardChildren.forEach((child) => {
+          child.classList.remove('light');
+        })
+      })
+    }
+  })
+
   const { t } = useTranslation();
 
   return (
@@ -110,7 +134,7 @@ export const Projects: React.FC = () => {
                     <Rate rateIs={project.rate}/>
                   </div>
 
-                  <UserPhoto size={20} photo={project.photo} />
+                  <UserPhoto size={100} photo={project.photo} />
                 </div>
               </div>
 

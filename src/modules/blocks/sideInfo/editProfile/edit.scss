@@ -12,15 +12,12 @@
   
   &__content {
     height: 97%;
-    overflow-y: scroll;
-    overflow-x: hidden;
 
     padding-right: 8px;
 
     @include onBigDesktop {
       padding-right: 20px;
     }
-
   }
 
   &__photo {
@@ -123,10 +120,20 @@
     @include onBigDesktop {
       padding: 14px 16px;
     }
+
+    &.light {
+      background-color: $white-text-main;
+
+      color: $grey-hover;
+    }
   }
 
   &__input {
     &--desc {
+      overflow: hidden;
+      word-wrap: break-word;
+      resize: none;
+
       height: 125px;
     }
   }

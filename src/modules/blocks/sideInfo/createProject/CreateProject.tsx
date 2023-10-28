@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
+import React, {memo, useEffect, useState} from 'react';
 
 import delet from '../../../../img/icons/delete.svg';
+import delet_light from '../../../../img/icons/delete_light.svg';
 import upload from '../../../../img/icons/upload.svg';
+import upload_light from '../../../../img/icons/upload_light.svg';
 import photo from '../../../../img/photo/user.png';
 
 import { UserPhoto } from '../../../shared/userPhoto';
@@ -13,6 +15,29 @@ type Props = {};
 
 export const CreateProject: React.FC<Props> = () => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [isLightTheme] = useState(() => {
+    return localStorage.theme === 'light';
+  });
+
+  const parentBlock = document.querySelector('.info__container');
+
+  useEffect(() => {
+    if (isLightTheme) {
+        const editChildren = parentBlock?.querySelectorAll('*');
+  
+        editChildren?.forEach((child) => {
+          if (!child.classList.contains('light')) {
+            child.classList.add('light');
+          }
+        })
+    } else {
+        const editChildren = parentBlock?.querySelectorAll('*');
+  
+        editChildren?.forEach((child) => {
+          child.classList.remove('light');
+        })
+    }
+  })
 
   const { t } = useTranslation();
 
@@ -20,22 +45,37 @@ export const CreateProject: React.FC<Props> = () => {
     setIsPopupVisible(!isPopupVisible);
   };
 
+  const textarea = document.getElementById('desc');
+
+  textarea?.addEventListener('input', function () {
+      this.style.height = '125px';
+      this.style.height = (this.scrollHeight) + 'px';
+  });
+
   return (
     <>
       <div className="edit">
-        <form action="#" className="edit__content">
+        <form action="#" className="edit__content scroll">
           <fieldset className="edit__container">
             <label htmlFor="uploadPhoto" className="edit__label list-text"> 
               {t('image')}
             </label>
 
             <div className="edit__photo d-flex flex-row align-items-center justify-content-between">
-              <UserPhoto size={20} photo={photo} />
+              <UserPhoto size={100} photo={photo} />
 
               <div className="edit__photo__upload">
                 <label htmlFor="uploadPhoto" className="edit__photo__upload__label btn-grey">
                   <div className="edit__photo__upload__label__content d-flex align-items-center flex-row">
-                    <img src={upload} alt="Upload Icon" className="edit__photo__upload__label__icon" />
+                    <img
+                      src={
+                        isLightTheme 
+                          ? upload_light
+                          : upload
+                      }
+                      alt="Upload Icon"
+                      className="edit__photo__upload__label__icon"
+                    />
 
                     <span className="edit__photo__upload__label__text bold-text">
                       {t('upload')}
@@ -47,7 +87,15 @@ export const CreateProject: React.FC<Props> = () => {
               </div>
 
               <button type="button" className="edit__photo__delete btn-grey">
-                <img src={delet} alt="Delete" className="edit__photo__delete__img" />
+                <img
+                  src={
+                    isLightTheme
+                      ? delet_light
+                      : delet
+                  }
+                  alt="Delete"
+                  className="edit__photo__delete__img"
+                />
               </button>
             </div>
           </fieldset>
@@ -73,7 +121,11 @@ export const CreateProject: React.FC<Props> = () => {
               {t('desc')}
             </legend>
 
-            <textarea id="desc" placeholder={t('none')} className="edit__input edit__input--desc list-text" />
+            <textarea
+              id="desc"
+              placeholder={t('none')}
+              className="edit__input edit__input--desc list-text"
+            />
           </fieldset>
 
           <fieldset className="edit__container d-flex flex-column">

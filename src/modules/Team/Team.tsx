@@ -79,7 +79,7 @@ export const Team: React.FC = () => {
                       <Rate rateIs={5}/>
                     </div>
 
-                    <UserPhoto size={24} photo={photo} />
+                    <UserPhoto size={100} photo={photo} />
                   </div>
                 </div>
 
@@ -120,7 +120,6 @@ export const Team: React.FC = () => {
             </div>
           ))}
         </div>
-
       </div>
 
       <Info isLightTheme={isLightTheme} purpose={location} employee={employees[0]} />

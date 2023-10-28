@@ -90,9 +90,15 @@ export const MainSelect = () => {
     <div className="select select__main block" id='select'>
       <div className="select__container select__container__main scroll">
         {isProject && (
-          <a href="#create-project" className="select__container__btn btn-grey list-text">
+          <button
+            onClick={() => {
+              window.location.hash = '#create-project';
+              window.location.reload();
+            }}
+            className="select__container__btn btn-grey list-text"
+          >
             {t('create__project')}
-          </a>
+          </button>
         )}
 
         {/* program languages */}
