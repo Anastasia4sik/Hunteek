@@ -11,9 +11,7 @@ import { UserPhoto } from '../../../shared/userPhoto';
 import { useTranslation } from 'react-i18next';
 import { Popup } from '../../../Popup';
 
-type Props = {};
-
-export const CreateProject: React.FC<Props> = () => {
+export const CreateProject: React.FC = () => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [isLightTheme] = useState(() => {
     return localStorage.theme === 'light';

@@ -74,6 +74,14 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
   
   const { t } = useTranslation();
 
+  useEffect(() => {
+    const textarea = document.getElementById('descRes');
+    if (textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
+  }, [desc]);
+
   return (
     <div className="edit scroll">
       <form action="#" className="edit__content">
@@ -129,7 +137,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
           <input
             type="text"
             id="name"
-            placeholder={`${name} ${lastname}`}
+            defaultValue={`${name} ${lastname}`}
             className="edit__input list-text"
           />
         </fieldset>
@@ -142,7 +150,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
           <input
             type="text"
             id="name"
-            placeholder={position}
+            defaultValue={position}
             className="edit__input list-text"
           />
         </fieldset>
@@ -153,8 +161,8 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
           </legend>
 
           <textarea
-            id="desc"
-            placeholder={desc}
+            id="descRes"
+            defaultValue={desc}
             className="edit__input edit__input--desc list-text"
           />
         </fieldset>
@@ -266,7 +274,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
           <input
             type="text"
             id="location"
-            placeholder={`${homeCountry}, ${homeCity}`}
+            defaultValue={`${homeCountry}, ${homeCity}`}
             className="edit__input list-text"
           />
         </fieldset>
@@ -276,7 +284,11 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
             {t('skills')}
           </legend>
 
-          <textarea id="skills" placeholder={skills} className="edit__input list-text" />
+          <textarea
+            id="skills"
+            defaultValue={skills}
+            className="edit__input list-text"
+          />
         </fieldset>
 
         <fieldset className="edit__container d-flex flex-column">
@@ -286,7 +298,7 @@ export const EditResume: React.FC<Props> = ({ employee }) => {
 
           <input
             id="expierence"
-            placeholder={`${expierence}`}
+            defaultValue={`${expierence}`}
             className="edit__input list-text"
           />
         </fieldset>

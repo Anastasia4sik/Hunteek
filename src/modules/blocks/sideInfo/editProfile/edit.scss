@@ -3,7 +3,7 @@
 
   color: $grey-text;
 
-  overflow: hidden;  
+  overflow: hidden;
   height: calc(100vh - #{$header-height} - 116px);
 
   @include onBigDesktop {

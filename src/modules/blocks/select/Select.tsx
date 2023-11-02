@@ -122,7 +122,7 @@ export const Select: React.FC<Props> = ({
                     onKeyDown={handleKeyDown}
                   >
                     <div className="d-flex flex-row align-items-center select__profile">
-                      <img src={dollar} alt="Wallet" />
+                      <img src={dollar} alt="Wallet" className="select__profile__img" />
   
                       <span className="select__option list-text">
                         {t('my__wallet')}

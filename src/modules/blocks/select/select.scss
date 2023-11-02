@@ -25,6 +25,10 @@
   
   &__profile {
     gap: 5px;
+
+    &__img.light {
+      filter: brightness(0.5)
+    }
   }
   
   &__container {
@@ -174,7 +178,14 @@
       transition: filter 0.3s ease-in-out;
 
       &.light {
-        color: $grey-hover;
+        &:hover {
+          color: $grey-hover;
+          filter: brightness(0.8);
+        }
+      }
+
+      &:hover {
+        filter: brightness(2);
       }
 
       &--delete {
@@ -185,10 +196,6 @@
         }
 
         padding-bottom: 15px;
-      }
-
-      &:hover {
-        filter: brightness(2);
       }
 
       &__img {

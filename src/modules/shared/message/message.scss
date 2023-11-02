@@ -60,6 +60,10 @@
     &__img {
       transition: filter 0.3s ease-in-out;
 
+      &.light:hover {
+        filter: brightness(0.8);
+      }
+
       &:hover {
         filter: brightness(1.5);
       }

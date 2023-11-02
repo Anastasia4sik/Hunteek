@@ -80,13 +80,13 @@ export const Info: React.FC<Props> = ({
     content = <CreateProject />;
   } else if (purpose === 'cryptoWallets') {
     title = t('info__crypto__wallets');
-    content = <AllWallets />;
+    content = <AllWallets isLightTheme={isLightTheme} />;
   } else if (purpose === 'fiatWallets') {
     title = t('info__fiat__wallets');
-    content = <AllWallets />;
+    content = <AllWallets isLightTheme={isLightTheme} />;
   } else if (purpose === 'transfer') {
     title = t('info__transfer');
-    content = <Transfer />;
+    content = <Transfer isLightTheme={isLightTheme} />;
   } else if (purpose === 'rating') {
     content = <Rating />;
   } else if (purpose === 'reporting') {

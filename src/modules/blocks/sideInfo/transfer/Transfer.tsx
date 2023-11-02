@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { Popup } from '../../../Popup';
 
-export const Transfer: React.FC = () => {
+type Props = {
+  isLightTheme?: boolean;
+}
+
+export const Transfer: React.FC<Props> = ( isLightTheme ) => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const { t } = useTranslation();
@@ -11,6 +15,26 @@ export const Transfer: React.FC = () => {
   const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible);
   };
+
+  const parentBlock = document.querySelector('.info__container');
+  
+  useEffect(() => {
+    if (isLightTheme) {
+      const children = parentBlock?.querySelectorAll('*');
+
+      children?.forEach((child) => {
+        if (!child.classList.contains('light')) {
+          child.classList.add('light');
+        }
+      });
+    } else {
+      const children = parentBlock?.querySelectorAll('*');
+
+      children?.forEach((child) => {
+        child.classList.remove('light');
+      });
+    }
+  })
 
   return (
     <div className="edit">
@@ -23,8 +47,9 @@ export const Transfer: React.FC = () => {
           <select
             id="wallet"
             className="list-text edit__input"
+            defaultValue="default"
           >
-            <option value="" disabled selected hidden>
+            <option value="default" disabled hidden>
               {t('none')}
             </option>
 
@@ -44,8 +69,9 @@ export const Transfer: React.FC = () => {
           <select
             id="paymentType"
             className="list-text edit__input"
+            defaultValue="default"
           >
-            <option value="" disabled selected hidden>
+            <option value="default" disabled hidden>
               {t('none')}
             </option>
 
@@ -62,7 +88,12 @@ export const Transfer: React.FC = () => {
             {t('card__num__ID')}
           </legend>
 
-          <input type="number" id="number" placeholder={t('none')} className="edit__input list-text" />
+          <input
+            type="number"
+            id="number"
+            placeholder={t('none')}
+            className="edit__input list-text"
+          />
         </fieldset>
 
         <div className="edit__container__row d-flex flex-row justify-content-between">
@@ -71,7 +102,12 @@ export const Transfer: React.FC = () => {
               {t('amount')}
             </legend>
 
-            <input type="number" id="amount" placeholder={t('none')} className="edit__input list-text" />
+            <input
+              type="number"
+              id="amount"
+              placeholder={t('none')}
+              className="edit__input list-text"
+            />
           </fieldset>
 
           <fieldset className="edit__container d-flex flex-column">
@@ -79,7 +115,12 @@ export const Transfer: React.FC = () => {
               {t('currency')}
             </legend>
 
-            <input type="number" id="currency" placeholder={t('none')} className="edit__input list-text" />
+            <input
+              type="number"
+              id="currency"
+              placeholder={t('none')}
+              className="edit__input list-text"
+            />
           </fieldset>
         </div>
 

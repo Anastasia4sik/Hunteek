@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-export const AllWallets: React.FC = () => {
+type Props = {
+  isLightTheme?: boolean;
+}
+
+export const AllWallets: React.FC<Props> = ({ isLightTheme }) => {
   const { t } = useTranslation();
+
+  const parentBlock = document.querySelector('.info__container');
+  
+  useEffect(() => {
+    if (isLightTheme) {
+      const children = parentBlock?.querySelectorAll('*');
+
+      children?.forEach((child) => {
+        if (!child.classList.contains('light')) {
+          child.classList.add('light');
+        }
+      });
+    } else {
+      const children = parentBlock?.querySelectorAll('*');
+
+      children?.forEach((child) => {
+        child.classList.remove('light');
+      });
+    }
+  })
 
   return (
     <div className="wallets d-flex flex-wrap">
