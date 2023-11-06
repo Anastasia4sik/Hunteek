@@ -3,11 +3,8 @@ import search from '../../../img/icons/search.svg';
 
 import time from '../../../img/icons/header/time.svg';
 import video from '../../../img/icons/header/video.svg';
-import video_light from '../../../img/icons/header/video_light.svg';
 import dollar from '../../../img/icons/header/dollar.svg';
-import dollar_light from '../../../img/icons/header/dollar_light.svg';
 import profile from '../../../img/icons/header/profile.svg';
-import profile_light from '../../../img/icons/header/profile_light.svg';
 
 import ua from '../../../img/icons/flags/ua.png';
 import eng from '../../../img/icons/flags/eng.png';
@@ -133,7 +130,7 @@ export const Header: React.FC<Props> = ({
         <div className="header__menu__nav d-flex align-items-center">
           <a href="/" title={t('video__desc')}>
             <img
-              src={localStorage.theme === 'light' ? video_light : video}
+              src={video}
               alt="Video"
               className="header__menu__nav__img header__menu__nav__img--video"
             />
@@ -141,7 +138,7 @@ export const Header: React.FC<Props> = ({
 
           <a href="/my-wallet">
             <img
-              src={localStorage.theme === 'light' ? dollar_light : dollar}
+              src={dollar}
               alt="Money"
               className="header__menu__nav__img"
             />
@@ -149,7 +146,7 @@ export const Header: React.FC<Props> = ({
 
           <a href="/my-profile">
             <img
-              src={localStorage.theme === 'light' ? profile_light : profile}
+              src={profile}
               alt="Profile"
               className="header__menu__nav__img"
             />

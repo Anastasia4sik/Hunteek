@@ -1,4 +1,4 @@
-import React, { RefObject, useRef, useState } from 'react';
+import React, { RefObject, useEffect, useRef, useState } from 'react';
 
 import { ReferralCard } from '../../../shared/referralCard';
 import { Pagination } from '../../../shared/pagination';
@@ -6,7 +6,11 @@ import { Pagination } from '../../../shared/pagination';
 import referralInfo from '../../../../api/referralPerson.json';
 import { useTranslation } from 'react-i18next';
 
-export const Referral: React.FC = () => {
+type Props = {
+  isLightTheme?: boolean;
+};
+
+export const Referral: React.FC<Props> = ({ isLightTheme }) => {
   const inputRef: RefObject<HTMLInputElement> = useRef(null);
 
   const [perPage] = useState(3);
@@ -17,6 +21,29 @@ export const Referral: React.FC = () => {
   const lastItem = currentPage * perPage;
   const itemsPerPage = referralInfo.slice(firstItem, lastItem);
   let newHash: string;
+
+  const parentBlock = document.querySelector('.referral');
+  
+  useEffect(() => {
+    if (isLightTheme) {
+      parentBlock?.classList.add('light');
+      const children = parentBlock?.querySelectorAll('*');
+
+      children?.forEach((child) => {
+        if (!child.classList.contains('light')) {
+          child.classList.add('light');
+        }
+      });
+    } else {
+      parentBlock?.classList.remove('light');
+
+      const children = parentBlock?.querySelectorAll('*');
+
+      children?.forEach((child) => {
+        child.classList.remove('light');
+      });
+    }
+  }, [isLightTheme])
 
   const handleOnPageChange = (page: number | string) => {
     if (typeof page === 'number') {

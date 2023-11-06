@@ -36,6 +36,12 @@
       @include onBigDesktop {
         height: 44px;
       }
+
+      &__img {
+        &.light {
+          filter: brightness(0);
+        }
+      }
     }
   }
 
@@ -64,6 +70,10 @@
 
       &__img {
         transform: rotate(180deg);
+
+        &.light {
+          filter: brightness(0);
+        }
       }
     }
   }

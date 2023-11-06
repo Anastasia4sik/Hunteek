@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import arrow from '../../../img/icons/arrow_down.svg';
 import arrow_light from '../../../img/icons/arrow_down_light.svg';

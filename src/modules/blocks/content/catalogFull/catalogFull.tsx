@@ -44,19 +44,26 @@ export const CatalogFull: React.FC<Props> = ({ forSideInfo }) => {
   }, [largePerPage, smallPerPage]);
 
   const handleOnPageChange = (page: number | string) => {
+    const hash = window.location.hash;
+
     if (typeof page === 'number') {
       setCurrentPage(page);
-      newHash = `#${page}`;
+      window.location.hash = `${hash}#${page}`;
     } else if (page === 'prev') {
       setCurrentPage(current => current - 1);
-      newHash = '#prev';
+      window.location.hash = hash.replace(`${page}`,'');
+      window.location.hash = hash.replace('next','');
+      window.location.hash = hash.replace('prev','');
+      window.location.hash = `${hash}#prev`;
     } else if (page === 'next') {
       setCurrentPage(current => current + 1);
-      newHash = '#next';
+      window.location.hash = hash.replace(`${page}`,'');
+      window.location.hash = hash.replace('next','');
+      window.location.hash = hash.replace('prev','');
+      window.location.hash = `${hash}#next`;
     }
 
-    const currentHash = window.location.hash;
-    const newHashWithCurrent = currentHash ? `${currentHash}${newHash}` : newHash;
+    const newHashWithCurrent = hash ? `${hash}${newHash}` : newHash;
 
     window.location.hash = newHashWithCurrent;
   };

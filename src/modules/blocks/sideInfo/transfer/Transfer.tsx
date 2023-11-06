@@ -7,7 +7,7 @@ type Props = {
   isLightTheme?: boolean;
 }
 
-export const Transfer: React.FC<Props> = ( isLightTheme ) => {
+export const Transfer: React.FC<Props> = ({ isLightTheme }) => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const { t } = useTranslation();
@@ -34,7 +34,7 @@ export const Transfer: React.FC<Props> = ( isLightTheme ) => {
         child.classList.remove('light');
       });
     }
-  })
+  }, [isLightTheme])
 
   return (
     <div className="edit">

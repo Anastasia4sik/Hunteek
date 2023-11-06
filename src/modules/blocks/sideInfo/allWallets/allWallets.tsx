@@ -27,7 +27,7 @@ export const AllWallets: React.FC<Props> = ({ isLightTheme }) => {
         child.classList.remove('light');
       });
     }
-  })
+  }, [isLightTheme])
 
   return (
     <div className="wallets d-flex flex-wrap">

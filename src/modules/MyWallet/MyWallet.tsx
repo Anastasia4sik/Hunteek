@@ -52,9 +52,9 @@ export const MyWallet: React.FC = () => {
         <Select setIsReferralChecked={setIsReferralChecked} />
 
         <div className="content__middle d-flex flex-column">
-          {isReferralChecked ? (
+          {window.location.hash.includes('referral') ? (
             <>
-              <Referral />
+              <Referral isLightTheme={isLightTheme} />
 
               <CatalogFull forSideInfo />
             </>

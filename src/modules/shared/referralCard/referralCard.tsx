@@ -11,7 +11,7 @@ type Props = {
 export const ReferralCard: React.FC<Props> = ({ personInfo }) => {
   return (
     <a href={`#ref-${personInfo.slug}`} className="referral__card d-flex flex-column align-items-center block">
-      <UserPhoto size={20} photo={personInfo.photo} />
+      <UserPhoto size={100} photo={personInfo.photo} />
 
       <div className="referral__card__user d-flex flex-column align-items-center">
         <p className="referral__card__name list-text">

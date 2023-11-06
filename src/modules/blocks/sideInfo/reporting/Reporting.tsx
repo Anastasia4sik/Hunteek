@@ -18,7 +18,7 @@ export const Reporting: React.FC<Props> = ({ personInfo }) => {
       <div className="reporting__content">
         <div className="repoting__top text-center">
           <div className="reporting__top__photo">
-            <UserPhoto size={20} photo={personInfo.photo} />
+            <UserPhoto size={100} photo={personInfo.photo} />
           </div>
 
           <h3 className="main-text reporting__top__name">

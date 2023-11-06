@@ -1,9 +1,7 @@
 import React, {memo, useEffect, useState} from 'react';
 
 import delet from '../../../../img/icons/delete.svg';
-import delet_light from '../../../../img/icons/delete_light.svg';
 import upload from '../../../../img/icons/upload.svg';
-import upload_light from '../../../../img/icons/upload_light.svg';
 import photo from '../../../../img/photo/user.png';
 
 import { UserPhoto } from '../../../shared/userPhoto';
@@ -66,11 +64,7 @@ export const CreateProject: React.FC = () => {
                 <label htmlFor="uploadPhoto" className="edit__photo__upload__label btn-grey">
                   <div className="edit__photo__upload__label__content d-flex align-items-center flex-row">
                     <img
-                      src={
-                        isLightTheme 
-                          ? upload_light
-                          : upload
-                      }
+                      src={upload}
                       alt="Upload Icon"
                       className="edit__photo__upload__label__icon"
                     />
@@ -86,11 +80,7 @@ export const CreateProject: React.FC = () => {
 
               <button type="button" className="edit__photo__delete btn-grey">
                 <img
-                  src={
-                    isLightTheme
-                      ? delet_light
-                      : delet
-                  }
+                  src={delet}
                   alt="Delete"
                   className="edit__photo__delete__img"
                 />

@@ -55,8 +55,28 @@ export const Select: React.FC<Props> = ({
     setIsResumeChecked ? setIsResumeChecked(e.target.checked) : null;
   };
 
-  const handleReferralChange = (e: { target: { checked: any; }; }) => {
-    setIsReferralChecked ? setIsReferralChecked(e.target.checked) : null;
+  const checkCheckboxState = () => {
+    const currentHash = window.location.hash;
+    const isReferralHashPresent = currentHash.includes('#referral');
+    const checkbox = document.getElementById('Referral-checkbox') as HTMLInputElement;
+  
+    if (checkbox) {
+      checkbox.checked = isReferralHashPresent;
+    }
+  };
+
+  window.addEventListener('load', checkCheckboxState);
+
+  const handleReferralChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const checkbox = e.target;
+    const currentHash = window.location.hash;
+
+    if (checkbox.checked) {
+      window.location.hash = `${currentHash}#referral`;
+    } else {
+      window.location.hash = currentHash.replace('#referral', '');
+    }
+    window.location.reload();
   };
 
   const { t } = useTranslation();
@@ -163,10 +183,10 @@ export const Select: React.FC<Props> = ({
                       <label htmlFor="Balance-checkbox" className="checkbox-label list-text">
                         <input
                           type="checkbox"
+                          onClick={() => { window.location.reload()}}
                           id="Balance-checkbox"
                           name="option"
                           value="Balance"
-  
                         />
                         <span>
                           {t('my__balance')}
@@ -181,6 +201,7 @@ export const Select: React.FC<Props> = ({
                       <label htmlFor="Contracts-checkbox" className="checkbox-label list-text">
                         <input
                           type="checkbox"
+                          onClick={() => { window.location.reload()}}
                           id="Contracts-checkbox"
                           name="option"
                           value="Contracts"
@@ -200,6 +221,7 @@ export const Select: React.FC<Props> = ({
                       <label htmlFor="Referral-checkbox" className="checkbox-label list-text">
                         <input
                           type="checkbox"
+                          // onClick={() => { window.location.reload()}}
                           id="Referral-checkbox"
                           name="option"
                           value="Referral"
@@ -265,6 +287,7 @@ export const Select: React.FC<Props> = ({
                         <label htmlFor="resume-checkbox" className="checkbox-label list-text">
                           <input
                             type="checkbox"
+                          onClick={() => { window.location.reload()}}
                             id="resume-checkbox"
                             name="option"
                             value="resume"
@@ -292,6 +315,7 @@ export const Select: React.FC<Props> = ({
                           <label htmlFor="BanList-checkbox" className="checkbox-label list-text">
                             <input
                               type="checkbox"
+                          onClick={() => { window.location.reload()}}
                               id="BanList-checkbox"
                               name="option"
                               value="BanList"
